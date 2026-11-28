@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "task": "C07",
+  "originalTask": "R17",
+  "masterRequirements": ["MR-006", "MR-044"],
+  "coordinatorCheckpoint": "00088cd6b1416adfc6822f4896813ef24e15d49b",
+  "snapshotPath": "verification/railway/c07-route-calibration/",
+  "preservedPriorSnapshots": [
+    "verification/railway/c04-baseline/",
+    "verification/railway/c04-fix-01/",
+    "verification/railway/c05-region-install/",
+    "verification/railway/c05-fix-01/",
+    "verification/railway/c05-fix-02/",
+    "verification/railway/c06-strict-oracle/",
+    "verification/railway/c06-fix-01/"
+  ],
+  "mode": "production-first synthetic engineering preparation",
+  "realPbfProcessed": false,
+  "realRouteComparisonsCompleted": 0,
+  "releaseAllowed": false,
+  "actualC08MobileAcceptanceClaimed": false,
+  "datasetMetrics": {
+    "datasetId": "C07-SYNTHETIC-CALIBRATION-V2",
+    "datasetVersion": "2.0.0",
+    "totalDistinctScenarios": 137,
+    "genuineRouteComparisons": 123,
+    "infrastructureAndUnsupportedCases": 14,
+    "positiveRouteScenarios": 50,
+    "negativeCompatibilityScenarios": 44,
+    "topologyAndOperationsScenarios": 29,
+    "validRoutesMatched": 46,
+    "rejectedRoutesMatched": 72,
+    "knownIncompatibleAcceptedCount": 0,
+    "discrepancyCounts": {
+      "MATCH_VALID_ROUTE": 46,
+      "MATCH_NO_VALID_ROUTE": 72,
+      "DURATION_DISCREPANCY": 3,
+      "ORACLE_FALSE_REJECT": 2,
+      "STRICT_PROFILE_UNSUPPORTED": 1,
+      "STALE_IDENTITY": 5,
+      "INVALID_INPUT": 2,
+      "SEARCH_EXHAUSTION": 2,
+      "ORACLE_EXECUTION_ERROR": 4
+    },
+    "openDiscrepancies": 5,
+    "openBlockingDiscrepancies": 0,
+    "resolvedDiscrepancies": 132
+  },
+  "suites": {
+    "c07_route_calibration": { "total": 7, "passed": 7, "failed": 0, "skipped": 0 },
+    "openrailrouting_upstream_maven_offline": { "total": 34, "passed": 34, "failed": 0, "skipped": 0 },
+    "c06_strict_routing_oracle": { "total": 8, "passed": 8, "failed": 0, "skipped": 0 },
+    "c05_packages_install_and_portals": { "total": 12, "passed": 12, "failed": 0, "skipped": 0 },
+    "c04_contracts_and_tiles": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
+    "c03_runtime_ts": { "total": 5, "passed": 5, "failed": 0, "skipped": 0, "routeP95Ms": 447.83 },
+    "r07_r11_upstream": { "total": 321, "passed": 321, "failed": 0, "skipped": 0 },
+    "verify_downstream_graphpack": { "total": 1, "passed": 1, "failed": 0, "skipped": 0 },
+    "c03_python_topology": { "total": 6, "passed": 6, "failed": 0, "skipped": 0 },
+    "v3_prefilter": { "total": 36, "passed": 36, "failed": 0, "skipped": 0 },
+    "c02_pipeline_live_osmium": { "total": 9, "passed": 9, "failed": 0, "skipped": 0 }
+  },
+  "totalExecuted": 444,
+  "totalPassed": 444,
+  "totalFailed": 0,
+  "totalSkipped": 0,
+  "typescriptStrictCheck": {
+    "tscVersion": "5.9.3",
+    "c06AndC07Errors": 0,
+    "preservedUpstreamErrors": 2,
+    "preservedErrorLocations": [
+      "src/rail/map/pmtiles-adapter.ts(260,5)",
+      "src/rail/regions/portals.ts(3,26)"
+    ]
+  },
+  "notRerun": [
+    "test_c04_browser_webgl.mjs (Playwright/Chromium WebGL)",
+    "test_c05_browser_persistence.mjs (Playwright/Chromium IDB+OPFS)",
+    "Physical Android Capacitor device suite (C08)",
+    "Mandatory R17 100+ curated real-geography comparisons (blocked pending C01 compliance & real PBF)"
+  ]
+}

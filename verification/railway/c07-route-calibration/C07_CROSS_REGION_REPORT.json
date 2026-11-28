@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "total": 9,
+  "passed": 9,
+  "failed": 0,
+  "verificationScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+  "nativeMultiRegionOracleSupported": false,
+  "independentJavaSegmentVerificationExecuted": false,
+  "zeroFabricatedEdgesVerified": true,
+  "results": [
+    {
+      "checkId": "cr_01_unavailable_destination_region",
+      "passed": true,
+      "expectedCode": "UNAVAILABLE_DESTINATION_REGION",
+      "actualCode": "UNAVAILABLE_DESTINATION_REGION",
+      "fabricatedEdges": 0,
+      "verificationScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+      "independentJavaSegmentVerificationExecuted": false,
+      "pinnedVersions": [],
+      "totalDistanceM": null,
+      "notes": "Cannot connect portal portal:in-east-c05:in-north-c05:eb1-nb1: in-north-c05 is not installed/activated"
+    },
+    {
+      "checkId": "cr_02_verified_regions_ac25k_a_to_b_pinned",
+      "passed": true,
+      "expectedCode": "PORTAL_VERIFIED",
+      "actualCode": "PORTAL_VERIFIED",
+      "fabricatedEdges": 0,
+      "verificationScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+      "independentJavaSegmentVerificationExecuted": false,
+      "pinnedVersions": [
+        "in-east-c05--1.0.0--p1",
+        "in-north-c05--1.0.0--p1"
+      ],
+      "totalDistanceM": 109945,
+      "notes": "Game-engine composed cross-region AC 25kV journey with seam continuity and version pinning"
+    },
+    {
+      "checkId": "cr_03_compatible_diesel_across_electrified_portal",
+      "passed": true,
+      "expectedCode": "PORTAL_VERIFIED",
+      "actualCode": "PORTAL_VERIFIED",
+      "fabricatedEdges": 0,
+      "verificationScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+      "independentJavaSegmentVerificationExecuted": false,
+      "pinnedVersions": [
+        "in-east-c05--1.0.0--p1",
+        "in-north-c05--1.0.0--p1"
+      ],
+      "totalDistanceM": 109945,
+      "notes": "Cross-region journey verified via portal:in-east-c05:in-north-c05:eb1-nb1"
+    },
+    {
+      "checkId": "cr_04_explicit_portal_direction_enforcement",
+      "passed": true,
+      "expectedCode": "PORTAL_DIRECTION_FORBIDDEN",
+      "actualCode": "PORTAL_DIRECTION_FORBIDDEN",
+      "fabricatedEdges": 0,
+      "verificationScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+      "independentJavaSegmentVerificationExecuted": false,
+      "pinnedVersions": [],
+      "totalDistanceM": null,
+      "notes": "B_TO_A on BOTH=PORTAL_VERIFIED, on A_TO_B=PORTAL_DIRECTION_FORBIDDEN"
+    },
+    {
+      "checkId": "cr_05_portal_gauge_mismatch_1435_rejected",
+      "passed": true,
+      "expectedCode": "PORTAL_GAUGE_MISMATCH",
+      "actualCode": "PORTAL_GAUGE_MISMATCH",
+      "fabricatedEdges": 0,
+      "verificationScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+      "independentJavaSegmentVerificationExecuted": false,
+      "pinnedVersions": [],
+      "totalDistanceM": null,
+      "notes": "Train gauges [1435] incompatible with portal gauges [1676]"
+    },
+    {
+      "checkId": "cr_06_portal_electrification_mismatch_1500v_dc_rejected",
+      "passed": true,
+      "expectedCode": "PORTAL_ELECTRIFICATION_MISMATCH",
+      "actualCode": "PORTAL_ELECTRIFICATION_MISMATCH",
+      "fabricatedEdges": 0,
+      "verificationScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+      "independentJavaSegmentVerificationExecuted": false,
+      "pinnedVersions": [],
+      "totalDistanceM": null,
+      "notes": "Electric voltage/frequency mismatch across portal portal:in-east-c05:in-north-c05:eb1-nb1"
+    },
+    {
+      "checkId": "cr_07_unverified_portal_rejected",
+      "passed": true,
+      "expectedCode": "PORTAL_UNVERIFIED",
+      "actualCode": "PORTAL_UNVERIFIED",
+      "fabricatedEdges": 0,
+      "verificationScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+      "independentJavaSegmentVerificationExecuted": false,
+      "pinnedVersions": [],
+      "totalDistanceM": null,
+      "notes": "Portal portal:in-east-c05:in-north-c05:eb1-nb1 is marked unverified"
+    },
+    {
+      "checkId": "cr_08_region_version_mismatch_rejected",
+      "passed": true,
+      "expectedCode": "PORTAL_GRAPH_VERSION_MISMATCH",
+      "actualCode": "PORTAL_GRAPH_VERSION_MISMATCH",
+      "fabricatedEdges": 0,
+      "verificationScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+      "independentJavaSegmentVerificationExecuted": false,
+      "pinnedVersions": [],
+      "totalDistanceM": null,
+      "notes": "Portal portal:in-east-c05:in-north-c05:eb1-nb1 expects graphs (in-east-c05@adb8879b, in-north-c05@6c5f1a42) but found (in-east-c05@616ec976, in-north-c05@6c5f1a42)"
+    },
+    {
+      "checkId": "cr_09_seam_distance_exceeded_rejected",
+      "passed": true,
+      "expectedCode": "PORTAL_SEAM_DISTANCE_EXCEEDED",
+      "actualCode": "PORTAL_SEAM_DISTANCE_EXCEEDED",
+      "fabricatedEdges": 0,
+      "verificationScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+      "independentJavaSegmentVerificationExecuted": false,
+      "pinnedVersions": [],
+      "totalDistanceM": null,
+      "notes": "Portal portal:in-east-c05:in-north-c05:eb1-nb1 seam distance 1200m exceeds cap 500m"
+    }
+  ]
+}

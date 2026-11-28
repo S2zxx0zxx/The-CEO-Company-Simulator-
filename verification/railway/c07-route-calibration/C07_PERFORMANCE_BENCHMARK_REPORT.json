@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "task": "C07",
+  "originalTask": "R17",
+  "masterRequirements": [
+    "MR-006",
+    "MR-044"
+  ],
+  "syntheticOnly": true,
+  "realPbfProcessed": false,
+  "realRouteComparisonsCompleted": 0,
+  "runtimeRoutingP95TargetMs": 300,
+  "historicalC03Windows500NodeP95Ms": 495.84,
+  "noteOnTarget": "Small synthetic oracle fixtures do not satisfy dense 500-node Windows target (495.84ms > 300ms retained open) or physical C08 Android acceptance.",
+  "datasetValidationMs": 5.64,
+  "batchElapsedMs": 7147.57,
+  "totalCasesExecuted": 137,
+  "genuineRouteComparisons": 123,
+  "infrastructureAndUnsupportedCases": 14,
+  "oracleLatencyMs": {
+    "count": 135,
+    "minMs": 0.01,
+    "p50Ms": 1.96,
+    "p95Ms": 41.03,
+    "maxMs": 1627.5,
+    "meanMs": 22.15
+  },
+  "gameLatencyMs": {
+    "count": 137,
+    "minMs": 0.11,
+    "p50Ms": 0.99,
+    "p95Ms": 3.65,
+    "maxMs": 25.56,
+    "meanMs": 1.53
+  },
+  "timeoutFailureCount": 1,
+  "peakRssBytes": 91082752,
+  "jvmSettings": {
+    "maxHeapMb": 256
+  },
+  "jvmTelemetryByCacheId": {
+    "c06-strict-cache": {
+      "startupLoadMs": 1311.53,
+      "jvmMaxHeapBytes": 268435456,
+      "jvmUsedHeapBytes": 44584624,
+      "loadedGraphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "loadedPbfSha256": "07d1ca96b1609c5e150f638b462a68f4dc40a70e5fa273ef90442fbb30c48dcd",
+      "graphNodes": 43,
+      "graphEdges": 27
+    },
+    "c07-strict-cache": {
+      "startupLoadMs": 1087.1,
+      "jvmMaxHeapBytes": 268435456,
+      "jvmUsedHeapBytes": 37659840,
+      "loadedGraphSha256": "b3cf4194eb8ce720baebc6d1101fc3793db2786cd683e2ac6ad4f70be1bc9650",
+      "loadedPbfSha256": "210888924fa983d5fafcfea40519bb37d91bac3d4299c8160ec0b84572d78c00",
+      "graphNodes": 19,
+      "graphEdges": 18
+    }
+  }
+}

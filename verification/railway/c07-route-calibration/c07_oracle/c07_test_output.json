@@ -1,0 +1,99 @@
+{
+  "suite": "c07_route_calibration",
+  "passed": true,
+  "total": 7,
+  "passedCount": 7,
+  "failedCount": 0,
+  "skippedCount": 0,
+  "realPbfProcessed": false,
+  "realRouteComparisonsCompleted": 0,
+  "releaseAllowed": false,
+  "actualC08MobileAcceptanceClaimed": false,
+  "tolerancePolicy": {
+    "policyId": "C07-PROVISIONAL-TOLERANCE-V1",
+    "provisional": true,
+    "approvedProductionToleranceLocked": false,
+    "rationale": "No production tolerance is locked for C06 yet; provisional thresholds allow spherical vs ellipsoidal geodesic rounding and integer ceil-second rounding while catching topology or speed mismatches.",
+    "distanceMaxDeltaM": 50,
+    "distanceMaxRelDelta": 0.01,
+    "durationMaxDeltaS": 5,
+    "durationMaxRelDelta": 0.02,
+    "endpointSnapMaxM": 250,
+    "runtimeRoutingP95TargetMs": 300
+  },
+  "results": [
+    {
+      "case": "c07_01_source_pin_jar_and_dataset_contract",
+      "passed": true,
+      "elapsedMs": 18.7,
+      "adapterJarSha256": "34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb",
+      "totalCases": 137,
+      "genuineRouteCases": 123,
+      "infrastructureAndUnsupportedCases": 14,
+      "validationMs": 17.18
+    },
+    {
+      "case": "c07_02_full_batch_execution_137_distinct_scenarios",
+      "passed": true,
+      "elapsedMs": 7169.13,
+      "totalExecuted": 137,
+      "genuineRouteComparisons": 123,
+      "infrastructureAndUnsupportedCases": 14,
+      "validRoutesMatched": 46,
+      "rejectedRoutesMatched": 72,
+      "knownIncompatibleAcceptedCount": 0,
+      "batchElapsedMs": 7147.57,
+      "peakRssBytes": 91082752
+    },
+    {
+      "case": "c07_03_checkpoint_cancellation_and_safe_resume",
+      "passed": true,
+      "elapsedMs": 2602.31,
+      "cancelledAfter": 3,
+      "resumedToTotal": 8,
+      "initialFailurePreserved": true
+    },
+    {
+      "case": "c07_04_distance_duration_calibration_and_provisional_tolerances",
+      "passed": true,
+      "elapsedMs": 0.39,
+      "validComparisonCount": 49,
+      "withinProvisionalToleranceCount": 46,
+      "maxAbsDistanceDeltaM": 1,
+      "meanAbsDistanceDeltaM": 0.08,
+      "maxAbsDurationDeltaS": 302,
+      "meanAbsDurationDeltaS": 10.73,
+      "categoryCounts": {
+        "EXACT_MATCH": 35,
+        "MEASUREMENT_PRECISION_DELTA": 11,
+        "DIFFERENT_VALID_ROUTE": 0,
+        "GENUINE_DISTANCE_INACCURACY": 0,
+        "GENUINE_DURATION_INACCURACY": 3,
+        "UNSUPPORTED_UPSTREAM_COST_SEMANTICS": 0
+      }
+    },
+    {
+      "case": "c07_05_cross_region_c05_fix02_portal_validation",
+      "passed": 9,
+      "elapsedMs": 169.85,
+      "total": 9,
+      "verificationScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+      "zeroFabricatedEdgesVerified": true
+    },
+    {
+      "case": "c07_06_mandatory_14_negative_regression_tests",
+      "passed": true,
+      "elapsedMs": 24.25,
+      "negativeRegressionCount": 14,
+      "taxonomyClassesVerified": 17
+    },
+    {
+      "case": "c07_07_repeated_run_reproducibility_and_real_data_readiness",
+      "passed": true,
+      "elapsedMs": 42.27,
+      "repeatedBatchRunsConsistent": 3,
+      "realRouteComparisonsCompleted": 0,
+      "c01ComplianceCleared": false
+    }
+  ]
+}
