@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "task": "C06",
+  "originalTask": "R16",
+  "masterRequirement": "MR-005",
+  "coordinatorCheckpoint": "461efa45ea8a21a9b509c071e7df8fa3fa4f5b0d",
+  "mode": "production-first synthetic engineering preparation",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "openRailRoutingPin": {
+    "repoUrl": "https://github.com/geofabrik/OpenRailRouting",
+    "commit": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+    "license": "Apache-2.0",
+    "licenseBlob": "5471dc10377b76db85a2feca7a99a7eef4980ba8",
+    "graphHopperVersion": "11.1-osm-reader-callbacks-1"
+  },
+  "artifacts": [
+    {
+      "requirement": "Pinned Offline Java Strict Oracle Adapter (Tri-State Exact Parsers, Stdout Log Isolation, Inter-Stop Reversal Check)",
+      "modules": [
+        "c06_oracle/java/src/com/railwayceo/c06/StrictEnums.java",
+        "c06_oracle/java/src/com/railwayceo/c06/StrictParsers.java",
+        "c06_oracle/java/src/com/railwayceo/c06/StrictOracleRunner.java"
+      ],
+      "tests": [
+        "test_c06_strict_oracle.mjs#c06_01_source_pin_import_and_c02_metadata_audit",
+        "test_c06_strict_oracle.mjs#c06_02_upstream_permissive_vs_strict_unknown_and_dc_resolution"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "Synthetic Multi-Scenario Fixture, PBF Import & C02 Metadata Retention Audit",
+      "modules": [
+        "c06_fixture_builder.py",
+        "fixtures/c06_oracle/c06_synthetic_network.osm",
+        "fixtures/c06_oracle/c06_synthetic_network.osm.pbf",
+        "fixtures/c06_oracle/c06_graph_v1.json",
+        "fixtures/c06_oracle/c06_graph_v2.json",
+        "fixtures/c06_oracle/c06_fixture_ground_truth.json",
+        "fixtures/c06_oracle/c06_c02_metadata_audit.json"
+      ],
+      "tests": [
+        "test_c06_strict_oracle.mjs#c06_01_source_pin_import_and_c02_metadata_audit"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "18-Rule Compatibility Mapping Matrix, Tolerances & C07 Synthetic Calibration Schema",
+      "modules": [
+        "src/rail/c06-oracle/contracts.ts",
+        "fixtures/c06_oracle/c07_synthetic_calibration_template.json"
+      ],
+      "tests": [
+        "test_c06_strict_oracle.mjs#c06_01_source_pin_import_and_c02_metadata_audit",
+        "test_c06_strict_oracle.mjs#c06_07_performance_benchmarks_and_c07_schema_preparation"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "Offline IPC Client, Realism/SHA Preflight & Timeout SIGKILL Recovery",
+      "modules": [
+        "src/rail/c06-oracle/client.ts"
+      ],
+      "tests": [
+        "test_c06_strict_oracle.mjs#c06_04_easy_isolation_stale_hashes_process_failure_and_timeout"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "Independent Path Safety Validator (Game & Oracle) Without Shared RailCompatibility",
+      "modules": [
+        "src/rail/c06-oracle/validator.ts"
+      ],
+      "tests": [
+        "test_c06_strict_oracle.mjs#c06_03_comprehensive_24_scenario_oracle_vs_game_comparison",
+        "test_c06_strict_oracle.mjs#c06_05_independent_safety_validator_hazard_detection"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "Reproducible Comparison Runner & C05 FIX-02 Cross-Region Portal Composition",
+      "modules": [
+        "src/rail/c06-oracle/harness.ts",
+        "src/rail/c06-oracle/index.ts"
+      ],
+      "tests": [
+        "test_c06_strict_oracle.mjs#c06_03_comprehensive_24_scenario_oracle_vs_game_comparison",
+        "test_c06_strict_oracle.mjs#c06_06_cross_region_c05_fix02_portal_continuity"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    }
+  ]
+}

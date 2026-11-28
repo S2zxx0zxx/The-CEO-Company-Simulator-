@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "task": "C06",
+  "originalTask": "R16",
+  "masterRequirement": "MR-005",
+  "syntheticOnly": true,
+  "realPbfProcessed": false,
+  "environment": {
+    "nodeVersion": "v24.10.0",
+    "pythonVersion": "3.13.0",
+    "javaVersion": "21 (Android Studio JBR)",
+    "mavenVersion": "3.9.9",
+    "osmiumVersion": "1.19.0",
+    "openRailRoutingCommit": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+    "graphHopperVersion": "11.1-osm-reader-callbacks-1"
+  },
+  "importMetrics": {
+    "pbfBytes": 1351,
+    "strictImportDurationMs": 1742.5,
+    "upstreamImportDurationMs": 508.71,
+    "strictCacheBytes": 6346134,
+    "upstreamCacheBytes": 6343187,
+    "graphNodes": 43,
+    "graphEdges": 27,
+    "jvmMaxHeapBytes": 268435456
+  },
+  "oracleQueryBenchmarks": {
+    "coldJvmLoadMs": 1227.78,
+    "coldCliQueryMs": 127.66,
+    "persistentJvmLoadMs": 1474.15,
+    "warmQueryP50Ms": 2.39,
+    "warmQueryP95Ms": 36.13,
+    "repeatedQueryDeterministic": true,
+    "c07TemplateCaseCount": 10
+  },
+  "oracleSuiteElapsedMs": {
+    "c06_01_source_pin_import_and_c02_metadata_audit": 0.23,
+    "c06_02_upstream_permissive_vs_strict_unknown_and_dc_resolution": 2461.39,
+    "c06_03_comprehensive_24_scenario_oracle_vs_game_comparison": 331.67,
+    "c06_04_easy_isolation_stale_hashes_process_failure_and_timeout": 4305.5,
+    "c06_05_independent_safety_validator_hazard_detection": 0.35,
+    "c06_06_cross_region_c05_fix02_portal_continuity": 115.35,
+    "c06_07_performance_benchmarks_and_c07_schema_preparation": 2261.32
+  }
+}
