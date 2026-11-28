@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "task": "C05",
+  "checkpoint": "e373e5548ed988788655ae0f0b17891f16543022",
+  "readiness": {
+    "C01": {
+      "status": "BLOCKED",
+      "reason": "Awaiting official DST/self-certification applicability, territorial allowlist confirmation, SoI asset rights, and R51 license clearance."
+    },
+    "C02": {
+      "status": "SYNTHETIC_READY_REAL_BLOCKED",
+      "reason": "Real PBF intake remains blocked behind C01; C02 synthetic prefilter (36/36) and pipeline (9/9) maintained."
+    },
+    "C03": {
+      "status": "SYNTHETIC_READY_REAL_BLOCKED",
+      "reason": "Real graph generation blocked behind C01/C02; synthetic C03 preserved; Windows route p95 (507.98-660.35 ms) remains open under MR-011/C08."
+    },
+    "C04": {
+      "status": "SYNTHETIC_READY_REAL_BLOCKED",
+      "reason": "C04-FIX-01 offline URL validation preserved; CPU SwiftShader WebGL FPS (<30 FPS) remains open for device GPU validation under C08."
+    },
+    "C05": {
+      "status": "SYNTHETIC_VERIFIED_REAL_BLOCKED",
+      "summary": "All synthetic region packaging, ECDSA P-256 authority verification, storage preflight, crash/reload journal recovery, atomic CAS activation, rollback, reference-pinned GC, bounded OPFS/IDB PMTiles range reads, multi-tab locks, and explicit verified portals passed in Node and live Chromium.",
+      "remainingBlockers": [
+        "C01 DST/self-certification & safe civilian/territorial scope approval",
+        "Physical Android device Capacitor Filesystem durability & low-storage verification (deferred to C08)",
+        "C04 Windows route p95 latency and software WebGL FPS misses retained open until C08 hardware optimization"
+      ]
+    },
+    "C06_C08": {
+      "status": "NOT_STARTED",
+      "note": "Do not start C06 without explicit owner authorization."
+    }
+  }
+}

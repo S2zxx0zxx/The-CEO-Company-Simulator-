@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "task": "C05-FIX-01",
+  "originalTask": "R19",
+  "masterRequirement": "MR-008",
+  "coordinatorCheckpoint": "2e69b6072d62f016abdfdb3330ba0956b1e380b5",
+  "mode": "production-first synthetic engineering preparation",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "actualC08MobileAcceptanceClaimed": false,
+  "artifacts": [
+    {
+      "requirement": "Package Contract, Trusted ECDSA-P256 Authority, Path Safety, C04-FIX-01 & SoI Gate",
+      "modules": ["src/rail/regions/contracts.ts"],
+      "tests": ["test_c05_packages_install_and_portals.mjs#c05_01_manifest_authority_signing_and_negative_security_gates"],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "Storage Preflight, Unknown-Quota Fail-Closed & Streaming Decompression Bomb Guard",
+      "modules": ["src/rail/regions/installer.ts"],
+      "tests": ["test_c05_packages_install_and_portals.mjs#c05_02_storage_preflight_quota_decompression_bomb_and_tamper_gates"],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "Durable Storage Separation, Web/PWA IndexedDB+OPFS & Android/Capacitor Chunked Filesystem",
+      "modules": ["src/rail/regions/storage.ts"],
+      "tests": [
+        "test_c05_browser_persistence.mjs",
+        "test_c05_packages_install_and_portals.mjs#c05_07_r33_r39_r40_gameplay_continuity_and_capacitor_android_adapter"
+      ],
+      "status": "VERIFIED_BROWSER_AND_ADAPTER_PHYSICAL_DEVICE_DEFERRED_C08"
+    },
+    {
+      "requirement": "C05-FIX-01-D & Bounded PMTiles v3 Range-Read Adapter (Zero Full-RAM Load, Block SHA-256 & Fail-Closed Corruption Invalidation)",
+      "modules": ["src/rail/regions/pmtiles-range-source.ts", "src/rail/regions/contracts.ts", "src/rail/map/pmtiles-adapter.ts"],
+      "tests": [
+        "test_c05_packages_install_and_portals.mjs#c05_05_pmtiles_range_source_bounds_corruption_abort_and_offline_protocol",
+        "test_c05_packages_install_and_portals.mjs#c05_11_fix01_d_same_size_corruption_fail_closed_bounded_reads",
+        "test_c05_browser_persistence.mjs"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "C05-FIX-01-A Mandatory Rollback Retention & Crash-Safe Journaled GC",
+      "modules": ["src/rail/regions/installer.ts"],
+      "tests": [
+        "test_c05_packages_install_and_portals.mjs#c05_04_atomic_upgrade_rollback_version_pinning_and_ref_gc",
+        "test_c05_packages_install_and_portals.mjs#c05_08_fix01_a_mandatory_rollback_and_crash_safe_gc",
+        "test_c05_browser_persistence.mjs"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "C05-FIX-01-B Durable Staged Install-Only Lifecycle & Atomic Retriable Activation",
+      "modules": ["src/rail/regions/installer.ts"],
+      "tests": [
+        "test_c05_packages_install_and_portals.mjs#c05_03_crash_recovery_journal_cancellation_and_idempotency",
+        "test_c05_packages_install_and_portals.mjs#c05_09_fix01_b_durable_staged_activation_restart_and_concurrency",
+        "test_c05_browser_persistence.mjs"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "C05-FIX-01-C Immutable Version+Content Bound PMTiles Archive Identity",
+      "modules": ["src/rail/regions/contracts.ts", "src/rail/regions/installer.ts", "src/rail/map/pmtiles-adapter.ts"],
+      "tests": [
+        "test_c05_packages_install_and_portals.mjs#c05_10_fix01_c_immutable_pmtiles_version_identity",
+        "test_c05_browser_persistence.mjs"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "Explicit Verified Region Portals & Adjacent Multi-Region Continuity",
+      "modules": ["src/rail/regions/portals.ts"],
+      "tests": [
+        "test_c05_packages_install_and_portals.mjs#c05_06_explicit_region_portals_and_cross_region_continuity",
+        "test_c05_browser_persistence.mjs"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "R33 Movement & R39/R40 Save/Clock Continuity Across Upgrades & Rollbacks",
+      "modules": ["src/rail/regions/installer.ts", "src/rail/regions/portals.ts"],
+      "tests": ["test_c05_packages_install_and_portals.mjs#c05_07_r33_r39_r40_gameplay_continuity_and_capacitor_android_adapter"],
+      "status": "VERIFIED_SYNTHETIC"
+    }
+  ]
+}

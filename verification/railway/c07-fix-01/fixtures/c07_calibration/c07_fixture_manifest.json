@@ -1,0 +1,27 @@
+{
+  "edges": 35,
+  "graphV1Sha256": "b3cf4194eb8ce720baebc6d1101fc3793db2786cd683e2ac6ad4f70be1bc9650",
+  "graphV2Sha256": "192362283dc8410bcc9db1cdc0d0c61b159cbdce969487cb1cab996dee1d4844",
+  "javaImport": {
+    "graphEdges": 18,
+    "graphNodes": 19,
+    "graphSha256": "b3cf4194eb8ce720baebc6d1101fc3793db2786cd683e2ac6ad4f70be1bc9650",
+    "jvmMaxHeapBytes": 268435456,
+    "jvmTotalHeapBytes": 141557760,
+    "ok": true,
+    "pbfPath": "C:\\r13-workspace\\fixtures\\c07_calibration\\c07_synthetic_corridor.osm.pbf",
+    "pbfSha256": "210888924fa983d5fafcfea40519bb37d91bac3d4299c8160ec0b84572d78c00",
+    "strictCacheBytes": 6346782,
+    "strictImportDurationMs": 1766.3,
+    "upstreamCacheBytes": 0,
+    "upstreamImportDurationMs": 0.0
+  },
+  "nodes": 22,
+  "osmSha256": "6380c4384ddf3e4d1f8dfcfc24a3e24a6e834f275711b369c0704dfc96620501",
+  "pbfBytes": 1018,
+  "pbfSha256": "210888924fa983d5fafcfea40519bb37d91bac3d4299c8160ec0b84572d78c00",
+  "regionId": "c07-corridor-v1",
+  "schemaVersion": 1,
+  "stations": 18,
+  "turnRules": 83
+}

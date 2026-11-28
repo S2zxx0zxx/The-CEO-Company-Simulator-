@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "task": "C05-FIX-01",
+  "originalTask": "R19",
+  "masterRequirement": "MR-008",
+  "coordinatorCheckpoint": "2e69b6072d62f016abdfdb3330ba0956b1e380b5",
+  "mode": "production-first synthetic engineering preparation",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "actualC08MobileAcceptanceClaimed": false,
+  "offlineClockSubcheckStatus": "EXECUTED",
+  "verifyDownstreamGraphpackRestored": true,
+  "suites": {
+    "c05_packages_install_and_portals": { "total": 11, "passed": 11, "failed": 0, "skipped": 0 },
+    "c05_browser_persistence_chromium_idb_opfs": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "storageNamespace": "railway-ceo-regions-v1",
+      "hasSaveDbOverlap": false,
+      "binaryStoreMode": "opfs",
+      "externalBlockedRequests": 0,
+      "failedLocalRequests": 0,
+      "pageErrors": 0
+    },
+    "c04_contracts_and_tiles": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
+    "c04_browser_webgl": { "total": 1, "passed": 1, "failed": 0, "skipped": 0 },
+    "c03_python_topology": { "total": 6, "passed": 6, "failed": 0, "skipped": 0 },
+    "c03_runtime_ts": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
+    "r07_r11_upstream": { "total": 321, "passed": 321, "failed": 0, "skipped": 0 },
+    "v3_prefilter": { "total": 36, "passed": 36, "failed": 0, "skipped": 0 },
+    "c02_pipeline": { "total": 9, "passed": 9, "failed": 0, "skipped": 0 }
+  },
+  "totalExecutedChecks": 395,
+  "totalPassedChecks": 395,
+  "totalFailedChecks": 0,
+  "totalSkippedChecks": 0,
+  "reportReconciliation": {
+    "priorReportedTotal": 397,
+    "priorEnumeratedSum": 391,
+    "reconciledFormula": "11 + 1 + 5 + 1 + 6 + 5 + 321 + 36 + 9 = 395",
+    "explanation": "Prior C05 report listed 397 against 9 suites summing to 391 (7+1+5+1+6+5+321+36+9); C05-FIX-01 added 4 dedicated cases (7 -> 11), bringing the exact reconciled executed count to 395 passed, 0 failed, 0 skipped."
+  },
+  "retainedBlockers": [
+    "C01 DST/self-certification, safe territorial scope allowlist, SoI boundary rights & R51 clearance",
+    "C08 physical Android device Capacitor Filesystem durability & low-storage verification (physicalDeviceVerified=false)",
+    "C03/C04 Windows dense 500-node routing p95 (>300 ms) and software SwiftShader WebGL FPS (<30 FPS) misses retained open"
+  ]
+}

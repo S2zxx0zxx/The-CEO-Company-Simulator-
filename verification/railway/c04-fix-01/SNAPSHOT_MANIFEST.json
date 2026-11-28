@@ -1,0 +1,267 @@
+{
+  "baselinePreservedUntouched": "verification/railway/c04-baseline/",
+  "parentBaselineCommit": "39a0517e947b6d13668943dd10cb9547a8aa1c53",
+  "productionAccepted": false,
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "schemaVersion": 1,
+  "sourceFiles": {
+    "C04_FIX_01_VERIFICATION_REPORT.json": {
+      "bytes": 3485,
+      "gitBlobSha1": "95be6ee8b632072afffb07086c9b7b22530a93d9",
+      "sha256": "ccb0cb4d1db70b14dde5d5c535f2166a924511aec0591fd46328a3602f916328"
+    },
+    "_run_upstream_cases.mjs": {
+      "bytes": 1739,
+      "gitBlobSha1": "641cc4019b8e031bd61c28914d89f29b50605cc6",
+      "sha256": "4395fe2b5db0ff4b22ec56a99e85cc2f7f043760614c292097b7938173cb08d3"
+    },
+    "c02_downstream_adapter.py": {
+      "bytes": 10790,
+      "gitBlobSha1": "2f65da64066e2176326d4ed75dafd2c4e529a7b4",
+      "sha256": "7cdfb5b5baa92c264caee6ef213dbd5a2fb63e1cc5b48602d95f04a2a4e0e334"
+    },
+    "c02_rail_prefilter.py": {
+      "bytes": 23495,
+      "gitBlobSha1": "d1c81957b4def1658b8d5ebee575c1db07fc36ca",
+      "sha256": "dacd8e10122695004cb531623bb937c760fb5b94746a549eb06e9235a0be7938"
+    },
+    "c02_streaming_pipeline.py": {
+      "bytes": 33427,
+      "gitBlobSha1": "2a259084776ae99fc7e43856fe72e4fca1cebce3",
+      "sha256": "9309e99592e1c3dedb155b1124371f9c247f1d9559c9fc02e3201ab848d64d49"
+    },
+    "c03_station_attachment.py": {
+      "bytes": 23314,
+      "gitBlobSha1": "c0b6fe016872d6bfd175c5883d737133fb8addc4",
+      "sha256": "881c322784b8f785bc05c3b3bae51dee904062350446a3b19438f6a16bf0b2fb"
+    },
+    "c03_topology_builder.py": {
+      "bytes": 36449,
+      "gitBlobSha1": "b0aa66646366e4517aae18bcdb8c18aaa91c07fd",
+      "sha256": "b98dc18e06fd570d8cb1faab2a1fd4b7d8778b4ab654273e6e08279e05fc3ee9"
+    },
+    "c04_asset_generator.mjs": {
+      "bytes": 14103,
+      "gitBlobSha1": "a7c38a237f100a16ab7a217dba8463cde4515155",
+      "sha256": "0d724ee7fd7e3466a3325a097ecf7ea8545493c585dba3b600e3dee7b085b2e5"
+    },
+    "c04_tile_inspector.mjs": {
+      "bytes": 3542,
+      "gitBlobSha1": "3092aa4d38cf3b05329cb90191687786e0105f7f",
+      "sha256": "24a7f6dbada50449c3e5b5c004fae26275e378c01cfb3c8faaba6d7cb3c88415"
+    },
+    "c04_tile_pipeline/c04_tile_builder.py": {
+      "bytes": 16607,
+      "gitBlobSha1": "2fac8ff359f7b9c21700d13243ce6edaba0e5f7f",
+      "sha256": "85cd2a9b7d8c4b33d1c6bd13f036a648bbf39ed14e61bbcb315e937f179f1c68"
+    },
+    "c04_tile_pipeline/railway_basemap_schema.yml": {
+      "bytes": 3139,
+      "gitBlobSha1": "4481595eda3d38b4e486dde18c4434a99bb1a7cc",
+      "sha256": "9f81f3ac32f6a7bcf33bb3aa8e4631cff445c9a62944abfe15a162cc3e5d2d74"
+    },
+    "c04_web_entry.ts": {
+      "bytes": 19628,
+      "gitBlobSha1": "0efd49d417be707f1029b57ab55d98bda0ed3b0b",
+      "sha256": "7f0d0dc58b6bce4e0899abb1aa6a14ec6eef752c3150416a1552952f5183a958"
+    },
+    "docs/C03_GRAPH_SCHEMA_AND_INTERFACES.md": {
+      "bytes": 3932,
+      "gitBlobSha1": "fd16bbe90a41185d53f43a17b54d3a50f2dcc450",
+      "sha256": "a89b8628bed3b23636cb7070f7b40886727be74421d9b9efd4bbc39227e4ec21"
+    },
+    "docs/C04_TILE_AND_RENDERER_ARCHITECTURE.md": {
+      "bytes": 3167,
+      "gitBlobSha1": "58855029ff0cd47ba59ef743c230d7f62501127b",
+      "sha256": "a8f1d46c6836f75bd17d6edfcf5a84e9a4c2f3657a4c516b725d0a9a2353e58a"
+    },
+    "src/domain/models.ts": {
+      "bytes": 13344,
+      "gitBlobSha1": "01cd4ebbb9dd7594d18eafc3940d046a23cbbd97",
+      "sha256": "aebd533b643f07c59ec05559ff82dc5a4015d94f9bfa70a55aaa76979212e15c"
+    },
+    "src/domain/units.ts": {
+      "bytes": 4027,
+      "gitBlobSha1": "8d78150ccc7c453f154d4943048e30ef07de5570",
+      "sha256": "402867cd1653599a5ef0b3971b00989936abedbd644ab85a2bd2a9c210e24a6d"
+    },
+    "src/domain/validation.ts": {
+      "bytes": 5148,
+      "gitBlobSha1": "262bd8b63d93848b8f6f98f8dd8bffcbf0c5090c",
+      "sha256": "196cb890d5655de0cce1b0eb346ffd16bc903fb5067483575b8c3182f533ef72"
+    },
+    "src/rail/catalog/index.ts": {
+      "bytes": 9047,
+      "gitBlobSha1": "715b5e77b733fc61a86ac724f1e8bb27538ae6a7",
+      "sha256": "306949f386324e3ede2222962a7136181aa3c46ed70c119ddf3ea60a0eb1e906"
+    },
+    "src/rail/compatibility/index.ts": {
+      "bytes": 9501,
+      "gitBlobSha1": "6bb7ddbb39434e0bccc05bd22f2c7ac10b29bb73",
+      "sha256": "eaace406b678d18edb584f1a639e846b4c52acc0693472a9bdc8e9500b6abd93"
+    },
+    "src/rail/geometry/index.ts": {
+      "bytes": 15314,
+      "gitBlobSha1": "45e95be650fc661f11f7db0dd8954683324c84af",
+      "sha256": "edb34888eda1acf530cf95234a6509a41229073481ffc8a748f67ad78a6858e2"
+    },
+    "src/rail/graph/index.ts": {
+      "bytes": 7557,
+      "gitBlobSha1": "416169eb7d364e7d5eea37ac77366b17c24a3ed0",
+      "sha256": "7bc1f39d9ee5523a39d23060aac97fab308d63292c5200c13ced720fbfe787a2"
+    },
+    "src/rail/map/contracts.ts": {
+      "bytes": 4450,
+      "gitBlobSha1": "9c2056adf292113ddf42bc2ed2d9fb53e5a818ac",
+      "sha256": "a0f6617ed41c15f19aed125ce54dd5ea33418f9fb383f68ae2613c78c7d9f408"
+    },
+    "src/rail/map/index.ts": {
+      "bytes": 117,
+      "gitBlobSha1": "4b789028836b92c8bb631a97f04962056fab895f",
+      "sha256": "b1ae20aa04e1fb6a5b4aff23f7b7a9f568abfc0bd9c63de75e597128836f3891"
+    },
+    "src/rail/map/pmtiles-adapter.ts": {
+      "bytes": 9613,
+      "gitBlobSha1": "e151994ed5b23ccf3362490d54cf3f609f5b2954",
+      "sha256": "024d663ca97f10d4f4f0ea76dfb4bd5ff4a1d6942101ed7044278e948e341959"
+    },
+    "src/rail/map/renderer.ts": {
+      "bytes": 21852,
+      "gitBlobSha1": "a7af7c026430f6c80881478027242731ddd2e4a2",
+      "sha256": "aee7654de50d7fa30d5d65d26c2aab98d1cb7988ac5eba605e7f0aa3f41b1b4a"
+    },
+    "src/rail/map/style.ts": {
+      "bytes": 26867,
+      "gitBlobSha1": "bf1e3a6db05803c548577981f90cb2ad9c0f02fc",
+      "sha256": "ff174bc63dbc09b15bc11c29a38aeadc3414e67cd94b9ef489dad036466a0c8d"
+    },
+    "src/rail/movement/index.ts": {
+      "bytes": 18687,
+      "gitBlobSha1": "9fe0817020ec16120df76f0f95796656dc1d7bdd",
+      "sha256": "e403a0719f0e98ed03277be261581b71a194b1a400751cc06210d4ffc20666bc"
+    },
+    "src/rail/quotes/index.ts": {
+      "bytes": 8293,
+      "gitBlobSha1": "743379408a8a79a8beb6493dc60f212747b7711c",
+      "sha256": "4a74adce049047511dde4f5dd1aba5ee139033f535e29b2591f892236be6b890"
+    },
+    "src/rail/routing/index.ts": {
+      "bytes": 12256,
+      "gitBlobSha1": "b33136abca29448e9e6b66cd5e37bf31b8340890",
+      "sha256": "c76b917b12bcee801c5ad0e48ccecc9f1ddf2ba3a44320eaddf6ff576841c57d"
+    },
+    "src/rail/scheduler/index.ts": {
+      "bytes": 11831,
+      "gitBlobSha1": "f01b91741b93eb9ddcdaf04e309f64194dc718a7",
+      "sha256": "0932ee9656c0586a89834ea654895e90e361064e20d401ba2dcec07c88eb9f71"
+    },
+    "src/rail/spatial/index.ts": {
+      "bytes": 14419,
+      "gitBlobSha1": "d0c7016af2f0a35dd6967ca2b8afa4508c1a7de4",
+      "sha256": "e5566d729cb567ce14472bc16189ac495b6324bf8ea5ac197a653ba8348657e3"
+    },
+    "src/rail/stations/index.ts": {
+      "bytes": 8286,
+      "gitBlobSha1": "d5031c49dd85cc9ff13b36938d1a467766c4b3eb",
+      "sha256": "6c1541b66a9027ed96c58fe6b1c4bb2473b407639a3cda11900cb67c0f8531ea"
+    },
+    "src/rail/topology/index.ts": {
+      "bytes": 15725,
+      "gitBlobSha1": "0df2dd0be916e6102eb9ea23c929ca20ea4685bd",
+      "sha256": "89e4e27e97228da1564a6938afbc252ba6790dd8faff7de80d0dfe112e6c066e"
+    },
+    "src/worker/rail-routing-bridge.ts": {
+      "bytes": 377,
+      "gitBlobSha1": "873c16723371472208aa1f003d789de4165ad1b4",
+      "sha256": "0bc786686fe8fcb5ed0edc9d7fe023d85dc46a79758619b48ded273894ce6e08"
+    },
+    "src/worker/rail-routing.ts": {
+      "bytes": 5377,
+      "gitBlobSha1": "06750726c0974ecb40fde7efbf4d17ba60eb187b",
+      "sha256": "609c121ebcfc1e23b69d83ffeecbbe12175289c9fbda52ba82e872d7e7e4e98a"
+    },
+    "src/worker/rail-routing.worker.ts": {
+      "bytes": 305,
+      "gitBlobSha1": "7fe734f82ba031143a643bc292322e3442c23c38",
+      "sha256": "55b864dfdfa48272f9f10ccf099c21bc307f5bfebbe48398b40e0e4d523c69f3"
+    },
+    "test_c02_pipeline_synthetic.py": {
+      "bytes": 27136,
+      "gitBlobSha1": "ed7ed0bbae3115ca03f7f1bd24b37eb33c530c7f",
+      "sha256": "a49e9194af03b073f859fcbfe9d60651fa1d6747dbf158ef6978493bd4591e9d"
+    },
+    "test_c02_prefilter_synthetic.py": {
+      "bytes": 31078,
+      "gitBlobSha1": "dd661673cc753081e619d977fcc58178e7914917",
+      "sha256": "c6c2c9217418f100f2593bfac600c840b58e7a152491d686aaf446eea377a215"
+    },
+    "test_c03_runtime_ts.mjs": {
+      "bytes": 21061,
+      "gitBlobSha1": "91ae28953bd99edd42c3255a3449bb4db8387a35",
+      "sha256": "6231abc3059003055ebc94213aa9a390c77c9449a78cb97a3baf86e10220f36f"
+    },
+    "test_c03_topology_and_stations.py": {
+      "bytes": 24955,
+      "gitBlobSha1": "fb9ba3854162a730807d91159ec334c9796d00fd",
+      "sha256": "20806945366ce70baf97bcbae303bee6bdf7672ffd6be430d16d92c3ce5efbfe"
+    },
+    "test_c04_browser_webgl.mjs": {
+      "bytes": 14774,
+      "gitBlobSha1": "601eb60274b9ff51d28ff0b3a3b6b4c9df855092",
+      "sha256": "2e3887d66635c6c0ce18c08aa87b16a7100003863ceeff6e52ea88db47e9b875"
+    },
+    "test_c04_contracts_and_tiles.mjs": {
+      "bytes": 26706,
+      "gitBlobSha1": "63f36f680d1a2c573216800e38d2344d62461744",
+      "sha256": "18e61886ec9a5608e83ac321a29c957ac495460650866d2a6f219f9385d4afe4"
+    },
+    "tests/fixtures/railway-synthetic.ts": {
+      "bytes": 10517,
+      "gitBlobSha1": "1d2d53f5423b3d859bd0ae6170ae328341cacadc",
+      "sha256": "f980dbf2f3d386c4be0be5e8075d3dcb042425b1ebab4fd605cd4e4ecb2bf1e7"
+    },
+    "tests/railway-r07.cases.ts": {
+      "bytes": 8048,
+      "gitBlobSha1": "2f40dd78b87aba44ab77356163f531d2f360e7e7",
+      "sha256": "6b2267a8027aa3c34113331d2506333625f5967bbc0a92930fa1788f4d2b33e8"
+    },
+    "tests/railway-r08.cases.ts": {
+      "bytes": 12918,
+      "gitBlobSha1": "9a14767c6bdc85515b1b106ed524d4555b6b4e7a",
+      "sha256": "8db1b59e1b2f673557bb1d6128f686fbf09c45551ca89bf6f25f56fbf4703501"
+    },
+    "tests/railway-r09.cases.ts": {
+      "bytes": 10068,
+      "gitBlobSha1": "fe133b7fe5777645ca4356a1362121480c88428a",
+      "sha256": "3505586846396dfdbd7514ba8d8fcb46453b165a6bf292e8e132e42821bd0071"
+    },
+    "tests/railway-r09.worker-cases.ts": {
+      "bytes": 4285,
+      "gitBlobSha1": "d341f4ddef56a7d423d4f057ddf164108a126f54",
+      "sha256": "91fa53fcd542d15c052bec90a921396b1bada897af77fc0999a3bde8f9868afd"
+    },
+    "tests/railway-r10.cases.ts": {
+      "bytes": 13513,
+      "gitBlobSha1": "df0a90bb970856d96108775cf0abdd6e3be1052f",
+      "sha256": "ba3b8a8f22043a26df4565a29756b00ea01d4d66fd84bc57d4358f57083adb47"
+    },
+    "tests/railway-r11.cases.ts": {
+      "bytes": 6837,
+      "gitBlobSha1": "cb29a7830fb9c93873e1ff5ab3a3f800f2cac6c3",
+      "sha256": "4ed7cfa6327936f8634c12f0a328437bc73e5bdc4b20c9d45a16cec507bde02f"
+    },
+    "verify_downstream_graphpack.mjs": {
+      "bytes": 4019,
+      "gitBlobSha1": "e24e58458a608fb69d0b49e1527b91dfa34e57c6",
+      "sha256": "82e58159c714a06d0d6231537be76b6e8df12746261dd20223b89f9686fad84c"
+    }
+  },
+  "task": "C04-FIX-01",
+  "zipArchive": {
+    "bytes": 772433,
+    "files": 106,
+    "name": "RAILWAY_CEO_C04_FIX_01_OFFLINE_URL_VERIFICATION.zip",
+    "sha256": "eca7bdbbd9fc398fb61d91a2924ba476a5cef0e967b080fc87faa7c3e9caf8b1"
+  }
+}

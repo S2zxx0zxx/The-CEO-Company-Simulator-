@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "task": "C05 FIX-01 independent review",
+  "basis": "e4b0fbf3638dd6b3528ee413c091764ee2d1b104",
+  "date": "2026-11-28",
+  "zip": {
+    "name": "RAILWAY_CEO_C05_FIX_01_VERIFICATION.zip",
+    "sha256": "6eca52c86217a32819111c473c7110a332467ea1124b7f7aae0a692279cc39da",
+    "bytes": 625374,
+    "files": 108,
+    "manifest": "107/107",
+    "crc": "PASS"
+  },
+  "source": {
+    "snapshot": "verification/railway/c05-fix-01/",
+    "sourceBlobMatches": "21/21",
+    "manifestBlob": "4ff98db0f3a5b7b8ba5bdf30e38be154f5a70980",
+    "entries": 22,
+    "rootRuntimeAdoption": "NOT_STARTED"
+  },
+  "independent": {
+    "V3": 36,
+    "C02": 8,
+    "C03Python": 6,
+    "C03TS": 5,
+    "upstream": 321,
+    "C05": 9,
+    "total": 385,
+    "failed": 0,
+    "additionalIdentityProbe": "PASS",
+    "additionalGcFailureProbe": "FAIL (defect reproduced)",
+    "scope": "Node22.16 transform-types; C05 cases05/10 skipped absent pinned PMTiles npm dependencies; case10 identity-only portion separately executed; optional offlineClock subsection in case07 absent upstream checkout; C02 live Osmium skipped; C04 full suite and Chromium/native Android not independently run"
+  },
+  "originalFixes": {
+    "A": "PASS mandatory rollback and injected GC interruption",
+    "B": "PASS durable staged activation/restart/concurrent operations/write failure",
+    "C": "PASS immutable version identity portion; full simultaneous PMTiles protocol not independently run",
+    "D": "PASS corruption block and invalidation"
+  },
+  "finding": {
+    "id": "C05-FIX-02-GC",
+    "actual": "Actual RegionInstallationManager with MemoryRegionStorageBackend: simulated non-injected backend deleteCommittedAsset EIO exception on first asset while explicitly removing allowed old rollback version; removeUnusedVersion returns ok:true and freedBytes:65087; recovery reports NONE and activeJournal:null; attribution asset remains orphaned. Both ordinary removal and REMOVE_VERSION recovery swallow deletion errors and clear journal.",
+    "required": "Retain durable retry journal/tombstone for unconfirmed deletes, distinguish already absent from I/O failure, verify all targets absent before reporting completion or freed bytes, maintain retry idempotency and never affect active/pinned versions. Add one-shot/persistent delete failure and restart regressions in both removal and recovery paths. Do not rewrite other accepted fixes."
+  },
+  "reportedFullTotal": 395,
+  "performance": {
+    "reportedRouteP95Ms": 509.26,
+    "reportedPureFps": 22.7,
+    "reportedCoupledFps": 24.5,
+    "targetRouteP95Ms": 300,
+    "targetFps": 30,
+    "actualMobileAcceptance": false
+  },
+  "privateBackup": {
+    "originalZip": "saved in owner recovery folder",
+    "evidenceZip": "RAILWAY_CEO_C05_FIX_01_INDEPENDENT_EVIDENCE.zip",
+    "evidenceBytes": 11150,
+    "evidenceSha256": "efc0244c3e2f2a17e677ed4865678defee7cfb45ce48552bca3812e917790d2d"
+  },
+  "status": "ORIGINAL_FOUR_FIXES_ACCEPTED_IN_TESTED_SCOPE__GC_DELETE_FAILURE_NARROW_FIX_PENDING__C06_HOLD",
+  "realPbfProcessed": false,
+  "releaseAllowed": false
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "task": "C06-FIX-01",
+  "originalTask": "R16",
+  "masterRequirement": "MR-005",
+  "coordinatorCheckpoint": "3245216aee348c292257625fbefd3cb049611982",
+  "mode": "production-first synthetic engineering preparation",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "openRailRoutingPin": {
+    "repoUrl": "https://github.com/geofabrik/OpenRailRouting",
+    "commit": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+    "license": "Apache-2.0",
+    "licenseBlob": "5471dc10377b76db85a2feca7a99a7eef4980ba8",
+    "graphHopperVersion": "11.1-osm-reader-callbacks-1"
+  },
+  "artifacts": [
+    {
+      "requirement": "Pinned Offline Java Strict Oracle Adapter + Loaded Cache Identity Manifest (c06_cache_identity.json) & IPC Correlation",
+      "modules": [
+        "c06_oracle/java/src/com/railwayceo/c06/StrictEnums.java",
+        "c06_oracle/java/src/com/railwayceo/c06/StrictParsers.java",
+        "c06_oracle/java/src/com/railwayceo/c06/StrictOracleRunner.java",
+        "c06_oracle/cache_strict/c06_cache_identity.json",
+        "src/rail/c06-oracle/client.ts"
+      ],
+      "tests": [
+        "test_c06_strict_oracle.mjs#c06_01_source_pin_import_and_c02_metadata_audit",
+        "test_c06_strict_oracle.mjs#c06_02_upstream_permissive_vs_strict_unknown_and_dc_resolution",
+        "test_c06_strict_oracle.mjs#c06_04_easy_isolation_stale_hashes_process_failure_and_timeout",
+        "test_c06_strict_oracle.mjs#c06_08_fix01_validator_traction_outcome_and_ipc_regressions"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "C06-FIX-01-A Ordered Station Stop & Edge Topology Binding",
+      "modules": ["src/rail/c06-oracle/validator.ts"],
+      "tests": [
+        "test_c06_strict_oracle.mjs#c06_05_independent_safety_validator_hazard_detection",
+        "test_c06_strict_oracle.mjs#c06_08_fix01_validator_traction_outcome_and_ipc_regressions"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "C06-FIX-01-B Strict Traction & Initial Operating Mode Compliance",
+      "modules": [
+        "src/rail/c06-oracle/validator.ts",
+        "src/rail/c06-oracle/client.ts",
+        "c06_oracle/java/src/com/railwayceo/c06/StrictOracleRunner.java"
+      ],
+      "tests": [
+        "test_c06_strict_oracle.mjs#c06_03_comprehensive_24_scenario_oracle_vs_game_comparison",
+        "test_c06_strict_oracle.mjs#c06_08_fix01_validator_traction_outcome_and_ipc_regressions"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "C06-FIX-01-C Discrepancy Outcome Integrity (Separating Stale/Invalid/Exhaustion/Execution/Indeterminate from Genuine Rejections)",
+      "modules": ["src/rail/c06-oracle/contracts.ts", "src/rail/c06-oracle/harness.ts"],
+      "tests": [
+        "test_c06_strict_oracle.mjs#c06_04_easy_isolation_stale_hashes_process_failure_and_timeout",
+        "test_c06_strict_oracle.mjs#c06_08_fix01_validator_traction_outcome_and_ipc_regressions"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "Game-Engine Cross-Region Portal Composition (C05 FIX-02 Portals) & Explicit Verification Scope Labeling",
+      "modules": ["src/rail/c06-oracle/harness.ts"],
+      "tests": [
+        "test_c06_strict_oracle.mjs#c06_06_cross_region_c05_fix02_portal_continuity"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "Dependency Locks, Artifact Checksums, License Evidence & Reproducible Build Guide",
+      "modules": [
+        "C06_DEPENDENCY_EVIDENCE.json",
+        "DEPENDENCY_AND_TOOL_MANIFEST.json",
+        "README.md",
+        "EXECUTION_SUMMARY.md"
+      ],
+      "tests": ["c06_package_and_sync.py"],
+      "status": "VERIFIED_SYNTHETIC"
+    }
+  ]
+}

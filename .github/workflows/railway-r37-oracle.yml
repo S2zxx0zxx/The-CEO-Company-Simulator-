@@ -1,0 +1,119 @@
+name: R37 pinned ALTRIOS research oracle
+on:
+  push:
+    branches: [feat/railway-manager-v5]
+    paths:
+      - 'tools/calibration/altrios/**'
+      - 'tests/railway-r37.test.ts'
+      - '.github/workflows/railway-r37-oracle.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: r37-oracle-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  oracle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      SHOW_PLOTS: 'false'
+      MPLBACKEND: Agg
+      PYTEST: 'true'
+      ENABLE_ASSERTS: 'true'
+      ENABLE_REF_OVERRIDE: 'false'
+      OVERRIDE_SSTS_INPUTS: 'false'
+      CARGO_BUILD_JOBS: '2'
+      CARGO_INCREMENTAL: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: NatLabRockies/altrios
+          ref: aecad5e702403c3a39947e7668af54ebfaefddd5
+          path: _r37_oracle
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install explicit compatibility toolchain
+        shell: bash
+        working-directory: _r37_oracle
+        run: |
+          set -euo pipefail
+          rustup toolchain install 1.85.1 --profile minimal
+          rustup override set 1.85.1
+          test "$(rustc --version | cut -d ' ' -f 2)" = 1.85.1
+      - name: Record exact toolchain and pinned sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/r37-evidence"
+          cd _r37_oracle
+          test "$(git rev-parse HEAD)" = aecad5e702403c3a39947e7668af54ebfaefddd5
+          test "$(git rev-parse 'HEAD^{tree}')" = d05bc45192ce2f2fafa5719df467db793419fa22
+          { git rev-parse HEAD; git rev-parse 'HEAD^{tree}'; python --version; rustc --version; cargo --version; sha256sum LICENSE.md Cargo.lock pyproject.toml pixi.lock; } | tee "$RUNNER_TEMP/r37-evidence/toolchain.txt"
+      - name: Official locked Rust workspace tests
+        shell: bash
+        working-directory: _r37_oracle
+        run: |
+          set -euo pipefail
+          cargo test --locked --workspace 2>&1 | tee "$RUNNER_TEMP/r37-evidence/cargo-test.log"
+      - name: Build pinned native wheel and install isolated Python dependencies
+        shell: bash
+        working-directory: _r37_oracle
+        run: |
+          set -euo pipefail
+          python -m pip install 'maturin~=1.8' 'pytest~=8.3'
+          maturin build --locked --release --interpreter "$(command -v python)" --out "$RUNNER_TEMP/r37-wheels" 2>&1 | tee "$RUNNER_TEMP/r37-evidence/build.log"
+          sha256sum "$RUNNER_TEMP"/r37-wheels/*.whl | tee "$RUNNER_TEMP/r37-evidence/wheel.sha256"
+          python -m pip install "$RUNNER_TEMP"/r37-wheels/*.whl
+          python -m pip freeze --all | tee "$RUNNER_TEMP/r37-evidence/python-freeze.txt"
+          python -m pip check
+      - name: Official Python tests and small corridor demo
+        shell: bash
+        working-directory: _r37_oracle
+        run: |
+          set -euo pipefail
+          python -c 'import altrios, altrios.altrios_pyo3; print(altrios.__file__); print(altrios.altrios_pyo3.__file__)'
+          # Execute exact upstream tests outside the altrios source package.
+          # pytest importlib can otherwise resolve altrios.tests through checkout.
+          mkdir -p "$RUNNER_TEMP/r37-test-isolated"
+          cp -a python/altrios/tests "$RUNNER_TEMP/r37-test-isolated/tests"
+          cp -a python/altrios/demos "$RUNNER_TEMP/r37-test-isolated/demos"
+          cd "$RUNNER_TEMP/r37-test-isolated"
+          unset PYTHONPATH
+          python -m pytest --import-mode=importlib -v tests 2>&1 | tee "$RUNNER_TEMP/r37-evidence/python-tests.log"
+          python -m pytest --import-mode=importlib -v demos/test_demos.py -k speed_limit_simple_corr_demo 2>&1 | tee "$RUNNER_TEMP/r37-evidence/demo.log"
+      - name: Execute disjoint ALTRIOS research scenarios
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/calibration/altrios/capture.py --checkout _r37_oracle --out "$RUNNER_TEMP/r37-evidence/results" 2>&1 | tee "$RUNNER_TEMP/r37-evidence/capture.log"
+      - name: Actual R23 and R33 comparison
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci --no-audit --no-fund
+          R37_ORACLE_DIR="$RUNNER_TEMP/r37-evidence/results" npx vitest run tests/railway-r37.test.ts 2>&1 | tee "$RUNNER_TEMP/r37-evidence/comparison.log"
+      - name: Hash evidence
+        if: always()
+        shell: bash
+        run: |
+          if test -d "$RUNNER_TEMP/r37-evidence"; then
+            cd "$RUNNER_TEMP/r37-evidence"
+            find . -type f ! -name MANIFEST.sha256 -print0 | sort -z | xargs -0 -r sha256sum > MANIFEST.sha256
+            cat MANIFEST.sha256
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r37-altrios-evidence
+          path: ${{ runner.temp }}/r37-evidence
+          if-no-files-found: warn
+          retention-days: 30

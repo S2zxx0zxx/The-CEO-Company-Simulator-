@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "task": "C07 coordinator independent review",
+  "basis": "ce18eeb5f4c0373f50cf5d239bf2cdf7e1065459",
+  "date": "2026-11-28",
+  "archive": {
+    "bytes": 730135,
+    "sha256": "3fb02b2d85d9c8541c625e160e41e716927321b7f83b7bec7ecabd76c22ec8fe",
+    "entries": 154,
+    "manifest": "153/153",
+    "crc": "PASS",
+    "safePaths": true
+  },
+  "source": {
+    "snapshot": "verification/railway/c07-route-calibration/",
+    "exactArchiveGitBlobMatches": "33/33",
+    "manifestBlob": "52cbf788ec36c62e883cec69f89ceb48dcc70650"
+  },
+  "reported": {
+    "checks": 444,
+    "cases": 137,
+    "genuineComparisons": 123,
+    "matchValid": 46,
+    "matchNoValid": 72,
+    "oracleFalseReject": 2,
+    "durationDiscrepancy": 3,
+    "infra": 14,
+    "knownIncompatibleAccepted": 0,
+    "realRouteComparisons": 0
+  },
+  "independent": {
+    "V3": 36,
+    "C03Python": 6,
+    "C03TS": 5,
+    "upstream": 321,
+    "C07Groups": 2,
+    "totalChecksOrGroups": 370,
+    "portalSubchecks": "9/9",
+    "negativeProbesFailed": 4,
+    "limitations": "C03TS and R07-R11 initially failed due missing fixture/test files; restored exact prior C06 FIX01 ZIP files and passed. Actual Java/Maven, C02 live Osmium, C04/C05 full suites, Chromium, Android not independently executed. C07 archive lacks C06 JAR."
+  },
+  "findings": [
+    {
+      "id": "C07-FIX-01-A",
+      "actual": "Wrong sourceFixtureSha256 replaced with f*64 accepted by actual dataset validator",
+      "required": "Bind actual fixture bytes/provenance hashes to trusted context; verify full case and dataset identities."
+    },
+    {
+      "id": "C07-FIX-01-B",
+      "actual": "Foreign checkpoint datasetId FOREIGN version 0.0.0 reused completed record and reports executed=1 passed=1 with zero clients; changed expected class DURATION_DISCREPANCY still reuses old MATCH_VALID_ROUTE PASS.",
+      "required": "Validate full dataset content digest, engine/cache/fixture versions and per-case expectation identity; reject or safely invalidate foreign/stale records; preserve history and separate cached versus newly executed counts; atomic journal writes."
+    },
+    {
+      "id": "C07-FIX-01-C",
+      "actual": "Injected unexpected oracle query exception on positive route yields failed expectation=1 and ORACLE_EXECUTION_ERROR but registry RESOLVED_WITH_EVIDENCE and openBlockingCount=0.",
+      "required": "Unexpected execution/expectation failures must remain unresolved; classify expected probes only after verifying their expected outcome. Never count false success or suppress hazards."
+    },
+    {
+      "id": "C07-FIX-01-D",
+      "actual": "C07 ZIP omits prior JAR, scale fixture, R07-R11 case sources and other prior dependencies; original clean extraction C03TS 4/5 and upstream module-not-found.",
+      "required": "Restore required verified fixtures/tests/JAR or supply exact reproducible prerequisite acquisition with explicit hashes and clean extraction verification; distinguish external dependencies from standalone scope."
+    }
+  ],
+  "reportedOpenDiscrepancies": [
+    "c07_a017/a018 16.7Hz vs integer17Hz false rejects",
+    "c07_a044/a050 dual-mode duration heuristic",
+    "c07_c022 intermediate reversal penalty"
+  ],
+  "performance": {
+    "reportedWindowsP95Ms": 447.83,
+    "targetMs": 300,
+    "reportedOracleP95Ms": 41.03,
+    "reportedSmallFixtureGameP95Ms": 3.65
+  },
+  "backup": {
+    "originalLibraryId": "libfile_878ef6da363c819193dfb93c75017170",
+    "evidenceLibraryId": "libfile_30d63a2cdff48191b7127187ece5f5a3",
+    "evidenceBytes": 10570,
+    "evidenceSha256": "1c2d2e223c8778aa281d580358f46ac9c6d8509e1b5db8c5498fe10a38cd9e1a"
+  },
+  "status": "C07_SOURCE_PRESERVED__COMPARISON_EVIDENCE_INTEGRITY_FIX_REQUIRED__C08_HOLD",
+  "realPbfProcessed": false,
+  "releaseAllowed": false
+}

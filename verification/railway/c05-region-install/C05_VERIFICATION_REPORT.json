@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "task": "C05",
+  "originalTask": "R19",
+  "masterRequirement": "MR-008",
+  "coordinatorCheckpoint": "e373e5548ed988788655ae0f0b17891f16543022",
+  "mode": "production-first synthetic engineering preparation",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "actualC08MobileAcceptanceClaimed": false,
+  "suites": {
+    "c05_packages_install_and_portals": { "total": 7, "passed": 7, "failed": 0 },
+    "c05_browser_persistence_chromium_idb_opfs": {
+      "passed": true,
+      "storageNamespace": "railway-ceo-regions-v1",
+      "hasSaveDbOverlap": false,
+      "binaryStoreMode": "opfs",
+      "externalBlockedRequests": 0,
+      "failedLocalRequests": 0,
+      "pageErrors": 0
+    },
+    "c04_contracts_and_tiles": { "total": 5, "passed": 5, "failed": 0 },
+    "c04_browser_webgl": { "passed": true },
+    "c03_python_topology": { "total": 6, "passed": 6, "failed": 0 },
+    "c03_runtime_ts": { "total": 5, "passed": 5, "failed": 0 },
+    "r07_r11_upstream": { "total": 321, "passed": 321, "failed": 0 },
+    "v3_prefilter": { "total": 36, "passed": 36, "failed": 0 },
+    "c02_pipeline": { "total": 9, "passed": 9, "failed": 0 }
+  },
+  "totalExecutedChecks": 397,
+  "totalPassedChecks": 397,
+  "totalFailedChecks": 0,
+  "retainedBlockers": [
+    "C01 DST/self-certification, safe territorial scope allowlist, SoI boundary rights & R51 clearance",
+    "C08 physical Android device Capacitor Filesystem durability & low-storage verification (physicalDeviceVerified=false)",
+    "C03/C04 Windows dense 500-node routing p95 (>300 ms) and software SwiftShader WebGL FPS (<30 FPS) misses retained open"
+  ]
+}

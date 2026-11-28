@@ -12,6 +12,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Railway quarantine negative and positive tests
+        run: node --test scripts/railway-quarantine-audit.selftest.mjs
+      - name: Railway tracked asset and quarantine audit
+        run: node scripts/railway-quarantine-audit.mjs
       - name: Require committed lockfile
         run: test -f package-lock.json
       - run: npm ci --ignore-scripts --no-audit --no-fund

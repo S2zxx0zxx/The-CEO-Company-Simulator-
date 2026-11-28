@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "task": "C07",
+  "originalTask": "R17",
+  "masterRequirements": ["MR-006", "MR-044"],
+  "coordinatorCheckpoint": "00088cd6b1416adfc6822f4896813ef24e15d49b",
+  "openRailRouting": {
+    "repoUrl": "https://github.com/geofabrik/OpenRailRouting",
+    "commit": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+    "pomVersion": "1.2",
+    "graphHopperVersion": "11.1-osm-reader-callbacks-1",
+    "docApiSubmodulePin": "4edcc9b85834a0ad75ff6ebe646e7a0c09e939d7",
+    "license": "Apache-2.0",
+    "licenseBlobSha1": "5471dc10377b76db85a2feca7a99a7eef4980ba8",
+    "thinJar": {
+      "path": "c04_c06_tools/openrailrouting/target/railway_routing-1.2-thin.jar",
+      "bytes": 2328368,
+      "sha256": "1caebe94d5678cbff85d83f09c099e5f585d61c10234ff7f4114c1422f2de400"
+    }
+  },
+  "reusedC06AdapterJar": {
+    "path": "c06_oracle/java/c06-strict-oracle.jar",
+    "bytes": 34375,
+    "sha256": "34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb",
+    "caches": {
+      "c06StrictCache": "c06_oracle/cache_strict/c06_cache_identity.json",
+      "c06BoundGraphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "c07StrictCache": "c07_oracle/cache_strict/c06_cache_identity.json",
+      "c07BoundGraphSha256": "b3cf4194eb8ce720baebc6d1101fc3793db2786cd683e2ac6ad4f70be1bc9650"
+    }
+  },
+  "toolchain": {
+    "java": "OpenJDK 21.0.8 (JetBrains Runtime)",
+    "maven": "3.9.9 (offline -o)",
+    "node": "v24.10.0 (--experimental-transform-types)",
+    "python": "3.13.0",
+    "osmium": "1.19.0 (GPL-3.0 standalone CLI only, never linked into TS/Java runtime)",
+    "typescriptCompiler": {
+      "tscVersion": "5.9.3",
+      "c06AndC07OracleCalibrationErrors": 0,
+      "preservedUpstreamErrors": 2,
+      "preservedErrorLocations": [
+        "src/rail/map/pmtiles-adapter.ts(260,5)",
+        "src/rail/regions/portals.ts(3,26)"
+      ]
+    }
+  }
+}

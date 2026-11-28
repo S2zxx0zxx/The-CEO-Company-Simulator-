@@ -1,0 +1,36 @@
+name: R50 railway synthetic regression and stress
+on:
+  pull_request:
+    paths:
+      - 'src/rail/**'
+      - 'tests/**'
+      - 'tools/stress/**'
+      - 'tools/balance/**'
+      - '.github/workflows/railway-r50.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stress:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --no-audit --no-fund
+      - run: |
+          set -euo pipefail
+          mkdir -p r50-evidence
+          node --version >r50-evidence/environment.txt
+          uname -a >>r50-evidence/environment.txt
+          lscpu >>r50-evidence/environment.txt
+          free -b >>r50-evidence/environment.txt
+          R50_STRESS_EVIDENCE=r50-evidence npx vitest run tests/railway-r50.test.ts 2>&1 | tee r50-evidence/run.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r50-synthetic-stress-evidence
+          path: r50-evidence
+          retention-days: 30

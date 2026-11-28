@@ -1,0 +1,14 @@
+/* QA-only original railway concept; not the approved brand or production theme. */
+body{margin:0;background:#16283d}
+.r46-review.rf{--rf-bg:#e9e8df;--rf-card:#fffef7;--rf-ink:#243448;--rf-muted:#51647a;--rf-line:#c4c8ca;--rf-gold:#906619;background:var(--rf-bg);max-width:860px;}
+.r46-review .rf-top{background:#24394f;color:#fffef5;padding:14px;border-radius:12px;justify-content:flex-start}
+.r46-review .rf-top h1{margin:4px 0;font-size:22px;letter-spacing:-.02em}
+.r46-review .rf-top small{color:#dfc07d}
+.r46-review .rf-card{box-shadow:0 1px 3px #182b4020}
+.r46-review button,.r46-review input,.r46-review select{background:#f8f8f1;color:#243448}
+.r46-review button:disabled{color:#6d7882}
+.r46-review button:not(:disabled):hover{background:#eee9d7}
+.r46-review .rf-sub{border-color:#d4d6d1}
+.r46-review .rf-pair>strong{font-variant-numeric:tabular-nums}
+.r46-review [data-art-scope]{margin:8px 0}
+.r46-review header [data-art-scope]{flex-shrink:0;margin:0}

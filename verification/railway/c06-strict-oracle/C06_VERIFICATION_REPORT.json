@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "task": "C06",
+  "originalTask": "R16",
+  "masterRequirement": "MR-005",
+  "coordinatorCheckpoint": "461efa45ea8a21a9b509c071e7df8fa3fa4f5b0d",
+  "preservedPriorSnapshots": [
+    "verification/railway/c04-baseline/",
+    "verification/railway/c04-fix-01/",
+    "verification/railway/c05-region-install/",
+    "verification/railway/c05-fix-01/",
+    "verification/railway/c05-fix-02/"
+  ],
+  "snapshotPath": "verification/railway/c06-strict-oracle/",
+  "mode": "production-first synthetic engineering preparation",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "knownIncompatibleAcceptedCount": 0,
+  "openRailRoutingPin": {
+    "repoUrl": "https://github.com/geofabrik/OpenRailRouting",
+    "commit": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+    "license": "Apache-2.0",
+    "licenseBlob": "5471dc10377b76db85a2feca7a99a7eef4980ba8",
+    "graphHopperVersion": "11.1-osm-reader-callbacks-1"
+  },
+  "suites": {
+    "c06_strict_routing_oracle": {
+      "total": 7,
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "comparisonScenarios": 27,
+      "matchValidRoute": 8,
+      "matchNoValidRoute": 19,
+      "knownIncompatibleAcceptedCount": 0
+    },
+    "openrailrouting_upstream_maven_offline": { "total": 34, "passed": 34, "failed": 0, "skipped": 0 },
+    "c05_packages_install_and_portals": { "total": 12, "passed": 12, "failed": 0, "skipped": 0 },
+    "c04_contracts_and_tiles": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
+    "c03_python_topology": { "total": 6, "passed": 6, "failed": 0, "skipped": 0 },
+    "c03_runtime_ts": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
+    "r07_r11_upstream": { "total": 321, "passed": 321, "failed": 0, "skipped": 0 },
+    "v3_prefilter": { "total": 36, "passed": 36, "failed": 0, "skipped": 0 },
+    "c02_pipeline": { "total": 9, "passed": 9, "failed": 0, "skipped": 0 },
+    "verify_downstream_graphpack": { "total": 1, "passed": 1, "failed": 0, "skipped": 0 }
+  },
+  "totalExecutedChecks": 436,
+  "totalPassedChecks": 436,
+  "totalFailedChecks": 0,
+  "totalSkippedChecks": 0,
+  "notRerunInThisTurn": [
+    "test_c04_browser_webgl.mjs (Playwright/Chromium WebGL)",
+    "test_c05_browser_persistence.mjs (Playwright/Chromium IDB+OPFS)",
+    "Physical Android Capacitor device suite (C08)",
+    "C07 real-geography 100+ route calibration (blocked pending C01 compliance & real PBF)"
+  ],
+  "retainedBlockers": [
+    "C01 DST/self-certification, safe territorial scope allowlist, SoI boundary rights & R51 clearance",
+    "C07/R16 real-geography PBF routing calibration remains blocked until C01 compliance clearance",
+    "C08 physical Android device & C03 Windows 500-node p95 (496.31 ms vs 300 ms) / C04 software WebGL FPS targets"
+  ]
+}

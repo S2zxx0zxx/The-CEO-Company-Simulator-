@@ -1,0 +1,29 @@
+{
+  "c02PolicyId": "C02-CIVILIAN-RAIL-MIN-NECESSARY-V3",
+  "conclusion": "C02 intentionally discards access, maxspeed, railway:active, and relation turn restrictions; strict oracle MUST keep these unknown/missing on C02-derived records rather than fabricating values.",
+  "discardedCriticalStrictKeys": [
+    "access",
+    "maxspeed",
+    "railway:active",
+    "railway:preferred_direction"
+  ],
+  "discardedKeysStillPresentAfterC02": [],
+  "excludedCounts": {
+    "ALLOW_CIVILIAN_RAIL_WAY": 25,
+    "ALLOW_CIVILIAN_STATION": 40,
+    "ALLOW_GEOMETRY_NODE": 4,
+    "DENY_RESTRICTED_ACCESS": 1
+  },
+  "inputObjects": 70,
+  "retainedObjects": 69,
+  "retainedWayTagKeys": [
+    "electrified",
+    "frequency",
+    "gauge",
+    "oneway",
+    "railway",
+    "usage",
+    "voltage"
+  ],
+  "schemaVersion": 1
+}

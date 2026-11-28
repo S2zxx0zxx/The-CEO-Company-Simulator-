@@ -1,0 +1,38 @@
+name: R50 railway durable stress acceptance
+on:
+  pull_request:
+    paths:
+      - 'src/rail/**'
+      - 'tests/fixtures/**'
+      - 'tools/qa/r50/**'
+      - 'vite.railway.config.ts'
+      - '.github/workflows/railway-r50-durable.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --no-audit --no-fund
+      - run: R50_QA=1 R47_BUILD_ID=r50 npm exec vite -- build --config vite.railway.config.ts
+      - run: npm install --no-save --package-lock=false --no-audit --no-fund playwright@1.51.1
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          set -euo pipefail
+          mkdir -p r50-durable-evidence
+          python -m http.server 4190 --bind 127.0.0.1 --directory r50-qa-dist >/tmp/r50-http.log 2>&1 &
+          trap 'kill $! 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4190/ >/dev/null && break; sleep 1; done
+          node tools/qa/r50/browser.mjs 2>&1 | tee r50-durable-evidence/run.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r50-durable-stress-evidence
+          path: r50-durable-evidence
+          retention-days: 30

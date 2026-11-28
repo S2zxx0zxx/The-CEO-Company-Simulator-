@@ -1,0 +1,64 @@
+{
+  "basis": "d7ef6136391335cc667ec366e3eaf9e07110ec64",
+  "date": "2026-11-28",
+  "zip": {
+    "filename": "RAILWAY_CEO_C04_FIX_01_OFFLINE_URL_VERIFICATION.zip",
+    "sha256": "eca7bdbbd9fc398fb61d91a2924ba476a5cef0e967b080fc87faa7c3e9caf8b1",
+    "bytes": 772433,
+    "files": 106,
+    "manifest": "105/105",
+    "crc": "PASS"
+  },
+  "source": {
+    "baselineRemoteMatches": "49/49",
+    "fixedRemoteMatches": "49/49",
+    "changedFiles": 6,
+    "unchangedFiles": 43,
+    "modifiedReportHashes": "6/6",
+    "baselineManifestBlob": "a29fcb79b92f8d214f1aecd67f73e65b1e23280e",
+    "fixReportBlob": "95be6ee8b632072afffb07086c9b7b22530a93d9",
+    "sourcePreservation": "VERIFIED_REMOTE",
+    "rootRuntimeAdoption": "NOT_STARTED"
+  },
+  "independent": {
+    "preservedV3": 36,
+    "c02Executed": 8,
+    "c03Python": 6,
+    "c03TS": 5,
+    "upstream": 321,
+    "c04IsolatedMockProtocolCases": 3,
+    "totalPassed": 379,
+    "failed": 0,
+    "allowedUrls": 11,
+    "blockedUrls": 39,
+    "blockedProtocolCalls": 4,
+    "rendererRejections": 4,
+    "notExecuted": [
+      "live Osmium smoke",
+      "full npm-dependent C04 cases 01 and 02",
+      "live Chromium rerun",
+      "Planetiler rebuild"
+    ],
+    "runtime": "Linux Node v22.16.0; C04 mock protocol constructors, actual style/renderer/adapter functions and supplied case bodies 03–05"
+  },
+  "reportedBrowser": {
+    "passed": true,
+    "externalNetworkRequestsBlockedCount": 0,
+    "failedLocalRequestsCount": 0,
+    "protocolGuardBlocked": true,
+    "rejectedRenderers": 4,
+    "pureFps": 23.3,
+    "coupledFps": 22.9
+  },
+  "performance": {
+    "reportedWindowsRouteP95Ms": 660.35,
+    "independentLinuxRouteP95Ms": 198.33,
+    "targetMs": 300,
+    "targetFps": 30,
+    "actualMobileAcceptance": false
+  },
+  "tilesUnchangedSha256": "ff5ffad34953f6144eb00fcb597f1f25734881028f596bbec4ddaf04b38ac652",
+  "disposition": "SOURCE_PRESERVATION_VERIFIED__C04_FIX_01_ACCEPTED_IN_TESTED_SCOPE__C05_SYNTHETIC_PREPARATION_ELIGIBLE_ON_OWNER_START",
+  "realPbfProcessed": false,
+  "releaseAllowed": false
+}

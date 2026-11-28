@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "task": "C06-FIX-01",
+  "originalTask": "R16",
+  "masterRequirement": "MR-005",
+  "coordinatorCheckpoint": "3245216aee348c292257625fbefd3cb049611982",
+  "preservedPriorSnapshots": [
+    "verification/railway/c04-baseline/",
+    "verification/railway/c04-fix-01/",
+    "verification/railway/c05-region-install/",
+    "verification/railway/c05-fix-01/",
+    "verification/railway/c05-fix-02/",
+    "verification/railway/c06-strict-oracle/"
+  ],
+  "snapshotPath": "verification/railway/c06-fix-01/",
+  "mode": "production-first synthetic engineering preparation",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "knownIncompatibleAcceptedCount": 0,
+  "fixes": {
+    "C06-FIX-01-A": "Enforced origin, ordered intermediate stop progression, destination anchor, GraphHopper adjNode->baseNode continuity, edge length agreement, and snappedWaypoint binding to traversed edge nodes across both validateGameRouteIndependently and validateOracleResponseIndependently.",
+    "C06-FIX-01-B": "Enforced strict train.traction vs operating.mode compliance (rejecting diesel mode for electric-only trains and invalid electrical/non-electrical operating combinations) and initialOperating checks.",
+    "C06-FIX-01-C": "Separated outcome classes so STALE_IDENTITY, INVALID_INPUT, SEARCH_EXHAUSTION, STRICT_PROFILE_UNSUPPORTED, ORACLE_EXECUTION_ERROR, and INDETERMINATE never classify as MATCH_NO_VALID_ROUTE.",
+    "C06-IPC-AND-CACHE-BINDING": "Bound strict cache identity manifest c06_cache_identity.json inside cache_strict (graphSha256, pbfSha256, graphNodes, graphEdges), verified loaded graph identity inside Java per query, and validated requestId + correlationNonce on every live IPC roundtrip.",
+    "C06-CROSS-REGION-LABELING": "Accurately labeled evaluateCrossRegionOracleJourney as GAME_ENGINE_PORTAL_COMPOSITION_ONLY (independentJavaSegmentVerificationExecuted=false)."
+  },
+  "suites": {
+    "c06_strict_routing_oracle": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "comparisonScenarios": 27,
+      "matchValidRoute": 8,
+      "matchNoValidRoute": 19,
+      "fix01NegativeProbesRejected": 9,
+      "fix01ValidControlsPassed": 2,
+      "knownIncompatibleAcceptedCount": 0
+    },
+    "openrailrouting_upstream_maven_offline": { "total": 34, "passed": 34, "failed": 0, "skipped": 0 },
+    "c05_packages_install_and_portals": { "total": 12, "passed": 12, "failed": 0, "skipped": 0 },
+    "c04_contracts_and_tiles": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
+    "c03_python_topology": { "total": 6, "passed": 6, "failed": 0, "skipped": 0 },
+    "c03_runtime_ts": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
+    "r07_r11_upstream": { "total": 321, "passed": 321, "failed": 0, "skipped": 0 },
+    "v3_prefilter": { "total": 36, "passed": 36, "failed": 0, "skipped": 0 },
+    "c02_pipeline": { "total": 9, "passed": 9, "failed": 0, "skipped": 0 },
+    "verify_downstream_graphpack": { "total": 1, "passed": 1, "failed": 0, "skipped": 0 }
+  },
+  "typescriptTypecheck": {
+    "status": "PASS_C06_ORACLE_STRICT",
+    "tscVersion": "5.9.3",
+    "c06OracleErrors": 0,
+    "preservedUpstreamErrors": 2,
+    "note": "tsc --noEmit --strict reported 0 errors in src/rail/c06-oracle/*.ts; 2 pre-existing errors remain in untouched preserved C04/C05 files src/rail/map/pmtiles-adapter.ts(260,5) and src/rail/regions/portals.ts(3,26)."
+  },
+  "totalExecuted": 437,
+  "totalPassed": 437,
+  "totalFailed": 0,
+  "notRerunInThisTurn": [
+    "test_c04_browser_webgl.mjs (Playwright/Chromium WebGL)",
+    "test_c05_browser_persistence.mjs (Playwright/Chromium IDB+OPFS)",
+    "Physical Android Capacitor device suite (C08)",
+    "C07 real-geography 100+ route calibration (blocked pending C01 compliance & real PBF)"
+  ],
+  "retainedBlockers": [
+    "C01 DST/self-certification, safe territorial scope allowlist, SoI boundary rights & R51 clearance",
+    "C07/R16 real-geography PBF routing calibration remains blocked until C01 compliance clearance",
+    "C08 physical Android device & C03 Windows 500-node p95 (496.31 ms vs 300 ms) / C04 software WebGL FPS targets"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "scope": "QA-only original concepts; no release clearance",
+  "legacyRegistry": "docs/railway/ASSET_REGISTRY.json",
+  "previewSource": {
+    "path": "tools/qa/r46/PreviewArt.tsx",
+    "gitBlob": "24b779bbcf7bae4a2b86014ddfe3aaf17fd57e17",
+    "disposition": "ORIGINAL_PREVIEW_ONLY",
+    "releaseClearance": "PENDING_OWNER",
+    "rightsEvidence": "docs/railway/R46_ART_PROVENANCE.md",
+    "categories": [
+      "diesel",
+      "electric",
+      "steam",
+      "dual",
+      "passenger-coach",
+      "freight-wagon"
+    ],
+    "brandStudy": "generic rail symbol (not final trademark)",
+    "sha256": "4a39b4d03bc56529513d04df936572dab6c1f9e91ef0d62b66801199ced3624e",
+    "bytes": 3135,
+    "originalArchiveExactHashMatches": 0
+  },
+  "productArtwork": "none newly approved",
+  "catalogIdentity": "R12 exact catalog/model revision and digest; no roster added",
+  "referenceUI": [
+    {
+      "id": "UI-03",
+      "sha256": "b13a9c065a6c7f3ff5788e0d6e50325c9d9a7ad5701998b9f4723c326260e0f3"
+    },
+    {
+      "id": "UI-04",
+      "sha256": "5059f453710a65e6a6bda8a4d5019339829e7fa9e1f8aa375948680788bf51c3"
+    }
+  ]
+}

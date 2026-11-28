@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "task": "C04/R18 synthetic map preparation independent review",
+  "basis": "b2e9ba6385fd5b8635176ef5cfe91a3421b3c70a",
+  "date": "2026-11-28",
+  "zip": {
+    "filename": "RAILWAY_CEO_C04_OFFLINE_MAP_VERIFICATION.zip",
+    "bytes": 779756,
+    "sha256": "71994a80663ba30606f29ae3d9ab8dcc488424ea643e7a0800160c5d8bd9c20a",
+    "files": 105,
+    "manifest": "104/104",
+    "crc": "PASS",
+    "commonC03Files": 53,
+    "unchangedC03Files": 46,
+    "changedC03Files": "seven docs/reports/manifests; no unexpected shared source changes"
+  },
+  "independent": {
+    "C03Python": "6/6",
+    "C03TypeScript": "5/5",
+    "R07_R11": "321/321",
+    "V3": "36/36",
+    "C02": "8/8 executed",
+    "preservedPassed": 376,
+    "preservedFailed": 0,
+    "C04Case03": "PASS using supplied case body with dependency-free subset runner",
+    "C04Case04": "PARTIAL PASS mock renderer and R33 movement lifecycle without PMTiles protocol subsection",
+    "C04NegativeUrlProbes": {
+      "expected": "REJECT",
+      "actual": "ACCEPT",
+      "failed": 3,
+      "classes": [
+        "scheme-relative external URL",
+        "PMTiles wrapper around remote HTTP URL",
+        "lookalike origin prefix"
+      ]
+    },
+    "notExecuted": [
+      "C02 live Osmium smoke",
+      "full C04 npm-dependent contract suite",
+      "Chromium MapLibre browser rerun",
+      "Planetiler binary rebuild"
+    ],
+    "reason": "Osmium and pinned C04 npm dependencies/build artifacts not included or present locally; independent tile decoding used standard library instead."
+  },
+  "tiles": {
+    "independentBinaryInspection": "PASS",
+    "version": 3,
+    "bytes": 97206,
+    "sha256": "ff5ffad34953f6144eb00fcb597f1f25734881028f596bbec4ddaf04b38ac652",
+    "addressedTiles": 314,
+    "tileEntries": 307,
+    "uniqueTileContents": 304,
+    "zoom": [
+      0,
+      14
+    ],
+    "layers": [
+      "landuse",
+      "place",
+      "poi_rail",
+      "transportation",
+      "water",
+      "waterway"
+    ],
+    "boundaryLayerAbsent": true,
+    "sourcePbfSchemaTileGraphManifestBinding": "PASS (actual file hashes and manifest identities; not independent Planetiler rebuild)",
+    "assetManifestHashes": "10/10",
+    "glyphCounts": {
+      "Inter Regular": 191,
+      "Inter SemiBold": 191,
+      "_empty": 0
+    },
+    "spriteBounds": "PASS",
+    "suppliedScreenshots": "4 inspected; 390x844 portrait and three 1280x720 views, clearly synthetic QA"
+  },
+  "performance": {
+    "syntheticOnly": true,
+    "reportedWindowsRouteP95Ms": 516.55,
+    "independentLinuxRouteP95Ms": 184.73,
+    "targetRouteP95Ms": 300,
+    "reportedSwiftShaderPureRenderFps": 26.7,
+    "reportedSwiftShaderCoupledFps": 27.9,
+    "targetFps": 30,
+    "reportedFrameP95Ms": 50,
+    "desktopTargetMisses": true,
+    "mobileAcceptance": false
+  },
+  "blockers": [
+    "C04 fail-closed URL validation defect: reject remote scheme-relative/nested protocol and exact-origin mismatch; ensure PMTiles only references registered local sources and browser network allowlist uses exact origin; add regression tests and actual offline browser rerun",
+    "Pinned npm/lockfile and complete license/NOTICE adoption into root application still pending; PMTiles license gap and OFL/BSD review",
+    "Only Latin 0–255 glyph range currently supplied; verify required label scripts before real map acceptance",
+    "C01 legal/territorial evidence and real C02/C03, metadata/turn/station validation, SoI asset and license pending",
+    "Windows routing and software WebGL FPS misses retained for C08; physical device measurements pending"
+  ],
+  "status": "SYNTHETIC_TILE_ARTIFACTS_VERIFIED__BOUNDED_OFFLINE_VALIDATOR_FIX_REQUIRED__PRODUCTION_NOT_STARTED",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "next": "Owner may authorize C05 synthetic preparation after narrow C04 offline URL/protocol regression gate passes locally; preserve C01 and actual dependency gates; no repeated downloads or broad remediation."
+}

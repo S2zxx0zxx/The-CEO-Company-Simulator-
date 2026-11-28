@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "task": "C01/R13 and C02/R14 controlled local handoff",
+  "date": "2026-11-27",
+  "basis": "e0d32f7649d7d51554fe5ce26d6cd4377b6d5a06",
+  "scope": "Private India-based individual developer, no public or foreign data distribution",
+  "ownerAttestation": {
+    "indianCitizen": true,
+    "individualDeveloper": true,
+    "rawAndDerivedDataPrivateIndiaPcOnly": true,
+    "source": "Explicit owner chat confirmation 2026-11-27; not independently verified citizenship or physical PC location; no identity document requested or retained"
+  },
+  "source": {
+    "filename": "eastern-zone-261101.osm.pbf",
+    "bytes": 247546068,
+    "md5": "2bd5e0db4194c3aa127814f96975a50d",
+    "sha256": "6f84fd4d634839b12b96126debd9e9b0237af8c927c5d746a6e272407fa1363a",
+    "osmium": {
+      "version": "1.19.0",
+      "build": "h60971b7_3",
+      "binarySha256": "6fb24c9f0859592d613c06628e19f00b7d081818d13183c25ef5274fcc77083b",
+      "lockSha256": "a7ef24933aadc024488da411c36fa7f1a717ad82586268c8f6078297f97641cd"
+    }
+  },
+  "officialSources": {
+    "guidelines": "https://www.geospatial.dst.gov.in/Guidelines.aspx",
+    "negativeList": "https://dst.gov.in/sites/default/files/Final%20List%20of%20Negative%20Attributes_0.pdf",
+    "selfCertificationTerms": "https://www.geospatial.dst.gov.in/IndianEntityTermsandCondition.aspx",
+    "odbl": "https://opendatacommons.org/licenses/odbl/1-0/"
+  },
+  "review": {
+    "originalR13Acceptance": "Actual PBF validated and SHA recorded; technical scope satisfied by reconciled local evidence; no independent Windows rerun",
+    "citizenship": "Owner attestation satisfies project eligibility input under individual definition in para 7(f); no formal government certification",
+    "accuracy": "Unknown actual positional accuracy; assume stricter localization handling; decimal encoding is not proof of real accuracy; no rounding shortcut",
+    "negativeList": "Official PDF and available page screenshots revisited; do not reproduce list entries or locations in public project. Screening must happen before retained game data creation; any uncertainty excluded, no restricted records retained in outputs.",
+    "boundary": "No political or administrative boundary geometry or labels in derived product at this phase. No cross-border playable corridor; exclude uncertain territory; authoritative SOI layer only after rights review.",
+    "license": "Treat extracted/normalized geographic database conservatively as ODbL derivative; separate game economy, executable code and independent assets; preserve attribution and notices; release machine-readable compliant derivative/access offer before public use, subject to Indian law. No public distribution now.",
+    "selfCertification": "Official entity terms accessible; no government filing made or implied. Owner must determine applicable self-certification, sign/submit only accurate declarations after verifying actual conditions. If required before current local processing and absent, stop. No agent may certify on owner's behalf."
+  },
+  "localPreflight": {
+    "state": "REQUIRED_BEFORE_C02_OUTPUT",
+    "requirements": [
+      "Confirm private workspace outside Git and sync/remote upload roots; local-only execution, no cloud CI or external services for raw or derived data, only sanitized aggregate evidence. If agent cannot ensure local-only processing, stop.",
+      "Read actual official DST negative-list annex locally with TLS verification; implement minimum-necessary civilian rail allowlist, exclusion of restricted or uncertain features/attributes and references, no separate sensitive location inventory. Test with synthetic records before real scan.",
+      "Use conservative screening before retaining any candidate; retain only necessary civilian operational rail geometry, ordinary public station/stop references and required compatibility attributes when reviewed. No actual private facility details, unrelated infrastructure, political layers, names/metadata from excluded records. Unknown gauge/electrification explicitly unknown; no invented connectivity.",
+      "Do not treat generic railway tags as proof of civilian eligibility. Deny uncertain access, association, provenance or territory; required references may not override exclusions. Keep aggregate reason counts only in shareable reports; never export excluded IDs, coordinates, labels or locations.",
+      "Confirm applicable self-certification status; if prerequisite is missing or uncertain, stop before real extraction. Do not submit certification automatically.",
+      "Recheck local PBF hash and pinned parser/lock identity; no repeat full scan or installation unless mismatch. Preserve immutable source."
+    ],
+    "deliverable": "R13_COMPLIANCE_PREFLIGHT_SANITIZED.json with actual checks, policy digest, synthetic test results, eligibility attestation reference, certification status and exact blockers; no personal data or geographic features."
+  },
+  "nextTask": {
+    "id": "C02/R14",
+    "state": "CONDITIONAL_AFTER_LOCAL_PREFLIGHT",
+    "acceptance": "All required geometry/member references resolve or quarantined. Actual output rail PBF/private reference report with local hash, audited references, no unsupported or excluded feature reintroduction. Only sanitized aggregate counts/hash/evidence shared; no raw or derived geography in Git.",
+    "noStart": [
+      "C03",
+      "FIX IT",
+      "R54",
+      "merge",
+      "publish"
+    ]
+  },
+  "releaseAllowed": false,
+  "civilianMapScope": {
+    "contract": "C01_CIVILIAN_MAP_SCOPE.json",
+    "productDirection": "OWNER_DIRECTED_RECORDED",
+    "specificTerritory": "PENDING_EVIDENCE",
+    "dstClarification": "OWNER_REPORTED_EMAIL_SENT_REPLY_PENDING",
+    "realPbfProcessingAllowed": false,
+    "releaseAllowed": false
+  }
+}

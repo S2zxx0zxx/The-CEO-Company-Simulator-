@@ -1,0 +1,50 @@
+name: R47 separate Android guest acceptance
+on:
+  pull_request:
+    paths:
+      - 'src/rail/**'
+      - 'src/ui/railway/**'
+      - 'vite.railway.config.ts'
+      - 'tools/qa/r47/**'
+      - '.github/workflows/railway-r47-android.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  emulator:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
+          log-accepted-android-sdk-licenses: 'false'
+      - run: npm ci --no-audit --no-fund
+      - run: R47_QA=1 R47_BUILD_ID=initial npm exec vite -- build --config vite.railway.config.ts
+      - run: node tools/qa/r47/prepare-android.mjs
+      - run: node tools/qa/r47/audit-native.mjs
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - uses: ReactiveCircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          script: bash tools/qa/r47/android.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r47-android-guest-evidence
+          path: r47-native-evidence
+          retention-days: 30

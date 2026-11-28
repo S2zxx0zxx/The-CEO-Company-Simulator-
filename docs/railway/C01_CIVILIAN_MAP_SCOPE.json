@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "task": "C01 civilian map scope; C03/C04/C26/C32/C41 downstream contract",
+  "basis": "72ff0afcd32a42e5ed670d777af95652991661de",
+  "date": "2026-11-28",
+  "status": "PRODUCT_SCOPE_OWNER_DIRECTED__REAL_DATA_SCOPE_NOT_YET_VALIDATED",
+  "ownerDirection": "Implement the proposed civilian map scope before C03; owner reports DST clarification email sent. Product scope only; no certification or legal clearance.",
+  "product": {
+    "launchCoverage": "Eastern Zone source candidate, verified connected inland civilian pilot only; India-only expansion through future validated region packs; no nationwide coverage claim",
+    "rail": "Ordinary publicly accessible civilian stations and operational civilian passenger/freight routes, only after source, permitted territory, negative-attribute and reference screening; uncertain records excluded",
+    "basemap": "Licensed ordinary cities/towns/villages, roads, rivers, terrain and labels screened separately from rail graph; do not pass unscreened source to tile builder",
+    "yards": "C26 company yards, depots, service, parking and expansion are independent game-generated facilities linked to eligible gameplay stations; no actual restricted/private facility mapping or fabricated physical rail edges",
+    "movement": "Simulated trains follow verified graph geometry, not live tracking; fictional company operations clearly distinct from actual railway services",
+    "boundaries": "Separate Survey of India standard display layer, versioned and licensed before use; never use unreviewed OSM political geometry, extract extent or fictional lines as political boundaries; withhold political map views until approved asset and visual QA"
+  },
+  "localPreflight": {
+    "state": "PENDING_EXTERNAL_AND_LOCAL_EVIDENCE",
+    "territory": "Candidate pilot must be verified within permitted inland Indian territory using authoritative reviewed reference; exclude uncertain, cross-border and unresolved edges without invented distances or coordinates; no approved universal 25 km rule",
+    "yardSource": "Exclude actual siding/yard facility detail from initial pilot unless separately reviewed and authorized; game-generated C26 mechanics retained",
+    "accuracy": "Actual accuracy unknown; preserve stricter India-only private handling; assess 1 m horizontal / 3 m vertical RMSE criteria as applicable; coordinate rounding is not proof of compliance",
+    "negativeAttributes": "Review current official negative-list and clarifications locally before actual intake; no restricted attributes retained, published or exposed in shared logs; uncertainty fails closed; apply to rail and basemap and referenced objects",
+    "storage": "Private India PC outside Git/sync roots, no real data to external AI/cloud/CI, only sanitized aggregate evidence",
+    "release": "No publication, foreign data sharing or app-store data upload before C41/R51 applicable accuracy, localization, rights, ODbL, SoI and distribution checks; app availability restricted to India alone is not proof of compliance"
+  },
+  "sources": [
+    {
+      "url": "https://www.geospatial.dst.gov.in/Guidelines.aspx",
+      "note": "Indexed official text; direct fetch returned 502"
+    },
+    {
+      "url": "https://onlinemaps.surveyofindia.gov.in/GeospatialGuidelines.aspx",
+      "note": "Indexed official text includes political boundary standard; direct fetch returned 502"
+    },
+    {
+      "url": "https://www.dst.gov.in/static/uploads/2025/10/2a1131b914d01d894ff991a51149ffd7.pdf",
+      "note": "DST OM SM/25/04/2021, 28 Nov 2022; actual PDF text and pages 2–3 reviewed, foreign data exchange and accuracy provisions"
+    },
+    {
+      "url": "https://dst.gov.in/news/list-featuresinstallations-and-their-sensitive-attributes-reference-guidelines-acquiring-and",
+      "note": "Official negative-list landing page indexed; full annex not independently re-reviewed this turn"
+    },
+    {
+      "url": "https://onlinemaps.surveyofindia.gov.in/",
+      "note": "Official asset discovery portal; no asset acquired or exact rights established"
+    },
+    {
+      "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "note": "Existing R04/R51 license requirement retained"
+    }
+  ],
+  "gates": {
+    "productDirection": "RECORDED",
+    "selfCertification": "OWNER_REPORTED_EMAIL_SENT__REPLY_PENDING",
+    "specificTerritory": "NOT_VALIDATED",
+    "negativeAttributeActualScreening": "NOT_EXECUTED",
+    "boundaryAsset": "NOT_ACQUIRED",
+    "realPbfProcessingAllowed": false,
+    "releaseAllowed": false,
+    "C01": "BLOCKED",
+    "C02": "NOT_STARTED_REAL_EXTRACTION__SYNTHETIC_PREPARATION_ACCEPTED",
+    "C03": "NOT_STARTED__SYNTHETIC_PREPARATION_ONLY_ON_SEPARATE_START"
+  },
+  "acceptanceEvidence": [
+    "Document applicability and required owner filing or authoritative clarification; no agent certification",
+    "Private local approved scope reference and source rights/hash; sanitized scope attestation only",
+    "Actual approved civilian and basemap screening with reference closure and aggregate-only audit; no prohibited data retained",
+    "Separate licensed official boundary display asset before political map release; verify attribution and depiction",
+    "No fabricated track connectivity; preserve unknown compatibility values and graph/tiles version match",
+    "Preserve R04/R51 and all C/R dependency gates"
+  ],
+  "next": "Owner may separately START C03 synthetic graph preparation; actual C02 and C03 acceptance remain gated; do not repeat V3/intake/toolchain work."
+}

@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "task": "R04",
+  "reviewDate": "2026-11-26",
+  "baseline": "bcbc68860250a602ae347407f6b4f8f71f6c76d5",
+  "scope": "India only; Eastern Zone source extract pilot candidate; actual connected playable corridor subset selected after topology analysis; not nationwide coverage",
+  "source": {
+    "resource": "B01",
+    "provider": "Geofabrik",
+    "dataOwner": "OpenStreetMap contributors",
+    "regionId": "in-east-pilot",
+    "listing": "https://download.geofabrik.de/asia/india/eastern-zone/",
+    "candidateFilename": "eastern-zone-261101.osm.pbf",
+    "candidateUrl": "https://download.geofabrik.de/asia/india/eastern-zone/eastern-zone-261101.osm.pbf",
+    "sidecarUrl": "https://download.geofabrik.de/asia/india/eastern-zone/eastern-zone-261101.osm.pbf.md5",
+    "listingSize": "236 MB (rounded provider display)",
+    "filenameDate": "2026-11-01",
+    "snapshotUtc": null,
+    "retrievedAtUtc": null,
+    "actualBytes": null,
+    "providerMd5": null,
+    "sha256": null,
+    "acquired": false,
+    "status": "LISTED_NOT_ACQUIRED",
+    "license": "ODbL-1.0",
+    "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+    "attribution": "© OpenStreetMap contributors",
+    "attributionUrl": "https://www.openstreetmap.org/copyright"
+  },
+  "fallback": {
+    "strategy": "If dated candidate absent, select another actually listed dated Eastern Zone file with matching sidecar, document replacement; never silently use mutable latest",
+    "fullIndia": "Source listing only; approximately 1.6 GB displayed; not a launch download or mobile bundle",
+    "crossBorder": "No cross-border playable expansion; quarantine uncertain boundaries/edges until verified"
+  },
+  "optional": {
+    "resource": "B08",
+    "decision": "DEFERRED_NO_INSTALL",
+    "catalogPin": "db0fe0bd5382f85e35740be5832589e7fe619ad7",
+    "catalogLicense": "CC-BY-4.0",
+    "feedSelected": false,
+    "feedRights": null,
+    "usage": "Schedule supplement only; never track geometry; direct license confirmation, attribution, redistribution, derivative and commercial rights mandatory before adoption",
+    "evidence": "https://www.transit.land/documentation/concepts/source-feeds/"
+  },
+  "boundary": {
+    "sourceStandard": "Survey of India",
+    "policy": "DST F.No.SM/25/02/2020 (Part-I), 2021-02-15, 8(xiii)",
+    "source": "https://surveyofindia.gov.in/documents/uploads/document-776-Final%20Approved%20Guidelines%20on%20Geospatial%20Data.pdf",
+    "portal": "https://onlinemaps.surveyofindia.gov.in/",
+    "negativeListSource": "https://dst.gov.in/news/list-featuresinstallations-and-their-sensitive-attributes-reference-guidelines-acquiring-and",
+    "assetAcquired": false,
+    "assetLicense": null,
+    "assetSha256": null,
+    "officialPoliticalLayerAccepted": false,
+    "precisionClassification": "UNREVIEWED_ACTUAL_DATA",
+    "releaseAllowed": false,
+    "processingRule": "Before real-data processing assess applicable rules, precision, sensitive attributes and entity status; use India-located storage/processing where required; no foreign CI data upload or public distribution until documented review. Do not treat extract extent as political boundary. Separate SOI display layer from ODbL graph; confirm exact reuse/redistribution terms and compatibility."
+  },
+  "integrity": {
+    "requiredBeforeActivation": [
+      "actual dated HTTPS source URL",
+      "exact filename and retrieval UTC",
+      "PBF snapshot UTC from header or documented authoritative source",
+      "actual byte count",
+      "provider MD5 if available with exact filename match",
+      "locally computed SHA-256",
+      "pinned parser/tool version",
+      "successful PBF full parse and reference checks",
+      "applicable data rights and precision review"
+    ],
+    "reject": [
+      "HTML or error payload",
+      "unexpected filename/redirect host",
+      "missing required evidence",
+      "checksum mismatch",
+      "truncated or empty file",
+      "malformed or unresolved references in published pack",
+      "unapproved political layer or prohibited attributes"
+    ],
+    "staging": "private India-located workspace where applicable; raw data outside Git; temporary download, validate, atomic promotion, retain verified immutable bytes; no credentials in manifests",
+    "checksumPolicy": "MD5 transport cross-check only; SHA-256 content identity; neither authenticates origin alone. HTTPS and reviewed source; signed release manifest later R19/R53; no guessed hashes."
+  },
+  "distribution": {
+    "osmDerivative": "Separate graph/database ODbL-1.0, retain notices; provide recipients machine-readable complete derived database free online or compliant alterations, review ODbL sections 4.3–4.7; no incompatible terms or DRM-only access.",
+    "map": "Locally built tiles from licensed input; visible attribution and offline credits; never prefetch public OSM tiles.",
+    "gameData": "Independent economy/catalog/save data separate; no automatic assumption of separate rights when combining data.",
+    "releaseGate": "R51 verify actual published bytes, notices, derivative offer, boundary, sensitive attributes, and license compatibility."
+  },
+  "targets": {
+    "stationTargetApprox": 100,
+    "connectionTargetApprox": [
+      150,
+      200
+    ],
+    "graphMaxMB": 50,
+    "routeP95Ms": 300,
+    "mapPanMinFPS": 30,
+    "mapIncrementalMemoryMaxMB": 150,
+    "curatedCasesMin": 100,
+    "measured": false
+  },
+  "futureTasks": {
+    "R13": "Acquire actual dated PBF and validate checksum, metadata and parser; document jurisdiction/data clearance before real processing.",
+    "R14": "Extract rail objects retaining references and source IDs; quarantine exclusions.",
+    "R15": "Normalize topology, stop attachments and boundary seams; no fabricated edge.",
+    "R18": "Build separate tiles with same graph version; rights and attribution.",
+    "R19": "Offline region activation, storage preflight, hash validation, rollback, retain active graph version.",
+    "R20": "Measure hardware budgets and coverage; no advertised unsupported routes.",
+    "R51": "Distribution and license review."
+  }
+}

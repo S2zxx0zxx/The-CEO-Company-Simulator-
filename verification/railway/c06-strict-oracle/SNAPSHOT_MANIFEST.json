@@ -1,0 +1,118 @@
+{
+  "baseline": "461efa45ea8a21a9b509c071e7df8fa3fa4f5b0d",
+  "masterRequirement": "MR-005",
+  "openRailRoutingPin": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+  "originalTask": "R16",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "schemaVersion": 1,
+  "scope": "Isolated C06 strict offline routing oracle synthetic preparation snapshot; leaves c04-*, c05-*, root runtime, PR #1 and main untouched.",
+  "sourceFiles": {
+    "C06_PERFORMANCE_BENCHMARK_REPORT.json": {
+      "bytes": 1530,
+      "gitBlobSha1": "686c9682a0f64bf8733a732d37626f6f2ad2ccb0",
+      "sha256": "d9fed57948530400a82b68c077d9ec3fa406fec93b25a734e6bab5b9e41edccd"
+    },
+    "C06_TRACEABILITY_MATRIX.json": {
+      "bytes": 3661,
+      "gitBlobSha1": "5c931a9ea5e1ea6f871f93d74e3b72a4846559f9",
+      "sha256": "ad1d8aa3733bdcf20f39f84197ad0107a4756fce0d07b5a15c699d8a3d845650"
+    },
+    "C06_VERIFICATION_REPORT.json": {
+      "bytes": 2756,
+      "gitBlobSha1": "38c43cb8cfcdeb330d5046a02153f6016ce60024",
+      "sha256": "fe3e539b6a5e8171c93e330595b976ec1800c61efa6ee8941f0b26f483466be3"
+    },
+    "c06_fixture_builder.py": {
+      "bytes": 24115,
+      "gitBlobSha1": "15aa7e858b4117eae80e8f4bb98da577b60b73ff",
+      "sha256": "fdc9bad21e88f73adb7547103ea9c645cec5e82e2522efa1a8d53c19412621dc"
+    },
+    "c06_oracle/c06_test_output.json": {
+      "bytes": 12421,
+      "gitBlobSha1": "15b6c9e32fa42991e41bb9f9b9611703325bccc6",
+      "sha256": "3a887efce9edefc19a9912f5fd890aa518cbbce7676cc6bc6af237d836a1a2ce"
+    },
+    "c06_oracle/import_metrics.json": {
+      "bytes": 286,
+      "gitBlobSha1": "bd824bce329fda79fd9ddb371d1f3c26850f1dbf",
+      "sha256": "05a5addeb9166c4b5721a88c002af630fac174863e08714c9b0f1465b27a3a43"
+    },
+    "c06_oracle/java/src/com/railwayceo/c06/StrictEnums.java": {
+      "bytes": 7911,
+      "gitBlobSha1": "9637402d80f022ea97f147375650a59e4be24f57",
+      "sha256": "e0f95a2c759fdb0895b004e43d78d3d2df9bb5295ff5789ea235008e62125639"
+    },
+    "c06_oracle/java/src/com/railwayceo/c06/StrictOracleRunner.java": {
+      "bytes": 26186,
+      "gitBlobSha1": "96441d05dd87ebe8e94cd1680b1fb22b1426594e",
+      "sha256": "a1d8abcd04d58e05ae6cf7feae4eeca9b96a261f3dfefcce7b91c93d876f1c51"
+    },
+    "c06_oracle/java/src/com/railwayceo/c06/StrictParsers.java": {
+      "bytes": 12941,
+      "gitBlobSha1": "137a6c6946de058b490b40407873ce2436b354f7",
+      "sha256": "ee6b69dc855ef12178d27dfcfb67bba9f1318f4c0cddb742334e41b597faace6"
+    },
+    "c06_package_and_sync.py": {
+      "bytes": 13392,
+      "gitBlobSha1": "19fe258158fb32e10ba112b9e9c4fb7ea9d8a55a",
+      "sha256": "1bd15e3f9e7ed46991675a1d9762d826bb885e6108038edd370a6bf2000d3f5a"
+    },
+    "docs/C06_STRICT_ORACLE_ARCHITECTURE.md": {
+      "bytes": 4902,
+      "gitBlobSha1": "92503cd125f29eaacb98a564f892a35d55ec9101",
+      "sha256": "31795c38efe97d918551dac0161b217962a299d323ff09bdde92f7abe2bbca8f"
+    },
+    "docs/C06_VERIFICATION_MATRIX.md": {
+      "bytes": 2853,
+      "gitBlobSha1": "8c543bf4ca77e204747b2ab2e8457c13e6263173",
+      "sha256": "3dda22070538513c2345c772e25563255e7225590f3e762f656f34f24cc4f139"
+    },
+    "fixtures/c06_oracle/c06_c02_metadata_audit.json": {
+      "bytes": 832,
+      "gitBlobSha1": "717d47cd4f0177945a765d126f557cb25bdaf971",
+      "sha256": "aab17b417ad6fc6457c3d0ec7f5d8dc668b74b9175ae9b157d6c7379669764e2"
+    },
+    "fixtures/c06_oracle/c06_fixture_manifest.json": {
+      "bytes": 652,
+      "gitBlobSha1": "2792a750fb745b7c844e9c5f4c86c353da4e3a83",
+      "sha256": "58bd4923ec55a6ad9c6a01adcb51efc491c3480caf0dcd1a285b7288335d7c9f"
+    },
+    "fixtures/c06_oracle/c07_synthetic_calibration_template.json": {
+      "bytes": 6832,
+      "gitBlobSha1": "c7fb1d110a8d63b5705c034264660fa75257ced1",
+      "sha256": "53a69fee849ef03fd13784007da4abf3b40c3f7139605ef1f0a218e3d69e5be6"
+    },
+    "src/rail/c06-oracle/client.ts": {
+      "bytes": 10428,
+      "gitBlobSha1": "ef7978531a29557c5e6f391ae9adb22fd7dd4d09",
+      "sha256": "6f216ced210324177ed2c495e4221eaf33dafd13a774d3d68073030a6ac62237"
+    },
+    "src/rail/c06-oracle/contracts.ts": {
+      "bytes": 14256,
+      "gitBlobSha1": "4f636a23f29ab133974d965c4d283fc70e8fad4d",
+      "sha256": "ef01b109d1163d567f1af11d8851f7e59224bb3f6aace4cb8561342ea20cbe40"
+    },
+    "src/rail/c06-oracle/harness.ts": {
+      "bytes": 12587,
+      "gitBlobSha1": "6311786ae1ecc426b1949ae736f670d9fa11d670",
+      "sha256": "c261621037603d3348aa869bb5bda867f7702394e20ca6e06b22204aed3751b5"
+    },
+    "src/rail/c06-oracle/index.ts": {
+      "bytes": 111,
+      "gitBlobSha1": "ed965e4f2b8596739f252cc353e13812b987fba9",
+      "sha256": "3c1eb9e22d363c84a41ae04f2729e0d0479ba528b496c059a85f0286553ca97e"
+    },
+    "src/rail/c06-oracle/validator.ts": {
+      "bytes": 16145,
+      "gitBlobSha1": "cc4f6038c5757b876c5da95c943fbc43c94a0aec",
+      "sha256": "a050d8159f54449b2ef83edd3bab29fe0877d19d5f9170e7a8bb24153f322827"
+    },
+    "test_c06_strict_oracle.mjs": {
+      "bytes": 31690,
+      "gitBlobSha1": "3eb301bd2a2e751247833a279bdcb581d258d8c6",
+      "sha256": "c45e8a7f0644505058a7d9fb3bb13b8243700a56a6f606c14916b5d5130fa9bd"
+    }
+  },
+  "task": "C06"
+}

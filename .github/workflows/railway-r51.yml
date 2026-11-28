@@ -1,0 +1,41 @@
+name: R51 railway license and bundle audit
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'railway-app/**'
+      - 'tools/qa/**'
+      - 'vite.railway.config.ts'
+      - 'scripts/**'
+      - 'docs/railway/**'
+      - 'docs/third-party/**'
+      - 'package-lock.json'
+      - '.github/workflows/railway-r51.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --no-audit --no-fund
+      - run: node --test scripts/railway-r51-notices.selftest.mjs
+      - run: node scripts/railway-quarantine-audit.mjs
+      - run: npm exec vite -- build --config vite.railway.config.ts
+      - run: R47_QA=1 R47_BUILD_ID=r51-guest npm exec vite -- build --config vite.railway.config.ts
+      - run: R50_QA=1 R47_BUILD_ID=r51-stress npm exec vite -- build --config vite.railway.config.ts
+      - run: node scripts/railway-r51-bundle-audit.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r51-license-bundle-evidence
+          path: |
+            r51-evidence/
+            audit-output/railway-quarantine.json
+            railway-dist/licenses/
+          retention-days: 30

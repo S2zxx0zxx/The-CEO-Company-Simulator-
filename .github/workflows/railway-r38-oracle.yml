@@ -1,0 +1,71 @@
+name: R38 pinned OSRD research oracle
+on:
+  push:
+    branches: [feat/railway-manager-v5]
+    paths:
+      - 'tools/calibration/osrd/**'
+      - 'tests/railway-r38.test.ts'
+      - '.github/workflows/railway-r38-oracle.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  oracle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: OpenRailAssociation/osrd
+          ref: 6d6f1d84b6a132fd10c6556460eec2576eeeb916
+          path: _r38_oracle
+          persist-credentials: false
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact source, schema and fixture
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/r38-evidence"
+          python tools/calibration/osrd/verify_source.py --checkout _r38_oracle --out "$RUNNER_TEMP/r38-evidence/source.json"
+          { java -version; cd _r38_oracle/core; ./gradlew --version; } 2>&1 | tee "$RUNNER_TEMP/r38-evidence/toolchain.txt"
+      - name: Run pinned core parser, simulation and constraint tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          export R38_OUT="$RUNNER_TEMP/r38-evidence"
+          cp tools/calibration/osrd/R38OracleCaptureTest.kt _r38_oracle/core/src/test/kotlin/fr/sncf/osrd/standalone_sim/
+          cd _r38_oracle/core
+          ./gradlew --no-daemon --max-workers=2 :test --tests '*R38OracleCaptureTest' --tests '*StandaloneSimulationTest.testBasicTrain' --tests '*IncrementalConflictDetectorTests' --tests '*LoadingGaugeConstraintsTest' --tests '*ElectrificationConstraintsTest' 2>&1 | tee "$R38_OUT/gradle.log"
+          cp -r build/test-results/test "$R38_OUT/junit"
+          test -z "$(git status --porcelain --untracked-files=no)"
+      - name: Compare real native results against R33
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci --no-audit --no-fund
+          R38_ORACLE_DIR="$RUNNER_TEMP/r38-evidence" npx vitest run tests/railway-r38.test.ts 2>&1 | tee "$RUNNER_TEMP/r38-evidence/comparison.log"
+      - name: Hash evidence
+        if: always()
+        shell: bash
+        run: |
+          if test -d "$RUNNER_TEMP/r38-evidence"; then
+            cd "$RUNNER_TEMP/r38-evidence"
+            find . -type f ! -name MANIFEST.sha256 -print0 | sort -z | xargs -0 -r sha256sum > MANIFEST.sha256
+            cat MANIFEST.sha256
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r38-osrd-evidence
+          path: ${{ runner.temp }}/r38-evidence
+          if-no-files-found: warn
+          retention-days: 30

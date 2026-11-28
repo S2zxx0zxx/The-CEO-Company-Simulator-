@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "task": "C03/R15 synthetic preparation independent review",
+  "basis": "e2a4dd4315e91255c20a40426b2cd03595cf9d44",
+  "date": "2026-11-28",
+  "zip": {
+    "filename": "RAILWAY_CEO_C03_GRAPH_VERIFICATION.zip",
+    "bytes": 248030,
+    "sha256": "6038d87485ca1de5da980f9f66afde83a510de8923bf655fa2649197bf3f9381",
+    "files": 54,
+    "manifest": "53/53",
+    "crc": "PASS",
+    "bundledDependencyHashes": "29/29",
+    "liveGitCoreBlobMatches": "10/10"
+  },
+  "runtime": {
+    "python": "3.13.5",
+    "node": "v22.16.0",
+    "os": "Linux"
+  },
+  "independent": {
+    "C03Python": "6/6",
+    "C03TypeScript": "5/5",
+    "R07_R11": "321/321",
+    "V3": "36/36",
+    "C02": "8/8 executed",
+    "totalPassed": 376,
+    "failed": 0,
+    "notExecuted": [
+      "C02 live Osmium smoke: executable unavailable"
+    ]
+  },
+  "geminiReported": {
+    "total": "377/377",
+    "routeP95Ms": 507.98
+  },
+  "benchmarks": {
+    "syntheticOnly": true,
+    "largestGraph": {
+      "nodes": 2000,
+      "edges": 7820,
+      "stations": 667,
+      "turnRules": 30748,
+      "rawBytes": 7735255,
+      "gzipBytes": 355293,
+      "buildSeconds": 8.3435,
+      "peakTracedHeapBytes": 40529717,
+      "linuxPeakProcessRssBytes": 190644224
+    },
+    "runtime500Nodes": {
+      "spatialIndexBuildMs": 4.73,
+      "bboxP95Ms": 0.101,
+      "viewportP95Ms": 1.26,
+      "routeP95Ms": 194.35,
+      "interpolation5000Ms": 5.04
+    },
+    "routeTargetMs": 300,
+    "windowsTargetMiss": true,
+    "mobileAcceptance": false
+  },
+  "productionBlockers": [
+    "C01 applicable certification and permitted territorial evidence; real C02 extraction not started",
+    "C02 retained track tags omit access/maxspeed, and relation allowlist does not include restriction; C03 real graph compatibility/turn semantics require approved minimum source policy and explicit unknown handling, no permissive inference",
+    "C03 default geometric turn thresholds and penalties are provisional model assumptions, not verified real switch rules; actual station/turn validation remains required",
+    "C03 code in owner bundle not integrated into GitHub application build yet",
+    "C08 routing p95 target miss on Windows and real-device frame/memory measurements pending"
+  ],
+  "status": "SYNTHETIC_PREPARATION_VERIFIED_IN_SUPPLIED_TEST_SCOPE__PRODUCTION_NOT_STARTED",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "next": "C04 isolated synthetic map preparation only on owner START; no real map tiles; actual C03 acceptance remains gated."
+}

@@ -1,0 +1,12 @@
+# C07 Execution Summary
+
+- **Task:** C07 — Production-Grade Route Comparison & Calibration Framework (R17 / MR-006, MR-044)
+- **Coordinator Checkpoint Basis:** `00088cd6b1416adfc6822f4896813ef24e15d49b`
+- **Mode:** Production-first synthetic engineering preparation (`realPbfProcessed: false`, `realRouteComparisonsCompleted: 0`, `releaseAllowed: false`)
+- **Status:** `C07_SYNTHETIC_PREPARATION_VERIFIED__R17_REAL_DATA_GATED_BY_C01`
+
+## Summary of Deliverables & Observed Results
+1. **Migrated Dataset & 137 Distinct Synthetic Scenarios (`fixtures/c07_calibration/c07_synthetic_calibration_dataset.json`, `c07_dataset_generator.mjs`, `c07_fixture_builder.py`):** Replaced placeholder C07 template entries with 137 unique scenarios across `c06-synthetic-v1` and companion `c07-corridor-v1`: **123 genuine route comparisons** (`50` Category A positive + `44` Category B negative compatibility + `29` Category C topology & operational restrictions) and **14 infrastructure/unsupported probes** (`5` `STALE_IDENTITY`, `2` `INVALID_INPUT`, `2` `SEARCH_EXHAUSTION`, `1` `STRICT_PROFILE_UNSUPPORTED`, `4` `ORACLE_EXECUTION_ERROR`).
+2. **Deterministic Batch Comparison & Checkpoint Engine (`src/rail/c07-calibration/batch-runner.ts`):** Executed all 137 scenarios with live Java 21 OpenRailRouting (`c06-strict-oracle.jar` SHA-256 `34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb`) and authoritative Railway CEO `findRoute`/`findRouteAlternatives` plus independent safety validation (`knownIncompatibleAcceptedCount: 0`), bounded concurrency, cancellation/checkpoint resume, and initial-failure preservation.
+3. **Calibration & 17-Class Discrepancy Registry (`calibration.ts`, `discrepancy-registry.ts`, `C07_DISCREPANCY_REGISTRY.json`, `C07_CALIBRATION_REPORT.json`):** `46` `MATCH_VALID_ROUTE` (`35` exact + `11` precision rounding <= `1 m`), `72` `MATCH_NO_VALID_ROUTE`, `0` false accepts, and `5` real cross-engine discrepancies openly tracked and dispositioned (`2` `ORACLE_FALSE_REJECT` on `16.7Hz` dHz rounding + `3` `DURATION_DISCREPANCY` on `dual` switch heuristic & intermediate waypoint U-turn penalty). Provisional tolerances remain `provisional: true`.
+4. **Cross-Region & Negative Framework Tests (`cross-region.ts`, `test_c07_calibration.mjs`):** `9/9` C05 portal checks passing (`GAME_ENGINE_PORTAL_COMPOSITION_ONLY`), `14/14` negative framework tests passing, and `444/444` total executed C02–C07 checks + Maven `34/34` passing with `0` TypeScript strict errors in `c06-oracle/` and `c07-calibration/`.

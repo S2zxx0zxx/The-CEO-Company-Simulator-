@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "disposition": "DISABLED_NO_AUTHORIZATION",
+  "runtimePackages": [
+    {
+      "path": "node_modules/@capacitor/android",
+      "version": "8.6.2",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@capacitor/app",
+      "version": "8.0.0",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@capacitor/core",
+      "version": "8.6.2",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@capacitor/filesystem",
+      "version": "8.0.0",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@capacitor/share",
+      "version": "8.0.0",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@capacitor/synapse",
+      "version": "1.0.4",
+      "license": "ISC"
+    },
+    {
+      "path": "node_modules/dexie",
+      "version": "4.4.7",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/lucide-react",
+      "version": "0.468.0",
+      "license": "ISC"
+    },
+    {
+      "path": "node_modules/react",
+      "version": "19.3.1",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/react-dom",
+      "version": "19.3.1",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/scheduler",
+      "version": "0.28.0",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/tslib",
+      "version": "2.9.1",
+      "license": "0BSD"
+    }
+  ],
+  "scope": {
+    "ads": "GP-028 GP-029 deferred",
+    "social": "GP-018 deferred",
+    "billing": "not authorized",
+    "accounts": "guest only",
+    "tracking": "not enabled"
+  },
+  "futureEnablement": [
+    "explicit owner approval",
+    "review exact SDK and own credentials/product IDs",
+    "consent and privacy disclosures before collection",
+    "server-verified idempotent receipts/rewards",
+    "revocation and offline independence",
+    "R52 and final device/store compliance"
+  ],
+  "nativeNotes": "QA Android wrapper may retain INTERNET for local WebView; no assertion of OS-wide network denial; explicit OS share export is not online social gameplay"
+}

@@ -1,0 +1,16 @@
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import {fixture} from '../../../tests/fixtures/railway-r39';
+import {RollingStockCatalog} from '../../../src/rail/catalog';
+import {RailwayCatalogPanel} from '../../../src/ui/railway/CatalogPanel';
+import {stockCategory,type StockCategory} from '../../../src/rail/catalog/presentation';
+import {DraftRailArt,DraftRailMark} from './PreviewArt';
+import '../../../src/ui/railway/fleet.css';
+import './preview.css';
+const f=await fixture(),s=f.catalog.snapshot(),base=s.entries[0];
+if(!('energyPerKm' in base))throw Error('expected powered fixture');
+const electric={...base,name:'Synthetic electric QA',model:{...base.model,id:'qa-electric',traction:'electric',voltagesV:[25000],frequenciesHz:[50]},energyPerKm:[]};
+const catalog=await RollingStockCatalog.prepare({...s,id:'r46-qa-catalog',entries:[base,electric]});
+const identity={catalogId:catalog.snapshot().id,catalogRevision:catalog.snapshot().revision,catalogSha256:catalog.sha256};
+const concepts:readonly StockCategory[]=['diesel','electric','steam','dual','passenger-coach','freight-wagon'];
+createRoot(document.getElementById('root')!).render(<main className="rf r46-review"><header className="rf-top"><DraftRailMark/><div><small>PRIVATE REVIEW / NOT RELEASE ART</small><h1>Railway catalogue preview</h1></div></header><p>Only synthetic QA catalogue entries; no approved launch roster. Illustrations are generic category concepts.</p><section className="rf-card"><RailwayCatalogPanel identity={identity} models={catalog.snapshot().entries} preview={e=><DraftRailArt category={stockCategory(e)}/>}/><button disabled>Choose starter / order or purchase</button><p>Owner visual and scenario approval required.</p></section><section className="rf-card"><h2>Original category studies</h2>{concepts.map(x=><div key={x} className="rf-sub"><h3>{x}</h3><DraftRailArt category={x}/></div>)}</section></main>);

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "task": "C06-FIX-01",
+  "originalTask": "R16",
+  "masterRequirement": "MR-005",
+  "coordinatorCheckpoint": "3245216aee348c292257625fbefd3cb049611982",
+  "openRailRouting": {
+    "repoUrl": "https://github.com/geofabrik/OpenRailRouting",
+    "commit": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+    "pomVersion": "1.2",
+    "graphHopperVersion": "11.1-osm-reader-callbacks-1",
+    "docApiSubmodulePin": "4edcc9b85834a0ad75ff6ebe646e7a0c09e939d7",
+    "license": "Apache-2.0",
+    "licenseBlobSha1": "5471dc10377b76db85a2feca7a99a7eef4980ba8",
+    "licenseFile": {
+      "path": "c04_c06_tools/openrailrouting/LICENSE.txt",
+      "bytes": 11562,
+      "sha256": "4b63d54afaae8f96b7b3baeb94d902bb50e4f17e3d0fc6cb450bef56cb769616"
+    },
+    "mavenDependencyLock": {
+      "file": "c04_c06_tools/openrailrouting_maven_dependencies.txt",
+      "bytes": 12958,
+      "sha256": "091ded608cae513dd1357a121eb2851903275cdfcf420b16628b2286be7a47a8"
+    },
+    "runtimeClasspathFile": {
+      "bytes": 3420,
+      "sha256": "9adb31046779351bc26005039cc53f864e9c5a0ead71e48ec5676b83d2be3a75"
+    },
+    "thinJar": {
+      "path": "c04_c06_tools/openrailrouting/target/railway_routing-1.2-thin.jar",
+      "bytes": 2328368,
+      "sha256": "1caebe94d5678cbff85d83f09c099e5f585d61c10234ff7f4114c1422f2de400"
+    }
+  },
+  "c06AdapterJar": {
+    "path": "c06_oracle/java/c06-strict-oracle.jar",
+    "bytes": 34375,
+    "sha256": "34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb",
+    "boundCacheIdentityFile": "c06_oracle/cache_strict/c06_cache_identity.json",
+    "boundGraphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+    "boundPbfSha256": "07d1ca96b1609c5e150f638b462a68f4dc40a70e5fa273ef90442fbb30c48dcd"
+  },
+  "toolchain": {
+    "java": "OpenJDK 21.0.8 (JetBrains Runtime)",
+    "maven": "3.9.9 (archive sha256 4ec3f26fb1a692473aea0235c300bd20f0f9fe741947c82c1234cefd76ac3a3c, offline -o)",
+    "node": "v24.10.0 (--experimental-transform-types)",
+    "python": "3.13.0",
+    "osmium": "1.19.0 (GPL-3.0 standalone CLI only, never linked into TS/Java runtime)",
+    "typescriptCompiler": {
+      "installedInWorkspace": false,
+      "tscVersion": "5.9.3",
+      "c06OracleErrors": 0,
+      "preservedUpstreamErrors": 2,
+      "note": "Strict TypeScript 5.9.3 (--noEmit --strict) passed with 0 errors across src/rail/c06-oracle/*.ts; 2 pre-existing errors remain in untouched preserved C04/C05 dependencies (src/rail/map/pmtiles-adapter.ts(260,5) and src/rail/regions/portals.ts(3,26))."
+    }
+  },
+  "frontendPackageLicenses": [
+    { "name": "maplibre-gl", "version": "6.18.0", "spdx": "BSD-3-Clause", "licenseArtifact": "assets/licenses/MAPLIBRE_GL_BSD3_LICENSE.txt" },
+    { "name": "pmtiles", "version": "4.5.0", "spdx": "BSD-3-Clause", "note": "Declared BSD-3-Clause in package.json (no bundled LICENSE file in npm tarball)." },
+    { "name": "fflate", "version": "0.8.3", "spdx": "MIT", "licenseArtifact": "assets/licenses/FFLATE_MIT_LICENSE.txt" },
+    { "name": "@fontsource/inter", "version": "5.1.1", "spdx": "OFL-1.1", "licenseArtifact": "assets/licenses/INTER_OFL_1_1_LICENSE.txt" },
+    { "name": "playwright", "version": "1.51.1", "spdx": "Apache-2.0", "devOnly": true }
+  ]
+}

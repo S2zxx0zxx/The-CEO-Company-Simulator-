@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "task": "C04-FIX-01",
+  "title": "Bounded Offline URL Validation & PMTiles Protocol Guard Remediation",
+  "generatedAtUtc": "2026-11-28T06:24:02.877272+00:00",
+  "parentCheckpoint": "39a0517e947b6d13668943dd10cb9547a8aa1c53",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "actualC08MobileAcceptanceClaimed": false,
+  "remediatedDefects": [
+    "Rejected scheme-relative external URLs (//, ///, /\\, \\\\) via canonical WHATWG URL resolution against canary origin and explicit leading-slash guard.",
+    "Rejected pmtiles:// wrapping http://, https://, //, encoded schemes, or unregistered archive identities both in isPermittedOfflineUrl and inside registerOfflineProtocols before pmtiles Protocol.tile can invoke network FetchSource.",
+    "Enforced exact parsed URL.origin matching (rejecting userinfo @, lookalike subdomains .evil.com, wrong ports, and scheme mismatches).",
+    "Extended validateOfflineStyleNoExternalUrls to validate MapLibre v8 sprite arrays, malformed non-string entries, tile arrays, and source data strings.",
+    "Preserved valid offline ./, ../, single /, pmtiles://<registered>, offlinefont://, localasset://, sprite arrays, and exact same-origin URLs."
+  ],
+  "testCounts": {
+    "c04_contracts_and_tiles": {
+      "passed": 5,
+      "total": 5,
+      "failed": 0
+    },
+    "c04_browser_webgl": {
+      "passed": true,
+      "externalNetworkRequestsBlockedCount": 0,
+      "failedLocalRequestsCount": 0,
+      "protocolGuardBlocked": true,
+      "rejectedRenderersCount": 4
+    },
+    "c04_pmtiles_inspect": {
+      "ok": true,
+      "outOfBoundsEmpty": true
+    },
+    "c03_python": {
+      "passed": 6,
+      "total": 6,
+      "failed": 0
+    },
+    "c03_ts": {
+      "passed": 5,
+      "total": 5,
+      "failed": 0,
+      "routeP95Ms": 660.35
+    },
+    "upstream_r07_r11": {
+      "passed": 321,
+      "total": 321,
+      "failed": 0
+    },
+    "v3_prefilter": {
+      "passed": 36,
+      "total": 36,
+      "failed": 0
+    },
+    "c02_pipeline": {
+      "passed": 9,
+      "total": 9,
+      "failed": 0
+    }
+  },
+  "modifiedSourceFiles": {
+    "src/rail/map/style.ts": {
+      "bytes": 26867,
+      "sha256": "ff174bc63dbc09b15bc11c29a38aeadc3414e67cd94b9ef489dad036466a0c8d",
+      "gitBlobSha1": "bf1e3a6db05803c548577981f90cb2ad9c0f02fc"
+    },
+    "src/rail/map/pmtiles-adapter.ts": {
+      "bytes": 9613,
+      "sha256": "024d663ca97f10d4f4f0ea76dfb4bd5ff4a1d6942101ed7044278e948e341959",
+      "gitBlobSha1": "e151994ed5b23ccf3362490d54cf3f609f5b2954"
+    },
+    "src/rail/map/renderer.ts": {
+      "bytes": 21852,
+      "sha256": "aee7654de50d7fa30d5d65d26c2aab98d1cb7988ac5eba605e7f0aa3f41b1b4a",
+      "gitBlobSha1": "a7af7c026430f6c80881478027242731ddd2e4a2"
+    },
+    "c04_web_entry.ts": {
+      "bytes": 19628,
+      "sha256": "7f0d0dc58b6bce4e0899abb1aa6a14ec6eef752c3150416a1552952f5183a958",
+      "gitBlobSha1": "0efd49d417be707f1029b57ab55d98bda0ed3b0b"
+    },
+    "test_c04_contracts_and_tiles.mjs": {
+      "bytes": 26706,
+      "sha256": "18e61886ec9a5608e83ac321a29c957ac495460650866d2a6f219f9385d4afe4",
+      "gitBlobSha1": "63f36f680d1a2c573216800e38d2344d62461744"
+    },
+    "test_c04_browser_webgl.mjs": {
+      "bytes": 14774,
+      "sha256": "2e3887d66635c6c0ce18c08aa87b16a7100003863ceeff6e52ea88db47e9b875",
+      "gitBlobSha1": "601eb60274b9ff51d28ff0b3a3b6b4c9df855092"
+    }
+  }
+}

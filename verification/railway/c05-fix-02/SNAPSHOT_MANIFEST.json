@@ -1,0 +1,117 @@
+{
+  "baseline": "adf6aa5ee169b2a145ac8e13d486be110ef22f47",
+  "masterRequirement": "MR-008",
+  "originalTask": "R19",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "schemaVersion": 1,
+  "scope": "Isolated C05-FIX-02 GC deletion failure recovery snapshot; leaves c05-region-install, c05-fix-01, c04-baseline, c04-fix-01, root runtime, PR #1 and main untouched.",
+  "sourceFiles": {
+    "C05_C08_READINESS_CHECKLIST.json": {
+      "bytes": 1986,
+      "gitBlobSha1": "dfd96713d88c09e1906af4cc649b5e6ae578bae6",
+      "sha256": "da7912d6ff6cc62247c9aea5a2bc329659ebfffe088a208be1f55b62aa5b7878"
+    },
+    "C05_FIX_02_VERIFICATION_REPORT.json": {
+      "bytes": 4036,
+      "gitBlobSha1": "426017f422982ace5f21aca86e114dd7f3bfdc77",
+      "sha256": "4871a8af9a80bf7360a2dbf1bf2b92c7bceab8676752bbcd5bc9338836c03af6"
+    },
+    "C05_PERFORMANCE_BENCHMARK_REPORT.json": {
+      "bytes": 2755,
+      "gitBlobSha1": "a5b3de3d54abcc92a6aaffae1535f8455e059867",
+      "sha256": "586370f13e1c26716230b81ffd312bbd14877ff30692c84bd88845a257c1cbf5"
+    },
+    "C05_TRACEABILITY_MATRIX.json": {
+      "bytes": 4676,
+      "gitBlobSha1": "5ac124ced122b6282131e201d32bf351e4d34ed4",
+      "sha256": "3dc6fb050553a4b1be76a7c7f2a82189eb40c24c3d1bb6d856d8c9c66ac37a04"
+    },
+    "C05_VERIFICATION_REPORT.json": {
+      "bytes": 2200,
+      "gitBlobSha1": "fb7097ec0dd3c8597165a54d68d31ba22b5f84a2",
+      "sha256": "822418f26eb42d1bff17b1891138a340409f8c75b400f974ce46ccc58ea2c10c"
+    },
+    "c05_fixture_builder.py": {
+      "bytes": 28963,
+      "gitBlobSha1": "7d66737b4fa44f4e2ade3d8ada59963c1aea4096",
+      "sha256": "cfeed6a27c8aa46a5853773d3561de89d9350e4e5124ecf3583bb9d4e72d9434"
+    },
+    "c05_package_and_sync.py": {
+      "bytes": 12927,
+      "gitBlobSha1": "6e9e7e16a96fc9dd78459c2f85e0f94a968056f7",
+      "sha256": "ba61744dd2a4700556124c0881e246543777c8c5dcbc5e19e63fa8f6699a9595"
+    },
+    "c05_sign_manifests.mjs": {
+      "bytes": 8468,
+      "gitBlobSha1": "3dbd78bd12cd6f59ed7895dbd81b20817b16fd0f",
+      "sha256": "59214aab7e1e2059d502f837e3b4c8969b2eb11922eea091d9f8faac0c6a0f23"
+    },
+    "c05_web_entry.ts": {
+      "bytes": 11834,
+      "gitBlobSha1": "048c1a6fd9f416be2439210ee9dc9ae4e80bc9e7",
+      "sha256": "2839f66f07a2334e17003d0d743ec734e16f004beb9378a853a82c063149b714"
+    },
+    "docs/C05_REGION_INSTALLATION_AND_PORTALS_ARCHITECTURE.md": {
+      "bytes": 8474,
+      "gitBlobSha1": "2150d1dce2e7b65077667578bc732380624c52ca",
+      "sha256": "fdbe2cf00a0d0cdeffe32df3aebb74bfab813a03f74731331042cf73a6e77a38"
+    },
+    "docs/C05_VERIFICATION_MATRIX.md": {
+      "bytes": 5116,
+      "gitBlobSha1": "b5660a863b9da69a205bf3262af841dd0de12f29",
+      "sha256": "856820249a605a43f2e68a4741cdf9771517918697fcb1a8402d7ee55760afa4"
+    },
+    "src/rail/map/pmtiles-adapter.ts": {
+      "bytes": 10174,
+      "gitBlobSha1": "892b97ebe9de783d136f705043471ada0d5d7b70",
+      "sha256": "e2e281155e6909f473e077ab467b07d85c8ef373dd84e47f592b9903d89c2560"
+    },
+    "src/rail/regions/contracts.ts": {
+      "bytes": 18951,
+      "gitBlobSha1": "64c154b5fac6544dcbfcd1d66e969dece027141c",
+      "sha256": "476348f90eb9403db0e4170b34f23dd0f8f121fb58d12e550170b75a7f19cacf"
+    },
+    "src/rail/regions/index.ts": {
+      "bytes": 152,
+      "gitBlobSha1": "4ab55588d925334748fe293a7d9806261f33bde7",
+      "sha256": "d0bef04a6662fa1ccf8fdf99968c4915491c8d3b6eaae2b444257f3ce1187449"
+    },
+    "src/rail/regions/installer.ts": {
+      "bytes": 74458,
+      "gitBlobSha1": "ba7c135b6d53ed3af72cb3973a850af34988f84b",
+      "sha256": "05a2e850eb007b5b20c2f2496e401613d946da8049dd0036451c0c6c39ec1637"
+    },
+    "src/rail/regions/pmtiles-range-source.ts": {
+      "bytes": 11489,
+      "gitBlobSha1": "17dfd129a641198f34c8517c912ab9f520592278",
+      "sha256": "b783ed7bcd2e3a467bdfb53ed212e8f7b049dde920f671be3adf14b9d61439a5"
+    },
+    "src/rail/regions/portals.ts": {
+      "bytes": 14151,
+      "gitBlobSha1": "9a7ee8cb902a1bc45c0a756e7e642e7117d400ec",
+      "sha256": "ff2f6ca7c0ef7207b3f59096fc1aef0fe4230cc7feffdc171eefea201cb82329"
+    },
+    "src/rail/regions/storage.ts": {
+      "bytes": 43964,
+      "gitBlobSha1": "b12c20a225907fbdfa9e9c03fafe762f161dcd2f",
+      "sha256": "09d507ebb88e8fe08a5cf88460aedf7e6773b6815d38e67f3683b0a8756c57c9"
+    },
+    "test_c05_browser_persistence.mjs": {
+      "bytes": 14585,
+      "gitBlobSha1": "17f2050caddf00f6741d78dec997d46450b3b76e",
+      "sha256": "aa36a9bead12e118a0c306cd97a2c3006033e2ed0ec0d2eba3976f3b1abbdd2f"
+    },
+    "test_c05_packages_install_and_portals.mjs": {
+      "bytes": 56383,
+      "gitBlobSha1": "ab307500ec254ada05a1cf2d3a6583631b7a0d4d",
+      "sha256": "887c491bb58ff8891f069c5f8173c7fc8103a9e6b65a17e56bc230b2433c51a5"
+    },
+    "verify_downstream_graphpack.mjs": {
+      "bytes": 4019,
+      "gitBlobSha1": "e24e58458a608fb69d0b49e1527b91dfa34e57c6",
+      "sha256": "82e58159c714a06d0d6231537be76b6e8df12746261dd20223b89f9686fad84c"
+    }
+  },
+  "task": "C05-FIX-02"
+}

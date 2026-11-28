@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "task": "C05",
+  "syntheticOnly": true,
+  "realPbfProcessed": false,
+  "environment": {
+    "nodeVersion": "v24.10.0",
+    "pythonVersion": "3.13.0",
+    "browser": "chromium-headless-swiftshader",
+    "osmiumVersion": "1.19.0",
+    "planetilerVersion": "v0.10.2"
+  },
+  "packageSizes": {
+    "in_east_c05_v1": {
+      "graphRawBytes": 6751,
+      "graphGzBytes": 964,
+      "pmtilesBytes": 55709
+    },
+    "in_east_c05_v2": {
+      "graphRawBytes": 10604,
+      "graphGzBytes": 1181,
+      "pmtilesBytes": 63368
+    },
+    "in_north_c05_v1": {
+      "graphRawBytes": 6999,
+      "graphGzBytes": 985,
+      "pmtilesBytes": 55572
+    }
+  },
+  "nodeSuiteTimingsMs": {
+    "c05_01_manifest_authority_signing_and_negative_security_gates": 45.97,
+    "c05_02_storage_preflight_quota_decompression_bomb_and_tamper_gates": 103.57,
+    "c05_03_crash_recovery_journal_cancellation_and_idempotency": 184.82,
+    "c05_04_atomic_upgrade_rollback_version_pinning_and_ref_gc": 72.0,
+    "c05_05_pmtiles_range_source_bounds_corruption_abort_and_offline_protocol": 87.21,
+    "c05_06_explicit_region_portals_and_cross_region_continuity": 92.0,
+    "c05_07_r33_r39_r40_gameplay_continuity_and_capacitor_android_adapter": 129.86
+  },
+  "chromiumBrowserMetrics": {
+    "storageNamespace": "railway-ceo-regions-v1",
+    "hasSaveDbOverlap": false,
+    "binaryStoreMode": "opfs",
+    "quotaStatus": "KNOWN",
+    "physicalDeviceVerified": false,
+    "installA1Ms": 252.9,
+    "installA2Ms": 227.8,
+    "reloadRecoveryMs": 67.0,
+    "rollbackTab2Ms": 205.9,
+    "lockTab1HeldMs": 154.0,
+    "rangeReadTelemetryA1": {
+      "rangeReadCount": 5,
+      "totalBytesRead": 18173,
+      "expectedByteLength": 55709,
+      "maxSingleReadBytes": 16384,
+      "fullArchiveLoadedInMemory": false
+    },
+    "crossRegionPortalDistanceM": 109945,
+    "multiTabBroadcastEventsObserved": 2
+  },
+  "retainedUpstreamPerformanceMisses": {
+    "note": "Inherited C03/C04 misses preserved unmodified; not waived by C05.",
+    "reportedWindowsRouteP95Ms": 660.35,
+    "routeP95TargetMs": 300,
+    "reportedSoftwareWebGLFpsPure": 23.3,
+    "reportedSoftwareWebGLFpsCoupled": 22.9,
+    "fpsTarget": 30
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "status": "RESEARCH_ONLY",
+  "description": "Original experimental conventional-diesel freight sweep; not approved Indian calibration. Fit uses A to B only; holdout uses B to A, disjoint load levels. Same corridor family, not external validation. 100 cars and 9 conventional locomotives from the upstream simple-corridor demo size; vary load for research.",
+  "cases": [
+    {
+      "id": "fit-1",
+      "split": "fit",
+      "origin": "A",
+      "destination": "B",
+      "loadedCars": 0,
+      "emptyCars": 100,
+      "locomotives": 9
+    },
+    {
+      "id": "fit-2",
+      "split": "fit",
+      "origin": "A",
+      "destination": "B",
+      "loadedCars": 50,
+      "emptyCars": 50,
+      "locomotives": 9
+    },
+    {
+      "id": "fit-3",
+      "split": "fit",
+      "origin": "A",
+      "destination": "B",
+      "loadedCars": 100,
+      "emptyCars": 0,
+      "locomotives": 9
+    },
+    {
+      "id": "holdout-1",
+      "split": "holdout",
+      "origin": "B",
+      "destination": "A",
+      "loadedCars": 25,
+      "emptyCars": 75,
+      "locomotives": 9
+    },
+    {
+      "id": "holdout-2",
+      "split": "holdout",
+      "origin": "B",
+      "destination": "A",
+      "loadedCars": 75,
+      "emptyCars": 25,
+      "locomotives": 9
+    },
+    {
+      "id": "holdout-3",
+      "split": "holdout",
+      "origin": "B",
+      "destination": "A",
+      "loadedCars": 40,
+      "emptyCars": 60,
+      "locomotives": 9
+    }
+  ]
+}

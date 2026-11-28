@@ -1,0 +1,107 @@
+{
+  "baseline": "e373e5548ed988788655ae0f0b17891f16543022",
+  "masterRequirement": "MR-008",
+  "originalTask": "R19",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "schemaVersion": 1,
+  "scope": "Isolated C05 synthetic region installation, storage adapters, rollback & portals source snapshot; leaves c04-baseline, c04-fix-01, root runtime, PR #1 and main untouched.",
+  "sourceFiles": {
+    "C05_C08_READINESS_CHECKLIST.json": {
+      "bytes": 1814,
+      "gitBlobSha1": "06f3db207bad5931ae900daecc7816f674752860",
+      "sha256": "c6c3429cf12438be347cac7e2a1e71fe9ba8a06bc352b2569ef78a33d896117d"
+    },
+    "C05_PERFORMANCE_BENCHMARK_REPORT.json": {
+      "bytes": 2189,
+      "gitBlobSha1": "b680eb6f10a2942e3a1744ead6c6c70ca861e8bd",
+      "sha256": "dba32c7ae1d296b6cb1438565ce1a6e33306530e09881bde994038ae8f3ba0f0"
+    },
+    "C05_TRACEABILITY_MATRIX.json": {
+      "bytes": 3161,
+      "gitBlobSha1": "bfe2499700bd181996d0d7062620fa6ebe0142a8",
+      "sha256": "e8177625420816dd221dd5536e772e5c8f6b834338e8211d5166545ad18d38da"
+    },
+    "C05_VERIFICATION_REPORT.json": {
+      "bytes": 1639,
+      "gitBlobSha1": "4485c17dfe40f58d2b6bfd91cf82949cfd5bd1a4",
+      "sha256": "0e96cd3cb885ee6c108b623a33ca379fcf0f51baad0e61a6372c02f632787422"
+    },
+    "c05_fixture_builder.py": {
+      "bytes": 28963,
+      "gitBlobSha1": "7d66737b4fa44f4e2ade3d8ada59963c1aea4096",
+      "sha256": "cfeed6a27c8aa46a5853773d3561de89d9350e4e5124ecf3583bb9d4e72d9434"
+    },
+    "c05_package_and_sync.py": {
+      "bytes": 12717,
+      "gitBlobSha1": "13221d02d744f666009102c281bd915c6ced4a60",
+      "sha256": "118f81d33676ab7a070ca546ba221c1d621e33039b237c739a60e5b62504edfc"
+    },
+    "c05_sign_manifests.mjs": {
+      "bytes": 8340,
+      "gitBlobSha1": "90d7302ac7b4a5fc636daa4e1ad64f3f2eef0cb2",
+      "sha256": "84827cfe6c4e5f3dc85fbc7e4122729f3b74afc90b543b8b3d84461b337e24e6"
+    },
+    "c05_web_entry.ts": {
+      "bytes": 10780,
+      "gitBlobSha1": "c36c5910782d4d5ed5ea084991a9f8c768452758",
+      "sha256": "c8f88438f8980857cacb50d620d7c171f88a407227733895b2b12a2f0abe1dea"
+    },
+    "docs/C05_REGION_INSTALLATION_AND_PORTALS_ARCHITECTURE.md": {
+      "bytes": 5875,
+      "gitBlobSha1": "76ad51da45e95c133b9bbf9447eb06bcabe1d4a2",
+      "sha256": "630fd69d8515b9f100a9414e79ef33846634728b96b92befe7f7f46218afb075"
+    },
+    "docs/C05_VERIFICATION_MATRIX.md": {
+      "bytes": 3085,
+      "gitBlobSha1": "6f611f75cd953f76b9e863a8df8f06b0df1f1104",
+      "sha256": "070ce893ac6db4480798bf7290f26198ad93b9580c06be69b059f0d14763e618"
+    },
+    "src/rail/map/pmtiles-adapter.ts": {
+      "bytes": 10174,
+      "gitBlobSha1": "892b97ebe9de783d136f705043471ada0d5d7b70",
+      "sha256": "e2e281155e6909f473e077ab467b07d85c8ef373dd84e47f592b9903d89c2560"
+    },
+    "src/rail/regions/contracts.ts": {
+      "bytes": 17081,
+      "gitBlobSha1": "b41560a9fd68945c221a9cc85b0260487f3804c7",
+      "sha256": "e679569a3abe569771692522bf165a743735a83d202b7ebcb64f659630933f95"
+    },
+    "src/rail/regions/index.ts": {
+      "bytes": 152,
+      "gitBlobSha1": "4ab55588d925334748fe293a7d9806261f33bde7",
+      "sha256": "d0bef04a6662fa1ccf8fdf99968c4915491c8d3b6eaae2b444257f3ce1187449"
+    },
+    "src/rail/regions/installer.ts": {
+      "bytes": 48011,
+      "gitBlobSha1": "2d2528dfe80254ec8a2b43f2f6d91f889425333f",
+      "sha256": "276f29efbf587ec531b563ff67a38a45658dbc833aa983308ba20c796237011c"
+    },
+    "src/rail/regions/pmtiles-range-source.ts": {
+      "bytes": 5650,
+      "gitBlobSha1": "9918ad6e85da1c0d43f2aa4e3fd4aa79173ee596",
+      "sha256": "3dfef8e2cc5392ee521f5a93919941b75f3966efc3aec8abb870cdad807d7ee7"
+    },
+    "src/rail/regions/portals.ts": {
+      "bytes": 14151,
+      "gitBlobSha1": "9a7ee8cb902a1bc45c0a756e7e642e7117d400ec",
+      "sha256": "ff2f6ca7c0ef7207b3f59096fc1aef0fe4230cc7feffdc171eefea201cb82329"
+    },
+    "src/rail/regions/storage.ts": {
+      "bytes": 42886,
+      "gitBlobSha1": "2d46ceffbb3f3522b638a9d784fe717d7c20805f",
+      "sha256": "2d9775fd423a31db135dd70f2e15c629b27a1c9e7f18223522dc993863fffa8d"
+    },
+    "test_c05_browser_persistence.mjs": {
+      "bytes": 14465,
+      "gitBlobSha1": "f819cffe88c64fe02a2f903efd652c9b1aabaf3b",
+      "sha256": "809f791950731cba11d53941b86003160bccc7c3ecfad9650497b13ac8d2384f"
+    },
+    "test_c05_packages_install_and_portals.mjs": {
+      "bytes": 36797,
+      "gitBlobSha1": "26bdc5e0f4f487eecec6f209f46dfef2999f8466",
+      "sha256": "7d0f899cb9113479f32cc0fd1b3a874d12942f570934769bea259823824a0c9a"
+    }
+  },
+  "task": "C05"
+}

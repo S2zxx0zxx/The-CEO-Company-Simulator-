@@ -1,0 +1,73 @@
+name: R40 Android WebView replay acceptance
+on:
+  pull_request:
+    paths:
+      - 'src/rail/**'
+      - 'tools/qa/r40/**'
+      - 'tests/fixtures/railway-r39.ts'
+      - '.github/workflows/railway-r40-android.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
+          log-accepted-android-sdk-licenses: 'false'
+      - run: npm ci --no-audit --no-fund
+      - run: npm run android:sync
+      - name: Build isolated QA-only local bundle
+        run: |
+          set -euo pipefail
+          npm exec vite -- build --config tools/qa/r40/vite.config.ts
+          mkdir -p r40-evidence
+          cp -a r40-qa-dist/. android/app/src/main/assets/public/
+          chmod +x android/gradlew
+          node scripts/android-build.mjs assembleDebug
+      - name: Obtain matching actual web reference
+        run: |
+          set -euo pipefail
+          npm install --no-save --package-lock=false --no-audit --no-fund playwright@1.51.1
+          npx playwright install --with-deps chromium
+          python -m http.server 4180 --bind 127.0.0.1 --directory r40-qa-dist >/tmp/r40-qa-http.log 2>&1 &
+          trap 'kill $! 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4180/ >/dev/null && break; sleep 1; done
+          node tools/qa/r40/web.mjs
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Actual Android WebView process-death and offline replay
+        uses: ReactiveCircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          script: bash tools/qa/r40/android.sh
+      - name: Hash evidence
+        if: always()
+        run: |
+          mkdir -p r40-evidence
+          cd r40-evidence
+          find . -type f ! -name MANIFEST.sha256 -print0 | sort -z | xargs -0 -r sha256sum > MANIFEST.sha256
+          cat MANIFEST.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r40-android-emulator-replay-evidence
+          path: r40-evidence
+          if-no-files-found: warn
+          retention-days: 30

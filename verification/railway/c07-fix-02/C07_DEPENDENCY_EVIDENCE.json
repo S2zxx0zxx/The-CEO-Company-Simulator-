@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "task": "C07-FIX-02",
+  "originalTask": "R17",
+  "masterRequirements": [
+    "MR-006",
+    "MR-044"
+  ],
+  "coordinatorCheckpoint": "5469a69e74df0553c460d820ea1bc234c0a7f146",
+  "realPbfProcessed": false,
+  "realRouteComparisonsCompleted": 0,
+  "releaseAllowed": false,
+  "actualC08MobileAcceptanceClaimed": false,
+  "bundledVerificationArtifacts": {
+    "c06StrictOracleJar": {
+      "path": "c06_oracle/java/c06-strict-oracle.jar",
+      "sha256": "34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb",
+      "bundledInZip": true
+    },
+    "c06GraphV1RawBytes": {
+      "path": "fixtures/c06_oracle/c06_graph_v1.json",
+      "sha256": "1d07584af9a44bed2e666ffeabe8528f98acbc993def709ed4881fa07da9f4ec",
+      "bundledInZip": true
+    },
+    "c07GraphV1RawBytes": {
+      "path": "fixtures/c07_calibration/c07_graph_v1.json",
+      "sha256": "98671f7233d814c7bb971103463b05026f1661c92c44c8d2b54ca265dace262f",
+      "bundledInZip": true
+    },
+    "c06SyntheticPbf": {
+      "path": "fixtures/c06_oracle/c06_synthetic_network.osm.pbf",
+      "sha256": "07d1ca96b1609c5e150f638b462a68f4dc40a70e5fa273ef90442fbb30c48dcd",
+      "bundledInZip": true
+    },
+    "c07SyntheticPbf": {
+      "path": "fixtures/c07_calibration/c07_synthetic_corridor.osm.pbf",
+      "sha256": "210888924fa983d5fafcfea40519bb37d91bac3d4299c8160ec0b84572d78c00",
+      "bundledInZip": true
+    },
+    "inheritedFixturesAndAssetsRestored": [
+      "tests/*",
+      "assets/fonts/*",
+      "assets/sprites/*",
+      "assets/licenses/*",
+      "fixtures/c02_synthetic_smoke.osm",
+      "fixtures/c03_synthetic_scale_pack.json",
+      "fixtures/c04_synthetic_basemap.osm",
+      "fixtures/c04_synthetic_basemap.osm.pbf",
+      "fixtures/c04_synthetic_basemap.pmtiles",
+      "fixtures/c04_synthetic_graph_bundle.json",
+      "fixtures/c04_tile_build_manifest.json",
+      "c04_tile_pipeline/railway_basemap_schema.yml",
+      "C04_ASSET_LICENSE_MANIFEST.json"
+    ]
+  },
+  "externalPrerequisitesNotBundledInZip": {
+    "javaRuntime": {
+      "name": "Java JDK",
+      "version": "21.0.8",
+      "requiredFor": [
+        "test_c07_calibration.mjs",
+        "test_c06_strict_oracle.mjs",
+        "mvn test"
+      ]
+    },
+    "mavenDistribution": {
+      "name": "Apache Maven",
+      "version": "3.9.9",
+      "archiveSha256": "4ec3f26fb1a692473aea0235c300bd20f0f9fe741947c82c1234cefd76ac3a3c",
+      "offlineRepo": "${USERPROFILE}/.m2/repository",
+      "dependencyListFile": "c04_c06_tools/openrailrouting_maven_dependencies.txt",
+      "dependencyListSha256": "091ded608cae513dd1357a121eb2851903275cdfcf420b16628b2286be7a47a8"
+    },
+    "openRailRoutingThinJar": {
+      "path": "c04_c06_tools/openrailrouting/target/railway_routing-1.2-thin.jar",
+      "sha256": "1caebe94d5678cbff85d83f09c099e5f585d61c10234ff7f4114c1422f2de400",
+      "upstreamPin": "https://github.com/geofabrik/OpenRailRouting @ e5112194fde4cc8ec36e2b0093e250df89ef4845",
+      "buildCommand": "mvn -f c04_c06_tools/openrailrouting/pom.xml -o package"
+    },
+    "javaRuntimeClasspath": {
+      "path": "c04_c06_tools/openrailrouting/target/runtime-classpath.txt",
+      "sha256": "9adb31046779351bc26005039cc53f864e9c5a0ead71e48ec5676b83d2be3a75",
+      "buildCommand": "mvn -f c04_c06_tools/openrailrouting/pom.xml -o dependency:build-classpath -Dmdep.outputFile=target/runtime-classpath.txt"
+    },
+    "planetiler": {
+      "version": "v0.10.2",
+      "jarSha256": "f310bd0413e2e4512b27f4046d418664e8e1d3bf31603c2a70e23de06c167e4d"
+    },
+    "osmiumTool": {
+      "version": "1.19.0",
+      "libosmiumVersion": "2.23.1",
+      "executableSha256": "6fb24c9f0859592d613c06628e19f00b7d081818d13183c25ef5274fcc77083b",
+      "requiredFor": [
+        "test_c02_pipeline_synthetic.py",
+        "c06_fixture_builder.py",
+        "c07_fixture_builder.py"
+      ]
+    },
+    "nodeRuntime": {
+      "version": "v24.10.0",
+      "executionFlag": "--experimental-transform-types",
+      "typescriptCompilerLocal": {
+        "installed": false,
+        "repoPackageJsonVersionSpec": "^5.8.3",
+        "note": "Standalone verification workspace runs .ts directly on Node v24.10.0 --experimental-transform-types; tsc binary and node_modules are not installed in this standalone directory."
+      }
+    },
+    "npmRendererAndBrowserPackages": [
+      {
+        "name": "maplibre-gl",
+        "version": "6.18.0",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "pmtiles",
+        "version": "4.5.0",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "fflate",
+        "version": "0.8.3",
+        "license": "MIT"
+      },
+      {
+        "name": "@fontsource/inter",
+        "version": "5.1.1",
+        "license": "OFL-1.1"
+      },
+      {
+        "name": "playwright",
+        "version": "1.51.1",
+        "license": "Apache-2.0"
+      }
+    ]
+  },
+  "standaloneCleanExtractionRunnableSuites": [
+    "test_c03_topology_and_stations.py (6/6)",
+    "test_c02_prefilter_synthetic.py (36/36)",
+    "test_c03_runtime_ts.mjs (5/5)",
+    "_run_upstream_cases.mjs (321/321)",
+    "verify_downstream_graphpack.mjs (1/1)",
+    "test_c05_packages_install_and_portals.mjs (10/12 executed standalone; c05_05 and c05_10 skipped without c04_renderer_pkg/node_modules)",
+    "c07_dataset_generator.mjs (137/137 dataset contract & raw fixture provenance validation)"
+  ],
+  "npmRendererDependentSuitesRequiringNodeModules": [
+    "test_c04_contracts_and_tiles.mjs (requires c04_renderer_pkg/node_modules/pmtiles)",
+    "test_c05_packages_install_and_portals.mjs c05_05 and c05_10 (require c04_renderer_pkg/node_modules/pmtiles)"
+  ],
+  "liveJavaDependentSuitesRequiringExternalJars": [
+    "test_c07_calibration.mjs",
+    "test_c06_strict_oracle.mjs",
+    "mvn -f c04_c06_tools/openrailrouting/pom.xml -o test"
+  ]
+}

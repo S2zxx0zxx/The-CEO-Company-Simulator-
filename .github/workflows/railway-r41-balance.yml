@@ -1,0 +1,43 @@
+name: R41 seeded economy balance research
+on:
+  pull_request:
+    paths:
+      - 'tools/balance/**'
+      - 'tests/railway-r41.test.ts'
+      - 'tests/fixtures/railway-r39.ts'
+      - 'src/rail/**'
+      - '.github/workflows/railway-r41-balance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  balance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --no-audit --no-fund
+      - name: Run all seeded profiles using actual production domain functions
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p r41-evidence
+          { git rev-parse HEAD; node --version; npm --version; uname -a; lscpu; free -m; } >r41-evidence/environment.txt
+          R41_BALANCE_EVIDENCE=r41-evidence npx vitest run tests/railway-r41.test.ts 2>&1 | tee r41-evidence/run.log
+      - name: Hash evidence
+        if: always()
+        run: |
+          mkdir -p r41-evidence
+          cd r41-evidence
+          find . -type f ! -name MANIFEST.sha256 -print0 | sort -z | xargs -0 -r sha256sum > MANIFEST.sha256
+          cat MANIFEST.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r41-seeded-balance-evidence
+          path: r41-evidence
+          if-no-files-found: warn
+          retention-days: 30

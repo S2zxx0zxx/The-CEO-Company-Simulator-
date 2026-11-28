@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "task": "C05-FIX-02",
+  "syntheticOnly": true,
+  "realPbfProcessed": false,
+  "environment": {
+    "nodeVersion": "v24.10.0",
+    "pythonVersion": "3.13.0",
+    "browser": "chromium-headless-swiftshader",
+    "osmiumVersion": "1.19.0",
+    "planetilerVersion": "v0.10.2"
+  },
+  "packageSizes": {
+    "in_east_c05_v1": {
+      "graphRawBytes": 6751,
+      "graphGzBytes": 964,
+      "pmtilesBytes": 55709
+    },
+    "in_east_c05_v2": {
+      "graphRawBytes": 10604,
+      "graphGzBytes": 1181,
+      "pmtilesBytes": 63368
+    },
+    "in_north_c05_v1": {
+      "graphRawBytes": 6999,
+      "graphGzBytes": 985,
+      "pmtilesBytes": 55572
+    }
+  },
+  "nodeSuiteTimingsMs": {
+    "c05_01_manifest_authority_signing_and_negative_security_gates": 41.98,
+    "c05_02_storage_preflight_quota_decompression_bomb_and_tamper_gates": 69.73,
+    "c05_03_crash_recovery_journal_cancellation_and_idempotency": 128.97,
+    "c05_04_atomic_upgrade_rollback_version_pinning_and_ref_gc": 55.50,
+    "c05_05_pmtiles_range_source_bounds_corruption_abort_and_offline_protocol": 98.21,
+    "c05_06_explicit_region_portals_and_cross_region_continuity": 73.44,
+    "c05_07_r33_r39_r40_gameplay_continuity_and_capacitor_android_adapter": 111.90,
+    "c05_08_fix01_a_mandatory_rollback_and_crash_safe_gc": 73.82,
+    "c05_09_fix01_b_durable_staged_activation_restart_and_concurrency": 75.29,
+    "c05_10_fix01_c_immutable_pmtiles_version_identity": 45.46,
+    "c05_11_fix01_d_same_size_corruption_fail_closed_bounded_reads": 40.44,
+    "c05_12_fix02_gc_delete_failure_and_durable_recovery": 144.91
+  },
+  "chromiumBrowserMetrics": {
+    "storageNamespace": "railway-ceo-regions-v1",
+    "hasSaveDbOverlap": false,
+    "binaryStoreMode": "opfs",
+    "quotaStatus": "KNOWN",
+    "physicalDeviceVerified": false,
+    "installA1Ms": 260.3,
+    "stageA2Ms": 228.9,
+    "reloadRecoveryMs": 64.3,
+    "rollbackTab2Ms": 234.1,
+    "lockTab1HeldMs": 167.0,
+    "v1ArchiveId": "in-east-c05--v1.0.0-p1-3e56d0d7a8a6",
+    "v2ArchiveId": "in-east-c05--v2.0.0-p2-707396c43a64",
+    "rangeReadTelemetryA1": {
+      "rangeReadCount": 5,
+      "totalBytesRead": 18173,
+      "expectedByteLength": 55709,
+      "blockSizeBytes": 16384,
+      "blockCount": 4,
+      "verifiedBlocksRead": 5,
+      "maxSingleReadBytes": 16384,
+      "fullArchiveLoadedInMemory": false
+    },
+    "crossRegionPortalDistanceM": 109945,
+    "multiTabBroadcastEventsObserved": 2
+  },
+  "retainedUpstreamPerformanceMisses": {
+    "note": "Inherited C03/C04 misses preserved unmodified; not waived by C05-FIX-02.",
+    "reportedWindowsRouteP95Ms": 585.27,
+    "routeP95TargetMs": 300,
+    "reportedSoftwareWebGLFpsPure": 22.7,
+    "reportedSoftwareWebGLFpsCoupled": 24.5,
+    "fpsTarget": 30
+  }
+}

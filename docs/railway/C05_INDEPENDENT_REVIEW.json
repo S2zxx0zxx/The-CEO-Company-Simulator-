@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "task": "C05/R19 MR-008 independent review",
+  "basis": "278d7523ae496de17084023bd721fd328ea17f53",
+  "date": "2026-11-28",
+  "zip": {
+    "name": "RAILWAY_CEO_C05_REGION_INSTALLATION_VERIFICATION.zip",
+    "sha256": "e1654cf74e1eb77b2f55537d4a7804930e2d588274863cac4eeff49516936f8c",
+    "bytes": 612318,
+    "files": 106,
+    "manifest": "105/105",
+    "crc": "PASS",
+    "crossBundleCommon": 63,
+    "crossBundleIdentical": 59
+  },
+  "source": {
+    "snapshot": "verification/railway/c05-region-install/",
+    "sourceBlobMatches": "19/19",
+    "manifestBlob": "540f9b46eb1b8b14133cad164f587b555262963a",
+    "entries": 20,
+    "rootRuntimeAdoption": "NOT_STARTED"
+  },
+  "independent": {
+    "runtime": "Linux Python 3.13.5 Node 22.16.0",
+    "V3": 36,
+    "C02": 8,
+    "C03Python": 6,
+    "C03TS": 5,
+    "upstream": 321,
+    "C05Subset": 6,
+    "suppliedPassed": 382,
+    "suppliedFailed": 0,
+    "additionalPassed": 1,
+    "additionalFailed": 4,
+    "scope": "C05 cases 01,02,03,04,06,07 run after removing unused npm imports; optional offline clock subsection not run; C02 recovered exact verify_downstream_graphpack.mjs from FIX-01 blob e24e58458a608fb69d0b49e1527b91dfa34e57c6. Live Osmium, actual C05 PMTiles protocol/MVT case05, C04 full suites, browser and native Android not independently run. Capacitor fake bridge only.",
+    "crossRegionDistanceM": 109945,
+    "fabricatedEdges": 0
+  },
+  "findings": [
+    {
+      "id": "C05-FIX-01-A",
+      "actual": "removeUnusedVersion deletes previous unpinned version; rollback returns NO_ROLLBACK_VERSION",
+      "required": "Protect mandatory rollback version; crash-safe GC and safe explicit retention policies."
+    },
+    {
+      "id": "C05-FIX-01-B",
+      "actual": "activateImmediately:false returns READY_FOR_ACTIVATION; activateRetainedVersion returns VERSION_NOT_FOUND",
+      "required": "Complete durable install-only lifecycle and explicit activation with restart-safe semantics."
+    },
+    {
+      "id": "C05-FIX-01-C",
+      "actual": "Different V1/V2 tiles SHA but both PMTiles source keys in-east-c05",
+      "required": "Version/content-bound archive identity through package/registry/renderer/protocol/cache; prevent collision and mutable mapping."
+    },
+    {
+      "id": "C05-FIX-01-D",
+      "actual": "Same-size byte flip causes verifyIntegrity failure, then getBytes(128,16) still succeeds",
+      "required": "Fail closed after corruption, validate backing identity and bound reads; avoid full RAM validation where practical, document guarantees."
+    }
+  ],
+  "postCommitCrashRecovery": "PASS: COMPLETED_INTERRUPTED_ACTIVATION",
+  "additionalReviewRequirements": [
+    "Exercise repeated installs and same-version/different-content rejection, non-injected promotion/GC write failures, concurrent/restart recovery; no claims of extra reproduced defects.",
+    "Restore standalone C02 verifier and report clock subsection honestly; reconcile browser and report totals; include pinned external dependency instructions and license evidence."
+  ],
+  "reportedTotal": 397,
+  "listedSuiteSum": 391,
+  "reportedBrowser": "PASS reported, not independently rerun",
+  "performance": {
+    "reportedLatestWindowsRouteP95Ms": 485.06,
+    "targetRouteP95Ms": 300,
+    "reportedLatestPureFps": 24.5,
+    "reportedLatestCoupledFps": 25.4,
+    "targetFps": 30,
+    "actualMobileAcceptance": false
+  },
+  "privateBackup": {
+    "originalZip": "saved in owner recovery folder",
+    "evidenceZip": "RAILWAY_CEO_C05_INDEPENDENT_EVIDENCE.zip",
+    "evidenceBytes": 22156,
+    "evidenceSha256": "8c87e8a87147cfdc235fd2462491beca1a99a7d638847c08130d99af807804e7",
+    "evidenceFiles": 11
+  },
+  "status": "SOURCE_PRESERVED__C05_BOUNDED_FIX_REQUIRED__C06_HOLD",
+  "realPbfProcessed": false,
+  "releaseAllowed": false
+}

@@ -1,0 +1,48 @@
+name: R44 railway finance UI acceptance
+on:
+  pull_request:
+    paths:
+      - 'src/rail/**'
+      - 'src/ui/railway/**'
+      - 'tools/qa/r44/**'
+      - 'tests/fixtures/railway-r39.ts'
+      - '.github/workflows/railway-r44-ui.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --no-audit --no-fund
+      - run: npm exec vite -- build --config tools/qa/r44/vite.config.ts
+      - run: npm install --no-save --package-lock=false --no-audit --no-fund playwright@1.51.1
+      - run: npx playwright install --with-deps chromium
+      - name: Actual responsive finance UI flow
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p r44-evidence
+          python -m http.server 4184 --bind 127.0.0.1 --directory r44-qa-dist >/tmp/r44-http.log 2>&1 &
+          trap 'kill $! 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4184/ >/dev/null && break; sleep 1; done
+          node tools/qa/r44/browser.mjs 2>&1 | tee r44-evidence/run.log
+      - name: Hash evidence
+        if: always()
+        run: |
+          mkdir -p r44-evidence
+          cd r44-evidence
+          find . -type f ! -name MANIFEST.sha256 -print0 | sort -z | xargs -0 -r sha256sum > MANIFEST.sha256
+          cat MANIFEST.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r44-finance-ui-evidence
+          path: r44-evidence
+          if-no-files-found: warn
+          retention-days: 30

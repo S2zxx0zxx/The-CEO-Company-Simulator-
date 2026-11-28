@@ -1,0 +1,58 @@
+[
+  {
+    "path": "public/icon.svg",
+    "gitBlob": "f802bb85d1a46a7813bd74d33ed39d4b44e5e669",
+    "disposition": "LEGACY_ORIGINAL_RETAINED",
+    "rightsEvidence": "docs/third-party/ASSET_PROVENANCE.md",
+    "sourceRevision": "fefd995fd189506502ae59230b9ee9c408faa544",
+    "releaseClearance": "PENDING_OWNER"
+  },
+  {
+    "path": "public/office.svg",
+    "gitBlob": "3fa95de2c098e1cee2a66e2f7403291eb4b179f7",
+    "disposition": "LEGACY_ORIGINAL_RETAINED",
+    "rightsEvidence": "docs/third-party/ASSET_PROVENANCE.md",
+    "sourceRevision": "fefd995fd189506502ae59230b9ee9c408faa544",
+    "releaseClearance": "PENDING_OWNER"
+  },
+  {
+    "path": "public/offices/stage-1.svg",
+    "gitBlob": "392c79e426cd336950650c8f49aa7bd9ef1df85b",
+    "disposition": "LEGACY_ORIGINAL_RETAINED",
+    "rightsEvidence": "docs/third-party/ASSET_PROVENANCE.md",
+    "sourceRevision": "fefd995fd189506502ae59230b9ee9c408faa544",
+    "releaseClearance": "PENDING_OWNER"
+  },
+  {
+    "path": "public/offices/stage-2.svg",
+    "gitBlob": "032e30174f21132f10bdac5df46cedb42076fb79",
+    "disposition": "LEGACY_ORIGINAL_RETAINED",
+    "rightsEvidence": "docs/third-party/ASSET_PROVENANCE.md",
+    "sourceRevision": "fefd995fd189506502ae59230b9ee9c408faa544",
+    "releaseClearance": "PENDING_OWNER"
+  },
+  {
+    "path": "public/offices/stage-3.svg",
+    "gitBlob": "d11a7af9e0e15b83781e841493b194f9a0c73e18",
+    "disposition": "LEGACY_ORIGINAL_RETAINED",
+    "rightsEvidence": "docs/third-party/ASSET_PROVENANCE.md",
+    "sourceRevision": "fefd995fd189506502ae59230b9ee9c408faa544",
+    "releaseClearance": "PENDING_OWNER"
+  },
+  {
+    "path": "public/offices/stage-4.svg",
+    "gitBlob": "848e20433f391f401825bceb97aa2e9811b7495e",
+    "disposition": "LEGACY_ORIGINAL_RETAINED",
+    "rightsEvidence": "docs/third-party/ASSET_PROVENANCE.md",
+    "sourceRevision": "fefd995fd189506502ae59230b9ee9c408faa544",
+    "releaseClearance": "PENDING_OWNER"
+  },
+  {
+    "path": "public/offices/stage-5.svg",
+    "gitBlob": "18d52db865f91538e810f5b92f40d64ce23a0846",
+    "disposition": "LEGACY_ORIGINAL_RETAINED",
+    "rightsEvidence": "docs/third-party/ASSET_PROVENANCE.md",
+    "sourceRevision": "fefd995fd189506502ae59230b9ee9c408faa544",
+    "releaseClearance": "PENDING_OWNER"
+  }
+]

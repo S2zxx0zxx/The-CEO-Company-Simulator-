@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "task": "C05 FIX-02 independent final review",
+  "basis": "6810619bfc5d920e974dd6fc82cdf8c9bd68c7cc",
+  "sourceCommit": "a1fb473d565f5046438879eb8aace2c193e9c863",
+  "date": "2026-11-28",
+  "archive": {
+    "name": "RAILWAY_CEO_C05_FIX_02_VERIFICATION.zip",
+    "bytes": 631735,
+    "sha256": "e7a6a65c64707bb641142261f45bbfbf1194afb5ca11a0452512ecf9eb1d40bb",
+    "files": 109,
+    "manifest": "108/108",
+    "crc": "PASS",
+    "safePaths": true
+  },
+  "source": {
+    "snapshot": "verification/railway/c05-fix-02/",
+    "actualRecomputedBlobMatches": "21/21",
+    "remoteManifestBlob": "9bf634d8670aa9698727c660e8280e5382088e53",
+    "rootRuntimeAdoption": "NOT_STARTED"
+  },
+  "independent": {
+    "V3": 36,
+    "C02": 8,
+    "C03Python": 6,
+    "C03TS": 5,
+    "upstream": 321,
+    "C05": 10,
+    "totalPassed": 386,
+    "failedInExecutedScope": 0,
+    "limitations": [
+      "C02 full command exit 1: pinned Osmium unavailable; explicit eight-case subset passed",
+      "C05 case05 and case10 skipped missing renderer dependencies",
+      "C05 case07 optional offline-clock subsection skipped absent upstream checkout",
+      "C04 full suites, Chromium, native Android not rerun"
+    ],
+    "gcRegression": {
+      "oneShotFailureRecovered": true,
+      "persistentFailureRetainedAcrossRestarts": true,
+      "interruptedRecoveryCompleted": true,
+      "absentVsNoOpDistinguished": true
+    }
+  },
+  "reportedFullTotal": 396,
+  "performance": {
+    "replyWindowsP95Ms": 478.1,
+    "archiveBenchmarkWindowsP95Ms": 585.27,
+    "independentLinuxP95Ms": 234.23,
+    "reportedSoftwareFps": [
+      22.7,
+      24.5
+    ],
+    "targetP95Ms": 300,
+    "targetFps": 30,
+    "actualMobileAcceptance": false
+  },
+  "privateBackup": {
+    "originalZipSaved": true,
+    "evidenceZip": "RAILWAY_CEO_C05_FIX_02_INDEPENDENT_EVIDENCE.zip",
+    "evidenceBytes": 9900,
+    "evidenceSha256": "d5cdf8c31477350f4f6f2693cd705d28d61d91592057ce3d19f2c39c5d7355f9",
+    "evidenceEntries": 16
+  },
+  "status": "C05_SYNTHETIC_PREPARATION_ACCEPTED_IN_VERIFIED_SCOPE__C06_SYNTHETIC_PREPARATION_ELIGIBLE_ON_OWNER_START",
+  "realPbfProcessed": false,
+  "releaseAllowed": false
+}

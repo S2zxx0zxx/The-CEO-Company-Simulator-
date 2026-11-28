@@ -1,0 +1,1013 @@
+{
+  "schema": 1,
+  "task": "R05",
+  "baseline": "cac9b84a34602ecef977ded0a6ad7579982a870a",
+  "scope": "Planning/module and CI baseline mapping; no product code changes; full source files fetched; focused semantic review, not exhaustive proof of every method",
+  "modules": [
+    {
+      "path": "src/engine/banking.ts",
+      "blob": "3fb27893e5a43edf2abb00a1821c83ab261fe6d4",
+      "decision": "ADAPT",
+      "tasks": [
+        "R28",
+        "R29"
+      ],
+      "reuse": "Equal-principal integer amortization and repayment allocation",
+      "limits": "Minute clock, scenario terms, loan schema; stable tie-break by ID; reconcile liabilities",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/contracts.ts",
+      "blob": "30c03b80c7bcdd8e97fd23fa399a822c4d037775",
+      "decision": "REPLACE_DOMAIN",
+      "tasks": [
+        "R10",
+        "R22",
+        "R34",
+        "R35"
+      ],
+      "reuse": "Reservation lifecycle and locked price/one delivery pattern",
+      "limits": "Biscuit lots, expiry, buyer region and sales assumptions not railway truth",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/costing.ts",
+      "blob": "d3fd7ed3c3099bce33d938cce5d6dd259faa9814",
+      "decision": "ADAPT",
+      "tasks": [
+        "R23",
+        "R24",
+        "R29"
+      ],
+      "reuse": "Pooled integer carrying value and remainder conservation",
+      "limits": "Separate units/energy lots; strict nonnegative input and stable lot order; locked prices",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/elapsed.ts",
+      "blob": "a9934543688613f35d34ff72315f7961569fe1ec",
+      "decision": "ADAPT",
+      "tasks": [
+        "R32",
+        "R40"
+      ],
+      "reuse": "Capped elapsed time and rollback detection",
+      "limits": "Minutes to integer seconds; preserve MIT notice; check safe multiplication and fractional elapsed",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/executive.ts",
+      "blob": "210723e15850fd4fda60540b0c0c74e1d32636a6",
+      "decision": "REPLACE_DOMAIN",
+      "tasks": [
+        "R31",
+        "R44"
+      ],
+      "reuse": "Derived risk and wage runway selectors",
+      "limits": "Manufacturing sanitation/quality/throughput; replace with rail service/solvency",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/finance.ts",
+      "blob": "eb2a6ca037ac77d01efc085817581e6b18b04db5",
+      "decision": "ADAPT_WITH_FIX",
+      "tasks": [
+        "R26",
+        "R29",
+        "R30"
+      ],
+      "reuse": "Noncash depreciation and positive-period fictional tax",
+      "limits": "Tax cutoff and nonaligned financeStart, same-boundary events and asset disposal; no real statutory tax",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/game.ts",
+      "blob": "7141a6a2279954f103dd4ce5cb843efeee0e4ec7",
+      "decision": "REPLACE_DOMAIN",
+      "tasks": [
+        "R06",
+        "R21",
+        "R29",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R39"
+      ],
+      "reuse": "Clone-before-command, seeded LCG, ID allocator, invariant checks and deterministic scheduling concepts",
+      "limits": "Monolithic manufacturing Game/Command state; replace entrypoint ownership at conversion; liquidation/event order; no parallel authoritative engines",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/governance.ts",
+      "blob": "9d2e1b9ec64f4363c9261cd76c361e5102594dd2",
+      "decision": "ADAPT",
+      "tasks": [
+        "R30",
+        "R31"
+      ],
+      "reuse": "Immutable company ID, decision history and crisis deadlines",
+      "limits": "Fixed ownerShareBps=10000 incompatible with fictional IPO/dilution; rail-specific thresholds",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/ledger.ts",
+      "blob": "af90ad6b973762ef1fa0d7443a084a1f0734106c",
+      "decision": "ADAPT",
+      "tasks": [
+        "R06",
+        "R29",
+        "R30"
+      ],
+      "reuse": "BigInt paise and balanced debit/credit, unique entry IDs",
+      "limits": "Account enum manufacturing; seconds, bounded amount, event/command payload IDs, replay semantics, checkpoint balances",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/managers.ts",
+      "blob": "d4033add358b0b97b73555c44a58ad360aca72ef",
+      "decision": "REPLACE_DOMAIN",
+      "tasks": [
+        "R31",
+        "R34",
+        "R45"
+      ],
+      "reuse": "Shared budget, authority, approval and stop policy",
+      "limits": "Factory purchase/produce/sell/repair commands and limits replaced by rail validated commands; delegation only approved scope",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/market.ts",
+      "blob": "78099113f7d8b9da3936cb1ac9ca530a4d17e936",
+      "decision": "ADAPT",
+      "tasks": [
+        "R21",
+        "R24",
+        "R27",
+        "R30",
+        "R41"
+      ],
+      "reuse": "Stable logit integer allocation and seeded bounded economic conditions",
+      "limits": "Biscuit price/quality, rival brands and export region; shared OD across segments; bounded fixed-point/seeded model and outside option",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/offline.ts",
+      "blob": "2a056f126a188042e31d90f351118b850807e071",
+      "decision": "ADAPT",
+      "tasks": [
+        "R32",
+        "R39",
+        "R40"
+      ],
+      "reuse": "Clone, bounded catchup, report, yielding",
+      "limits": "Factory metrics, minute units, cancel/backlog and replay parity; one clock",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/operations.ts",
+      "blob": "c3b6e3521d42863a7f62356c82feb3449cfa3df8",
+      "decision": "REPLACE_DOMAIN",
+      "tasks": [
+        "R23",
+        "R26",
+        "R36"
+      ],
+      "reuse": "Record status and service lifecycle shape",
+      "limits": "Material purchase, machine upgrades, water/power flags not railway operations",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/ordering.ts",
+      "blob": "8f3b0d6d7e46bf9c704f656680f3473217fe5041",
+      "decision": "REFERENCE_ONLY",
+      "tasks": [
+        "R24"
+      ],
+      "reuse": "EOQ relation available as nonbinding analytical reference",
+      "limits": "No demand assumption from food supply; do not add optional runtime scope",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/planning.ts",
+      "blob": "15353b7cfcf146165d502fa029b25c9ed4cb5c58",
+      "decision": "REPLACE_DOMAIN",
+      "tasks": [
+        "R21",
+        "R23",
+        "R34"
+      ],
+      "reuse": "Reservation/free quantity invariant",
+      "limits": "Recipe and lot expiry not rail demand/energy/track slots; atomic multi-resource reservation",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/reports.ts",
+      "blob": "0623901317ac224729e1c343d4d046322d6f810e",
+      "decision": "ADAPT",
+      "tasks": [
+        "R29",
+        "R30",
+        "R44"
+      ],
+      "reuse": "Balance-sheet and cash flow reconciliation, income/aging",
+      "limits": "Factory accounts and cashflow heuristic; explicit categories, disjoint periods and rail statements",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/rescue.ts",
+      "blob": "33f4c09f425f93ec594c46e3aa56707ac0410cc3",
+      "decision": "ADAPT_WITH_FIX",
+      "tasks": [
+        "R31",
+        "R32",
+        "R35"
+      ],
+      "reuse": "State transition and one-time milestone concepts",
+      "limits": "Biscuit sold thresholds, difficulty and liquidation order; freeze/release/settle under explicit rail rules",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/engine/traceability.ts",
+      "blob": "a6d7bde7f6f8f29a75b2e244f741d10adee0b6a1",
+      "decision": "REPLACE_DOMAIN",
+      "tasks": [
+        "R22",
+        "R29",
+        "R35"
+      ],
+      "reuse": "Unique genealogy and conservation pattern",
+      "limits": "Food lots, spoilage and packaging replaced by unique cargo/passenger trip settlement",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/content/scenario.ts",
+      "blob": "741c30356ed25b6d00710a827cd11e1f3aaa328c",
+      "decision": "REPLACE_DOMAIN",
+      "tasks": [
+        "R06",
+        "R12",
+        "R21",
+        "R31",
+        "R41"
+      ],
+      "reuse": "Central versioned config concept",
+      "limits": "No factory material, export market, prices, difficulty or opening balance silently ported",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/persistence/codec.ts",
+      "blob": "7ecf83eb41818a4bd1d316daa02082c27951c307",
+      "decision": "ADAPT_WITH_FIX",
+      "tasks": [
+        "R06",
+        "R39",
+        "R40"
+      ],
+      "reuse": "Runtime decode, validate and explicit migration",
+      "limits": "Legacy schema 1 and 50000 journal cap; no silent history truncation; archive/checkpoint reconciliation",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/persistence/integrity.ts",
+      "blob": "1633a39ec890abb38c9341b31aac4f4ab3e4e90c",
+      "decision": "ADAPT",
+      "tasks": [
+        "R39",
+        "R47"
+      ],
+      "reuse": "Bounded envelope and CRC corruption detection",
+      "limits": "New rail format/version; CRC not authentication; signed region manifest separate",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/persistence/receipts.ts",
+      "blob": "2e6b52898e2da611463aabea072adb762590c700",
+      "decision": "ADAPT_WITH_FIX",
+      "tasks": [
+        "R29",
+        "R34",
+        "R35",
+        "R39"
+      ],
+      "reuse": "Canonical payload and same-ID conflict detection",
+      "limits": "512-receipt eviction alone insufficient for durable settlement; exact prior result vs latest snapshot; retain durable event IDs/checkpoints",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/persistence/save.ts",
+      "blob": "92d30ed9f5efe0c46b0b9cd101610e0fd63c4286",
+      "decision": "ADAPT_WITH_FIX",
+      "tasks": [
+        "R39",
+        "R40",
+        "R47"
+      ],
+      "reuse": "Dexie CAS, transaction, backups, archive and export",
+      "limits": "Separate DB namespace, identity and version; worker outside transaction, commit atomically; limits, concurrent retries and backup semantics",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/platform/native.ts",
+      "blob": "ab9c42b3027bc231063ef67ee85b446b85ce6428",
+      "decision": "ADAPT",
+      "tasks": [
+        "R47",
+        "R49"
+      ],
+      "reuse": "Capacitor lifecycle/back/export adapter",
+      "limits": "New filenames/privacy; physical device, permission and low-storage proof",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/platform/pwa.ts",
+      "blob": "1da5ad8ef844c66b52f6b3b422336c1dd4b41c57",
+      "decision": "ADAPT",
+      "tasks": [
+        "R19",
+        "R47",
+        "R49"
+      ],
+      "reuse": "Explicit update acceptance and safe reload",
+      "limits": "Separate cache prefix and scope, pack range reads; save-independent rollback and bounded cache retention",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/worker/bridge.ts",
+      "blob": "82d6e7cea77eeb335ad0caba35b9c1a197a87d39",
+      "decision": "ADAPT",
+      "tasks": [
+        "R09",
+        "R32",
+        "R40"
+      ],
+      "reuse": "One worker bridge, timeout and safe fallback",
+      "limits": "Typed versioned requests, correlation/cancellation/stale results, bounded work; no second clock",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/worker/protocol.ts",
+      "blob": "126c77f393b5cea4b6ff8a61cd5867955b7eea62",
+      "decision": "ADAPT",
+      "tasks": [
+        "R09",
+        "R32",
+        "R40"
+      ],
+      "reuse": "Discriminated request/reply shape",
+      "limits": "Rail commands, schema/version and request correlation; validated boundaries",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/worker/simulation.worker.ts",
+      "blob": "d29dc7fe57b5a3fedb30b981ab4dae56db4564d4",
+      "decision": "ADAPT",
+      "tasks": [
+        "R32",
+        "R40"
+      ],
+      "reuse": "Single worker delegates to same core",
+      "limits": "Use shared deterministic rail core, no divergent simulation or unbounded loop",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/ui/App.tsx",
+      "blob": "55f0916107a519d21a49906d187a5f86797c3d2c",
+      "decision": "REPLACE_UI_AT_APPROVAL",
+      "tasks": [
+        "R42",
+        "R43",
+        "R44",
+        "R45",
+        "R47"
+      ],
+      "reuse": "Command-driven UI, busy/error state, dialog, lifecycle and accessibility patterns",
+      "limits": "Office screen, 12 departments, manufacturing selectors, minute tick; preserve existing screen until approved conversion",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/ui/game.css",
+      "blob": "338f184ebdd0786a35efb51036399945cb4ee95a",
+      "decision": "REPLACE_UI_AT_APPROVAL",
+      "tasks": [
+        "R42",
+        "R43",
+        "R44",
+        "R46",
+        "R49"
+      ],
+      "reuse": "Safe areas, focus, reduced motion, responsive controls",
+      "limits": "Landscape office and gradients not approved railway portrait theme",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/ui/financial-export.ts",
+      "blob": "4ca127a97590145e01327b1101983bb36b7a5b8b",
+      "decision": "ADAPT",
+      "tasks": [
+        "R29",
+        "R44",
+        "R47"
+      ],
+      "reuse": "Decimal strings and native/web export",
+      "limits": "New rail report format, periods, source version; preserve privacy",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/ui/office-stages.ts",
+      "blob": "02bab73a62140ba00ba7c4f5ed488cff3c8dfb7e",
+      "decision": "REPLACE_UI_AT_APPROVAL",
+      "tasks": [
+        "R42",
+        "R46"
+      ],
+      "reuse": "Asset mapping/fallback pattern",
+      "limits": "No office or global headquarters stages in rail UI",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/main.tsx",
+      "blob": "c74c01d84d7924ebec22aee5ce27d356fa1befa5",
+      "decision": "KEEP_INFRA",
+      "tasks": [
+        "R42",
+        "R47"
+      ],
+      "reuse": "Single React root and PWA init",
+      "limits": "Switch root only at controlled UI conversion",
+      "railwayVerified": false
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "blob": "11f02fe2a0061d6e6e1f271b21da95423b448b32",
+      "decision": "KEEP_INFRA",
+      "tasks": [
+        "R06",
+        "R47"
+      ],
+      "reuse": "Existing Vite type declarations",
+      "limits": "No framework change",
+      "railwayVerified": false
+    }
+  ],
+  "qa": [
+    {
+      "path": "tests/g01-company.test.ts",
+      "blob": "998bd5d5ffb377ef002a93b4555728dee8a1f9d0",
+      "tasks": [
+        "R31",
+        "R39",
+        "R44"
+      ],
+      "focus": "Company identity, invalid commands, migration, risk",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g01-customer.test.ts",
+      "blob": "72637dfffd48be01ecc683a868fdfc1d4dd77c56",
+      "tasks": [
+        "R22",
+        "R29",
+        "R35"
+      ],
+      "focus": "Refunds, credit note, collection linkage",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g01-engineering.test.ts",
+      "blob": "1b56f191264c5fb16fabde5ecf2c325b9d3280e2",
+      "tasks": [
+        "R26",
+        "R36"
+      ],
+      "focus": "Capitalized upgrades, downtime and preventive service",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g01-hr.test.ts",
+      "blob": "50646275cf726b097478db6e07c50b2ab2f144d2",
+      "tasks": [
+        "R25",
+        "R31"
+      ],
+      "focus": "Overtime, fatigue, wage and save attributes",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g01-procurement.test.ts",
+      "blob": "ba820be4e21a4134c30c9f96192e80e37d9b79b4",
+      "tasks": [
+        "R23",
+        "R24",
+        "R28",
+        "R29"
+      ],
+      "focus": "Credit liabilities and cancellation, limits",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g02-elapsed.test.ts",
+      "blob": "762ed5a49425200001ff5ffb6fa0472f06571d65",
+      "tasks": [
+        "R32",
+        "R40"
+      ],
+      "focus": "Elapsed floor, cap and rollback",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g03-office.test.ts",
+      "blob": "003f0645d687e971377ff46de0a4f42b0028a0b4",
+      "tasks": [
+        "R42",
+        "R46"
+      ],
+      "focus": "Legacy asset mapping; preserve baseline only",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g04-banking.test.ts",
+      "blob": "d8727400b4e816050a22a7fa08c420c9d2a6ae69",
+      "tasks": [
+        "R28",
+        "R29"
+      ],
+      "focus": "Amortization and principal reconciliation",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g04-costing.test.ts",
+      "blob": "aba6373453919c18a8819a0db7dc83220b1b7559",
+      "tasks": [
+        "R23",
+        "R24",
+        "R29"
+      ],
+      "focus": "Integer cost conservation",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g04-finance.test.ts",
+      "blob": "f14380349ee8a853b740a3aec35572e4684e3e8d",
+      "tasks": [
+        "R26",
+        "R29",
+        "R30"
+      ],
+      "focus": "Interest/depreciation, tax boundaries, aging",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g04-receipts.test.ts",
+      "blob": "467fe08b52cc6e90f871387e3826aaf0deb37468",
+      "tasks": [
+        "R29",
+        "R35",
+        "R39",
+        "R44"
+      ],
+      "focus": "Canonical IDs and export",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g05-cost-time.test.ts",
+      "blob": "5aa2b272901d1610a96b46fc126e87b0e3d7b337",
+      "tasks": [
+        "R25",
+        "R26",
+        "R32"
+      ],
+      "focus": "Active vs paused time and boundary",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g05-operations.test.ts",
+      "blob": "245475993ce83729e74d5fbdc4e39d7e36c78891",
+      "tasks": [
+        "R26",
+        "R36"
+      ],
+      "focus": "Service/order records and interruption",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g05-planning.test.ts",
+      "blob": "483d46e1e068e2431db4f9acfe424d4fca403d0c",
+      "tasks": [
+        "R21",
+        "R23",
+        "R34",
+        "R36"
+      ],
+      "focus": "Atomic reservation and release",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g05-traceability.test.ts",
+      "blob": "e6f3f178a6c9e0358a3c84be55f2327ca2387609",
+      "tasks": [
+        "R22",
+        "R35"
+      ],
+      "focus": "Conservation and refund lineage",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g06-economy.test.ts",
+      "blob": "91f59372dbb6c6b16a9f30a78f8d3b66c426c4c5",
+      "tasks": [
+        "R21",
+        "R24",
+        "R27",
+        "R41"
+      ],
+      "focus": "Seeded prices, campaigns and shocks",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g06-market.test.ts",
+      "blob": "914855d1e873e9b2f1b7a142f8cbab43abfd0b1f",
+      "tasks": [
+        "R21",
+        "R27",
+        "R41"
+      ],
+      "focus": "Integer allocation, monotonic demand, replay",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g06-regions.test.ts",
+      "blob": "c615aef77507427993afb9c1863b797570d54491",
+      "tasks": [
+        "R19",
+        "R21",
+        "R31"
+      ],
+      "focus": "Eligibility, region linkage; not real geography",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g07-governance.test.ts",
+      "blob": "147e95a073765e34529b9f9f79eae814eb0cfd16",
+      "tasks": [
+        "R28",
+        "R30",
+        "R31"
+      ],
+      "focus": "Identity, decisions and deadlines",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g07-rescue.test.ts",
+      "blob": "99241e3210f6d425307f2839748a31b10f310d9c",
+      "tasks": [
+        "R31",
+        "R41"
+      ],
+      "focus": "Finite difficulty states, one-time assistance",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g07-restart.test.ts",
+      "blob": "707e999260ee5bf926b454337ee8ad0677377549",
+      "tasks": [
+        "R31",
+        "R35",
+        "R39"
+      ],
+      "focus": "Terminal freeze, archive and restart",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g08-clock.test.ts",
+      "blob": "24ac5c4066091106dcd835664cecb8ffb5c18ba8",
+      "tasks": [
+        "R32",
+        "R40"
+      ],
+      "focus": "Partition parity, cap, rollback",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g08-integrity.test.ts",
+      "blob": "273a85cc8c7b0a8b66d9f5a6e07fc12e6fabdfc2",
+      "tasks": [
+        "R06",
+        "R39"
+      ],
+      "focus": "CRC, corrupt schema and round trip",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g09-managers.test.ts",
+      "blob": "2700425a1489f5e878e47e6f5b3eb31a97bbaae6",
+      "tasks": [
+        "R31",
+        "R34",
+        "R45"
+      ],
+      "focus": "Authority, shared budget, stale approvals",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g12-conservation.test.ts",
+      "blob": "fd147543a5c277c92b9a992b51ef7e4a9ae4fd34",
+      "tasks": [
+        "R29",
+        "R34",
+        "R35",
+        "R50"
+      ],
+      "focus": "Full ledger conservation cycle",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g12-contracts.test.ts",
+      "blob": "9e95a8d3d7af2e23a6896628982b3ebcc9ab697e",
+      "tasks": [
+        "R10",
+        "R22",
+        "R34",
+        "R35"
+      ],
+      "focus": "Locked quote, reserve/cancel/once",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g12-labor.test.ts",
+      "blob": "3ae48eab3a9a698228e0033c39f7a1cc5dbf26ce",
+      "tasks": [
+        "R25",
+        "R29",
+        "R32"
+      ],
+      "focus": "Wages conservation and midnight",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g12-recovery-path.test.ts",
+      "blob": "0df15eb761f42ce0ebb668bc18416c05d9569043",
+      "tasks": [
+        "R31",
+        "R41"
+      ],
+      "focus": "Reachable legacy recovery; rail balance independent",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/g12-research.test.ts",
+      "blob": "c40faba1bff4138e4bdda9c06fa190998f9d5c54",
+      "tasks": [
+        "R31",
+        "R45"
+      ],
+      "focus": "Prerequisites, paused work and one-time cost",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/game.test.ts",
+      "blob": "b4cbe73cac3ff4558f3de66df73081f26fe6b88a",
+      "tasks": [
+        "R06",
+        "R29",
+        "R32",
+        "R40"
+      ],
+      "focus": "Opening reconciliation, pure failure, deterministic replay",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/management.test.ts",
+      "blob": "247173124685ff19c66820e8ca78b8e1b9358a05",
+      "tasks": [
+        "R25",
+        "R31",
+        "R40"
+      ],
+      "focus": "Budget, staff and fractional time",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/operations.test.ts",
+      "blob": "c3c4c34d24f23825a8593ebcf59e652bc24b21c7",
+      "tasks": [
+        "R25",
+        "R26",
+        "R36"
+      ],
+      "focus": "Daily reset and actual expense",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/ordering.test.ts",
+      "blob": "00edf1ef8fbe5f9f00353a16cde6f156a85a4fda",
+      "tasks": [
+        "R24"
+      ],
+      "focus": "Reference EOQ checks; no rail feature claim",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/reports-save.test.ts",
+      "blob": "401354db0625c475482d228085d6bdb0437d6785",
+      "tasks": [
+        "R29",
+        "R39",
+        "R44"
+      ],
+      "focus": "Balance sheet and corrupt save",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    },
+    {
+      "path": "tests/suppliers.test.ts",
+      "blob": "f94b1ad18170f7577fa30eebb8d9db4556aab4f3",
+      "tasks": [
+        "R23",
+        "R24",
+        "R28"
+      ],
+      "focus": "Quote/capacity rejection",
+      "status": "LEGACY_BASELINE_PASS_NOT_RAILWAY",
+      "railwayTestsRequired": true
+    }
+  ],
+  "infra": [
+    {
+      "path": "package.json",
+      "blob": "11e9fd9f98277fd3ff893e936239a8add0af78ec"
+    },
+    {
+      "path": "package-lock.json",
+      "blob": "ad825d9957af3685fbcddec3cdad95a6d2e71e24"
+    },
+    {
+      "path": "tsconfig.json",
+      "blob": "063eaf7dbe520ab323c586006a4f6a07123d8d29"
+    },
+    {
+      "path": "vite.config.ts",
+      "blob": "7bdd471a58746deb0ee1a79bd039f3f7976e3d84"
+    },
+    {
+      "path": "capacitor.config.ts",
+      "blob": "8270cb3a146b77224b83bb3141542888d20586db"
+    },
+    {
+      "path": "index.html",
+      "blob": "254fe06ee4bc4eb8c89e08769e32e5d4c3e991ce"
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "blob": "b3e20977b4c8d36df46c5f4652c21d481f540183"
+    },
+    {
+      "path": ".github/workflows/android-qa.yml",
+      "blob": "85d085b4c5ce2bd89898e6b21ffd0955c2a0eaef"
+    },
+    {
+      "path": ".github/workflows/browser-smoke.yml",
+      "blob": "a789f7d890f736d52de89f69ba3fe64cae1e265c"
+    },
+    {
+      "path": ".github/workflows/g08-save-worker.yml",
+      "blob": "bb349e746e62bfd962968b79a655daf3234e3fd7"
+    },
+    {
+      "path": ".github/workflows/release-audit.yml",
+      "blob": "173979254777375874e271e36aa351fb7212dc2b"
+    },
+    {
+      "path": "scripts/prepare-android.mjs",
+      "blob": "b8ac079c4ee282ed408554b15c8d6bdbe1da75bc"
+    },
+    {
+      "path": "scripts/android-build.mjs",
+      "blob": "a6b2cf331927604a0380cfd425a2b6f81c4aa415"
+    },
+    {
+      "path": "scripts/g08-browser.mjs",
+      "blob": "19c634b10b4bc38bd07133081b6fa73eae4d0400"
+    },
+    {
+      "path": "scripts/audit-native-package.py",
+      "blob": "80c1f0f6cc1184f59276e3bddfdaea83842f5fa7"
+    },
+    {
+      "path": "scripts/runtime-licenses.mjs",
+      "blob": "b8e1e15b09be62b8715cb57e7a7e29b295c0f046"
+    },
+    {
+      "path": "scripts/railway-quarantine-audit.mjs",
+      "blob": "3b9b49e204d8dbd99fd55257fb5ff044ce396d0d"
+    },
+    {
+      "path": "scripts/railway-quarantine-audit.selftest.mjs",
+      "blob": "db17153813f078647236ff6a6aa0b323d2ce8683"
+    }
+  ],
+  "ownership": {
+    "root": "existing React/Vite/TypeScript root",
+    "canonical": "one railway state and deterministic application/sim core; existing factory core remains isolated until conversion; no dual writable state, clock, ledger or scheduler",
+    "dependencyOrder": "UI -> application command/query -> deterministic rail core -> graph/economy/domain; persistence/platform through interfaces; renderer read-only; external oracles build/test only",
+    "namespace": "rail save DB, envelope, app ID and cache distinct; final identity owner approved; legacy saved data untouched",
+    "future": "R06 pure contracts first; R07–R12 graph/catalog; R21–R41 integrate one authoritative core; R42–R49 switch UI/platform only after approval and real gates"
+  },
+  "risks": [
+    {
+      "id": "MR-01",
+      "tasks": [
+        "R29",
+        "R32"
+      ],
+      "finding": "finance.ts taxForPeriod uses absolute modulo and (start,end] filter; game.ts daily tax precedes same-time ready jobs. Nonaligned start and boundary postings require explicit period ordering and regression."
+    },
+    {
+      "id": "MR-02",
+      "tasks": [
+        "R39",
+        "R40"
+      ],
+      "finding": "codec.ts journal cap 50000 and integrity.ts payload cap 8M; save.ts validates decode before every write; no reconciled journal pruning observed. Growth may reject saves; checkpoint/archival and export tests."
+    },
+    {
+      "id": "MR-03",
+      "tasks": [
+        "R31",
+        "R32",
+        "R35"
+      ],
+      "finding": "advanceInPlace daily may liquidate before ready jobs run; final freeze after jobs/crises. Specify terminal ordering and settlement/cancellation invariants; reproduce boundary scenario."
+    },
+    {
+      "id": "MR-04",
+      "tasks": [
+        "R29",
+        "R34",
+        "R35",
+        "R39"
+      ],
+      "finding": "Receipts limited to last 512 and duplicate returns latest snapshot; durable event IDs, payload conflict and exact retry semantics required."
+    },
+    {
+      "id": "MR-05",
+      "tasks": [
+        "R09",
+        "R32",
+        "R40"
+      ],
+      "finding": "Worker request is catchUp only, timeout 120s, no correlated request/version cancellation. Add bounded worker contract and stale rejection."
+    },
+    {
+      "id": "MR-06",
+      "tasks": [
+        "R47",
+        "R49",
+        "R53"
+      ],
+      "finding": "Existing Android config app.theceo.companysimulator, generated sensorLandscape, CEO_VERSION_CODE; PWA CEO cache/manifest, legacy DB. Distinct railway identity/portrait and safe migration required."
+    },
+    {
+      "id": "MR-07",
+      "tasks": [
+        "R49",
+        "R53"
+      ],
+      "finding": "Playwright 1.51.1 ephemeral install without lock; browser revision/transitive reproducibility pending; fast-check 4.11.0 candidate not installed."
+    }
+  ]
+}

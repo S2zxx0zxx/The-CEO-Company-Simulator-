@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "disposition": "BLOCKED_NOT_RELEASE_CLEARED",
+  "data": {
+    "osm": {
+      "status": "NOT_SHIPPED",
+      "license": "ODbL-1.0",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attributionUrl": "https://www.openstreetmap.org/copyright",
+      "required": [
+        "actual dated PBF and source hash",
+        "complete derived graph database or compliant alterations offer",
+        "visible map attribution and offline credits",
+        "actual graph/tile ID and version parity",
+        "no incompatible downstream restrictions",
+        "review actual distribution and jurisdiction"
+      ]
+    },
+    "boundary": {
+      "status": "NOT_SHIPPED",
+      "requires": "actual Survey of India layer rights, applicable precision and sensitive attribute review; separate rights and display layer"
+    },
+    "tiles": {
+      "status": "NOT_BUILT_R18",
+      "requires": "actual pinned build tool and transitives, local sprites/fonts/tiles rights and hashes"
+    }
+  },
+  "assets": {
+    "legacy": "7 PENDING_OWNER; legacy preserved not railway",
+    "preview": "R46 QA-only PENDING_OWNER",
+    "newBrand": "NOT_APPROVED"
+  },
+  "native": {
+    "status": "QA_ONLY",
+    "requires": "resolved Gradle/Maven dependencies SBOM and license/NOTICE review, exact final signed APK/AAB package inspection",
+    "qaEvidence": {
+      "commit": "e59c529b4e61929c1c72de1e579ea64397ad9441",
+      "runId": 45884553888,
+      "exactEmbeddedNpmNotices": 4
+    },
+    "qaClasspathInventory": "New offline Gradle collector and cached POM declaration evidence; pending actual CI; no clearance inferred.",
+    "qaClasspathEvidence": {
+      "runId": 45887252821,
+      "artifactId": 15149333980,
+      "providerAndLocalZipSha256": "d72b8f840511320e1911a13320778595f657b4817058722d4edc2d754bafb832",
+      "zipCrc": "PASS",
+      "components": 61,
+      "externalArtifacts": 53,
+      "mavenCoordinates": 51,
+      "directDeclarations": 50,
+      "unresolvedCoordinate": "com.google.guava:listenablefuture:1.0",
+      "unresolvedParent": "com.google.guava:guava-parent:26.0-android",
+      "releaseClearance": false
+    }
+  },
+  "projectLicense": "PENDING_OWNER",
+  "releaseAccepted": false,
+  "reviewedReferences": [
+    "https://opendatacommons.org/licenses/odbl/1-0/",
+    "https://osmfoundation.org/wiki/Licence/Attribution_Guidelines",
+    "https://www.geospatial.dst.gov.in/Guidelines.aspx",
+    "https://dst.gov.in/news/list-featuresinstallations-and-their-sensitive-attributes-reference-guidelines-acquiring-and"
+  ],
+  "executableEvidence": {
+    "commit": "b99d06fc997618d6dce3bda6dd58f9d5d6197c92",
+    "runId": 45884209136,
+    "lockEntries": 238,
+    "runtimeEntries": 12,
+    "sourceEvidenceHashesMatched": 18,
+    "bundles": 3,
+    "finalReleaseAccepted": false
+  }
+}

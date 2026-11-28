@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "task": "C05-FIX-02",
+  "originalTask": "R19",
+  "masterRequirement": "MR-008",
+  "coordinatorCheckpoint": "adf6aa5ee169b2a145ac8e13d486be110ef22f47",
+  "preservedPriorSnapshots": [
+    "verification/railway/c05-region-install/",
+    "verification/railway/c05-fix-01/"
+  ],
+  "fixSnapshotPath": "verification/railway/c05-fix-02/",
+  "mode": "production-first synthetic engineering preparation",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "actualC08MobileAcceptanceClaimed": false,
+  "fixes": {
+    "C05-FIX-02-GC": {
+      "status": "FIXED_AND_VERIFIED",
+      "summary": "Replaced error-swallowing .catch(() => undefined) calls in both removeUnusedVersion() and REMOVE_VERSION recovery with verification-enforced #executeGcDeletesUnlocked.",
+      "invariantsVerified": [
+        "1. Durable retry metadata: activeJournal retains kind='REMOVE_VERSION', state='RECOVERY_REQUIRED', narrowed unconfirmed stagedAssetKeys, committedVersionSnapshot (with per-asset sizeBytes), and failureReason until every asset is confirmed absent.",
+        "2. Absent vs genuine I/O failure distinction: pre-delete committedStat check + isStorageNotFoundError() distinguish already-absent assets (NotFoundError/ENOENT/OS-PLUG-FILE-0006) from genuine EIO/EACCES/silent-no-op delete failures across Memory, OPFS/IDB, and Capacitor Filesystem backends.",
+        "3. Journal retention until confirmed absence: post-delete committedStat confirms exists===false before clearing activeJournal to null or setting COMPLETED_INTERRUPTED_GC.",
+        "4. Accurate reclaimed storage accounting: freedBytes sums only previously present assets confirmed deleted on storage (excluding already-absent and failed assets).",
+        "5. Idempotent repeated recovery: recoverInstallations() returns resolution='GC_RETRY_PENDING', recovered=false, preserving narrowed retry state during persistent faults; transitions cleanly to COMPLETED_INTERRUPTED_GC on final success and NONE thereafter.",
+        "6. Active, pinned & mandatory rollback version protection: VERSION_IS_ACTIVE, VERSION_PINNED_BY_ACTIVE_REFS, and VERSION_IS_MANDATORY_ROLLBACK checks remain strictly enforced before GC starts, and GC_RECOVERY_PENDING prevents overlapping install/activate/rollback/remove operations from clobbering a pending GC retry journal.",
+        "7. Comprehensive regression coverage in c05_12_fix02_gc_delete_failure_and_durable_recovery covering one-shot backend deleteCommittedAsset EIO failure, persistent failures across multiple restarts, interrupted recovery (injectCrashDuringGc), already-absent vs silent-no-op deletion, and final verified cleanup."
+      ]
+    },
+    "C05-FIX-01-A..D": {
+      "status": "PRESERVED_UNCHANGED_AND_REVERIFIED"
+    }
+  },
+  "suites": {
+    "c05_packages_install_and_portals": { "total": 12, "passed": 12, "failed": 0, "skipped": 0 },
+    "c05_browser_persistence_chromium_idb_opfs": { "total": 1, "passed": 1, "failed": 0, "skipped": 0 },
+    "c04_contracts_and_tiles": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
+    "c04_browser_webgl": { "total": 1, "passed": 1, "failed": 0, "skipped": 0 },
+    "c03_python_topology": { "total": 6, "passed": 6, "failed": 0, "skipped": 0 },
+    "c03_runtime_ts": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
+    "r07_r11_upstream": { "total": 321, "passed": 321, "failed": 0, "skipped": 0 },
+    "v3_prefilter": { "total": 36, "passed": 36, "failed": 0, "skipped": 0 },
+    "c02_pipeline": { "total": 9, "passed": 9, "failed": 0, "skipped": 0 }
+  },
+  "totalExecutedChecks": 396,
+  "totalPassedChecks": 396,
+  "totalFailedChecks": 0,
+  "totalSkippedChecks": 0,
+  "retainedBlockers": [
+    "C01 DST/self-certification, safe territorial scope allowlist, SoI boundary rights & R51 clearance",
+    "C08 physical Android device Capacitor Filesystem durability & low-storage verification (physicalDeviceVerified=false)",
+    "C03 Windows dense 500-node routing p95 (> 300 ms target) & C04 SwiftShader WebGL FPS (< 30 FPS) retained open"
+  ]
+}

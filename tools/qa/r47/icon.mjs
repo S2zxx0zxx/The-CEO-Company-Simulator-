@@ -1,0 +1,5 @@
+import {deflateSync} from 'node:zlib';
+const table=Uint32Array.from({length:256},(_,n)=>{let c=n;for(let i=0;i<8;i++)c=(c>>>1)^((c&1)?0xedb88320:0);return c>>>0;});
+function chunk(type,data){const b=Buffer.concat([Buffer.from(type),data]);let c=0xffffffff;for(const x of b)c=(c>>>8)^table[(c^x)&255];const n=Buffer.alloc(4),crc=Buffer.alloc(4);n.writeUInt32BE(data.length);crc.writeUInt32BE((c^0xffffffff)>>>0);return Buffer.concat([n,b,crc]);}
+// Generic QA marker, not final art or branding.
+export function qaIcon(size){const raw=Buffer.alloc(size*(size*3+1));for(let y=0;y<size;y++)for(let x=0;x<size;x++){const u=x/size,v=y/size,rail=(Math.abs(u-(.36-.13*(v-.25)))<.035||Math.abs(u-(.64+.13*(v-.25)))<.035)&&v>.22&&v<.82,tie=u>.25&&u<.75&&v>.25&&v<.82&&Math.floor(v*15)%3===0;const rgb=rail||tie?[222,193,125]:[34,49,68];const pos=y*(size*3+1)+1+x*3;raw.set(rgb,pos);}const h=Buffer.alloc(13);h.writeUInt32BE(size,0);h.writeUInt32BE(size,4);h[8]=8;h[9]=2;return Buffer.concat([Buffer.from([137,80,78,71,13,10,26,10]),chunk('IHDR',h),chunk('IDAT',deflateSync(raw)),chunk('IEND',Buffer.alloc(0))]);}

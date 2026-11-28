@@ -1,0 +1,14 @@
+{
+  "c02DiscardedKeysStillPresent": [],
+  "edges": 51,
+  "graphV1Sha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+  "graphV2Sha256": "e77ee6b21aa74787250a3daeddb2c1168833746e036d1b1d68f68c9a454083a4",
+  "nodes": 44,
+  "osmPath": "C:\\r13-workspace\\fixtures\\c06_oracle\\c06_synthetic_network.osm",
+  "osmSha256": "66cd59733fda1890e6c8a0260478a43e721abb61d5dfcec5871bae60fd704ad4",
+  "pbfBytes": 1351,
+  "pbfPath": "C:\\r13-workspace\\fixtures\\c06_oracle\\c06_synthetic_network.osm.pbf",
+  "pbfSha256": "07d1ca96b1609c5e150f638b462a68f4dc40a70e5fa273ef90442fbb30c48dcd",
+  "stations": 41,
+  "turnRules": 78
+}

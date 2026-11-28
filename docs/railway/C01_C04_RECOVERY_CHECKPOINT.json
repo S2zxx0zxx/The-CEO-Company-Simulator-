@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-28",
+  "basis": "8c5d594f5d35a1a472f806c8cd8927ac0bb3ba86",
+  "repositoryVisibility": "public",
+  "protectedRefs": {
+    "main": "8268c8dcd6ef46fc35e300c14d8491bfbb3656e1",
+    "feat/company-simulator-v3": "fefd995fd189506502ae59230b9ee9c408faa544"
+  },
+  "pr2": {
+    "state": "draft open unmerged",
+    "commitsAtBasis": 157,
+    "changedFilesAtBasis": 245
+  },
+  "immutableArchiveVerification": [
+    {
+      "name": "Train_Manager_Final_V4_Agent_Implementation_Pack.zip",
+      "sha256": "ebd171202005b8a680540c7f9add297298feb69ea11acc1b36f5c86c46b9f4ea",
+      "regularFiles": 3059,
+      "crc": "PASS"
+    },
+    {
+      "name": "Railway_Manager_Master_Build_Pack_V5.zip",
+      "sha256": "ba177fb4ecbc7247696459e4794fec878adf2c0f0b6ebc07903339653376e41d",
+      "regularFiles": 15,
+      "crc": "PASS"
+    }
+  ],
+  "verifiedBundles": [
+    {
+      "task": "C02",
+      "sha256": "a203a32f87f3d5bd8cd75deb95ff88104947d9be4330bf9cbad8f44fb80ff858",
+      "bytes": 77598,
+      "files": 27,
+      "manifest": "26/26"
+    },
+    {
+      "task": "C03",
+      "sha256": "6038d87485ca1de5da980f9f66afde83a510de8923bf655fa2649197bf3f9381",
+      "bytes": 248030,
+      "files": 54,
+      "manifest": "53/53"
+    },
+    {
+      "task": "C04",
+      "sha256": "71994a80663ba30606f29ae3d9ab8dcc488424ea643e7a0800160c5d8bd9c20a",
+      "bytes": 779756,
+      "files": 105,
+      "manifest": "104/104"
+    }
+  ],
+  "crossBundle": {
+    "C02toC03": {
+      "common": 18,
+      "unchanged": 12,
+      "changed": "documentation/manifests/reports"
+    },
+    "C03toC04": {
+      "common": 53,
+      "unchanged": 46,
+      "changed": "documentation/manifests/reports"
+    }
+  },
+  "ledgerCounts": {
+    "R": {
+      "PASS": 14,
+      "IMPLEMENTED_UNVERIFIED": 22,
+      "BLOCKED": 9,
+      "NOT_STARTED": 9
+    },
+    "C": {
+      "BLOCKED": 1,
+      "NOT_STARTED": 42
+    },
+    "DV": {
+      "OPEN": 44,
+      "CLOSED": 44
+    }
+  },
+  "sourceRecovery": {
+    "archive": "RAILWAY_CEO_C01_C04_SOURCE_RECOVERY.zip",
+    "sha256": "d5d08d5c023db2b49759209a363d9c980c162711196029b492078fb738c6a529",
+    "bytes": 193131,
+    "files": 53,
+    "manifest": "52/52",
+    "sourceFiles": 49,
+    "sourceBytes": 605569,
+    "sourceGitBlobSha1": {
+      "_run_upstream_cases.mjs": "641cc4019b8e031bd61c28914d89f29b50605cc6",
+      "c02_downstream_adapter.py": "2f65da64066e2176326d4ed75dafd2c4e529a7b4",
+      "c02_rail_prefilter.py": "d1c81957b4def1658b8d5ebee575c1db07fc36ca",
+      "c02_streaming_pipeline.py": "2a259084776ae99fc7e43856fe72e4fca1cebce3",
+      "c03_station_attachment.py": "c0b6fe016872d6bfd175c5883d737133fb8addc4",
+      "c03_topology_builder.py": "b0aa66646366e4517aae18bcdb8c18aaa91c07fd",
+      "c04_asset_generator.mjs": "a7c38a237f100a16ab7a217dba8463cde4515155",
+      "c04_tile_inspector.mjs": "3092aa4d38cf3b05329cb90191687786e0105f7f",
+      "c04_tile_pipeline/c04_tile_builder.py": "2fac8ff359f7b9c21700d13243ce6edaba0e5f7f",
+      "c04_tile_pipeline/railway_basemap_schema.yml": "4481595eda3d38b4e486dde18c4434a99bb1a7cc",
+      "c04_web_entry.ts": "e70cd8c86bcda1ada196df1a1ebfc0f90057e9ed",
+      "docs/C03_GRAPH_SCHEMA_AND_INTERFACES.md": "fd16bbe90a41185d53f43a17b54d3a50f2dcc450",
+      "docs/C04_TILE_AND_RENDERER_ARCHITECTURE.md": "58855029ff0cd47ba59ef743c230d7f62501127b",
+      "src/domain/models.ts": "01cd4ebbb9dd7594d18eafc3940d046a23cbbd97",
+      "src/domain/units.ts": "8d78150ccc7c453f154d4943048e30ef07de5570",
+      "src/domain/validation.ts": "262bd8b63d93848b8f6f98f8dd8bffcbf0c5090c",
+      "src/rail/catalog/index.ts": "715b5e77b733fc61a86ac724f1e8bb27538ae6a7",
+      "src/rail/compatibility/index.ts": "6bb7ddbb39434e0bccc05bd22f2c7ac10b29bb73",
+      "src/rail/geometry/index.ts": "45e95be650fc661f11f7db0dd8954683324c84af",
+      "src/rail/graph/index.ts": "416169eb7d364e7d5eea37ac77366b17c24a3ed0",
+      "src/rail/map/contracts.ts": "9c2056adf292113ddf42bc2ed2d9fb53e5a818ac",
+      "src/rail/map/index.ts": "4b789028836b92c8bb631a97f04962056fab895f",
+      "src/rail/map/pmtiles-adapter.ts": "f7634636b9f6d41b40c4c8a755cc7b3bc2b89321",
+      "src/rail/map/renderer.ts": "20531a35d65a7cb34009c34bb6e89f5492b04248",
+      "src/rail/map/style.ts": "5d91f9fc2c0e3873d9179870c0a0594fac62881b",
+      "src/rail/movement/index.ts": "9fe0817020ec16120df76f0f95796656dc1d7bdd",
+      "src/rail/quotes/index.ts": "743379408a8a79a8beb6493dc60f212747b7711c",
+      "src/rail/routing/index.ts": "b33136abca29448e9e6b66cd5e37bf31b8340890",
+      "src/rail/scheduler/index.ts": "f01b91741b93eb9ddcdaf04e309f64194dc718a7",
+      "src/rail/spatial/index.ts": "d0c7016af2f0a35dd6967ca2b8afa4508c1a7de4",
+      "src/rail/stations/index.ts": "d5031c49dd85cc9ff13b36938d1a467766c4b3eb",
+      "src/rail/topology/index.ts": "0df2dd0be916e6102eb9ea23c929ca20ea4685bd",
+      "src/worker/rail-routing-bridge.ts": "873c16723371472208aa1f003d789de4165ad1b4",
+      "src/worker/rail-routing.ts": "06750726c0974ecb40fde7efbf4d17ba60eb187b",
+      "src/worker/rail-routing.worker.ts": "7fe734f82ba031143a643bc292322e3442c23c38",
+      "test_c02_pipeline_synthetic.py": "ed7ed0bbae3115ca03f7f1bd24b37eb33c530c7f",
+      "test_c02_prefilter_synthetic.py": "dd661673cc753081e619d977fcc58178e7914917",
+      "test_c03_runtime_ts.mjs": "91ae28953bd99edd42c3255a3449bb4db8387a35",
+      "test_c03_topology_and_stations.py": "fb9ba3854162a730807d91159ec334c9796d00fd",
+      "test_c04_browser_webgl.mjs": "1e6563c4b07936fc822b168b427841f3c1a49371",
+      "test_c04_contracts_and_tiles.mjs": "5c49378ae83f0d1d612a6d6ff6d08ee64aae8fbe",
+      "tests/fixtures/railway-synthetic.ts": "1d2d53f5423b3d859bd0ae6170ae328341cacadc",
+      "tests/railway-r07.cases.ts": "2f40dd78b87aba44ab77356163f531d2f360e7e7",
+      "tests/railway-r08.cases.ts": "9a14767c6bdc85515b1b106ed524d4555b6b4e7a",
+      "tests/railway-r09.cases.ts": "fe133b7fe5777645ca4356a1362121480c88428a",
+      "tests/railway-r09.worker-cases.ts": "d341f4ddef56a7d423d4f057ddf164108a126f54",
+      "tests/railway-r10.cases.ts": "df0a90bb970856d96108775cf0abdd6e3be1052f",
+      "tests/railway-r11.cases.ts": "cb29a7830fb9c93873e1ff5ab3a3f800f2cac6c3",
+      "verify_downstream_graphpack.mjs": "e24e58458a608fb69d0b49e1527b91dfa34e57c6"
+    },
+    "scriptSha256": "57e8e170a0f9eed767d6a3c031cd09ab72930fc0aa25ee12612916cd3b6c0d09",
+    "localIsolatedGitCommitTest": "50/50 exact byte checks; current HEAD unchanged",
+    "destination": "verification/railway/c04-baseline/",
+    "actualSourcePush": "VERIFIED_REMOTE_AT_d7ef6136391335cc667ec366e3eaf9e07110ec64",
+    "rootRuntimeAdoption": "NOT_STARTED",
+    "reason": "Container direct Git DNS unavailable; connector metadata/commit access available but no byte-exact archive transfer. Original archives remain private; no geo/asset binaries or private policy/logs in source snapshot.",
+    "requiredNext": "Use fixed snapshot as authoritative recovery source for isolated C05 synthetic preparation; preserve baseline. Root application dependency adoption/CI remains separate.",
+    "baselineRemoteMatches": "49/49",
+    "fixedSnapshot": {
+      "destination": "verification/railway/c04-fix-01/",
+      "remoteMatches": "49/49",
+      "modifiedFiles": 6,
+      "rootRuntimeAdoption": "NOT_STARTED"
+    }
+  },
+  "gates": {
+    "C01": "BLOCKED",
+    "C02": "synthetic preparation verified; real extraction NOT_STARTED",
+    "C03": "synthetic preparation verified; real graph NOT_STARTED",
+    "C04": "synthetic artifacts verified; three prior URL bypass classes pass independent regression; browser rerun Gemini-reported; actual production NOT_STARTED",
+    "C05": "ELIGIBLE_SYNTHETIC_PREPARATION_ON_OWNER_START; real dependencies gated",
+    "C06_C08": "NOT_STARTED actual; prior blockers retained",
+    "R54": "HOLD",
+    "realPbfProcessed": false,
+    "releaseAllowed": false
+  },
+  "nextOwnerProtocol": "At each future checkpoint verify exact source hashes, commit reviewed source changes or isolate verified snapshot, record CI and all unexecuted tests; update C/R/DV ledgers before next START. No automatic merge/publish/sign.",
+  "latestReview": {
+    "basis": "d7ef6136391335cc667ec366e3eaf9e07110ec64",
+    "date": "2026-11-28",
+    "zip": {
+      "filename": "RAILWAY_CEO_C04_FIX_01_OFFLINE_URL_VERIFICATION.zip",
+      "sha256": "eca7bdbbd9fc398fb61d91a2924ba476a5cef0e967b080fc87faa7c3e9caf8b1",
+      "bytes": 772433,
+      "files": 106,
+      "manifest": "105/105",
+      "crc": "PASS"
+    },
+    "source": {
+      "baselineRemoteMatches": "49/49",
+      "fixedRemoteMatches": "49/49",
+      "changedFiles": 6,
+      "unchangedFiles": 43,
+      "modifiedReportHashes": "6/6",
+      "baselineManifestBlob": "a29fcb79b92f8d214f1aecd67f73e65b1e23280e",
+      "fixReportBlob": "95be6ee8b632072afffb07086c9b7b22530a93d9",
+      "sourcePreservation": "VERIFIED_REMOTE",
+      "rootRuntimeAdoption": "NOT_STARTED"
+    },
+    "independent": {
+      "preservedV3": 36,
+      "c02Executed": 8,
+      "c03Python": 6,
+      "c03TS": 5,
+      "upstream": 321,
+      "c04IsolatedMockProtocolCases": 3,
+      "totalPassed": 379,
+      "failed": 0,
+      "allowedUrls": 11,
+      "blockedUrls": 39,
+      "blockedProtocolCalls": 4,
+      "rendererRejections": 4,
+      "notExecuted": [
+        "live Osmium smoke",
+        "full npm-dependent C04 cases 01 and 02",
+        "live Chromium rerun",
+        "Planetiler rebuild"
+      ],
+      "runtime": "Linux Node v22.16.0; C04 mock protocol constructors, actual style/renderer/adapter functions and supplied case bodies 03–05"
+    },
+    "reportedBrowser": {
+      "passed": true,
+      "externalNetworkRequestsBlockedCount": 0,
+      "failedLocalRequestsCount": 0,
+      "protocolGuardBlocked": true,
+      "rejectedRenderers": 4,
+      "pureFps": 23.3,
+      "coupledFps": 22.9
+    },
+    "performance": {
+      "reportedWindowsRouteP95Ms": 660.35,
+      "independentLinuxRouteP95Ms": 198.33,
+      "targetMs": 300,
+      "targetFps": 30,
+      "actualMobileAcceptance": false
+    },
+    "tilesUnchangedSha256": "ff5ffad34953f6144eb00fcb597f1f25734881028f596bbec4ddaf04b38ac652",
+    "disposition": "SOURCE_PRESERVATION_VERIFIED__C04_FIX_01_ACCEPTED_IN_TESTED_SCOPE__C05_SYNTHETIC_PREPARATION_ELIGIBLE_ON_OWNER_START",
+    "realPbfProcessed": false,
+    "releaseAllowed": false
+  }
+}

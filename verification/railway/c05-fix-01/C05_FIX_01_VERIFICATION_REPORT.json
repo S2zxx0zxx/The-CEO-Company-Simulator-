@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "task": "C05-FIX-01",
+  "originalTask": "R19",
+  "masterRequirement": "MR-008",
+  "coordinatorCheckpoint": "2e69b6072d62f016abdfdb3330ba0956b1e380b5",
+  "preservedPriorSnapshotPath": "verification/railway/c05-region-install/",
+  "fixSnapshotPath": "verification/railway/c05-fix-01/",
+  "mode": "production-first synthetic engineering preparation",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "actualC08MobileAcceptanceClaimed": false,
+  "fixes": {
+    "C05-FIX-01-A": {
+      "status": "FIXED_AND_VERIFIED",
+      "summary": "removeUnusedVersion enforces VERSION_PINNED_BY_ACTIVE_REFS for active route/movement/save refs and VERSION_IS_MANDATORY_ROLLBACK independently of active refs for previousVersionKey unless explicit override is supplied; GC journals asset deletion under REMOVE_VERSION and completes interrupted GC deterministically in recoverInstallations()."
+    },
+    "C05-FIX-01-B": {
+      "status": "FIXED_AND_VERIFIED",
+      "summary": "installPackage(..., { activateImmediately: false }) durably persists stagedPackages metadata and staged_<versionKey>/<role> blobs across restarts; activateRetainedVersion / activateStagedPackage promote via ephemeral per-operation temp keys so mid-promotion write errors preserve all durable staged assets intact for retry; duplicate identical install is idempotent while differing content/hash under the same versionKey fails closed with CONFLICTING_VERSION_CONTENT; concurrent requests serialize safely under exclusive lock."
+    },
+    "C05-FIX-01-C": {
+      "status": "FIXED_AND_VERIFIED",
+      "summary": "makeImmutablePMTilesArchiveId binds PMTiles protocol archive keys (pmtiles://<archiveId>) deterministically to regionId, versionKey, and canonical uncompressed tilesSha256; distinct V1 and V2 archives never alias pmtiles://<regionId>, and decodeRegionPackageManifest / C05 installer enforce exact immutable identity across manifest, registry, style adapter, and source cache."
+    },
+    "C05-FIX-01-D": {
+      "status": "FIXED_AND_VERIFIED",
+      "summary": "Same-size post-commit corruption is detected by verifyInstalledIntegrity(), persisted as corrupted=true on InstalledVersionRecord, and triggers active source invalidation so subsequent openVersionArtifacts and VerifiedInstalledPMTilesSource.getBytes() calls fail closed immediately; in addition, per-16 KiB block SHA-256 verification catches direct block tampering on unverified range reads without loading the full archive into RAM.",
+      "documentedGuaranteesAndLimitations": "Full-archive SHA-256 catches any byte corruption across all offsets during verifyInstalledIntegrity(), openVersionArtifacts(), rollback, or reinstall; incremental range reads via getBytes() verify every touched 16 KiB block against expectedBlockSha256s in O(blockSize) RAM and fail closed persistently once any corruption is flagged, rather than hashing untouched file tail offsets on every single tiny header read."
+    }
+  },
+  "verifyDownstreamGraphpackRestored": true,
+  "offlineClockSubcheckStatus": "EXECUTED",
+  "reportReconciliation": {
+    "priorReportedTotal": 397,
+    "priorEnumeratedSum": 391,
+    "currentExecutedTotal": 395,
+    "currentEnumeratedSum": 395,
+    "formula": "11 + 1 + 5 + 1 + 6 + 5 + 321 + 36 + 9 = 395",
+    "skippedSubchecks": 0
+  },
+  "suites": {
+    "c05_packages_install_and_portals": { "total": 11, "passed": 11, "failed": 0, "skipped": 0 },
+    "c05_browser_persistence_chromium_idb_opfs": { "total": 1, "passed": 1, "failed": 0, "skipped": 0 },
+    "c04_contracts_and_tiles": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
+    "c04_browser_webgl": { "total": 1, "passed": 1, "failed": 0, "skipped": 0 },
+    "c03_python_topology": { "total": 6, "passed": 6, "failed": 0, "skipped": 0 },
+    "c03_runtime_ts": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
+    "r07_r11_upstream": { "total": 321, "passed": 321, "failed": 0, "skipped": 0 },
+    "v3_prefilter": { "total": 36, "passed": 36, "failed": 0, "skipped": 0 },
+    "c02_pipeline": { "total": 9, "passed": 9, "failed": 0, "skipped": 0 }
+  },
+  "externalDependenciesNote": {
+    "bundledInZip": false,
+    "dependencies": [
+      "maplibre-gl (BSD-3-Clause, external NPM via C04_RENDERER_PKG)",
+      "pmtiles (BSD-3-Clause, external NPM via C04_RENDERER_PKG or node_modules)",
+      "playwright (Apache-2.0, browser verification harness via C04_RENDERER_PKG)",
+      "esbuild (MIT, browser bundle build via C04_ESBUILD_PATH)",
+      "osmium-tool (GPL-3.0, CLI invocation only via OSMIUM_EXE; zero GPL linking in runtime TS)"
+    ]
+  },
+  "retainedBlockers": [
+    "C01 DST/self-certification, safe territorial scope allowlist, SoI boundary rights & R51 clearance",
+    "C08 physical Android device Capacitor Filesystem durability & low-storage verification (physicalDeviceVerified=false)",
+    "C03 Windows dense 500-node routing p95 (509.26 ms > 300 ms target) & C04 SwiftShader WebGL FPS (< 30 FPS) retained open"
+  ]
+}

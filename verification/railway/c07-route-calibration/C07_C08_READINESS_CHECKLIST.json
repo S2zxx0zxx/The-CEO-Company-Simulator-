@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "task": "C07",
+  "originalTask": "R17",
+  "checkpoint": "00088cd6b1416adfc6822f4896813ef24e15d49b",
+  "readiness": {
+    "C01": {
+      "status": "BLOCKED",
+      "reason": "Awaiting DST/self-certification applicability, territorial allowlist confirmation, SoI asset rights, and R51 license clearance."
+    },
+    "C02_C06": {
+      "status": "SYNTHETIC_READY_REAL_BLOCKED",
+      "reason": "C02-C06 synthetic suites and pinned OpenRailRouting Java adapter (34/34 Maven, 8/8 C06 live Java, 12/12 C05, 5/5 C04, 5/5 C03 TS, 6/6 C03 Py, 321/321 R07-R11, 36/36 V3, 9/9 C02 live Osmium, 1/1 graphpack) preserved and passing."
+    },
+    "C07": {
+      "status": "SYNTHETIC_PREPARATION_VERIFIED_REAL_GATED",
+      "summary": "137 distinct synthetic scenarios executed (123 genuine route comparisons + 14 infrastructure/unsupported probes) with 0 known incompatible routes accepted, 5 real cross-engine discrepancies (2 16.7Hz quantization + 3 dual-switch/multi-stop U-turn duration deltas) explicitly surfaced & dispositioned, 9/9 cross-region portal checks, and 14/14 mandatory negative framework tests.",
+      "realRouteComparisonsCompleted": 0,
+      "approvedProductionToleranceLocked": false,
+      "remainingBlockers": [
+        "C01 DST/self-certification and real Indian OSM PBF processing clearance for mandatory 100+ curated actual routes (R17)",
+        "Owner/domain sign-off on provisional C07 comparison tolerances & disposition of 5 open non-blocking calibration discrepancies (16.7Hz deci-Hz rounding, dual-switch heuristic, multi-stop U-turn penalty)",
+        "Preserved two TypeScript strict errors in untouched C04/C05 dependencies (src/rail/map/pmtiles-adapter.ts(260,5) and src/rail/regions/portals.ts(3,26))"
+      ]
+    },
+    "C08": {
+      "status": "ELIGIBLE_SYNTHETIC_BENCHMARK_ON_OWNER_START__PHYSICAL_DEVICE_SEPARATE",
+      "remainingBlockers": [
+        "Windows 500-node C03 synthetic routing p95 (447.83 ms latest / 495.84 ms historical vs 300 ms target) exceeds budget",
+        "SwiftShader software WebGL FPS (< 30 FPS) requires real GPU/Android device measurement",
+        "Physical Android device benchmark & thermal/memory instrumentation deferred to C08"
+      ]
+    }
+  }
+}

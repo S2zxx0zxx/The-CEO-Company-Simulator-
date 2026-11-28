@@ -1,0 +1,191 @@
+{
+  "baseline": "0f4159d1ab1428f60fddfc5b86acd554c0d89a1f",
+  "c06AdapterJarSha256": "34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb",
+  "coordinatorCheckpoint": "36c2128d6ea1a86cfebcc94d9886fbf535773354",
+  "datasetIdentity": {
+    "datasetId": "C07-SYNTHETIC-CALIBRATION-V2",
+    "datasetVersion": "2.0.0",
+    "genuineRouteComparisons": 123,
+    "infrastructureAndUnsupportedCases": 14,
+    "totalCases": 137
+  },
+  "masterRequirements": [
+    "MR-006",
+    "MR-044"
+  ],
+  "openRailRoutingPin": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+  "originalTask": "R17",
+  "realPbfProcessed": false,
+  "realRouteComparisonsCompleted": 0,
+  "releaseAllowed": false,
+  "schemaVersion": 1,
+  "scope": "Isolated C07-FIX-01 comparison evidence integrity & complete ZIP restoration snapshot; leaves c04-*, c05-*, c06-*, c07-route-calibration, root runtime, PR #1 and main untouched.",
+  "sourceFiles": {
+    "C07_C08_READINESS_CHECKLIST.json": {
+      "bytes": 2218,
+      "gitBlobSha1": "9d448b9943928a9a65b0539be16b362703862759",
+      "sha256": "a2281745283856b1697bb416dd0e716a876d16a3c97edcb6af608bc578b590e2"
+    },
+    "C07_CALIBRATION_REPORT.json": {
+      "bytes": 38758,
+      "gitBlobSha1": "a5b0d1090cbbedac194433ae11f91b8356fcd9d0",
+      "sha256": "c77fa7d085f7f9015189b5b31e9f1d49855bf004e109d7a001c0e791f381cebd"
+    },
+    "C07_COVERAGE_MATRIX.json": {
+      "bytes": 3456,
+      "gitBlobSha1": "c3dc0181d8862869a1e37ede2d6aec93d96e5a7a",
+      "sha256": "88d4a386e91ddb38b2ea9528c6982fbeec73bc90a7e1ca5435026fe12dd03329"
+    },
+    "C07_CROSS_REGION_REPORT.json": {
+      "bytes": 5050,
+      "gitBlobSha1": "0538b24eddaabd7a4898744f30fa08e863806ba6",
+      "sha256": "485ff8237afe64224b9e5afe5fbfbc49627d10afe8f46197fac46782f49d604c"
+    },
+    "C07_DEPENDENCY_EVIDENCE.json": {
+      "bytes": 5812,
+      "gitBlobSha1": "bb3ca39203e954b2daa4c4da2d72da771c7e34e0",
+      "sha256": "02abc53f915a7deb8fb8e49bce3f0506b9ec2c43dea93256337f9ad6f11b62b1"
+    },
+    "C07_DISCREPANCY_REGISTRY.json": {
+      "bytes": 192889,
+      "gitBlobSha1": "c2e315a71e85675663ddd402ff900f9b4a7935b3",
+      "sha256": "9a0c5a20db4a6c9738681b6293c9074b8b7d0b4e21bd48977c419c8582af9ecb"
+    },
+    "C07_PERFORMANCE_BENCHMARK_REPORT.json": {
+      "bytes": 1797,
+      "gitBlobSha1": "7c885e85605e0a6a74fe496ccaec12729c0e9e07",
+      "sha256": "3184f5751d5a30a1d9eefeebf4a9281bdf733c2ea26d8b5b1811177aa91ebec5"
+    },
+    "C07_VERIFICATION_REPORT.json": {
+      "bytes": 2230,
+      "gitBlobSha1": "6fac97a54ef0280653ec0808ceb60a740bf45986",
+      "sha256": "1adfdb46ace11afcd600a7221aa8bddea16c36a126a5f1a4aaf8cf881bf4b70a"
+    },
+    "EXECUTION_SUMMARY.md": {
+      "bytes": 3970,
+      "gitBlobSha1": "f1455fd83606a6dd83ce7bc8164bfe84c9fb6632",
+      "sha256": "e26b3c7a5ad072e9cab43b379b75ec8afba4f8a717e9e79981e15d7d870dd63b"
+    },
+    "README.md": {
+      "bytes": 6089,
+      "gitBlobSha1": "d799620f763eb94574e06b04d095487b8925e475",
+      "sha256": "97c7959f8a14c668d04da66edf4b20d23af077e9ddf1c108bbfcae75f13e8ed5"
+    },
+    "c07_dataset_generator.mjs": {
+      "bytes": 64157,
+      "gitBlobSha1": "3fdb663c662c9a4612878a465b4cab7abe88d8eb",
+      "sha256": "842f0297007bff9c85350fbfb7e1c0bfccd8a2c1b12dc28da33aaf216182189f"
+    },
+    "c07_fixture_builder.py": {
+      "bytes": 15566,
+      "gitBlobSha1": "8656777a94133b9ad55455c9729631243bfcb7e3",
+      "sha256": "a2a2ea5ef9c45130695dbf35860340df59a18b57e394d73e30165577ffc7ab35"
+    },
+    "c07_oracle/c07_batch_evidence.json": {
+      "bytes": 140500,
+      "gitBlobSha1": "45cf75d3c5a2a532813b6985c3a3cb34a23db43d",
+      "sha256": "660fd39ab82013b23f8e7f7c8a393c36cb05110b0504bba75b319da39ef01eb5"
+    },
+    "c07_oracle/c07_test_output.json": {
+      "bytes": 3518,
+      "gitBlobSha1": "6b45d0c17d15bc06f2655044ddf67c0e1639ecbd",
+      "sha256": "542dcdac2d099cc167ff8fcc23dabc9e754cad4c09d15f2cefe3f21819ab594f"
+    },
+    "c07_oracle/cache_strict/c06_cache_identity.json": {
+      "bytes": 649,
+      "gitBlobSha1": "42dea3f8b7517a25d93b333623474ead3dca5aa3",
+      "sha256": "8b2364b7c1e2a055e0bd3a681bb2a76b1b2e6369d8e4ffa1615a16216125b569"
+    },
+    "c07_oracle/import_metrics.json": {
+      "bytes": 464,
+      "gitBlobSha1": "fe071a6a1c94e84be24f3ff22b91054b7b257aeb",
+      "sha256": "6267b393b384bebeb1dc86acc6da84720c2f32d7e94b504c1e7b1fec5140f3c6"
+    },
+    "c07_package_and_sync.py": {
+      "bytes": 17185,
+      "gitBlobSha1": "99efa3744a8de34af4ea13e8ec764481a91d2fc1",
+      "sha256": "75d72b84181eca350923f953edba8526308c242edc338e832a36f0bc508eaeb9"
+    },
+    "docs/C07_ROUTE_CALIBRATION_ARCHITECTURE.md": {
+      "bytes": 4745,
+      "gitBlobSha1": "d26b1aa5359cd4dc56927035c4f55aaeaa32cbbf",
+      "sha256": "34e22340c8bcd6f870c60182e53eb5b08167fedaa59b2b1554b7860a0051feb7"
+    },
+    "fixtures/c07_calibration/c07_fixture_ground_truth.json": {
+      "bytes": 59260,
+      "gitBlobSha1": "950b635f53bddc1b9a99b50aee3d77b08e928eee",
+      "sha256": "fe82a49f352a4bb66bee3697c0bf113f9f406597891465bccf314766bba7a08a"
+    },
+    "fixtures/c07_calibration/c07_fixture_manifest.json": {
+      "bytes": 1068,
+      "gitBlobSha1": "5c0d16a45455fe792d2b665a4267ea37b78640ba",
+      "sha256": "186d79e80fe5bd0a46b64e0ce39886a196e8bc049e2ac5ea34e67cd2148adf24"
+    },
+    "fixtures/c07_calibration/c07_graph_v1.json": {
+      "bytes": 34581,
+      "gitBlobSha1": "ade11066c9518bd0da9f4913346f684a65b99fb7",
+      "sha256": "98671f7233d814c7bb971103463b05026f1661c92c44c8d2b54ca265dace262f"
+    },
+    "fixtures/c07_calibration/c07_graph_v2.json": {
+      "bytes": 34581,
+      "gitBlobSha1": "b02cfea433da49a591e9ac5debc73ce64e370378",
+      "sha256": "e1f39221ebe1f3e76b789e53ebbe4245cc16af199e5848d89d759228f25f2cab"
+    },
+    "fixtures/c07_calibration/c07_real_data_readiness_schema.json": {
+      "bytes": 419,
+      "gitBlobSha1": "6fc5ac4da18a83697311fd8ffb23b3f838b8f171",
+      "sha256": "4da3fdc2120e71f38563fb46c3a5e180758638f47a0c75d44e5ff7495eb4fd02"
+    },
+    "fixtures/c07_calibration/c07_synthetic_calibration_dataset.json": {
+      "bytes": 410247,
+      "gitBlobSha1": "3e5ade88d5942c9f08473181a7dbcdef8c5ba1a8",
+      "sha256": "f9d28b1ebe4a20153ecf4064301e4e8eb5845a00160e4b5ece8ce883cf8a46ce"
+    },
+    "fixtures/c07_calibration/c07_synthetic_corridor.osm": {
+      "bytes": 10102,
+      "gitBlobSha1": "8120db203fa32a5e42c691af606cb0c3cc62172c",
+      "sha256": "6380c4384ddf3e4d1f8dfcfc24a3e24a6e834f275711b369c0704dfc96620501"
+    },
+    "fixtures/c07_calibration/c07_synthetic_corridor.osm.pbf": {
+      "bytes": 1018,
+      "gitBlobSha1": "32c1916e47f4eb50292866203d9b4d5eea196e54",
+      "sha256": "210888924fa983d5fafcfea40519bb37d91bac3d4299c8160ec0b84572d78c00"
+    },
+    "src/rail/c07-calibration/batch-runner.ts": {
+      "bytes": 33989,
+      "gitBlobSha1": "4a8c09a63ec2e9f14ed170fc051cd1155c5e5824",
+      "sha256": "5bd9edb365356d72237906cc0c53cc70fa7f75e9d132950387a29f22a9933772"
+    },
+    "src/rail/c07-calibration/calibration.ts": {
+      "bytes": 7814,
+      "gitBlobSha1": "8c2ca2f9f0035e36c9a66b6c542ae46389a9eab8",
+      "sha256": "bbe94058c10bf91dc794469ebdb6295ed99b11d6280a7e4d88e243e7370d025a"
+    },
+    "src/rail/c07-calibration/contracts.ts": {
+      "bytes": 26255,
+      "gitBlobSha1": "91e5cc0ee143e2cdafc9d78094070ee338582867",
+      "sha256": "b83218efbf9a3b43ee4a98203e55af44e0ce9e5eb2e343dbb5a59aa4d322570f"
+    },
+    "src/rail/c07-calibration/cross-region.ts": {
+      "bytes": 13076,
+      "gitBlobSha1": "ee8bb91c91bddc60f93da55fa0e3222bf5dce023",
+      "sha256": "0a78cf48eeb3773c5debdeba1940c97ecdbb1182bce220f228b880780c010b73"
+    },
+    "src/rail/c07-calibration/discrepancy-registry.ts": {
+      "bytes": 6494,
+      "gitBlobSha1": "ca257926ba14463789bc37f76876357c934dcb15",
+      "sha256": "77549b107a9527ea54c8c6f2ba9e35643597db31facba7470d662d0b2061db39"
+    },
+    "src/rail/c07-calibration/index.ts": {
+      "bytes": 164,
+      "gitBlobSha1": "ebeee814a9cd95443eddc4f7ba2ff938be9dcb47",
+      "sha256": "e51667bb48cbe57ad6d91d9b10607ec1b8d62350f5ebf8e727caa72baf56f5fe"
+    },
+    "test_c07_calibration.mjs": {
+      "bytes": 39591,
+      "gitBlobSha1": "788651e029547e2b49ce66c5d825ad80010f6779",
+      "sha256": "707a04d0b884a3853ab782847bd5f9d9bc5cca9c4d44c2307472d2e2a4a47b7e"
+    }
+  },
+  "task": "C07-FIX-01"
+}

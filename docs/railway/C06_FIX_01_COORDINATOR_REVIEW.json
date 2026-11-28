@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "task": "C06 FIX-01 coordinator independent reconciliation",
+  "basis": "980cce428e1e1b4570938cb265d3ee06b068a0e2",
+  "sourceCommit": "202cdc78103cc6bafe6991d39330ca81ac644d10",
+  "date": "2026-11-28",
+  "archive": {
+    "name": "RAILWAY_CEO_C06_FIX_01_VERIFICATION.zip",
+    "bytes": 764176,
+    "sha256": "98e9a09811c7d0a850310e99868b0a383184b3d9a22bdbfb3ac1d152d047ae7c",
+    "entries": 144,
+    "manifest": "143/143",
+    "crc": "PASS",
+    "safePaths": true,
+    "commonWithC06": 136,
+    "unchangedCommon": 118
+  },
+  "source": {
+    "snapshot": "verification/railway/c06-fix-01/",
+    "recomputedArchiveGitBlobMatches": "25/25",
+    "manifestBlob": "2157cc9f41df9920600cca1db6a8e647c379efee",
+    "jarSha256": "34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb",
+    "rootRuntimeAdoption": "NOT_STARTED"
+  },
+  "independent": {
+    "V3": 36,
+    "C02": 8,
+    "C03Python": 6,
+    "C03TS": 5,
+    "upstream": 321,
+    "C05": 10,
+    "C06Subset": 4,
+    "downstream": 1,
+    "totalChecksOrGroups": 391,
+    "failed": 0,
+    "C06Scope": "case01 recorded metadata assertions, case05, case06 and partial case08 (five original findings, wrong-order and valid game control). No live Java",
+    "originalFiveProbes": "PASS",
+    "crossRegionScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY",
+    "limitations": [
+      "C02 live Osmium excluded",
+      "C05 cases05/10 renderer dependencies absent; optional offline clock unavailable",
+      "actual Java oracle, upstream Maven, C04 full suites, Chromium, strict tsc and physical Android not independently rerun"
+    ]
+  },
+  "reported": {
+    "total": 437,
+    "javaComparisons": 27,
+    "knownIncompatibleAccepted": 0,
+    "c06StrictTypeErrors": 0,
+    "preservedTypeErrors": [
+      "src/rail/map/pmtiles-adapter.ts(260,5)",
+      "src/rail/regions/portals.ts(3,26)"
+    ]
+  },
+  "performance": {
+    "independentLinuxSyntheticRouteP95Ms": 202.15,
+    "reportedWindowsRouteP95Ms": 495.84,
+    "targetP95Ms": 300,
+    "reportedFinalJavaWarmP95Ms": 35.62,
+    "previousIdenticalCodeReportJavaWarmP95Ms": 38.65,
+    "actualMobileAcceptance": false
+  },
+  "privateBackup": {
+    "originalZipLibraryId": "libfile_07053c47cdf48191a5ce5b0ae3ee0e29",
+    "evidenceZip": "RAILWAY_CEO_C06_FIX_01_INDEPENDENT_EVIDENCE.zip",
+    "evidenceLibraryId": "libfile_3f9560d87ab4819198c68edbae481950",
+    "evidenceBytes": 18320,
+    "evidenceSha256": "5404a0323905c182507ba94dc3072d2d688ab230b9e74ae4728e8fea985d0451",
+    "evidenceEntries": 30
+  },
+  "status": "C06_SYNTHETIC_PREPARATION_ACCEPTED_IN_VERIFIED_SCOPE__C07_SYNTHETIC_PREPARATION_ELIGIBLE_ON_OWNER_START",
+  "realPbfProcessed": false,
+  "releaseAllowed": false
+}

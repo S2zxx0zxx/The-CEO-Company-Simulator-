@@ -1,0 +1,725 @@
+{
+  "schemaVersion": 1,
+  "task": "R13",
+  "status": "V3_DEFINED_SYNTHETIC_REGRESSION_PASS_COMPLIANCE_PENDING",
+  "observedDate": "2026-11-26",
+  "source": {
+    "resource": "B01",
+    "provider": "Geofabrik",
+    "region": "Eastern Zone",
+    "listing": "https://download.geofabrik.de/asia/india/eastern-zone/",
+    "filename": "eastern-zone-261101.osm.pbf",
+    "url": "https://download.geofabrik.de/asia/india/eastern-zone/eastern-zone-261101.osm.pbf",
+    "sidecarUrl": "https://download.geofabrik.de/asia/india/eastern-zone/eastern-zone-261101.osm.pbf.md5",
+    "filenameDate": "2026-11-01",
+    "listedSize": "236 MB (rounded provider display)",
+    "sidecarListedSize": "62.0 B",
+    "listingConfirmed": true,
+    "license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "attributionUrl": "https://www.openstreetmap.org/copyright"
+  },
+  "actual": {
+    "retrievedAtUtc": null,
+    "bytes": null,
+    "receivedBytesThisAttempt": null,
+    "publishedMd5": "2bd5e0db4194c3aa127814f96975a50d",
+    "computedMd5": null,
+    "sha256": null,
+    "snapshotUtc": null,
+    "header": null,
+    "bbox": null,
+    "counts": null,
+    "rawFileRetained": false,
+    "parserExit": null
+  },
+  "tool": {
+    "resource": "B02",
+    "pin": "v1.19.0",
+    "source": "https://github.com/osmcode/osmium-tool",
+    "fileinfoManualBlob": "6d92e5eb47a2d67d2e00d82248d01b84ff60f0e9",
+    "fileinfoImplementationBlob": "c6d9dc66f151afa9f10827e8b67c7069ef13609c",
+    "fileinfoExampleBlob": "71d1da972c7fd452a3933c13b88e6337907ba486",
+    "binaryAvailable": false,
+    "binarySha256": null,
+    "currentRuntimeAvailability": "UNKNOWN_RUNTIME_UNAVAILABLE",
+    "windowsCandidate": {
+      "channel": "conda-forge",
+      "version": "1.19.0",
+      "build": "h60971b7_3",
+      "platform": "win-64",
+      "package": "win-64/osmium-tool-1.19.0-h60971b7_3.conda",
+      "source": "https://anaconda.org/conda-forge/osmium-tool/files?page=1",
+      "installed": false
+    }
+  },
+  "attempts": [
+    {
+      "check": "curl exact sidecar URL",
+      "exit": 6,
+      "result": "Could not resolve host"
+    },
+    {
+      "check": "curl HEAD exact PBF URL",
+      "exit": 6,
+      "result": "Could not resolve host"
+    },
+    {
+      "check": "web provider links",
+      "result": "application/octet-stream unsupported for both files"
+    },
+    {
+      "check": "alternate binary download sidecar",
+      "result": "Download failed"
+    },
+    {
+      "check": "command -v osmium",
+      "exit": 1,
+      "result": "Unavailable"
+    },
+    {
+      "check": "python import spec osmium",
+      "result": "None"
+    },
+    {
+      "check": "Owner-uploaded files: direct reads, hashes, shell listing, pwd/true and Python execution",
+      "result": "Runtime ClientError before output; actual size and bytes not verified"
+    },
+    {
+      "check": "Resume R13: shell and Python commands on original mounted paths",
+      "result": "ClientError before command output"
+    },
+    {
+      "check": "File service metadata and sidecar read",
+      "result": "PBF metadata 247546068 bytes; checksum sidecar 62 bytes; installer 158341784 bytes; sidecar literal MD5 2bd5e0db4194c3aa127814f96975a50d"
+    },
+    {
+      "check": "Intentional rematerialization of PBF and sidecar",
+      "result": "Succeeded, metadata 247546068 and 62 bytes; subsequent shell hash/tool probe ClientError before command output"
+    }
+  ],
+  "workspace": {
+    "freeSpaceObserved": "30G rounded df display",
+    "approvedIndiaLocatedWorkspaceVerified": false,
+    "actualAccuracyAndAttributeReview": null,
+    "rawInGit": false
+  },
+  "helper": {
+    "path": "tools/railway/acquire_pbf.py",
+    "gitBlob": "f6be5d19dc6fa3834a1ff3fa5a64c61d377eef81",
+    "sha256": "5c8ccba511371c12f1d1cd18a04f336c689a833186de23fa5d53df6d5609d288",
+    "tests": 6,
+    "passed": 6,
+    "liveRun": false
+  },
+  "acceptance": {
+    "actualPbfValidated": false,
+    "hashRecorded": false,
+    "readyForExtraction": false,
+    "blockedDependents": [
+      "R14",
+      "R15",
+      "R16",
+      "R17",
+      "R18",
+      "R19",
+      "R20"
+    ],
+    "nextIndependent": "R21",
+    "nextAuthorized": "R21"
+  },
+  "ownerHandoff": {
+    "filenames": [
+      "eastern-zone-261101.osm.pbf",
+      "eastern-zone-261101.osm.pbf.md5",
+      "Miniforge3-Windows-x86_64.exe"
+    ],
+    "attachmentMetadataObserved": true,
+    "actualBytesReadable": null,
+    "readAttempts": "Files service read sidecar and rematerialized PBF and sidecar; container and Python runtime ClientError before executing commands; full PBF hash not computed.",
+    "windowsInstallerExecuted": false,
+    "sequence": "R13–R20 deferred as blocked chain; proceed independent R21; finish original G2 dependency order at final reconciliation",
+    "next": "START R21",
+    "uploadMetadata": {
+      "pbfBytes": 247546068,
+      "sidecarBytes": 62,
+      "windowsInstallerBytes": 158341784,
+      "sidecarText": "2bd5e0db4194c3aa127814f96975a50d  eastern-zone-261101.osm.pbf",
+      "sidecarOrigin": "Owner-uploaded provider-named sidecar, not independently retrieved from provider in this retry",
+      "materializedPbfBytes": 247546068,
+      "materializedSidecarBytes": 62
+    },
+    "pcDeferral": {
+      "ownerAuthorized": true,
+      "when": "final reconciliation unless approved execution recovers earlier",
+      "requiredOutput": "R13_VERIFICATION.json",
+      "noCodexRequired": true
+    }
+  },
+  "historicalDirectDownloadReceivedBytes": 0,
+  "reportedLocalVerification": {
+    "source": "Owner-pasted Gemini CLI report; actual JSON/lock bytes not yet received or independently hashed",
+    "date": "2026-11-27",
+    "status": "REPORTED_LOCAL_PASS_PENDING_EVIDENCE_AND_RIGHTS",
+    "pbf": {
+      "bytes": 247546068,
+      "md5": "2bd5e0db4194c3aa127814f96975a50d",
+      "sha256": "6f84fd4d634839b12b96126debd9e9b0237af8c927c5d746a6e272407fa1363a",
+      "sidecarBytes": 62,
+      "sidecarSha256": "06506014cebc79436524cb831cff6e748060f0bba44e8b053576cfb606c47a39",
+      "crc32": "1198aa55",
+      "generator": "osmium/1.16.0",
+      "snapshotUtc": "2026-11-01T21:21:36Z",
+      "replicationSequence": 1846,
+      "ordered": true,
+      "multipleVersions": false,
+      "withHistory": false,
+      "counts": {
+        "nodes": 40636804,
+        "ways": 3882397,
+        "relations": 11657,
+        "changesets": 0
+      }
+    },
+    "osmium": {
+      "version": "1.19.0",
+      "build": "h60971b7_3",
+      "libosmium": "2.23.1",
+      "binarySha256": "6fb24c9f0859592d613c06628e19f00b7d081818d13183c25ef5274fcc77083b",
+      "fileinfoExit": 0,
+      "scriptExit": 0
+    },
+    "artifacts": {
+      "verification": {
+        "name": "R13_VERIFICATION.json",
+        "bytes": 15800,
+        "sha256": "b5944b80558586370f5fedd2b04d4ddeb770e7b069d5794b97df6111b3678e93"
+      },
+      "lock": {
+        "name": "R13_CONDA_EXPLICIT.txt",
+        "bytes": 1634,
+        "sha256": "a7ef24933aadc024488da411c36fa7f1a717ad82586268c8f6078297f97641cd"
+      }
+    },
+    "workspace": {
+      "privateOutsideGitReported": true,
+      "indiaLocationOwnerAttested": true,
+      "independentlyVerified": false,
+      "miniforgeVersion": "26.9.4-2",
+      "condaVersion": "26.9.4",
+      "installerSignatureReportedValid": true,
+      "originalsReportedPreserved": true,
+      "childEnvironment": "PYTHONNOUSERSITE=1; use absolute PowerShell/conda paths; prepend System32 and WindowsPowerShell to child PATH only"
+    },
+    "upstream": {
+      "ownerSidecarMatchReported": true,
+      "independentProviderFetch": "ChatGPT web attempt failed (binary sidecar inaccessible); PC HTTPS recheck pending"
+    },
+    "rights": {
+      "status": "REVIEW_OPEN",
+      "sources": [
+        "https://opendatacommons.org/licenses/odbl/1-0/",
+        "https://osmfoundation.org/wiki/Licence/Licence_and_Legal_FAQ",
+        "https://osmfoundation.org/wiki/Attribution_Guidelines",
+        "https://www.geospatial.dst.gov.in/Guidelines.aspx",
+        "https://dst.gov.in/news/list-featuresinstallations-and-their-sensitive-attributes-reference-guidelines-acquiring-and"
+      ],
+      "conclusions": "OSM commercial use allowed subject to ODbL; segregate geographic derived database from independent game code/data; attribution, derivative DB offer/alterations and distribution conditions before release. DST guideline 8 allows processing subject to Indian Entity, sensitive attributes and accuracy conditions; actual accuracy not established by decimal precision; no foreign transfer, no raw data in Git. Owner eligibility and local workspace attestation, applicable negative attribute/precision and boundary review pending. Not legal certification."
+    },
+    "acceptance": {
+      "C01": "BLOCKED",
+      "R13": "BLOCKED",
+      "C02": "NOT_STARTED",
+      "rawPbfUploadAllowed": false
+    }
+  },
+  "reportedProvenanceReconciliation": {
+    "source": "Owner-pasted Gemini CLI report; evidence files not uploaded to ChatGPT, no independent file-byte verification",
+    "retrievedUtc": "2026-11-27T13:21:37.081687+00:00",
+    "url": "https://download.geofabrik.de/asia/india/eastern-zone/eastern-zone-261101.osm.pbf.md5",
+    "httpStatus": 200,
+    "exitCode": 0,
+    "bytes": 62,
+    "sidecarSha256": "06506014cebc79436524cb831cff6e748060f0bba44e8b053576cfb606c47a39",
+    "md5": "2bd5e0db4194c3aa127814f96975a50d",
+    "threeWayMatchReported": true,
+    "sanitizedArtifacts": [
+      {
+        "name": "R13_VERIFICATION_SANITIZED.json",
+        "bytes": 15679,
+        "sha256": "8f529a919704d25d17f1a01dd39c616272caf6a55d5b2bf755548397f42cf71d"
+      },
+      {
+        "name": "R13_CONDA_EXPLICIT_SANITIZED.txt",
+        "bytes": 1613,
+        "sha256": "562d34ff7175380dcb07a8d9a8028cc67dcc3d7397a5c40e6b1238e0f22c2082"
+      },
+      {
+        "name": "R13_PROVENANCE_RECONCILIATION_SANITIZED.json",
+        "bytes": 5339,
+        "sha256": "e09e7c056958227bf589d1a8504d354379e2c177cb5362372cc8033ecf95bf54"
+      },
+      {
+        "name": "R13_DATA_USE_REVIEW.md",
+        "bytes": 7363,
+        "sha256": "f94c5bf83c2c91c46a19fe1c9d9779ee8eb50832385af968b3616ca56dce51d8"
+      }
+    ],
+    "officialReview": {
+      "negativeList": "https://dst.gov.in/sites/default/files/Final%20List%20of%20Negative%20Attributes_0.pdf",
+      "pagesReviewed": 6,
+      "numberedEntries": 51,
+      "review": "Official PDF text and six page images reviewed by assistant. No sensitive feature inventory or locations recorded. Civilian-only minimum required attribute policy; deny uncertain/restricted records, test against synthetic examples; actual local filter verification outstanding.",
+      "guidelines": "https://www.geospatial.dst.gov.in/Guidelines.aspx",
+      "selfCertification": "https://www.geospatial.dst.gov.in/IndianEntityTermsandCondition.aspx",
+      "odbl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "decision": "Separate actual derived geographic database and independent game data/code; comply with ODbL attribution, share-alike and access before public use. No political boundary depiction until authorized SOI layer. Treat accuracy unknown conservatively, keep raw/derived data local in India until reviewed. Indian Entity eligibility owner confirmation and applicable self-certification remain open; no legal clearance claimed. Official PDF retrieval blocker resolved, application of restrictions not yet verified."
+    },
+    "acceptance": "C01/R13 BLOCKED pending sanitized evidence and owner/policy confirmation; C02 not started."
+  },
+  "independentEvidenceInspection": {
+    "date": "2026-11-27",
+    "method": "Read uploaded eight files in local container; actual byte size and SHA256, parsed four JSONs, normalized lock comparison, package IDs and cross-record assertions. No raw PBF or Windows executable rerun.",
+    "files": [
+      {
+        "name": "geofabrik-eastern-zone-261101.osm.pbf.md5",
+        "bytes": 62,
+        "sha256": "06506014cebc79436524cb831cff6e748060f0bba44e8b053576cfb606c47a39",
+        "matchReported": true
+      },
+      {
+        "name": "R13_CONDA_EXPLICIT.txt",
+        "bytes": 1631,
+        "sha256": "3cdcc459c49c2583d01fb390a10e92eea8883ace3e0db02e45da58d1d95cee87",
+        "matchReported": false
+      },
+      {
+        "name": "R13_CONDA_EXPLICIT_SANITIZED.txt",
+        "bytes": 1613,
+        "sha256": "562d34ff7175380dcb07a8d9a8028cc67dcc3d7397a5c40e6b1238e0f22c2082",
+        "matchReported": true
+      },
+      {
+        "name": "R13_DATA_USE_REVIEW.md",
+        "bytes": 7363,
+        "sha256": "f94c5bf83c2c91c46a19fe1c9d9779ee8eb50832385af968b3616ca56dce51d8",
+        "matchReported": true
+      },
+      {
+        "name": "R13_PROVENANCE_RECONCILIATION.json",
+        "bytes": 4990,
+        "sha256": "d268ee80927bf5dc10497b3089f0e06abb61815a16a2fba4320ad7232ffb9ddf",
+        "matchReported": true
+      },
+      {
+        "name": "R13_PROVENANCE_RECONCILIATION_SANITIZED.json",
+        "bytes": 5339,
+        "sha256": "e09e7c056958227bf589d1a8504d354379e2c177cb5362372cc8033ecf95bf54",
+        "matchReported": true
+      },
+      {
+        "name": "R13_VERIFICATION.json",
+        "bytes": 15800,
+        "sha256": "b5944b80558586370f5fedd2b04d4ddeb770e7b069d5794b97df6111b3678e93",
+        "matchReported": true
+      },
+      {
+        "name": "R13_VERIFICATION_SANITIZED.json",
+        "bytes": 15679,
+        "sha256": "8f529a919704d25d17f1a01dd39c616272caf6a55d5b2bf755548397f42cf71d",
+        "matchReported": true
+      }
+    ],
+    "lockNormalization": {
+      "uploadedBytes": 1631,
+      "reportedBytes": 1634,
+      "reason": "Missing UTF-8 BOM in uploaded copy; prepending EF BB BF reproduces reported original SHA256 exactly",
+      "reconstructedSha256": "a7ef24933aadc024488da411c36fa7f1a717ad82586268c8f6078297f97641cd",
+      "packageLinesIdentical": true,
+      "packageIdentities": 13,
+      "condaForgeWin64DigestEntries": 13
+    },
+    "checks": {
+      "sidecarBytesVerified": true,
+      "threeWayMd5RecordConsistent": true,
+      "pbfSha256RecordConsistent": true,
+      "parserExitRecordZero": true,
+      "orderedSingleVersionSnapshot": true,
+      "countsAndTimestampConsistent": true,
+      "pin": "1.19.0=h60971b7_3",
+      "allSevenOtherFileHashesMatch": true,
+      "originalArchiveHashesAndCrcVerified": true
+    },
+    "limitations": "Actual PBF bytes, local executable and upstream network execution not independently rerun; original uploaded JSON records are coherent evidence, not external attestation. No private paths, coordinates or original raw evidence committed.",
+    "policy": {
+      "source": "https://www.geospatial.dst.gov.in/Guidelines.aspx",
+      "reviewed": "2026-11-27",
+      "interpretation": "Para 8(ii) generally no prior approval except specified restrictions; self-certification conveys adherence. Para 7(f) any Indian citizen qualifies as individual; company/LLP ownership/control conditions separate. Need owner confirmation of individual eligibility or publisher entity status; no inference from location. Official self-certification terms endpoint returned 502 on current fetch. Actual data screening still pending; no claim of legal clearance.",
+      "next": "Obtain owner confirmation; establish local-only reviewed civilian allowlist/deny uncertain attributes, independent geographic DB ODbL obligations, no political boundary layer without SoI compliance. Actual extraction only after recorded project preflight. Public redistribution remains gated separately."
+    }
+  },
+  "currentAcceptance": {
+    "asOf": "2026-11-27",
+    "ownerEligibilityAttested": true,
+    "technicalAcquisitionAcceptance": "SATISFIED",
+    "fullC01": "BLOCKED",
+    "reason": "V3 defined synthetic regressions independently verified; applicable self-certification and safe civilian/territorial scope unresolved",
+    "policyPath": "docs/railway/C01_C02_LOCAL_DATA_POLICY.json",
+    "handoffPath": "docs/railway/C01_COMPLIANCE_PREFLIGHT.md",
+    "C02": "NOT_STARTED",
+    "releaseAllowed": false
+  },
+  "localPreflightReport": {
+    "date": "2026-11-27",
+    "evidenceSource": "Owner-pasted Gemini report; new actual artifact bytes not received",
+    "checkpoint": "109ffc2328276f03595281025952729a6544298c",
+    "verification": {
+      "name": "R13_COMPLIANCE_PREFLIGHT_SANITIZED.json",
+      "bytes": 8229,
+      "sha256": "c1f7167d22b88c93656cb1848383014302c6b8c65cccbe507c4418d02e5cad2d"
+    },
+    "reported": {
+      "workspaceOutsideGitAndSync": true,
+      "sourceAndParserHashesUnchanged": true,
+      "syntheticTestsPassed": 11,
+      "syntheticTestsTotal": 11,
+      "realExtractionPerformed": false,
+      "negativeList": {
+        "url": "https://www.dst.gov.in/static/uploads/2025/10/377573618229195cf17d8745e5f0042c.pdf",
+        "http": 200,
+        "bytes": 445775,
+        "sha256": "ce442221c3ac80e0dfe626dd210812f5ce0415d6fe8711c5cd25476cd251e7ee",
+        "pages": 6
+      },
+      "filterArtifacts": [
+        {
+          "name": "C02_CIVILIAN_RAIL_EXTRACTION_POLICY.json",
+          "sha256": "b5ae117c2bba7e74f5f8692b88a8e4e40e4e2efc2da03e8e84f91c33267e2b8f"
+        },
+        {
+          "name": "c02_rail_prefilter.py",
+          "sha256": "2cdd869be392aef4f07235d09f604ab4abaf86eca242d25f5af8961a8213e26f"
+        },
+        {
+          "name": "test_c02_prefilter_synthetic.py",
+          "sha256": "d148d1b1573120681fe42037997f3a4dabad3d5c17d4e8fe9afea30d302ba184"
+        }
+      ],
+      "certificationFiled": false,
+      "readyForC02RealExtraction": false
+    },
+    "coordinatorReview": {
+      "technicalR13": "SATISFIED previously",
+      "archivesReopenedActual": "Both expected SHA256 match; 3059 and 15 regular entries; CRC clean; original task rows R13 and R14 match",
+      "officialGuidelines": "https://www.geospatial.dst.gov.in/Guidelines.aspx",
+      "officialPortal": "https://www.geospatial.dst.gov.in/Login.aspx",
+      "negativeListReview": "Legacy official PDF cached text reopened; page 2 image inspected; page 6 screenshot failed and text inspected. New CMS binary could not be independently fetched here; Gemini hash remains reported. DST para 8(ii)-(iii) does not impose blanket prior approval or prohibited geographic areas; listed attribute restrictions are specific. Do not treat an across-the-board border buffer as statutory ban on ordinary civilian rail. No mapping or inventory of restricted facilities; require documented safe civilian scope, exclude uncertain data; seek DST clarification if applicability unresolved. No blanket legal clearance.",
+      "certification": "No filing evidence; owner must personally verify eligibility and applicable undertakings before submitting; correct official entry is Login.aspx, not assumed SelfCertification.aspx. Do not certify incomplete compliance. If uncertain ask DST for written guidance.",
+      "policyScope": "Reported prefilter excludes real spur/siding/yard; conservative for initial public rail scope, not final proof of GP-011/032 or yard game coverage. Keep fictional game-owned yard mechanics separate; no claim all real yard data required. Review actual filter policy and tests before approval.",
+      "acceptance": "C01 BLOCKED; actual sanitized preflight report and reviewable non-sensitive implementation evidence pending, applicable certification and safe civilian scope unresolved. C02 NOT_STARTED. C09 independent contract review may be proposed under owner authorization; no real geographic dependency bypass."
+    }
+  },
+  "localPreflightArtifactInspection": {
+    "date": "2026-11-27",
+    "files": [
+      {
+        "name": "C01_C02_LOCAL_DATA_POLICY.json",
+        "bytes": 5480,
+        "sha256": "cce86cda5d62fd3b9d150c250f40acf3d7e1bc11f5db1351b99be159214ad984",
+        "originalGitBlobMatch": true
+      },
+      {
+        "name": "C01_COMPLIANCE_PREFLIGHT.md",
+        "bytes": 2685,
+        "sha256": "f498647982c2cb8a4212d337bf149c0e77839469191e5e92c287160086feb893",
+        "originalGitBlobMatch": true
+      },
+      {
+        "name": "C02_CIVILIAN_RAIL_EXTRACTION_POLICY.json",
+        "bytes": 3944,
+        "sha256": "b5ae117c2bba7e74f5f8692b88a8e4e40e4e2efc2da03e8e84f91c33267e2b8f"
+      },
+      {
+        "name": "R13_COMPLIANCE_PREFLIGHT_SANITIZED.json",
+        "bytes": 8229,
+        "sha256": "c1f7167d22b88c93656cb1848383014302c6b8c65cccbe507c4418d02e5cad2d"
+      }
+    ],
+    "allFourMatchReported": true,
+    "sourceAndParserHashesConsistent": true,
+    "syntheticTestResult": "11/11 reported by local evidence; source module and test suite not uploaded, no independent rerun",
+    "originalArchives": "Actual SHA256 and CRC checked again, 3059/15 files; R13/R14 exact task rows reopened",
+    "review": "Policy JSON inspected: deny-overrides-allow, metadata minimization and no boundary display are appropriate preliminary controls. Generic tags, missing access or usage, and tag exclusions alone do not establish civilian eligibility or territorial compliance. No explicit relation/member extraction contract in uploaded filter policy; must reconcile complete reference audit before R14 acceptance. Siding/yard exclusion is pilot scope not full yard gameplay coverage. Do not produce a restricted-site inventory or assume legal clearance. No actual extraction.",
+    "certification": {
+      "status": "UNRESOLVED",
+      "officialGuidelines": "https://geospatial.dst.gov.in/Guidelines.aspx",
+      "officialTerms": "https://www.geospatial.dst.gov.in/IndianEntityTermsandCondition.aspx",
+      "officialContact": "https://geospatial.dst.gov.in/",
+      "finding": "Official guidance removes blanket prior approval and uses self-certification for adherence. No definitive evidence of timing/applicability for this particular private prototype, no executed declaration. Seek owner determination supported by official clarification if unclear; do not claim filing or waive project gate."
+    },
+    "remaining": [
+      "Review actual non-sensitive prefilter and synthetic test source (not received)",
+      "Applicable self-certification determination and documented safe civilian/territorial scope",
+      "C01 coordinator final acceptance before C02"
+    ],
+    "releaseAllowed": false
+  },
+  "localFilterSourceReview": {
+    "date": "2026-11-27",
+    "inputs": [
+      {
+        "name": "c02_rail_prefilter.py",
+        "bytes": 7926,
+        "sha256": "2cdd869be392aef4f07235d09f604ab4abaf86eca242d25f5af8961a8213e26f"
+      },
+      {
+        "name": "test_c02_prefilter_synthetic.py",
+        "bytes": 7059,
+        "sha256": "d148d1b1573120681fe42037997f3a4dabad3d5c17d4e8fe9afea30d302ba184"
+      }
+    ],
+    "sourceHashesMatchReported": true,
+    "independentSyntheticExecution": {
+      "original": {
+        "passed": 11,
+        "total": 11,
+        "exitCode": 0,
+        "retained": 3,
+        "excluded": 8
+      },
+      "additional": {
+        "passed": 0,
+        "total": 7,
+        "confirmedDefects": 6,
+        "missingContract": 1,
+        "findings": [
+          "Ordinary untagged geometry nodes rejected and associated synthetic track quarantined",
+          "Missing node references accepted",
+          "Station node output loses geometry",
+          "Station way output loses member references",
+          "Invalid coordinate accepted",
+          "Missing object identity accepted",
+          "Relation/member processing contract absent"
+        ]
+      }
+    },
+    "archives": {
+      "sha256AndCrcRechecked": true,
+      "v4Files": 3059,
+      "v5Files": 15
+    },
+    "scope": "Only synthetic records tested; no actual geographic data, no PBF extraction. Preliminary filter not accepted for production. Privacy and exclusion safeguards must not be weakened; no real data until compliance gates clear.",
+    "remaining": [
+      "Remediate confirmed synthetic correctness defects and prove explicit relation/member disposition and complete reference integrity under fail-closed policy",
+      "Applicable self-certification determination and approved safe civilian scope",
+      "Coordinator acceptance"
+    ],
+    "releaseAllowed": false
+  },
+  "v2FilterRemediationReport": {
+    "date": "2026-11-27",
+    "basis": "22b98b6df7120fcf4740c542081a5b0eb5b2347b",
+    "source": "Owner-pasted Gemini CLI report only; updated artifact bytes not received; no independent V2 execution",
+    "artifacts": [
+      {
+        "name": "c02_rail_prefilter.py",
+        "bytes": 18081,
+        "sha256": "8b80604e5d4cf6e826cbb5a80a4db2d5004b29c628fee2984b745f39541fcb4a"
+      },
+      {
+        "name": "test_c02_prefilter_synthetic.py",
+        "bytes": 17020,
+        "sha256": "8b331ed3d3e0235657733d44720189528ebcf881d2f6635d6d7ae38f8f4c471e"
+      },
+      {
+        "name": "C02_CIVILIAN_RAIL_EXTRACTION_POLICY.json",
+        "bytes": 5441,
+        "sha256": "d5eeed70d02ffa7de64558a1ab543184715b2f3a944af97bc64ec593d3ef7085"
+      },
+      {
+        "name": "R13_PREFILTER_REMEDIATION_SANITIZED.json",
+        "bytes": 6590,
+        "sha256": "74bfa761219d1eea2895e2dc4543e41717f089a5b4f3815f29cd291dc0619ff3"
+      }
+    ],
+    "reportedTests": {
+      "original": "11/11",
+      "additional": "7/7",
+      "combined": "18/18",
+      "exitCode": 0,
+      "independentVerification": false
+    },
+    "reportedRemediation": "Six geometry/reference/identity defects and relation/member contract addressed; original files preserved per report. Actual source review and synthetic rerun pending. No real PBF processing reported.",
+    "remaining": [
+      "Verify exact four updated files and rerun independent original and regression checks against synthetic data only",
+      "Resolve applicable self-certification determination and safe civilian/territorial scope",
+      "Coordinator C01 acceptance before C02; separate public distribution/ODbL gate"
+    ],
+    "releaseAllowed": false
+  },
+  "v2IndependentReview": {
+    "basis": "e521d4597565e67360f7d13c4a8f8a5a7399618b",
+    "artifactHashMatches": 4,
+    "artifactsTotal": 4,
+    "suppliedSuite": {
+      "original": "11/11",
+      "additional": "7/7",
+      "combined": "18/18",
+      "exitCode": 0
+    },
+    "extendedSuite": {
+      "passed": 5,
+      "total": 16,
+      "failed": 11,
+      "exitCode": 1,
+      "passes": [
+        "node exclusion conflict rejected both orders",
+        "valid batch references accepted",
+        "missing relation member quarantined",
+        "unreferenced geometry dropped",
+        "excluded node propagates to way and relation"
+      ],
+      "findings": [
+        "way exclusion conflict survives both orderings",
+        "relation exclusion conflict survives both orderings",
+        "conflicting allowed node geometry silently overwritten",
+        "conflicting allowed way geometry silently overwritten",
+        "identical relation duplicated",
+        "direct way evaluation without reference context accepts",
+        "direct relation evaluation without reference context accepts",
+        "denyOperatorTypes not wired; synthetic operator:type probe retained",
+        "track allowedUsageValues not enforced for unknown nonempty value",
+        "oversized numeric coordinate throws OverflowError",
+        "non-object batch element throws AttributeError"
+      ]
+    },
+    "immutableArchives": {
+      "v4": {
+        "sha256": "ebd171202005b8a680540c7f9add297298feb69ea11acc1b36f5c86c46b9f4ea",
+        "files": 3059,
+        "crcPass": true
+      },
+      "v5": {
+        "sha256": "ba177fb4ecbc7247696459e4794fec878adf2c0f0b6ebc07903339653376e41d",
+        "files": 15,
+        "crcPass": true
+      },
+      "r13r14RowsMatch": true
+    },
+    "realPbfProcessed": false,
+    "releaseAllowed": false
+  },
+  "v3IndependentReview": {
+    "basis": "3b8ef936f9527d059dfcc5779099686631b5234e",
+    "artifactHashMatches": 4,
+    "artifacts": [
+      {
+        "name": "c02_rail_prefilter.py",
+        "bytes": 23495,
+        "sha256": "dacd8e10122695004cb531623bb937c760fb5b94746a549eb06e9235a0be7938"
+      },
+      {
+        "name": "test_c02_prefilter_synthetic.py",
+        "bytes": 31078,
+        "sha256": "c6c2c9217418f100f2593bfac600c840b58e7a152491d686aaf446eea377a215"
+      },
+      {
+        "name": "C02_CIVILIAN_RAIL_EXTRACTION_POLICY.json",
+        "bytes": 6250,
+        "sha256": "3929be9cd5ae29054f732bc2c5e7304a8b3899a89666de893bbd2cb6a4b93e70"
+      },
+      {
+        "name": "R13_PREFILTER_V3_VERIFICATION_SANITIZED.json",
+        "bytes": 17736,
+        "sha256": "22aa1fb3a082b43c07da7d713a8ab3f9165e1119ef5b9f2c9c9341e04724a5e0"
+      }
+    ],
+    "suppliedSuite": {
+      "passed": 36,
+      "total": 36,
+      "exitCode": 0,
+      "reportExactMatch": true
+    },
+    "unchangedCoordinatorSuite": {
+      "passed": 16,
+      "total": 16,
+      "exitCode": 0,
+      "overlapsSupplied": true
+    },
+    "originalTaskLedgerByteMatch": true,
+    "archivesCrcAndSha256Match": true,
+    "previousElevenFailuresClosedInSyntheticScope": true,
+    "realPbfProcessed": false,
+    "releaseAllowed": false
+  },
+  "c02PreparationIndependentReview": {
+    "basis": "af7ab9fa5da11707bad06b06bc27aa9d9cf689e9",
+    "artifactHashesMatched": 7,
+    "artifactHashesTotal": 7,
+    "v3Supplied": "36/36",
+    "v3Independent": "16/16",
+    "c02FullIndependent": {
+      "passed": 3,
+      "blockedEnvironment": 2,
+      "reportedByGemini": "5/5"
+    },
+    "pythonAdapterStructuralFixtures": "2/2",
+    "typescriptIndependentlyExecuted": false,
+    "syntheticRecords": 35500,
+    "retained": 29940,
+    "excluded": 5560,
+    "elapsedSeconds": 5.741,
+    "peakPythonHeapBytes": 580109,
+    "deterministicSha256": "b150eb5b64ad4b4374429db1f5aede9b15a84831b6404dd092e39c3c20da220b",
+    "realPbfProcessed": false,
+    "releaseAllowed": false
+  },
+  "c02LocalToolchainReview": {
+    "basis": "093d7045727a413395ff3e939f3c51899664a277",
+    "currentHashes": "8/8",
+    "preservedV3Hashes": "4/4",
+    "mavenZipEntries": 104,
+    "mavenZipCRC": "PASS",
+    "v3Supplied": "36/36",
+    "c02Core": "3/3",
+    "c02FullGeminiReported": "6/6",
+    "oracleGeminiReported": "34/34",
+    "dependencyListSha256": "091ded608cae513dd1357a121eb2851903275cdfcf420b16628b2286be7a47a8",
+    "dependencyListMarkdownMismatch": true,
+    "syntheticRecords": 35500,
+    "retained": 29940,
+    "excluded": 5560,
+    "elapsedSeconds": 6.542,
+    "peakPythonHeapBytes": 580261,
+    "independentIntakeDefects": 3,
+    "realPbfProcessed": false,
+    "releaseAllowed": false
+  },
+  "c02FinalIntakeBundleReview": {
+    "basis": "ce8e45f0f191144b8fd98fe42b8385e77566f776",
+    "zipSha256": "a203a32f87f3d5bd8cd75deb95ff88104947d9be4330bf9cbad8f44fb80ff858",
+    "bytes": 77598,
+    "files": 27,
+    "manifest": "26/26",
+    "crc": "PASS",
+    "v3": "36/36",
+    "c02Independent": "8/8 executed",
+    "c02NotRun": [
+      "c02_06_e2e_synthetic_osmium_file_smoke"
+    ],
+    "typescriptIndependent": "2/2 PASS",
+    "geminiReported": {
+      "c02": "9/9",
+      "oracle": "34/34",
+      "planetilerHelpExit": 0
+    },
+    "priorIntakeDefectsClosedInRegressionScope": true,
+    "syntheticRecords": 35500,
+    "retained": 29940,
+    "excluded": 5560,
+    "elapsedSeconds": 6.552,
+    "peakPythonHeapBytes": 580489,
+    "realPbfProcessed": false,
+    "releaseAllowed": false
+  }
+}

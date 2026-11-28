@@ -1,0 +1,84 @@
+name: R53 isolated railway QA artifacts
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'railway-app/**'
+      - 'tools/qa/**'
+      - 'vite.railway.config.ts'
+      - 'scripts/railway-r51*'
+      - 'package-lock.json'
+      - '.github/workflows/railway-r53.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  web:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --no-audit --no-fund
+      - run: |
+          set -euo pipefail
+          mkdir -p r53-first r53-evidence
+          for pass in first second; do
+            R47_BUILD_ID=r53-development npm exec vite -- build --config vite.railway.config.ts
+            R47_QA=1 R47_BUILD_ID=r53-guest npm exec vite -- build --config vite.railway.config.ts
+            if [ "$pass" = first ]; then mv railway-dist r47-qa-dist r53-first/; fi
+          done
+          python tools/qa/r53/web.py
+          git rev-parse HEAD > r53-evidence/source-commit.txt
+          (cd r53-evidence && sha256sum *.zip *.json source-commit.txt > MANIFEST.sha256 && sha256sum -c MANIFEST.sha256)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r53-railway-web-QA
+          path: r53-evidence/
+          retention-days: 14
+  android:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
+          log-accepted-android-sdk-licenses: 'false'
+      - run: npm ci --no-audit --no-fund
+      - run: R47_QA=1 R47_BUILD_ID=r53-guest npm exec vite -- build --config vite.railway.config.ts
+      - run: R53_PACKAGE_QA=1 node tools/qa/r47/prepare-android.mjs
+      - run: python tools/qa/r53/native.py
+      - run: node tools/qa/r47/audit-native.mjs
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - uses: ReactiveCircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          script: bash tools/qa/r47/android.sh
+      - run: |
+          cp r47-native-evidence/*.json r53-evidence/
+          git rev-parse HEAD > r53-evidence/source-commit.txt
+          (cd r53-evidence && sha256sum *.apk *.aab *.json *.txt > MANIFEST.sha256 && sha256sum -c MANIFEST.sha256)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r53-railway-android-QA
+          path: |
+            r53-evidence/
+            r47-native-evidence/
+          retention-days: 14

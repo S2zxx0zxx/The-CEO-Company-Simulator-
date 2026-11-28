@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "task": "C06 FIX-01 strict validator traction and comparison integrity reconciliation",
+  "basis": "3245216aee348c292257625fbefd3cb049611982",
+  "priorIntermediateCommit": "19e7d1f170e126b9bc5cf541b2c5216be42d45c5",
+  "sourceCommit": "202cdc78103cc6bafe6991d39330ca81ac644d10",
+  "date": "2026-11-28",
+  "archive": {
+    "name": "RAILWAY_CEO_C06_FIX_01_VERIFICATION.zip",
+    "bytes": 764176,
+    "sha256": "98e9a09811c7d0a850310e99868b0a383184b3d9a22bdbfb3ac1d152d047ae7c",
+    "files": 144,
+    "manifest": "143/143",
+    "crc": "PASS",
+    "safePaths": true,
+    "cleanExtractionVerified": true
+  },
+  "source": {
+    "snapshot": "verification/railway/c06-fix-01/",
+    "snapshotFilesVerified": 26,
+    "postPushByteVerification": "100%",
+    "protectedRefsUnchanged": true,
+    "openRailRoutingCommit": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+    "adapterJarBytes": 34375,
+    "adapterJarSha256": "34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb",
+    "boundCacheGraphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+    "rootRuntimeAdoption": "NOT_STARTED"
+  },
+  "executedSuites": {
+    "openrailroutingMavenOffline": 34,
+    "c06StrictOracleLiveJava": 8,
+    "c05PackagesInstallAndPortals": 12,
+    "c04ContractsAndTiles": 5,
+    "c03RuntimeTS": 5,
+    "upstreamR07R11": 321,
+    "downstreamGraphpack": 1,
+    "c03PythonTopology": 6,
+    "v3Prefilter": 36,
+    "c02PipelineLiveOsmium": 9,
+    "totalExecuted": 437,
+    "totalPassed": 437,
+    "failedInExecutedScope": 0,
+    "typescriptStrict": {
+      "version": "5.9.3",
+      "c06OracleErrors": 0,
+      "preservedUpstreamErrors": 2,
+      "preservedUpstreamLocations": [
+        "src/rail/map/pmtiles-adapter.ts(260,5)",
+        "src/rail/regions/portals.ts(3,26)"
+      ]
+    },
+    "fix01MatrixAndProbes": {
+      "comparisonScenarios": 27,
+      "matchValidRoute": 8,
+      "matchNoValidRoute": 19,
+      "knownIncompatibleAcceptedCount": 0,
+      "negativeProbesRejected": 9,
+      "validControlsPassed": 2,
+      "crossRegionScope": "GAME_ENGINE_PORTAL_COMPOSITION_ONLY"
+    }
+  },
+  "performance": {
+    "coldJvmLoadMs": 1349.03,
+    "coldCliQueryMs": 122.43,
+    "persistentJvmLoadMs": 1439.02,
+    "warmQueryP50Ms": 1.9,
+    "warmQueryP95Ms": 35.62,
+    "c03WindowsRouteP95Ms": 495.84,
+    "targetP95Ms": 300,
+    "actualMobileAcceptance": false
+  },
+  "status": "C06_FIX_01_SYNTHETIC_VERIFIED__C07_AND_REAL_DATA_GATED",
+  "realPbfProcessed": false,
+  "releaseAllowed": false
+}

@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "C07-SYNTHETIC-CALIBRATION-V1",
+  "realDataUsed": false,
+  "c01ComplianceCleared": false,
+  "minimumRequiredRealCasesForC07": 100,
+  "syntheticOnly": true,
+  "cases": [
+    {
+      "caseId": "01_valid_ac_mainline",
+      "category": "positive",
+      "dataProvenance": "SYNTHETIC_C06",
+      "regionId": "c06-synthetic-v1",
+      "graphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "stopIds": [
+        "st:101",
+        "st:102"
+      ],
+      "objective": "time",
+      "allowReversal": false,
+      "trainProfileId": "tr-c06-ac25k",
+      "expectedValid": true,
+      "expectedGameCode": "OK",
+      "expectedDiscrepancyClass": "MATCH_VALID_ROUTE",
+      "notes": "Synthetic calibration entry for C07 schema readiness; NOT real Indian rail data."
+    },
+    {
+      "caseId": "02_disconnected_island",
+      "category": "negative_power",
+      "dataProvenance": "SYNTHETIC_C06",
+      "regionId": "c06-synthetic-v1",
+      "graphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "stopIds": [
+        "st:101",
+        "st:102"
+      ],
+      "objective": "time",
+      "allowReversal": false,
+      "trainProfileId": "tr-c06-ac25k",
+      "expectedValid": false,
+      "expectedGameCode": "INCOMPATIBLE_PROFILE:NO_COMPATIBLE_PATH",
+      "expectedDiscrepancyClass": "MATCH_NO_VALID_ROUTE",
+      "notes": "Synthetic calibration entry for C07 schema readiness; NOT real Indian rail data."
+    },
+    {
+      "caseId": "03_wrong_gauge_1435_on_1676",
+      "category": "negative_power",
+      "dataProvenance": "SYNTHETIC_C06",
+      "regionId": "c06-synthetic-v1",
+      "graphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "stopIds": [
+        "st:101",
+        "st:102"
+      ],
+      "objective": "time",
+      "allowReversal": false,
+      "trainProfileId": "tr-c06-ac25k",
+      "expectedValid": false,
+      "expectedGameCode": "INCOMPATIBLE_PROFILE:NO_COMPATIBLE_PATH",
+      "expectedDiscrepancyClass": "MATCH_NO_VALID_ROUTE",
+      "notes": "Synthetic calibration entry for C07 schema readiness; NOT real Indian rail data."
+    },
+    {
+      "caseId": "04_narrow_gauge_1000_valid",
+      "category": "positive",
+      "dataProvenance": "SYNTHETIC_C06",
+      "regionId": "c06-synthetic-v1",
+      "graphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "stopIds": [
+        "st:101",
+        "st:102"
+      ],
+      "objective": "time",
+      "allowReversal": false,
+      "trainProfileId": "tr-c06-ac25k",
+      "expectedValid": true,
+      "expectedGameCode": "OK",
+      "expectedDiscrepancyClass": "MATCH_VALID_ROUTE",
+      "notes": "Synthetic calibration entry for C07 schema readiness; NOT real Indian rail data."
+    },
+    {
+      "caseId": "05_unknown_gauge_rejected",
+      "category": "negative_power",
+      "dataProvenance": "SYNTHETIC_C06",
+      "regionId": "c06-synthetic-v1",
+      "graphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "stopIds": [
+        "st:101",
+        "st:102"
+      ],
+      "objective": "time",
+      "allowReversal": false,
+      "trainProfileId": "tr-c06-ac25k",
+      "expectedValid": false,
+      "expectedGameCode": "DATA_MISSING:CRITICAL_DATA_MISSING_ON_EXPLORED_PATH",
+      "expectedDiscrepancyClass": "MATCH_NO_VALID_ROUTE",
+      "notes": "Synthetic calibration entry for C07 schema readiness; NOT real Indian rail data."
+    },
+    {
+      "caseId": "06_diesel_non_electrified_valid",
+      "category": "positive",
+      "dataProvenance": "SYNTHETIC_C06",
+      "regionId": "c06-synthetic-v1",
+      "graphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "stopIds": [
+        "st:101",
+        "st:102"
+      ],
+      "objective": "time",
+      "allowReversal": false,
+      "trainProfileId": "tr-c06-ac25k",
+      "expectedValid": true,
+      "expectedGameCode": "OK",
+      "expectedDiscrepancyClass": "MATCH_VALID_ROUTE",
+      "notes": "Synthetic calibration entry for C07 schema readiness; NOT real Indian rail data."
+    },
+    {
+      "caseId": "07_explicit_dc_valid",
+      "category": "positive",
+      "dataProvenance": "SYNTHETIC_C06",
+      "regionId": "c06-synthetic-v1",
+      "graphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "stopIds": [
+        "st:101",
+        "st:102"
+      ],
+      "objective": "time",
+      "allowReversal": false,
+      "trainProfileId": "tr-c06-ac25k",
+      "expectedValid": true,
+      "expectedGameCode": "OK",
+      "expectedDiscrepancyClass": "MATCH_VALID_ROUTE",
+      "notes": "Synthetic calibration entry for C07 schema readiness; NOT real Indian rail data."
+    },
+    {
+      "caseId": "08_unknown_frequency_rejected",
+      "category": "negative_power",
+      "dataProvenance": "SYNTHETIC_C06",
+      "regionId": "c06-synthetic-v1",
+      "graphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "stopIds": [
+        "st:101",
+        "st:102"
+      ],
+      "objective": "time",
+      "allowReversal": false,
+      "trainProfileId": "tr-c06-ac25k",
+      "expectedValid": false,
+      "expectedGameCode": "DATA_MISSING:CRITICAL_DATA_MISSING_ON_EXPLORED_PATH",
+      "expectedDiscrepancyClass": "MATCH_NO_VALID_ROUTE",
+      "notes": "Synthetic calibration entry for C07 schema readiness; NOT real Indian rail data."
+    },
+    {
+      "caseId": "09_missing_voltage_rejected",
+      "category": "negative_power",
+      "dataProvenance": "SYNTHETIC_C06",
+      "regionId": "c06-synthetic-v1",
+      "graphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "stopIds": [
+        "st:101",
+        "st:102"
+      ],
+      "objective": "time",
+      "allowReversal": false,
+      "trainProfileId": "tr-c06-ac25k",
+      "expectedValid": false,
+      "expectedGameCode": "DATA_MISSING:CRITICAL_DATA_MISSING_ON_EXPLORED_PATH",
+      "expectedDiscrepancyClass": "MATCH_NO_VALID_ROUTE",
+      "notes": "Synthetic calibration entry for C07 schema readiness; NOT real Indian rail data."
+    },
+    {
+      "caseId": "10_ac_frequency_mismatch",
+      "category": "negative_power",
+      "dataProvenance": "SYNTHETIC_C06",
+      "regionId": "c06-synthetic-v1",
+      "graphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+      "stopIds": [
+        "st:101",
+        "st:102"
+      ],
+      "objective": "time",
+      "allowReversal": false,
+      "trainProfileId": "tr-c06-ac25k",
+      "expectedValid": false,
+      "expectedGameCode": "INCOMPATIBLE_PROFILE:NO_COMPATIBLE_PATH",
+      "expectedDiscrepancyClass": "MATCH_NO_VALID_ROUTE",
+      "notes": "Synthetic calibration entry for C07 schema readiness; NOT real Indian rail data."
+    }
+  ]
+}

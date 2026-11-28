@@ -1,0 +1,134 @@
+import {describe,it,expect} from 'vitest';
+import {createAccountingBook,applyAccountingCommand,inspectAccountingBook,type AccountingBook,type AccountingSources} from '../src/rail/economy/accounting';
+import {createDemandBook,reserveDemand,closeDemand,type DemandBook} from '../src/rail/economy/demand';
+import {createRevenueBook,issueRevenueTerms,settleRevenue,type RevenueBook} from '../src/rail/economy/revenue';
+import {createEnergyBook,applyEnergyEvent,type EnergyBook} from '../src/rail/economy/energy';
+import {createOperatingBook,applyOperatingEvent,type OperatingBook} from '../src/rail/economy/operations';
+import {createIncentiveBook,applyIncentiveEvent,type IncentiveBook} from '../src/rail/economy/incentives';
+import {RollingStockCatalog,type CatalogField} from '../src/rail/catalog';
+type Context=AccountingSources&{demand:DemandBook;revenue:RevenueBook;energy:EnergyBook;operations:OperatingBook;incentives:IncentiveBook};
+const fields:CatalogField[]=['name','kind','traction','gaugesMm','voltagesV','frequenciesHz','maxSpeedKmh','rangeM','capacitySeats','cargoCapacityKg','purchasePriceMinor','massKg','energyPerKm'];
+const catalog=()=>RollingStockCatalog.prepare({schemaVersion:1,id:'r29-synthetic',revision:1,currency:'INR',entries:[{name:'Fictional engine',kind:'mixed-train',identity:'fictional',modelRevision:1,model:{id:'engine',traction:'diesel',gaugesMm:[1676],voltagesV:[],frequenciesHz:[],maxSpeedKmh:72,rangeM:100000,massKg:1000,capacitySeats:20,cargoCapacityKg:100,purchasePriceMinor:'1000',provenance:{sourceUrl:'urn:railway:r29-fixture',sourceId:'fictional',sourceVersion:'1',license:'original-fixture',qualityFlags:['SYNTHETIC_NOT_REAL_DATA']}},energyPerKm:[],fieldOrigins:fields.map(field=>({field,classification:'game-balanced',evidenceId:null}))}]});
+const policy={creditLimitMinor:'100000',maxInterestBps:1000,interestPeriodS:100,maxTermS:1000};
+const bucket=(id:string,kind:string)=>({kind,bucket:{id,origin:'a',destination:'b',intervalStartS:0,intervalEndS:1000,total:100,available:100,reserved:0,served:0}});
+const claim=(bucketId:string,requested:number)=>({bucketId,boardIndex:0,alightIndex:1,requested,outsideWeight:1,services:[{serviceId:'svc',weight:9999}]});
+const opsPolicy={id:'op',trackRates:[{regionId:'r',trackClass:'main',minorPerKm:'100'}],terminalRates:[{stationId:'a',activity:'departure',chargeMinor:'10'},{stationId:'b',activity:'arrival',chargeMinor:'20'}],crewRates:[{roleId:'driver',minorPerHour:'3600'}],crew:[{employeeId:'e1',roleId:'driver'}],staff:[{employeeId:'s1',minorPerPeriod:'50'}],payrollOriginSimS:0,payrollPeriodS:100,wearRules:[{modelId:'engine',maintenanceIntervalM:1000000,agePeriodS:1000,ageIncrementBps:0,maxAgeFactorBps:10000,maxLoadFactorBps:10000,maxWornFactorBps:10000}]};
+const service={intervalS:100,repairThresholdBps:3000,restoreToBps:9000,scheduledCostMinor:'100',repairMinorPerBps:'2',scheduledDurationS:20,repairBaseDurationS:10,repairSecondsPerBps:1};
+const asset={purchaseMinor:'1000',residualMinor:'100',usefulLifeS:300};
+const cfg=(evade=false)=>({seed:123,programs:[{program:{id:'g1',budgetMinor:'300',remainingMinor:'300',startS:0,endS:1000},serviceId:'svc',stopIds:['a','b'],unit:'passenger',rateMinor:'10'}],inspectionPolicies:[{serviceId:'svc',classId:'std',evasionBps:evade?10000:0,deterrenceBps:0,detectionBps:10000,fineMinor:'50',fineCapMinor:'30'}],marketing:{budgetMinor:'1000',halfSaturationMinor:'100',maxLiftBps:5000}});
+const op=(c:Context,event:unknown):Context=>({...c,operations:applyOperatingEvent(c.catalog,c.operations,{expectedRevision:c.operations.revision,event})});
+const en=(c:Context,event:unknown):Context=>({...c,energy:applyEnergyEvent(c.energy,{expectedRevision:c.energy.revision,event})});
+const inc=(c:Context,event:unknown):Context=>({...c,incentives:applyIncentiveEvent(c.incentives,c.demand,c.revenue,{expectedRevision:c.incentives.revision,expectedDemandRevision:c.demand.revision,expectedRevenueRevision:c.revenue.revision,event})});
+const conf={type:'configure-maintenance',trainId:'train',atSimS:0,service,asset};
+const purchase={type:'purchase',lotId:'lot',energy:{unit:'mL',quantity:'100'},source:{kind:'spot',contractId:null,priceMinor:'200',priceQuantity:'100'},availableCashMinor:'10000'};
+async function initial(evade=false):Promise<Context>{
+ const cat=await catalog(),d=createDemandBook([bucket('p','passenger'),bucket('f','freight')]),r=createRevenueBook(),e=createEnergyBook([{unit:'mL',quantity:'1000'}]);
+ const o=createOperatingBook(cat,'co',opsPolicy,[{train:{id:'train',companyId:'co',modelId:'engine',state:'IDLE',conditionBps:10000,baseId:null,routeId:null},catalogReference:cat.reference('engine'),acquiredAtSimS:0,ageAtAcquisitionS:0,odometerM:0}]);
+ return en(op({catalog:cat,demand:d,revenue:r,energy:e,operations:o,incentives:createIncentiveBook(cfg(evade),d,r)},conf),purchase);
+}
+const versions=(c:Context)=>({demand:c.demand.revision,revenue:c.revenue.revision,energy:c.energy.revision,operations:c.operations.revision,incentives:c.incentives.revision});
+const apply=(b:AccountingBook,c:Context,action:unknown,commandId='cmd'+b.revision,expectedRevision=b.revision,expectedSources=versions(c))=>applyAccountingCommand(b,c,{expectedRevision,expectedSources,commandId,action});
+const view=inspectAccountingBook;
+const timed=(type:string,atSimS:number,extra:Record<string,unknown>={})=>({type,atSimS,...extra});
+const create=(c:Context,cash='10000')=>createAccountingBook(cash,0,policy,c);
+const copy=(x:unknown):any=>JSON.parse(JSON.stringify(x));
+function dispatch(c:Context,baseMinor='100'):Context{
+ const d=reserveDemand(c.demand,{expectedRevision:c.demand.revision,trip:{tripId:'trip',serviceId:'svc',dispatchSimS:10,stopIds:['a','b'],capacitySeats:20,cargoCapacityKg:10,claims:[claim('p',20),claim('f',10)]}});
+ const r=issueRevenueTerms(c.revenue,d,{expectedRevision:c.revenue.revision,expectedDemandRevision:d.revision,terms:{tripId:'trip',policySha256:'a'.repeat(64),segmentDistancesM:[1000],promisedDurationS:10,delayRateMinorPerSecond:'2',delayCapMinor:'15',passengers:[{bucketId:'p',classId:'std',quantity:20,policy:{baseMinor,rateMinorPerKm:'0',discountBps:0,capMinor:'1000'}}],cargo:[{bucketId:'f',consignmentId:'cargo',massKg:10,paidDistanceM:1000,rateMinorPerTonneKm:'100000',serviceFactorBps:10000}]}});
+ return en({...c,demand:d,revenue:r},{type:'reserve',reservationId:'trip',requirements:[{unit:'mL',quantity:'60'}]});
+}
+function finish(c:Context,evade=false,released=false):Context{
+ const d=closeDemand(c.demand,{expectedRevision:c.demand.revision,tripId:'trip',outcome:released?'released':'served'});
+ const r=settleRevenue(c.revenue,d,{expectedRevision:c.revenue.revision,expectedDemandRevision:d.revision,tripId:'trip',evidence:released?{arrivalSimS:null,passengers:[],cargo:[]}:{arrivalSimS:30,passengers:[{bucketId:'p',classId:'std',paid:evade?0:20,unpaid:evade?20:0,refundMinor:evade?'0':'100'}],cargo:[{consignmentId:'cargo',deliveredKg:10,finalDestinationId:'b'}]}});
+ const e=en({...c,demand:d,revenue:r},{type:'close',reservationId:'trip',outcome:released?'released':'consumed',actual:released?[]:[{unit:'mL',quantity:'40'}]});
+ if(released)return e;
+ return op(e,{type:'trip',trip:{tripId:'trip',trainId:'train',departureSimS:10,arrivalSimS:30,settledAtSimS:30,stopIds:['a','b'],distanceM:1000,segments:[{edgeId:'ab',regionId:'r',trackClass:'main',distanceM:1000}],terminals:[{stopIndex:0,activity:'departure'},{stopIndex:1,activity:'arrival'}],shifts:[{shiftId:'s',employeeId:'e1',startSimS:10,endSimS:20}],loadFactorBps:10000}});
+}
+const acquired=async(evade=false,cash='10000')=>{
+ const c=await initial(evade);let b=await create(c,cash);
+ b=await apply(b,c,timed('acquire-asset',0,{trainId:'train'}));
+ b=await apply(b,c,timed('buy-energy',0,{lotId:'lot'}));
+ return {c,b};
+};
+const reserved=async(evade=false)=>{
+ const {c,b}=await acquired(evade),d=dispatch(c);
+ return {c:d,b:await apply(b,d,timed('reserve-trip',10,{tripId:'trip',amountMinor:'300'}))};
+};
+const settled=async(evade=false)=>{
+ const a=await reserved(evade),c=finish(a.c,evade);
+ return {c,b:await apply(a.b,c,timed('settle-trip',30,{tripId:'trip'}))};
+};
+
+import {createInflationBook,decodeInflationBook,inspectInflationBook,applyInflationEvent,quoteInflatedPrice,resolveLockedPrice,evaluateExpansionScenario,evaluatePurchase,createFictionalStockBook,decodeFictionalStockBook,inspectFictionalStockBook,applyFictionalStockEvent,valueCompany,type InflationBook,type FictionalStockBook} from '../src/rail/economy/company';
+const region=(regionId='east',x:Record<string,unknown>={})=>({regionId,initialIndexBps:10000,minIndexBps:8000,maxIndexBps:12000,minChangeBps:-2000,maxChangeBps:2000,...x});
+const infPolicy=(x:Record<string,unknown>={})=>({id:'scenario-v1',startSimS:7,periodS:100,regions:[region(),region('west')],...x});
+const inf=(p=infPolicy())=>createInflationBook(p);
+const tick=(atSimS=107,east=1000,west=-1000)=>({type:'advance',atSimS,changes:[{regionId:'east',changeBps:east},{regionId:'west',changeBps:west}]});
+const lock=(x:Record<string,unknown>={})=>({type:'lock-price',contractId:'contract',atSimS:10,regionId:'east',expectedIndexVersion:0,baseMinor:'101',rounding:'ceil',expiresAtSimS:500,...x});
+const ia=(b:InflationBook,event:unknown,commandId='cmd'+b.revision,expectedRevision=b.revision)=>applyInflationEvent(b,{expectedRevision,commandId,event});
+const iv=inspectInflationBook;
+const quote=(b:InflationBook,atSimS=7,regionId='east',baseMinor='101',rounding='ceil')=>quoteInflatedPrice(b,{atSimS,regionId,baseMinor,rounding});
+describe('R30 E24 regional price history',()=>{
+ it('initial explicit regional index and nonaligned tick',()=>{const b=inf();expect(iv(b)).toMatchObject({indexVersion:0,simTimeS:7,nextUpdateSimS:107});expect(quote(b).priceMinor).toBe('101');expect(()=>ia(b,tick(100))).toThrow('next boundary');});
+ it('independent regional rates and historical point retention',()=>{const b=ia(inf(),tick());expect(iv(b).current.map(x=>x.indexBps)).toEqual([11000,9000]);expect(iv(b).history.map(x=>x.indexBps)).toEqual([10000,10000,11000,9000]);expect(quote(b,107).priceMinor).toBe('112');expect(quote(b,107,'west','101','floor').priceMinor).toBe('90');});
+ it('multiplicative floor and upper/lower saturation',()=>{let b=ia(inf(),tick(107,2000,-2000));b=ia(b,tick(207,2000,-2000));expect(iv(b).current.map(x=>x.indexBps)).toEqual([12000,8000]);b=ia(b,tick(307,-1001,1001));expect(iv(b).current.map(x=>x.indexBps)).toEqual([10798,8800]);});
+ it('price locks retain old index and price after later ticks',()=>{const a=ia(inf(),lock()),b=ia(a,tick());expect(resolveLockedPrice(b,'contract',107)).toMatchObject({indexVersion:0,priceMinor:'101',indexBps:10000,issuedAtSimS:10});expect(quote(b,107).priceMinor).toBe('112');expect(iv(a).lockedPrices).toEqual(iv(b).lockedPrices);expect(Object.isFrozen(iv(b).lockedPrices[0])).toBe(true);});
+ it('expiry is exclusive, old audit record retained and ID never reused',()=>{const b=ia(inf(),lock());expect(resolveLockedPrice(b,'contract',499).priceMinor).toBe('101');expect(()=>resolveLockedPrice(b,'contract',500)).toThrow('active window');expect(()=>resolveLockedPrice(b,'contract',9)).toThrow('active window');expect(iv(b).lockedPrices.length).toBe(1);expect(()=>ia(b,lock({atSimS:11}))).toThrow('duplicate contract');});
+ it('new contract binds latest version at exact tick boundary',()=>{const b=ia(inf(),tick()),c=ia(b,lock({atSimS:107,expectedIndexVersion:1}));expect(resolveLockedPrice(c,'contract',107)).toMatchObject({indexVersion:1,priceMinor:'112',effectiveSimS:107});expect(()=>ia(b,lock({atSimS:107}))).toThrow('stale inflation');});
+ it('cannot quote or lock through a missed boundary',()=>{const b=inf();expect(()=>quote(b,107)).toThrow('outside current');expect(()=>ia(b,lock({atSimS:107}))).toThrow('update due');expect(()=>ia(b,tick(207))).toThrow('next boundary');});
+ it('no incomplete, duplicate or unknown region update',()=>{const b=inf(),t=tick();expect(()=>ia(b,{...t,changes:t.changes.slice(0,1)})).toThrow('incomplete');expect(()=>ia(b,{...t,changes:[t.changes[0],t.changes[0]]})).toThrow();expect(()=>ia(b,{...t,changes:[t.changes[0],{regionId:'unknown',changeBps:0}]})).toThrow('unknown region');});
+ it('out-of-policy rates and invalid expiry reject without mutation',()=>{const b=inf(),before=JSON.stringify(b);expect(()=>ia(b,tick(107,2001))).toThrow('outside policy');expect(()=>ia(b,lock({expiresAtSimS:10}))).toThrow('expiry');expect(JSON.stringify(b)).toBe(before);});
+ it('canonical sorted regions and update idempotency',()=>{const a=inf(),p=infPolicy();p.regions.reverse();expect(inf(p)).toEqual(a);const b=ia(a,tick(),'tick'),t=tick();t.changes.reverse();expect(ia(b,t,'tick',0)).toEqual(b);expect(()=>ia(b,tick(107,0,0),'tick',0)).toThrow('conflict');expect(()=>ia(b,lock({atSimS:107,expectedIndexVersion:1}),'new',0)).toThrow('STALE');});
+ it('restore, forged revision, duplicate command and time reversal',()=>{const a=ia(inf(),lock()),b=ia(a,tick());expect(decodeInflationBook(copy(b))).toEqual(b);const q=copy(b);q.revision--;expect(()=>decodeInflationBook(q)).toThrow('revision');q.revision+=2;q.entries.push(q.entries[0]);expect(()=>decodeInflationBook(q)).toThrow('duplicate');expect(()=>ia(b,lock({contractId:'new',atSimS:106,expectedIndexVersion:1}))).toThrow('time reversed');});
+ it('exact zero and 30-digit amount, no overflow or fractional paise',()=>{const b=inf(),max='9'.repeat(30);expect(quote(b,7,'east',max).priceMinor).toBe(max);expect(quote(b,7,'east','0').priceMinor).toBe('0');expect(()=>quote(ia(b,tick()),107,'east',max)).toThrow();expect(()=>quote(b,7,'east','1.5')).toThrow();});
+ it('safe time limit at final index boundary',()=>{const b=inf(infPolicy({startSimS:Number.MAX_SAFE_INTEGER,periodS:1}));expect(iv(b).nextUpdateSimS).toBeNull();expect(quote(b,Number.MAX_SAFE_INTEGER).priceMinor).toBe('101');});
+ for(const [name,p] of [['zero period',infPolicy({periodS:0})],['unknown region bounds',infPolicy({regions:[region('east',{minIndexBps:11000})]})],['negative index',infPolicy({regions:[region('east',{initialIndexBps:-1})]})],['duplicate region',infPolicy({regions:[region(),region()]})],['inverted rate bounds',infPolicy({regions:[region('east',{minChangeBps:100,maxChangeBps:0})]})]] as [string,ReturnType<typeof infPolicy>][])it('rejects '+name,()=>expect(()=>inf(p)).toThrow());
+ it('R22 locked fare remains unchanged after inflation update',async()=>{const a=ia(inf(),lock({baseMinor:'100'})),{c}=await acquired(),d=dispatch(c,resolveLockedPrice(a,'contract',10).priceMinor),b=ia(a,tick());expect(quote(b,107,'east','100').priceMinor).toBe('110');expect(d.revenue.records[0].terms.passengers[0].policy.baseMinor).toBe('100');expect(finish(d).revenue.records[0].closed?.totals.passengerGrossMinor).toBe('2000');});
+});
+const period=(x:Record<string,unknown>={})=>({durationS:100,passengerRevenueMinor:'500',freightRevenueMinor:'0',subsidyRevenueMinor:'0',operatingCashCostMinor:'100',depreciationMinor:'50',...x});
+const scenario=(x:Record<string,unknown>={})=>({scenarioId:'expansion',capex:[{id:'train',amountMinor:'800'},{id:'terminal',amountMinor:'200'}],periods:[period(),period({passengerRevenueMinor:'700'})],...x});
+const calc=evaluateExpansionScenario;
+describe('R30 E25 expansion scenario arithmetic',()=>{
+ it('capex, operating margin, depreciation and full recovery',()=>expect(calc(scenario())).toMatchObject({capexMinor:'1000',horizonS:200,revenueMinor:'1200',operatingCashCostMinor:'200',depreciationMinor:'100',operatingMarginMinor:'1000',operatingProfitMinor:'900',netReturnMinor:'0',roiBps:'0',paybackS:200,endsRecovered:true}));
+ it('positive ROI and earliest end-of-period recovery',()=>{const x=calc(scenario({periods:[period({passengerRevenueMinor:'1200'}),period()]}));expect(x).toMatchObject({netReturnMinor:'500',roiBps:'5000',paybackS:100});});
+ it('loss-making investment with negative operating margin and no payback',()=>{const x=calc(scenario({periods:[period({passengerRevenueMinor:'0',operatingCashCostMinor:'300'})]}));expect(x).toMatchObject({operatingMarginMinor:'-300',operatingProfitMinor:'-350',netReturnMinor:'-1300',roiBps:'-13000',paybackS:null,endsRecovered:false});});
+ it('positive margin insufficient to recover investment in horizon',()=>expect(calc(scenario({periods:[period()]}))).toMatchObject({operatingMarginMinor:'400',netReturnMinor:'-600',roiBps:'-6000',paybackS:null,endsRecovered:false}));
+ it('later losses after initial recovery explicitly shown',()=>expect(calc(scenario({periods:[period({passengerRevenueMinor:'1200'}),period({passengerRevenueMinor:'0',operatingCashCostMinor:'500'})]}))).toMatchObject({paybackS:100,endsRecovered:false,netReturnMinor:'-400',roiBps:'-4000'}));
+ it('zero capex ROI undefined not infinite',()=>expect(calc(scenario({capex:[]}))).toMatchObject({capexMinor:'0',roiBps:null,paybackS:null,endsRecovered:null,netReturnMinor:'1000'}));
+ it('freight and earned subsidy included exactly once',()=>expect(calc(scenario({periods:[period({freightRevenueMinor:'100',subsidyRevenueMinor:'20'})]}))).toMatchObject({revenueMinor:'620',operatingMarginMinor:'520'}));
+ it('fractional signed ROI rounds toward zero',()=>expect(calc(scenario({capex:[{id:'c',amountMinor:'3'}],periods:[period({passengerRevenueMinor:'2',operatingCashCostMinor:'0'})]})).roiBps).toBe('-3333'));
+ it('reject duplicate capex, negative input, zero duration, unknown field, unsafe elapsed',()=>{for(const x of [{capex:[{id:'x',amountMinor:'1'},{id:'x',amountMinor:'1'}]},{periods:[period({passengerRevenueMinor:'-1'})]},{periods:[period({durationS:0})]},{periods:[period({guaranteedProfit:true})]},{periods:[period({durationS:Number.MAX_SAFE_INTEGER}),period()]}])expect(()=>calc(scenario(x))).toThrow();});
+ it('exact overflow rejected; input and immutable output unchanged',()=>{const q=scenario(),before=JSON.stringify(q),x=calc(q);expect(JSON.stringify(q)).toBe(before);expect(Object.isFrozen(x.periods[0])).toBe(true);expect(()=>calc(scenario({capex:[{id:'a',amountMinor:'9'.repeat(30)},{id:'b',amountMinor:'1'}]}))).toThrow();});
+ it('actual R29 cash reservations reduce purchase affordability',async()=>{const {c,b}=await reserved(),x=await evaluatePurchase(b,c,scenario({capex:[{id:'x',amountMinor:'8600'}]}));expect(x).toMatchObject({sourceReconciled:true,availableCashMinor:'8500',affordableFromAvailableCash:false,cashShortfallMinor:'100'});expect((await view(b,c)).liquidityView.cashMinor).toBe('8800');});
+ it('unrecognized source cash prevents an affirmative affordability result',async()=>{const c=await initial(),b=await create(c),x=await evaluatePurchase(b,c,scenario());expect(x).toMatchObject({sourceReconciled:false,affordableFromAvailableCash:null,cashShortfallMinor:null});});
+});
+const stockPolicy=(x:Record<string,unknown>={})=>({id:'virtual-v1',companyId:'co',startSimS:0,initialMultiplierBps:10000,minMultiplierBps:5000,maxMultiplierBps:15000,maxEventImpactBps:2000,...x});
+const stock=()=>createFictionalStockBook(stockPolicy());
+const sa=(b:FictionalStockBook,eventId='e1',atSimS=10,impactBps=2000,expectedRevision=b.revision)=>applyFictionalStockEvent(b,{expectedRevision,event:{eventId,atSimS,impactBps}});
+const sv=inspectFictionalStockBook;
+const shares=(issued=100,companyId='co')=>({companyId,issued,holdings:issued?[{ownerId:'owner',shares:issued}]:[]});
+const req=(s:unknown=null,sh:unknown=null,companyId='co')=>({companyId,shares:sh,stock:s});
+describe('R30 E26 ledger-backed assets and fictional valuation',()=>{
+ it('acquired assets reconcile cash, inventory and capital basis',async()=>{const {c,b}=await acquired(),x=await valueCompany(b,c,req());expect(x).toMatchObject({cashMinor:'8800',energyInventoryMinor:'200',grossTrainAssetsMinor:'1000',totalAssetsMinor:'10000',totalLiabilitiesMinor:'0',netEquityMinor:'10000',stock:null});});
+ it('reserved cash remains an asset, not an expense or liability',async()=>{const {c,b}=await reserved(),x=await valueCompany(b,c,req());expect(x).toMatchObject({cashMinor:'8800',reservedCashMinor:'300',availableCashMinor:'8500',netEquityMinor:'10000'});});
+ it('settled profit, consumption and depreciation reconcile exact net assets',async()=>{const a=await settled(),c=op(a.c,timed('depreciate',100,{trainId:'train'})),b=await apply(a.b,c,timed('depreciation',100,{trainId:'train',throughSimS:100})),x=await valueCompany(b,c,req());expect(x).toMatchObject({cashMinor:'11545',energyInventoryMinor:'120',grossTrainAssetsMinor:'1000',accumulatedDepreciationMinor:'300',netTrainAssetsMinor:'700',netEquityMinor:'12365'});});
+ it('loans increase liabilities as well as cash, interest payable reduces equity',async()=>{const a=await acquired();let b=await apply(a.b,a.c,timed('borrow',0,{loanId:'l',principalMinor:'10000',maturityS:300,interestBps:100}));expect(await valueCompany(b,a.c,req())).toMatchObject({totalAssetsMinor:'20000',totalLiabilitiesMinor:'10000',netEquityMinor:'10000'});b=await apply(b,a.c,timed('advance',100));expect(await valueCompany(b,a.c,req())).toMatchObject({loanPrincipalMinor:'10000',recognizedInterestPayableMinor:'100',totalLiabilitiesMinor:'10100',netEquityMinor:'9900'});});
+ it('unrecognized interest shown separately without rewriting journal equity',async()=>{const a=await acquired();let b=await apply(a.b,a.c,timed('borrow',0,{loanId:'l',principalMinor:'10000',maturityS:300,interestBps:100}));b=await apply(b,a.c,timed('advance',50));expect(await valueCompany(b,a.c,req())).toMatchObject({netEquityMinor:'10000',unrecognizedInterestMinor:'50',payoffAdjustedEquityMinor:'9950'});});
+ it('sold train removed from asset carrying values',async()=>{const a=await acquired(),c=op(a.c,timed('dispose',100,{trainId:'train',proceedsMinor:'600'})),b=await apply(a.b,c,timed('disposal',100,{trainId:'train'})),x=await valueCompany(b,c,req());expect(x).toMatchObject({grossTrainAssetsMinor:'0',accumulatedDepreciationMinor:'0',netEquityMinor:'9600'});});
+ it('strictly refuse incomplete source and unconfigured asset valuations',async()=>{const c=await initial(),b=await create(c);await expect(valueCompany(b,c,req())).rejects.toThrow('unrecognized');const cat=c.catalog,o=createOperatingBook(cat,'co',opsPolicy,c.operations.opening),d=createDemandBook([]),r=createRevenueBook(),z={...c,operations:o,demand:d,revenue:r,energy:createEnergyBook([]),incentives:createIncentiveBook(cfg(),d,r)},a=await create(z);await expect(valueCompany(a,z,req())).rejects.toThrow('unconfigured asset');});
+ it('pending subsidy cannot silently inflate equity',async()=>{const a=await settled(),c=inc(a.c,{type:'subsidy',tripId:'trip',programId:'g1',atSimS:30});await expect(valueCompany(a.b,c,req())).rejects.toThrow('unrecognized');});
+ it('optional fictional share price has no cash or accounting effect',async()=>{const {c,b}=await acquired(),before=JSON.stringify(b),x=await valueCompany(b,c,req(stock(),shares()));expect(x.stock).toMatchObject({label:'FICTIONAL_GAME_ONLY',issued:100,bookValuePerShareMinor:'100',pricePerShareMinor:'100',marketCapitalizationMinor:'10000'});expect(JSON.stringify(b)).toBe(before);expect(x.netEquityMinor).toBe('10000');});
+ it('market cap uses rounded per-share price, not a fictitious cash asset',async()=>{const {c,b}=await acquired(),x=await valueCompany(b,c,req(stock(),shares(3)));expect(x.stock).toMatchObject({pricePerShareMinor:'3333',marketCapitalizationMinor:'9999'});expect(x.totalAssetsMinor).toBe('10000');});
+ it('negative equity remains negative, virtual price floors at zero',async()=>{const a=await acquired(false,'1200');let b=await apply(a.b,a.c,timed('borrow',0,{loanId:'l',principalMinor:'10000',maturityS:300,interestBps:1000}));b=await apply(b,a.c,timed('advance',200));const x=await valueCompany(b,a.c,req(stock(),shares()));expect(x.netEquityMinor).toBe('-800');expect(x.stock).toMatchObject({bookValuePerShareMinor:'-8',pricePerShareMinor:'0',marketCapitalizationMinor:'0'});});
+ it('company identity, share conservation, future stock events and missing shares reject',async()=>{const {c,b}=await acquired();for(const q of [req(null,null,'other'),req(stock(),shares(100,'other')),req(stock(),{companyId:'co',issued:100,holdings:[{ownerId:'o',shares:99}]}),req(stock(),null),req(sa(stock()),shares()),req(createFictionalStockBook(stockPolicy({companyId:'other'})),shares())])await expect(valueCompany(b,c,q)).rejects.toThrow();});
+ it('zero issued shares no fictional quote',async()=>{const {c,b}=await acquired();expect(await valueCompany(b,c,req(stock(),shares(0)))).toMatchObject({shareCount:0,stock:null});});
+ it('bounded event multipliers, exact idempotency and conflict rejection',()=>{let b=stock();b=sa(b);b=sa(b,'e2',20);b=sa(b,'e3',30);expect(sv(b).multiplierBps).toBe(15000);expect(sa(b,'e1',10,2000,0)).toEqual(b);expect(()=>sa(b,'e1',10,1,0)).toThrow('conflict');expect(()=>sa(b,'e4',30,2001)).toThrow('exceeds policy');for(let n=0;n<6;n++)b=sa(b,'down'+n,40+n,-2000);expect(sv(b).multiplierBps).toBe(5000);expect(decodeFictionalStockBook(copy(b))).toEqual(b);expect(()=>sa(b,'new',1,0)).toThrow('time reversed');expect(()=>sa(b,'new',50,0,0)).toThrow('STALE');});
+ it('multiplier events affect only virtual price, not book equity',async()=>{const a=await acquired(),b=await apply(a.b,a.c,timed('advance',10)),x=await valueCompany(b,a.c,req(sa(stock()),shares()));expect(x.stock?.pricePerShareMinor).toBe('120');expect(x.netEquityMinor).toBe('10000');expect(x.cashMinor).toBe('8800');});
+ it('invalid stock bounds, malformed event and forged revision fail',()=>{expect(()=>createFictionalStockBook(stockPolicy({maxMultiplierBps:9000}))).toThrow();expect(()=>sa(stock(),'x',10,1.5)).toThrow();const b=copy(sa(stock()));b.revision=0;expect(()=>decodeFictionalStockBook(b)).toThrow('revision');});
+});
+
+describe('R30 deterministic property grids',()=>{
+ it('regional index always bounded across 25 explicit rate sequences',()=>{for(const a of [-2000,-1000,0,1000,2000])for(const b of [-2000,-1000,0,1000,2000]){const x=ia(ia(inf(),tick(107,a,b)),tick(207,b,a));for(const r of iv(x).current){expect(r.indexBps).toBeGreaterThanOrEqual(8000);expect(r.indexBps).toBeLessThanOrEqual(12000);}expect(iv(x).history.length).toBe(6);}});
+ it('scenario net return and ROI agree over positive and negative margin grid',()=>{for(let c=1;c<=9;c++)for(let r=0;r<=9;r++){const x=calc(scenario({capex:[{id:'x',amountMinor:String(c)}],periods:[period({passengerRevenueMinor:String(r),operatingCashCostMinor:'5',depreciationMinor:'0'})]}));expect(x.netReturnMinor).toBe(String(r-5-c));expect(x.roiBps).toBe(String(BigInt(r-5-c)*10000n/BigInt(c)));expect(x.paybackS).toBe(r-5>=c?100:null);}});
+ it('fictional event sequences respect bounds and canonical replay',()=>{let b=stock();for(let n=0;n<100;n++){b=sa(b,'grid'+n,n,n%3===0?-2000:2000);expect(sv(b).multiplierBps).toBeGreaterThanOrEqual(5000);expect(sv(b).multiplierBps).toBeLessThanOrEqual(15000);}expect(decodeFictionalStockBook(copy(b))).toEqual(b);});
+});

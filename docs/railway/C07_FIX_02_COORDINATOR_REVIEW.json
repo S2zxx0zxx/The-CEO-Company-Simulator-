@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "task": "C07 FIX-02 coordinator final reconciliation",
+  "basis": "d0bec23d3a111b76b3f5b387fc609fb28ac5f5f9",
+  "date": "2026-11-28",
+  "archive": {
+    "name": "RAILWAY_CEO_C07_FIX_02_VERIFICATION.zip",
+    "bytes": 1082687,
+    "sha256": "2566935dc79cc95901646ecc7e624bf7dcc9c5dfc26c0579e8ec5c42a6699956",
+    "entries": 191,
+    "manifest": "190/190",
+    "crc": "PASS",
+    "safePaths": true,
+    "priorCommon": 190,
+    "priorUnchanged": 169
+  },
+  "source": {
+    "snapshot": "verification/railway/c07-fix-02/",
+    "exactArchiveGitBlobMatches": "33/33",
+    "manifestBlob": "0eefdf3e68f77618d171eec5b7eadb11074373c6",
+    "jarSha256": "34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb",
+    "rootRuntimeAdoption": "NOT_STARTED"
+  },
+  "independent": {
+    "V3": 36,
+    "C02Subset": 8,
+    "C03Python": 6,
+    "C03TS": 5,
+    "R07R11": 321,
+    "C05": 10,
+    "downstream": 1,
+    "regressionPassed": 387,
+    "focusedProbeGroupsPassed": 13,
+    "focusedProbeGroupsFailed": 0,
+    "portalSubchecks": "9/9",
+    "exactPriorFinding": "PASS: inconsistent record purged and clientless resume refuses missing client; valid sibling reused; injected rerun failure remains blocking; prior discrepancy retained; contradictory oracleOk and malformed safety schema rejected",
+    "limitations": [
+      "No actual Java/Maven rerun",
+      "No live Osmium ninth case",
+      "C05 renderer cases05/10 and optional clock subsection unavailable",
+      "C04 full suites, browser, strict tsc, physical Android not independently rerun",
+      "Recorded checkpoint and injected failure are not live Java comparisons"
+    ]
+  },
+  "reported": {
+    "checksOrGroups": 446,
+    "preserved": 437,
+    "C07": 9,
+    "cases": 137,
+    "genuineComparisons": 123,
+    "infra": 14,
+    "matchValid": 46,
+    "matchNoValid": 72,
+    "knownIncompatibleAccepted": 0,
+    "openNonBlocking": 5
+  },
+  "performance": {
+    "historicalReportedWindowsP95Ms": 447.83,
+    "independentLinuxSyntheticP95Ms": 227.51,
+    "targetMs": 300,
+    "reportedOracleSmallFixtureP95Ms": 39.33,
+    "reportedGameSmallFixtureP95Ms": 4.15
+  },
+  "retained": [
+    "five previously documented calibration discrepancies",
+    "two preexisting C04/C05 TS errors",
+    "C01/approved real graph/rights gate",
+    "real route count zero",
+    "physical Android and browser verification",
+    "C08 performance targets"
+  ],
+  "backup": {
+    "originalLibraryId": "libfile_0a3e82c64ef48191a68f60564d79a504",
+    "evidenceLibraryId": "libfile_7b29fab468a881918dac54a73d73dcc4",
+    "evidenceBytes": 12044,
+    "evidenceSha256": "8b5b7a9b599ce5c5b6bb1551154f0e49b2f2f25710f48d5efec953f5f481f080",
+    "evidenceEntries": 11
+  },
+  "status": "C07_SYNTHETIC_PREPARATION_ACCEPTED_IN_VERIFIED_SCOPE__C08_SYNTHETIC_PREPARATION_ELIGIBLE_ON_OWNER_START",
+  "realPbfProcessed": false,
+  "realRouteComparisonsCompleted": 0,
+  "releaseAllowed": false
+}

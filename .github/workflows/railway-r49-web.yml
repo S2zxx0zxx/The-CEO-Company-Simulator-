@@ -1,0 +1,45 @@
+name: R49 integrated cross-browser gameplay QA
+on:
+  pull_request:
+    paths:
+      - 'src/rail/**'
+      - 'src/ui/railway/**'
+      - 'tools/qa/r47/**'
+      - 'tools/qa/r49/**'
+      - 'vite.railway.config.ts'
+      - '.github/workflows/railway-r49-web.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --no-audit --no-fund
+      - run: R47_QA=1 VITE_R49_QA=1 R47_BUILD_ID=r49 npm exec vite -- build --config vite.railway.config.ts
+      - run: npm install --no-save --package-lock=false --no-audit --no-fund playwright@1.51.1
+      - run: npx playwright install --with-deps chromium firefox
+      - run: |
+          set -euo pipefail
+          mkdir -p r49-evidence
+          python -m http.server 4189 --bind 127.0.0.1 --directory r47-qa-dist >/tmp/r49-http.log 2>&1 &
+          trap 'kill $! 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4189/ >/dev/null && break; sleep 1; done
+          node tools/qa/r49/browser.mjs 2>&1 | tee r49-evidence/run.log
+      - name: Hash evidence
+        if: always()
+        run: |
+          mkdir -p r49-evidence
+          cd r49-evidence
+          find . -type f ! -name MANIFEST.sha256 -print0 | sort -z | xargs -0 -r sha256sum > MANIFEST.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r49-cross-browser-evidence
+          path: r49-evidence
+          retention-days: 30

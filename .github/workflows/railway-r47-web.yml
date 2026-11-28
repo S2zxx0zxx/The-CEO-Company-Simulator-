@@ -1,0 +1,52 @@
+name: R47 railway guest PWA acceptance
+on:
+  pull_request:
+    paths:
+      - 'src/rail/**'
+      - 'src/ui/railway/**'
+      - 'railway-app/**'
+      - 'vite.railway.config.ts'
+      - 'tools/qa/r47/**'
+      - 'scripts/railway-r48-audit.mjs'
+      - 'docs/railway/R48_OPTIONAL_SCOPE.json'
+      - 'package-lock.json'
+      - '.github/workflows/railway-r47-web.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --no-audit --no-fund
+      - run: |
+          npm exec vite -- build --config vite.railway.config.ts
+          test -f railway-dist/railway-sw.js
+          R47_QA=1 R47_BUILD_ID=update npm exec vite -- build --config vite.railway.config.ts
+          mv r47-qa-dist r47-update-dist
+          R47_QA=1 R47_BUILD_ID=initial npm exec vite -- build --config vite.railway.config.ts
+      - run: node scripts/railway-r48-audit.mjs
+      - run: npm install --no-save --package-lock=false --no-audit --no-fund playwright@1.51.1
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          set -euo pipefail
+          mkdir -p r47-evidence
+          python -m http.server 4187 --bind 127.0.0.1 --directory r47-qa-dist >/tmp/r47-http.log 2>&1 &
+          qa_pid=$!
+          python -m http.server 4188 --bind 127.0.0.1 --directory railway-dist >/tmp/r47-dev-http.log 2>&1 &
+          dev_pid=$!
+          trap 'kill "$qa_pid" "$dev_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4187/ >/dev/null && break; sleep 1; done
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4188/ >/dev/null && break; sleep 1; done
+          node tools/qa/r47/browser.mjs 2>&1 | tee r47-evidence/run.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r47-pwa-evidence
+          path: r47-evidence
+          retention-days: 30

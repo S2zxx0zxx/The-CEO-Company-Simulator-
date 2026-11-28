@@ -1,0 +1,169 @@
+schema_name: Railway CEO Synthetic Basemap v1
+schema_description: Offline modular civilian basemap (landuse, water, waterway, roads, civilian railway, places, rail stations; no OSM political boundaries)
+attribution: "Synthetic Basemap Fixture (C04 Verification)"
+args:
+  osm_path:
+    description: Local verified synthetic OSM PBF path
+    default: synthetic_basemap.osm.pbf
+sources:
+  osm:
+    type: osm
+    local_path: '${ args.osm_path }'
+tag_mappings:
+  layer: long
+  population: long
+layers:
+- id: landuse
+  features:
+  - source: osm
+    geometry: polygon
+    min_zoom: 6
+    include_when:
+      landuse:
+      - residential
+      - commercial
+      - industrial
+      - forest
+      - grass
+      - meadow
+    exclude_when:
+      military: __any__
+    attributes:
+    - key: class
+      tag_value: landuse
+  - source: osm
+    geometry: polygon
+    min_zoom: 6
+    include_when:
+      leisure:
+      - park
+    exclude_when:
+      military: __any__
+    attributes:
+    - key: class
+      tag_value: leisure
+- id: water
+  features:
+  - source: osm
+    geometry: polygon
+    min_zoom: 0
+    include_when:
+      natural:
+      - water
+    exclude_when:
+      military: __any__
+    attributes:
+    - key: class
+      value: lake
+    - key: name
+- id: waterway
+  features:
+  - source: osm
+    geometry: line
+    min_zoom: 5
+    include_when:
+      waterway:
+      - river
+      - stream
+      - canal
+    exclude_when:
+      military: __any__
+    attributes:
+    - key: class
+      tag_value: waterway
+    - key: name
+- id: transportation
+  features:
+  - source: osm
+    geometry: line
+    min_zoom: 4
+    include_when:
+      highway:
+      - motorway
+      - trunk
+      - primary
+      - secondary
+      - tertiary
+      - residential
+    exclude_when:
+      access:
+      - private
+      - military
+      - no
+    attributes:
+    - key: kind
+      value: road
+    - key: class
+      tag_value: highway
+    - key: name
+    - key: ref
+    - key: bridge
+    - key: tunnel
+    - key: layer
+  - source: osm
+    geometry: line
+    min_zoom: 3
+    include_when:
+      railway:
+      - rail
+      - light_rail
+      - subway
+      - narrow_gauge
+    exclude_when:
+      __any__:
+      - service:
+        - spur
+        - siding
+        - yard
+      - military: __any__
+      - access:
+        - private
+        - military
+        - no
+    attributes:
+    - key: kind
+      value: railway
+    - key: class
+      tag_value: railway
+    - key: usage
+    - key: gauge
+    - key: electrified
+    - key: voltage
+    - key: frequency
+    - key: bridge
+    - key: tunnel
+    - key: layer
+    - key: oneway
+    - key: name
+- id: place
+  features:
+  - source: osm
+    geometry: point
+    min_zoom: 3
+    include_when:
+      place:
+      - city
+      - town
+      - village
+      - suburb
+    attributes:
+    - key: class
+      tag_value: place
+    - key: name
+    - key: population
+- id: poi_rail
+  features:
+  - source: osm
+    geometry: point
+    min_zoom: 5
+    include_when:
+      railway:
+      - station
+      - halt
+    exclude_when:
+      military: __any__
+    attributes:
+    - key: class
+      tag_value: railway
+    - key: name
+    - key: ref

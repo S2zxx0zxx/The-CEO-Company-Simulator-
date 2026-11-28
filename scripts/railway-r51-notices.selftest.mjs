@@ -1,0 +1,5 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {validateRuntime,verifyNoticePayload} from './railway-r51-notices.mjs';
+const p={version:'1.0.0',license:'MIT',integrity:'sha512-YQ==',resolved:'https://registry.npmjs.org/example/-/example-1.0.0.tgz'},m={version:'1.0.0',license:'MIT'};
+test('known runtime license, pinned package and exact notice bytes',()=>{validateRuntime('node_modules/example',p,m);verifyNoticePayload('notice',Buffer.from('notice'));});
+test('rejects unreviewed license, mismatched installed version, missing integrity and nonregistry origin',()=>{assert.throws(()=>validateRuntime('node_modules/example',{...p,license:'GPL-3.0'},{...m,license:'GPL-3.0'}));assert.throws(()=>validateRuntime('node_modules/example',p,{...m,version:'2.0.0'}));assert.throws(()=>validateRuntime('node_modules/example',{...p,integrity:undefined},m));assert.throws(()=>validateRuntime('node_modules/example',{...p,resolved:'https://example.invalid/pkg.tgz'},m));});
+test('rejects altered and truncated notices',()=>{assert.throws(()=>verifyNoticePayload('license complete','license'));assert.throws(()=>verifyNoticePayload('license','licence'));});

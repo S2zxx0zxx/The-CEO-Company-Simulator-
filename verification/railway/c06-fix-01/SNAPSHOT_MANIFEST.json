@@ -1,0 +1,140 @@
+{
+  "baseline": "19e7d1f170e126b9bc5cf541b2c5216be42d45c5",
+  "coordinatorCheckpoint": "3245216aee348c292257625fbefd3cb049611982",
+  "masterRequirement": "MR-005",
+  "openRailRoutingPin": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+  "originalTask": "R16",
+  "priorSnapshot": "19e7d1f170e126b9bc5cf541b2c5216be42d45c5",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "schemaVersion": 1,
+  "scope": "Isolated C06-FIX-01 validator, traction, outcome classification & IPC cache-identity hardening snapshot; leaves c04-*, c05-*, c06-strict-oracle, root runtime, PR #1 and main untouched.",
+  "sourceFiles": {
+    "C06_DEPENDENCY_EVIDENCE.json": {
+      "bytes": 3256,
+      "gitBlobSha1": "87fd65e61cc69789d3e65cd2ed52f72437e1bd68",
+      "sha256": "ba8ff4e8444cc5504b998f302c75f54f50de5f35525dfef70ade308970af5829"
+    },
+    "C06_PERFORMANCE_BENCHMARK_REPORT.json": {
+      "bytes": 1788,
+      "gitBlobSha1": "8f9364ed8fb5f8af2d8a0d8cad1f71a3a5d84031",
+      "sha256": "b666fa6a889428017dc69e35912a8c987202ed27297ac810e5f816dab1c6235e"
+    },
+    "C06_TRACEABILITY_MATRIX.json": {
+      "bytes": 3729,
+      "gitBlobSha1": "70285d3adfcb1edc0692aeea6034b11868756e23",
+      "sha256": "e5e149e9805a01da3918bb8c5374aadf3bbe3be390259c5405ba6acd17bff8b4"
+    },
+    "C06_VERIFICATION_REPORT.json": {
+      "bytes": 4144,
+      "gitBlobSha1": "69cf9c0e648fb5765a099a900771104b1740256d",
+      "sha256": "e2b2a7cecac56ab5ab7432f05e9de8bbed772a4c4fab4bc163f16ebb53dfac01"
+    },
+    "EXECUTION_SUMMARY.md": {
+      "bytes": 2731,
+      "gitBlobSha1": "48c2243efaf3fa9b8f1ee993e280da1f1d1872e0",
+      "sha256": "20f1720b2826a8ccc624c6e1ee51a6906fe376f2f45934dd9d5b072ae5046755"
+    },
+    "README.md": {
+      "bytes": 6026,
+      "gitBlobSha1": "ce871d97491707c443d6b53a83d48ced602dd7b0",
+      "sha256": "adeb36ecf6893ca6355d5fea3eba14b0bfa35eea0955c916599ce619d2bfbde5"
+    },
+    "c06_fixture_builder.py": {
+      "bytes": 24115,
+      "gitBlobSha1": "15aa7e858b4117eae80e8f4bb98da577b60b73ff",
+      "sha256": "fdc9bad21e88f73adb7547103ea9c645cec5e82e2522efa1a8d53c19412621dc"
+    },
+    "c06_oracle/c06_test_output.json": {
+      "bytes": 12797,
+      "gitBlobSha1": "92c295fdea3536e602ad2964ab4c27deaf532e10",
+      "sha256": "24fe628c7e8d2c5ebf22873106b3d5693d7eb0368c8c6fb460e3d12989fc7e61"
+    },
+    "c06_oracle/cache_strict/c06_cache_identity.json": {
+      "bytes": 649,
+      "gitBlobSha1": "b7b0e2ebf4d49452341fab84fc72f9b97386e40f",
+      "sha256": "a85f0fe65bdbd66aa97b5d2847fbe56d537658f3217d452c53d415dea3b09eb2"
+    },
+    "c06_oracle/import_metrics.json": {
+      "bytes": 446,
+      "gitBlobSha1": "01efe9f46b092561616938e07e528f3f658ede42",
+      "sha256": "a2793c025e1c9761e4e66c57ef7312e533d99e63a0d8a9d0b0e458dc7a7eaa13"
+    },
+    "c06_oracle/java/src/com/railwayceo/c06/StrictEnums.java": {
+      "bytes": 7911,
+      "gitBlobSha1": "9637402d80f022ea97f147375650a59e4be24f57",
+      "sha256": "e0f95a2c759fdb0895b004e43d78d3d2df9bb5295ff5789ea235008e62125639"
+    },
+    "c06_oracle/java/src/com/railwayceo/c06/StrictOracleRunner.java": {
+      "bytes": 35499,
+      "gitBlobSha1": "0fa68fa83d8a8321cf1a8ed59a1b10b39e69ed84",
+      "sha256": "dbf0556772505ed28b13f88c71f91141267a65f6baaa8c9e471b8c0a844cd066"
+    },
+    "c06_oracle/java/src/com/railwayceo/c06/StrictParsers.java": {
+      "bytes": 12941,
+      "gitBlobSha1": "137a6c6946de058b490b40407873ce2436b354f7",
+      "sha256": "ee6b69dc855ef12178d27dfcfb67bba9f1318f4c0cddb742334e41b597faace6"
+    },
+    "c06_package_and_sync.py": {
+      "bytes": 14554,
+      "gitBlobSha1": "6adfd6b03ff2f4d449fb099947895ea348e4cbe2",
+      "sha256": "3a49ba5d8db4da785001088cc3dc91b26eedbdc4793638357ca1bd44c71898b5"
+    },
+    "docs/C06_STRICT_ORACLE_ARCHITECTURE.md": {
+      "bytes": 4207,
+      "gitBlobSha1": "fab78e05c096a17a3d9133c6eb57c3f62e27cb62",
+      "sha256": "32e80db6c9093a1e8491c7ddc4eed0eea8db2cf89d14b0171dcc9b197334347c"
+    },
+    "docs/C06_VERIFICATION_MATRIX.md": {
+      "bytes": 3200,
+      "gitBlobSha1": "680e1789de633d98dca7af03b8dac785e9144052",
+      "sha256": "a81e8414fc5089614926fa9903778c72c7582eb891e255f36269a3e65fc37db9"
+    },
+    "fixtures/c06_oracle/c06_c02_metadata_audit.json": {
+      "bytes": 832,
+      "gitBlobSha1": "717d47cd4f0177945a765d126f557cb25bdaf971",
+      "sha256": "aab17b417ad6fc6457c3d0ec7f5d8dc668b74b9175ae9b157d6c7379669764e2"
+    },
+    "fixtures/c06_oracle/c06_fixture_manifest.json": {
+      "bytes": 652,
+      "gitBlobSha1": "2792a750fb745b7c844e9c5f4c86c353da4e3a83",
+      "sha256": "58bd4923ec55a6ad9c6a01adcb51efc491c3480caf0dcd1a285b7288335d7c9f"
+    },
+    "fixtures/c06_oracle/c07_synthetic_calibration_template.json": {
+      "bytes": 6832,
+      "gitBlobSha1": "c7fb1d110a8d63b5705c034264660fa75257ced1",
+      "sha256": "53a69fee849ef03fd13784007da4abf3b40c3f7139605ef1f0a218e3d69e5be6"
+    },
+    "src/rail/c06-oracle/client.ts": {
+      "bytes": 12228,
+      "gitBlobSha1": "9d62ca5243c4366b81891c47a4dc6fe6295c6b0f",
+      "sha256": "1c29e6622dab713cd24830c4b10435dd8f5ed701d98f15ec6b71d4a9fecfc2a9"
+    },
+    "src/rail/c06-oracle/contracts.ts": {
+      "bytes": 14549,
+      "gitBlobSha1": "6150005d945eb0a567d0ece8c7ed023d04276009",
+      "sha256": "5b20e24f7f4b5d09e6a14e944d6264aa7301dc87c4b583d85cf3bb696da32b00"
+    },
+    "src/rail/c06-oracle/harness.ts": {
+      "bytes": 15563,
+      "gitBlobSha1": "d5e37e21ac4d7e8eed75d1884382e50ba9c57139",
+      "sha256": "708d0daa225e2973716c218cc0d826c4fb48dbd6fdeea568a711b15be6ccbca5"
+    },
+    "src/rail/c06-oracle/index.ts": {
+      "bytes": 111,
+      "gitBlobSha1": "ed965e4f2b8596739f252cc353e13812b987fba9",
+      "sha256": "3c1eb9e22d363c84a41ae04f2729e0d0479ba528b496c059a85f0286553ca97e"
+    },
+    "src/rail/c06-oracle/validator.ts": {
+      "bytes": 22594,
+      "gitBlobSha1": "7f200ae3f96609b8453e66b6a617e552d04c34fe",
+      "sha256": "56e7433548b56c0ff584df75f3fe61ddedcfb9ec6e71bbd365522dc09ba5e8dc"
+    },
+    "test_c06_strict_oracle.mjs": {
+      "bytes": 42128,
+      "gitBlobSha1": "6b91aa9be73ae700813e4be9ecf076ba45a4ec12",
+      "sha256": "56afbe3519fdf8934b7ed2943c4ae22d0e0885e0372efe4729cd4cbd707c9e5f"
+    }
+  },
+  "task": "C06-FIX-01"
+}
