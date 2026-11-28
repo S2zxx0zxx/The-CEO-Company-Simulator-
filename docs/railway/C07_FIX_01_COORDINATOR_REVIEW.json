@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "task": "C07 FIX-01 coordinator independent reconciliation",
+  "basis": "3bbac1f6ed21b8327cfbee7f886be48b22703837",
+  "date": "2026-11-28",
+  "archive": {
+    "bytes": 1075458,
+    "sha256": "8d6ceca1519d01832e849ce30fa1e4db4e2b75864c2254f889d1a686bee92791",
+    "entries": 190,
+    "manifest": "189/189",
+    "crc": "PASS",
+    "safePaths": true,
+    "priorCommon": 154,
+    "priorUnchanged": 129
+  },
+  "source": {
+    "snapshot": "verification/railway/c07-fix-01/",
+    "exactArchiveGitBlobMatches": "33/33",
+    "manifestBlob": "2c56c14a45faa75385ab99dbec43ade4592d8719",
+    "jarSha256": "34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb"
+  },
+  "reported": {
+    "checks": 445,
+    "cases": 137,
+    "genuineComparisons": 123,
+    "knownIncompatibleAccepted": 0,
+    "openNonBlocking": 5
+  },
+  "independent": {
+    "V3": 36,
+    "C02Subset": 8,
+    "C03Python": 6,
+    "C03TS": 5,
+    "upstream": 321,
+    "C05": 10,
+    "downstream": 1,
+    "regressionPassed": 387,
+    "focusedProbeGroupsPassed": 9,
+    "focusedProbeGroupsFailed": 1,
+    "portalSubchecks": "9/9",
+    "scope": "Clean ZIP extraction; no live Java/Maven or Osmium, C04 full, C05 renderer cases05/10 or optional clock subsection, Chromium, strict tsc or physical Android. Recorded checkpoint and injected failure are not live Java comparisons."
+  },
+  "originalFindings": "All four prior negative findings corrected in tested scope; inherited regression dependencies restored and passed without prior archive overlay.",
+  "finding": {
+    "id": "C07-FIX-02-CHECKPOINT-RESULT",
+    "reproduction": "Change only comparison.discrepancyClass in a previously passing checkpoint record from MATCH_VALID_ROUTE to DURATION_DISCREPANCY while leaving case identity and passedExpectation=true intact. Resume with empty clients.",
+    "observed": {
+      "reused": 1,
+      "passed": 1,
+      "expected": "MATCH_VALID_ROUTE",
+      "actual": "DURATION_DISCREPANCY",
+      "openBlockingCount": 0
+    },
+    "required": "Strictly validate completed result structure and recompute acceptance/disposition from current expectation and stored comparison, not stored boolean. Reject or invalidate inconsistent records, never silently count them as PASS. Retain valid resume controls and prior failure evidence. This is a local checkpoint integrity probe, not a live Java defect."
+  },
+  "backup": {
+    "originalLibraryId": "libfile_3d414308cea88191a2efa54135b96f0e",
+    "evidenceLibraryId": "libfile_c4dbb97abd24819195066671184bd3df",
+    "evidenceBytes": 11829,
+    "evidenceSha256": "3d845cd21612c8e132fd0e991a1aad1b910ba4ce677b9a19436cc8591895cc98",
+    "entries": 11
+  },
+  "status": "FIX01_PRIOR_DEFECTS_CORRECTED__ONE_BOUNDED_CHECKPOINT_RESULT_INTEGRITY_FIX_REQUIRED",
+  "realPbfProcessed": false,
+  "releaseAllowed": false
+}
