@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "task": "C06 independent review",
+  "basis": "1533175f79c9d5f69facb0f274a6afe2933c1f1f",
+  "date": "2026-11-28",
+  "archive": {
+    "name": "RAILWAY_CEO_C06_STRICT_ORACLE_VERIFICATION.zip",
+    "bytes": 733237,
+    "sha256": "5ddd846fc88d7adbc126dec6d9dc067ddb3bd7a3d0689b178c879a2e250b6998",
+    "files": 136,
+    "manifest": "135/135",
+    "crc": "PASS",
+    "commonPriorFiles": 109,
+    "unchangedPriorFiles": 108
+  },
+  "source": {
+    "snapshot": "verification/railway/c06-strict-oracle/",
+    "exactArchiveBlobMatches": "21/21",
+    "remoteManifestBlob": "27d9425859dfa1b702075f0b18c0c48f4b5043a2"
+  },
+  "reported": {
+    "checks": 436,
+    "comparisonScenarios": 27,
+    "matchValid": 8,
+    "matchNoValid": 19,
+    "knownIncompatibleAccepted": 0,
+    "maven": 34,
+    "warmP95Ms": 36.13,
+    "windowsRuntimeP95Ms": 496.31
+  },
+  "independent": {
+    "V3": 36,
+    "C02": 8,
+    "C03Python": 6,
+    "C03TS": 5,
+    "upstream": 321,
+    "C05": 10,
+    "C06": 2,
+    "downstream": 1,
+    "totalPassed": 389,
+    "additionalPositiveControls": 2,
+    "additionalNegativeFailures": 5,
+    "linuxRuntimeP95Ms": 252.01,
+    "limitations": [
+      "C02 full command blocked by unavailable Osmium; eight-case subset passed",
+      "C05 cases05/10 and optional offline-clock subcheck unavailable",
+      "C06 full suite initialization failed because external runtime-classpath.txt absent; actual Java oracle and upstream Maven not rerun",
+      "C06 cases05/06 extracted and executed independently; case06 composes game portal journey only",
+      "C04 full suites/browser/native Android and strict typecheck not independently executed"
+    ]
+  },
+  "findings": [
+    {
+      "id": "C06-FIX-01-A",
+      "severity": "blocking",
+      "proof": "Actual extracted game validator accepts a single A-to-B step for requested stops A-C-B. Oracle validator accepts A-to-B edge with snapped metadata A-C, and accepts A-C-B while omitting C."
+    },
+    {
+      "id": "C06-FIX-01-B",
+      "severity": "blocking",
+      "proof": "Actual extracted game validator accepts diesel operating mode for electric-only train on otherwise compatible fixture edge."
+    },
+    {
+      "id": "C06-FIX-01-C",
+      "severity": "blocking",
+      "proof": "Actual harness with real game STALE_GRAPH and injected synthetic IPC STALE_GRAPH response classifies MATCH_NO_VALID_ROUTE rather than indeterminate/invalid comparison."
+    }
+  ],
+  "reviewConcerns": [
+    "Bind graph identity to real loaded Java cache/import manifest and request/response correlation; currently caller-declared hashes are compared and not sent with IPC payload. Not a live Java reproduction.",
+    "Cross-region helper is game portal composition, not independent Java segment routing; label accurately or implement actual per-segment oracle verification where supported.",
+    "README/EXECUTION_SUMMARY unchanged from C05; supply reproducible C06 classpath/build/import commands, exact dependency locks, artifact digests and license evidence; strict tsc reported not executed successfully."
+  ],
+  "jarSha256": "97dd632979330bb4a4c82803a51beb8d87edbeffccf52f6549abe1d55a8696f3",
+  "privateBackup": {
+    "originalZipSaved": true,
+    "evidenceZip": "RAILWAY_CEO_C06_INDEPENDENT_EVIDENCE.zip",
+    "evidenceBytes": 23211,
+    "evidenceSha256": "0ec9cf04c690c352c75b33c1dfee4374cb10a7a9d205fbcec1f45b00d6307282",
+    "evidenceEntries": 17
+  },
+  "status": "C06_SOURCE_PRESERVED__BOUNDED_VALIDATION_FIX_REQUIRED__C07_HOLD",
+  "realPbfProcessed": false,
+  "releaseAllowed": false
+}
