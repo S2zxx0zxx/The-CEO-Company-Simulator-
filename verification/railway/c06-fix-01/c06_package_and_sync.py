@@ -14,7 +14,8 @@ import zipfile
 
 REPO_URL = "https://github.com/S2zxx0zxx/Railway-Ceo-.git"
 BRANCH = "feat/railway-manager-v5"
-EXPECTED_HEAD = "3245216aee348c292257625fbefd3cb049611982"
+COORDINATOR_CHECKPOINT = "3245216aee348c292257625fbefd3cb049611982"
+EXPECTED_HEAD = "19e7d1f170e126b9bc5cf541b2c5216be42d45c5"
 PROTECTED_REFS = {
     "refs/heads/main": "8268c8dcd6ef46fc35e300c14d8491bfbb3656e1",
     "refs/heads/feat/company-simulator-v3": "fefd995fd189506502ae59230b9ee9c408faa544",
@@ -236,7 +237,9 @@ def collect_git_snapshot_files(ws: pathlib.Path) -> dict[str, bytes]:
         "task": "C06-FIX-01",
         "originalTask": "R16",
         "masterRequirement": "MR-005",
+        "coordinatorCheckpoint": COORDINATOR_CHECKPOINT,
         "baseline": EXPECTED_HEAD,
+        "priorSnapshot": EXPECTED_HEAD,
         "openRailRoutingPin": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
         "realPbfProcessed": False,
         "releaseAllowed": False,
@@ -298,14 +301,14 @@ def push_isolated_snapshot(ws: pathlib.Path, repo: pathlib.Path) -> dict[str, ob
             "-p",
             EXPECTED_HEAD,
             "-m",
-            "chore(railway): preserve verified C06-FIX-01 strict validator, traction & outcome integrity snapshot",
+            "fix(railway): finalize verified C06-FIX-01 strict tsc, Java initialOperating & validator snapshot",
             env=env,
         ).decode("utf-8").strip()
 
         changed = git_run(repo, "diff-tree", "--no-commit-id", "--name-only", "-r", EXPECTED_HEAD, commit).decode("utf-8").splitlines()
         expected_paths = {GIT_PREFIX + rel for rel in selected}
-        if set(changed) != expected_paths:
-            raise RuntimeError(f"Unexpected diff paths: {set(changed) ^ expected_paths}")
+        if not set(changed).issubset(expected_paths):
+            raise RuntimeError(f"Unexpected diff paths outside snapshot: {set(changed) - expected_paths}")
 
         git_run(repo, "push", "origin", f"{commit}:{branch_ref}")
         git_run(repo, "merge", "--ff-only", commit)

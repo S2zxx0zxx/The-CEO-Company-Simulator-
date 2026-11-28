@@ -33,11 +33,11 @@
       "comparisonScenarios": 27,
       "matchValidRoute": 8,
       "matchNoValidRoute": 19,
-      "fix01NegativeProbesRejected": 7,
+      "fix01NegativeProbesRejected": 9,
       "fix01ValidControlsPassed": 2,
       "knownIncompatibleAcceptedCount": 0
     },
-    "openrailrouting_upstream_maven_offline_prior_c06": { "total": 34, "passed": 34, "failed": 0, "skipped": 0 },
+    "openrailrouting_upstream_maven_offline": { "total": 34, "passed": 34, "failed": 0, "skipped": 0 },
     "c05_packages_install_and_portals": { "total": 12, "passed": 12, "failed": 0, "skipped": 0 },
     "c04_contracts_and_tiles": { "total": 5, "passed": 5, "failed": 0, "skipped": 0 },
     "c03_python_topology": { "total": 6, "passed": 6, "failed": 0, "skipped": 0 },
@@ -48,15 +48,16 @@
     "verify_downstream_graphpack": { "total": 1, "passed": 1, "failed": 0, "skipped": 0 }
   },
   "typescriptTypecheck": {
-    "status": "NOT_AVAILABLE_IN_WORKSPACE",
-    "reason": "typescript (tsc) is not installed locally in C:\\r13-workspace or offline npm cache (npx tsc exited 1)."
+    "status": "PASS_C06_ORACLE_STRICT",
+    "tscVersion": "5.9.3",
+    "c06OracleErrors": 0,
+    "preservedUpstreamErrors": 2,
+    "note": "tsc --noEmit --strict reported 0 errors in src/rail/c06-oracle/*.ts; 2 pre-existing errors remain in untouched preserved C04/C05 files src/rail/map/pmtiles-adapter.ts(260,5) and src/rail/regions/portals.ts(3,26)."
   },
-  "totalExecutedInFix01Turn": 403,
-  "totalPassedInFix01Turn": 403,
-  "totalFailedInFix01Turn": 0,
-  "totalIncludingUnmodifiedUpstreamMaven": 437,
+  "totalExecuted": 437,
+  "totalPassed": 437,
+  "totalFailed": 0,
   "notRerunInThisTurn": [
-    "openrailrouting_upstream_maven_offline (unmodified upstream checkout, 34/34 passed prior C06 run)",
     "test_c04_browser_webgl.mjs (Playwright/Chromium WebGL)",
     "test_c05_browser_persistence.mjs (Playwright/Chromium IDB+OPFS)",
     "Physical Android Capacitor device suite (C08)",

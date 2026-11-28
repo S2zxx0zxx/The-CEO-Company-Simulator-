@@ -27,22 +27,22 @@
     "jvmMaxHeapBytes": 268435456
   },
   "oracleQueryBenchmarks": {
-    "coldJvmLoadMs": 1321.21,
-    "coldCliQueryMs": 147.53,
-    "persistentJvmLoadMs": 1446.03,
-    "warmQueryP50Ms": 2.7,
-    "warmQueryP95Ms": 51.04,
+    "coldJvmLoadMs": 1347.58,
+    "coldCliQueryMs": 150.79,
+    "persistentJvmLoadMs": 1491.59,
+    "warmQueryP50Ms": 2.41,
+    "warmQueryP95Ms": 38.65,
     "repeatedQueryDeterministic": true,
     "c07TemplateCaseCount": 10
   },
   "oracleSuiteElapsedMs": {
-    "c06_01_source_pin_import_and_c02_metadata_audit": 0.82,
-    "c06_02_upstream_permissive_vs_strict_unknown_and_dc_resolution": 2624,
-    "c06_03_comprehensive_24_scenario_oracle_vs_game_comparison": 363.83,
-    "c06_04_easy_isolation_stale_hashes_process_failure_and_timeout": 4546.71,
-    "c06_05_independent_safety_validator_hazard_detection": 0.41,
-    "c06_06_cross_region_c05_fix02_portal_continuity": 183.76,
-    "c06_07_performance_benchmarks_and_c07_schema_preparation": 2481.85,
-    "c06_08_fix01_validator_traction_outcome_and_ipc_regressions": 24.22
+    "c06_01_source_pin_import_and_c02_metadata_audit": 0.27,
+    "c06_02_upstream_permissive_vs_strict_unknown_and_dc_resolution": 2457.31,
+    "c06_03_comprehensive_24_scenario_oracle_vs_game_comparison": 293.68,
+    "c06_04_easy_isolation_stale_hashes_process_failure_and_timeout": 4317.4,
+    "c06_05_independent_safety_validator_hazard_detection": 0.47,
+    "c06_06_cross_region_c05_fix02_portal_continuity": 99.95,
+    "c06_07_performance_benchmarks_and_c07_schema_preparation": 2419.23,
+    "c06_08_fix01_validator_traction_outcome_and_ipc_regressions": 1830.75
   }
 }

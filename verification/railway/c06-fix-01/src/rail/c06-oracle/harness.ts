@@ -2,11 +2,8 @@ import { RailGraph } from '../graph';
 import { findRoute, policyHash, profileHash, type RoutingResult } from '../routing';
 import type { CompatibilityPolicy, OperatingMode } from '../compatibility';
 import type { TrainProfile } from '../../domain/models';
-import {
-  planCrossRegionPortalJourney,
-  type RegionPortal,
-} from '../regions/portals';
-import type { InstalledVersionRecord } from '../regions/contracts';
+import { planCrossRegionPortalJourney } from '../regions/portals';
+import type { InstalledVersionRecord, RegionPortal } from '../regions/contracts';
 import { RegionInstallationManager } from '../regions/installer';
 import { StrictOracleClient } from './client';
 import {

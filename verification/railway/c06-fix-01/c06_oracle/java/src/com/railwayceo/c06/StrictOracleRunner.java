@@ -279,6 +279,55 @@ public final class StrictOracleRunner {
         return cm;
     }
 
+    private static String validateInitialOperating(JsonNode req) {
+        JsonNode initOp = req.path("initialOperating");
+        if (initOp.isMissingNode() || initOp.isNull()) {
+            return null;
+        }
+        JsonNode train = req.path("train");
+        String traction = train.path("traction").asText("");
+        String opMode = initOp.path("mode").asText("");
+        boolean modeAllowed = "dual".equals(traction)
+            ? ("diesel".equals(opMode) || "electric".equals(opMode))
+            : traction.equals(opMode);
+        if (!modeAllowed) {
+            return "TRACTION_OPERATING_MISMATCH: traction=" + traction + " initialOperating=" + opMode;
+        }
+        int opGauge = initOp.path("gaugeMm").asInt(-1);
+        boolean gaugeOk = false;
+        for (JsonNode g : train.path("gaugesMm")) {
+            if (g.asInt(-1) == opGauge) { gaugeOk = true; break; }
+        }
+        if (!gaugeOk) {
+            return "GAUGE_OPERATING_MISMATCH: gaugeMm=" + opGauge;
+        }
+        JsonNode vNode = initOp.path("voltageV");
+        JsonNode fNode = initOp.path("frequencyHz");
+        if ("electric".equals(opMode)) {
+            if (vNode.isMissingNode() || vNode.isNull() || fNode.isMissingNode() || fNode.isNull()) {
+                return "ELECTRIC_OPERATING_MISSING_POWER_SPEC";
+            }
+            int opV = vNode.asInt(-1);
+            int opF = fNode.asInt(-1);
+            boolean vOk = false;
+            for (JsonNode v : train.path("voltagesV")) {
+                if (v.asInt(-1) == opV) { vOk = true; break; }
+            }
+            boolean fOk = false;
+            for (JsonNode f : train.path("frequenciesHz")) {
+                if (f.asInt(-1) == opF) { fOk = true; break; }
+            }
+            if (!vOk || !fOk) {
+                return "ELECTRIC_OPERATING_POWER_MISMATCH: V=" + opV + " Hz=" + opF;
+            }
+        } else {
+            if ((!vNode.isMissingNode() && !vNode.isNull()) || (!fNode.isMissingNode() && !fNode.isNull())) {
+                return "NON_ELECTRIC_OPERATING_WITH_POWER_SPEC";
+            }
+        }
+        return null;
+    }
+
     private static ObjectNode inspectQuery(GraphHopper strictHopper, GraphHopper upstreamHopper, CacheIdentity cacheId, JsonNode req) {
         ObjectNode out = MAPPER.createObjectNode();
         out.put("requestId", req.path("requestId").asText(""));
@@ -320,6 +369,24 @@ public final class StrictOracleRunner {
                     out.put("elapsedMs", (System.nanoTime() - t0) / 1e6);
                     return out;
                 }
+                String expectedProf = req.path("expectedProfileSha256").asText("");
+                String actualProf = req.path("actualProfileSha256").asText("");
+                if (!expectedProf.isEmpty() && !actualProf.isEmpty() && !expectedProf.equals(actualProf)) {
+                    out.put("ok", false);
+                    out.put("statusCode", "STALE_PROFILE");
+                    out.put("reason", "PROFILE_SHA256_MISMATCH");
+                    out.put("elapsedMs", (System.nanoTime() - t0) / 1e6);
+                    return out;
+                }
+                String expectedPol = req.path("expectedPolicySha256").asText("");
+                String actualPol = req.path("actualPolicySha256").asText("");
+                if (!expectedPol.isEmpty() && !actualPol.isEmpty() && !expectedPol.equals(actualPol)) {
+                    out.put("ok", false);
+                    out.put("statusCode", "STALE_POLICY");
+                    out.put("reason", "POLICY_SHA256_MISMATCH");
+                    out.put("elapsedMs", (System.nanoTime() - t0) / 1e6);
+                    return out;
+                }
             }
             ArrayNode ptsNode = (ArrayNode) req.path("stops");
             if (ptsNode == null || ptsNode.size() < 2) {
@@ -352,6 +419,14 @@ public final class StrictOracleRunner {
                     out.put("ok", false);
                     out.put("statusCode", "DATA_MISSING");
                     out.put("reason", "AMBIGUOUS_TRAIN_POWER_PAIRS");
+                    out.put("elapsedMs", (System.nanoTime() - t0) / 1e6);
+                    return out;
+                }
+                String opErr = validateInitialOperating(req);
+                if (opErr != null) {
+                    out.put("ok", false);
+                    out.put("statusCode", "INCOMPATIBLE_PROFILE");
+                    out.put("reason", opErr);
                     out.put("elapsedMs", (System.nanoTime() - t0) / 1e6);
                     return out;
                 }

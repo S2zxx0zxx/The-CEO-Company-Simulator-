@@ -1,5 +1,6 @@
 import type { CompatibilityPolicy, OperatingMode } from '../compatibility';
 import type { TrainProfile } from '../../domain/models';
+import { hertz, volts } from '../../domain/units';
 import { C06_COMPARISON_TOLERANCES, type OracleRawResponse } from './contracts';
 
 export interface GroundTruthEdge {
@@ -476,14 +477,14 @@ export function validateOracleResponseIndependently(
         chosen.frequencyHz !== null &&
         !(chosen.voltageV.length > 1 && chosen.frequencyHz.length > 1) &&
         !(params.train.voltagesV.length > 1 && params.train.frequenciesHz.length > 1) &&
-        chosen.voltageV.some((v) => params.train.voltagesV.includes(v)) &&
-        chosen.frequencyHz.some((f) => params.train.frequenciesHz.includes(f));
+        chosen.voltageV.some((v) => params.train.voltagesV.includes(volts(v))) &&
+        chosen.frequencyHz.some((f) => params.train.frequenciesHz.includes(hertz(f)));
       if (!canElec) {
         edgeOp = { mode: 'diesel', gaugeMm: params.initialOperating.gaugeMm, voltageV: null, frequencyHz: null };
       } else {
-        const vv = chosen.voltageV!.find((v) => params.train.voltagesV.includes(v))!;
-        const ff = chosen.frequencyHz!.find((f) => params.train.frequenciesHz.includes(f))!;
-        edgeOp = { mode: 'electric', gaugeMm: params.initialOperating.gaugeMm, voltageV: vv, frequencyHz: ff };
+        const rawV = chosen.voltageV!.find((v) => params.train.voltagesV.includes(volts(v)))!;
+        const rawF = chosen.frequencyHz!.find((f) => params.train.frequenciesHz.includes(hertz(f)))!;
+        edgeOp = { mode: 'electric', gaugeMm: params.initialOperating.gaugeMm, voltageV: volts(rawV), frequencyHz: hertz(rawF) };
       }
     }
     checkEdgeAgainstTrain(chosen, params.train, edgeOp, hazards, reasons);
@@ -520,8 +521,8 @@ export function validateOracleResponseIndependently(
         edge.electrification === 'yes' &&
         edge.voltageV !== null &&
         edge.frequencyHz !== null &&
-        edge.voltageV.some((v) => params.train.voltagesV.includes(v)) &&
-        edge.frequencyHz.some((f) => params.train.frequenciesHz.includes(f));
+        edge.voltageV.some((v) => params.train.voltagesV.includes(volts(v))) &&
+        edge.frequencyHz.some((f) => params.train.frequenciesHz.includes(hertz(f)));
       return canElec ? 'electric' : 'diesel';
     };
     let prevM = params.initialOperating.mode;

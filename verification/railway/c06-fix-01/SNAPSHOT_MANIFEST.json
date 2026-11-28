@@ -1,42 +1,44 @@
 {
-  "baseline": "3245216aee348c292257625fbefd3cb049611982",
+  "baseline": "19e7d1f170e126b9bc5cf541b2c5216be42d45c5",
+  "coordinatorCheckpoint": "3245216aee348c292257625fbefd3cb049611982",
   "masterRequirement": "MR-005",
   "openRailRoutingPin": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
   "originalTask": "R16",
+  "priorSnapshot": "19e7d1f170e126b9bc5cf541b2c5216be42d45c5",
   "realPbfProcessed": false,
   "releaseAllowed": false,
   "schemaVersion": 1,
   "scope": "Isolated C06-FIX-01 validator, traction, outcome classification & IPC cache-identity hardening snapshot; leaves c04-*, c05-*, c06-strict-oracle, root runtime, PR #1 and main untouched.",
   "sourceFiles": {
     "C06_DEPENDENCY_EVIDENCE.json": {
-      "bytes": 3124,
-      "gitBlobSha1": "891f3ea91fa7b4e1411fcecc74d8d70009460fb5",
-      "sha256": "7daac5a6b69499a28233b37d869c045e5cb23fd517cee61c8cbaed0b97e598e3"
+      "bytes": 3256,
+      "gitBlobSha1": "87fd65e61cc69789d3e65cd2ed52f72437e1bd68",
+      "sha256": "ba8ff4e8444cc5504b998f302c75f54f50de5f35525dfef70ade308970af5829"
     },
     "C06_PERFORMANCE_BENCHMARK_REPORT.json": {
-      "bytes": 1784,
-      "gitBlobSha1": "123200ad9f97589ac0359ab174201ccad4005cc7",
-      "sha256": "14c24a6291e7c30d030fe948c0778eedfff57ce084405818ae6a7b3727a966ea"
+      "bytes": 1788,
+      "gitBlobSha1": "8f9364ed8fb5f8af2d8a0d8cad1f71a3a5d84031",
+      "sha256": "b666fa6a889428017dc69e35912a8c987202ed27297ac810e5f816dab1c6235e"
     },
     "C06_TRACEABILITY_MATRIX.json": {
-      "bytes": 3598,
-      "gitBlobSha1": "c1b53b5c28b6e7aed41e862e45919fd95202d7f3",
-      "sha256": "a9abdf79824629dd48e20d903577502f3719abb3a7b005713ea5dc2fd1b52a60"
+      "bytes": 3729,
+      "gitBlobSha1": "70285d3adfcb1edc0692aeea6034b11868756e23",
+      "sha256": "e5e149e9805a01da3918bb8c5374aadf3bbe3be390259c5405ba6acd17bff8b4"
     },
     "C06_VERIFICATION_REPORT.json": {
-      "bytes": 4150,
-      "gitBlobSha1": "9bbd7fe12ef313500e3e69f236dc9186f4c87758",
-      "sha256": "1d96661d5e8e4aaf090f3d46b44ff29eb1f9c8a705a60e12f01d52d567a30647"
+      "bytes": 4144,
+      "gitBlobSha1": "69cf9c0e648fb5765a099a900771104b1740256d",
+      "sha256": "e2b2a7cecac56ab5ab7432f05e9de8bbed772a4c4fab4bc163f16ebb53dfac01"
     },
     "EXECUTION_SUMMARY.md": {
-      "bytes": 2515,
-      "gitBlobSha1": "6c71d772d1fa408cc9f030a06faac9de2f55a02a",
-      "sha256": "8261fd7cc1b827b2c8a90ff651d4b2c2d247911f747a5cd13deff600aaec5000"
+      "bytes": 2731,
+      "gitBlobSha1": "48c2243efaf3fa9b8f1ee993e280da1f1d1872e0",
+      "sha256": "20f1720b2826a8ccc624c6e1ee51a6906fe376f2f45934dd9d5b072ae5046755"
     },
     "README.md": {
-      "bytes": 5451,
-      "gitBlobSha1": "9e3f211db3573074cd5a6595a49820c5406feeec",
-      "sha256": "d266ab18e403afcaa9d2a43fb55248edb9847f46b4576fab38034ed22b2444cc"
+      "bytes": 6026,
+      "gitBlobSha1": "ce871d97491707c443d6b53a83d48ced602dd7b0",
+      "sha256": "adeb36ecf6893ca6355d5fea3eba14b0bfa35eea0955c916599ce619d2bfbde5"
     },
     "c06_fixture_builder.py": {
       "bytes": 24115,
@@ -44,9 +46,9 @@
       "sha256": "fdc9bad21e88f73adb7547103ea9c645cec5e82e2522efa1a8d53c19412621dc"
     },
     "c06_oracle/c06_test_output.json": {
-      "bytes": 12792,
-      "gitBlobSha1": "cc91aa4b42c19be6b4b8be57beea1426947ce045",
-      "sha256": "4821c687ab51e90fcd7d5c1a6852c70c75116999ad1b530f0ba2d31a5cadb087"
+      "bytes": 12797,
+      "gitBlobSha1": "92c295fdea3536e602ad2964ab4c27deaf532e10",
+      "sha256": "24fe628c7e8d2c5ebf22873106b3d5693d7eb0368c8c6fb460e3d12989fc7e61"
     },
     "c06_oracle/cache_strict/c06_cache_identity.json": {
       "bytes": 649,
@@ -64,9 +66,9 @@
       "sha256": "e0f95a2c759fdb0895b004e43d78d3d2df9bb5295ff5789ea235008e62125639"
     },
     "c06_oracle/java/src/com/railwayceo/c06/StrictOracleRunner.java": {
-      "bytes": 31889,
-      "gitBlobSha1": "ae56553fe6ed5d2e50a0d00ec37cd9cd43b67c8e",
-      "sha256": "7f8946039a267612dd419f39948a42c14e84015ede1e572cc465178d77cf0ea0"
+      "bytes": 35499,
+      "gitBlobSha1": "0fa68fa83d8a8321cf1a8ed59a1b10b39e69ed84",
+      "sha256": "dbf0556772505ed28b13f88c71f91141267a65f6baaa8c9e471b8c0a844cd066"
     },
     "c06_oracle/java/src/com/railwayceo/c06/StrictParsers.java": {
       "bytes": 12941,
@@ -74,9 +76,9 @@
       "sha256": "ee6b69dc855ef12178d27dfcfb67bba9f1318f4c0cddb742334e41b597faace6"
     },
     "c06_package_and_sync.py": {
-      "bytes": 14364,
-      "gitBlobSha1": "e67435008213ff92c008cb0a57838618c90bad92",
-      "sha256": "d3453f0bbdab916bbabfa7b67f3ffa204cf54a9706acfcb9460b28e379357556"
+      "bytes": 14554,
+      "gitBlobSha1": "6adfd6b03ff2f4d449fb099947895ea348e4cbe2",
+      "sha256": "3a49ba5d8db4da785001088cc3dc91b26eedbdc4793638357ca1bd44c71898b5"
     },
     "docs/C06_STRICT_ORACLE_ARCHITECTURE.md": {
       "bytes": 4207,
@@ -104,9 +106,9 @@
       "sha256": "53a69fee849ef03fd13784007da4abf3b40c3f7139605ef1f0a218e3d69e5be6"
     },
     "src/rail/c06-oracle/client.ts": {
-      "bytes": 12178,
-      "gitBlobSha1": "31517e6a453dd7bf15f92d8edc3c90563a1d4e1d",
-      "sha256": "466f3d8355ce6ad79a31b90b5dea41640b2010fe265099678a3f391b474a0612"
+      "bytes": 12228,
+      "gitBlobSha1": "9d62ca5243c4366b81891c47a4dc6fe6295c6b0f",
+      "sha256": "1c29e6622dab713cd24830c4b10435dd8f5ed701d98f15ec6b71d4a9fecfc2a9"
     },
     "src/rail/c06-oracle/contracts.ts": {
       "bytes": 14549,
@@ -114,9 +116,9 @@
       "sha256": "5b20e24f7f4b5d09e6a14e944d6264aa7301dc87c4b583d85cf3bb696da32b00"
     },
     "src/rail/c06-oracle/harness.ts": {
-      "bytes": 15573,
-      "gitBlobSha1": "6d2205291de543f075d4ab087d79df8aaacceedd",
-      "sha256": "8d001b015d347350b798efd7a8806da47cbe445a577950a476e9c3dcb8c08052"
+      "bytes": 15563,
+      "gitBlobSha1": "d5e37e21ac4d7e8eed75d1884382e50ba9c57139",
+      "sha256": "708d0daa225e2973716c218cc0d826c4fb48dbd6fdeea568a711b15be6ccbca5"
     },
     "src/rail/c06-oracle/index.ts": {
       "bytes": 111,
@@ -124,14 +126,14 @@
       "sha256": "3c1eb9e22d363c84a41ae04f2729e0d0479ba528b496c059a85f0286553ca97e"
     },
     "src/rail/c06-oracle/validator.ts": {
-      "bytes": 22479,
-      "gitBlobSha1": "ac87bbd55536272a03d9f46eead1893a89615eb0",
-      "sha256": "4ef5829915d8af337667d27c69b6f0e21fcb85cb26e0395ae10966fb8feb2c05"
+      "bytes": 22594,
+      "gitBlobSha1": "7f200ae3f96609b8453e66b6a617e552d04c34fe",
+      "sha256": "56e7433548b56c0ff584df75f3fe61ddedcfb9ec6e71bbd365522dc09ba5e8dc"
     },
     "test_c06_strict_oracle.mjs": {
-      "bytes": 40353,
-      "gitBlobSha1": "8e2c91af891cf484588dfce37e827254f3d141db",
-      "sha256": "f4811fd6fcce0578e005a9f1ae6c898fae49fec84a7c9853346e46bf0e1bb5b1"
+      "bytes": 42128,
+      "gitBlobSha1": "6b91aa9be73ae700813e4be9ecf076ba45a4ec12",
+      "sha256": "56afbe3519fdf8934b7ed2943c4ae22d0e0885e0372efe4729cd4cbd707c9e5f"
     }
   },
   "task": "C06-FIX-01"

@@ -43,7 +43,11 @@
     },
     {
       "requirement": "C06-FIX-01-B Strict Traction & Initial Operating Mode Compliance",
-      "modules": ["src/rail/c06-oracle/validator.ts"],
+      "modules": [
+        "src/rail/c06-oracle/validator.ts",
+        "src/rail/c06-oracle/client.ts",
+        "c06_oracle/java/src/com/railwayceo/c06/StrictOracleRunner.java"
+      ],
       "tests": [
         "test_c06_strict_oracle.mjs#c06_03_comprehensive_24_scenario_oracle_vs_game_comparison",
         "test_c06_strict_oracle.mjs#c06_08_fix01_validator_traction_outcome_and_ipc_regressions"

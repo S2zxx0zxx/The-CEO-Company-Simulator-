@@ -34,8 +34,8 @@
   },
   "c06AdapterJar": {
     "path": "c06_oracle/java/c06-strict-oracle.jar",
-    "bytes": 33399,
-    "sha256": "6b3cc10e2a9d828742f879df96026280d3347b8e7b1440c434b4b3eab76c59d0",
+    "bytes": 34375,
+    "sha256": "34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb",
     "boundCacheIdentityFile": "c06_oracle/cache_strict/c06_cache_identity.json",
     "boundGraphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
     "boundPbfSha256": "07d1ca96b1609c5e150f638b462a68f4dc40a70e5fa273ef90442fbb30c48dcd"
@@ -48,8 +48,10 @@
     "osmium": "1.19.0 (GPL-3.0 standalone CLI only, never linked into TS/Java runtime)",
     "typescriptCompiler": {
       "installedInWorkspace": false,
-      "tscExitObserved": 1,
-      "note": "TypeScript compiler (tsc) is not installed locally in the C06 workspace or offline npm cache; all TS modules were executed directly under Node v24.10.0 --experimental-transform-types."
+      "tscVersion": "5.9.3",
+      "c06OracleErrors": 0,
+      "preservedUpstreamErrors": 2,
+      "note": "Strict TypeScript 5.9.3 (--noEmit --strict) passed with 0 errors across src/rail/c06-oracle/*.ts; 2 pre-existing errors remain in untouched preserved C04/C05 dependencies (src/rail/map/pmtiles-adapter.ts(260,5) and src/rail/regions/portals.ts(3,26))."
     }
   },
   "frontendPackageLicenses": [

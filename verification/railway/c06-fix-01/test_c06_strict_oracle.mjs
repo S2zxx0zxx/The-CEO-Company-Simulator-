@@ -799,6 +799,43 @@ try {
     equal(javaStaleResp.loadedGraphSha256, graphV1.graphSha256);
     equal(javaStaleResp.correlationNonce, 'nonce-live-mismatch-01');
 
+    // Probe 8 (Live Java initialOperating enforcement): electric-only train + diesel operating rejected inside Java itself
+    const javaTractionResp = await client.query({
+      requestId: 'java-live-diesel-on-electric',
+      correlationNonce: 'nonce-traction-01',
+      engineMode: 'STRICT_ORACLE',
+      stops: [
+        { stationId: 'st:101', lat: truthV1.stations['st:101'].coordinates[1], lon: truthV1.stations['st:101'].coordinates[0] },
+        { stationId: 'st:102', lat: truthV1.stations['st:102'].coordinates[1], lon: truthV1.stations['st:102'].coordinates[0] },
+      ],
+      objective: 'distance',
+      allowReversal: false,
+      train: trainAc25k,
+      policy: policyStrictNoRev,
+      expectedGraphSha256: graphV1.graphSha256,
+      expectedProfileSha256: await profileHash(trainAc25k),
+      expectedPolicySha256: await policyHash(policyStrictNoRev),
+      actualGraphSha256: graphV1.graphSha256,
+      actualProfileSha256: await profileHash(trainAc25k),
+      actualPolicySha256: await policyHash(policyStrictNoRev),
+      initialOperating: opDieselBroad,
+    });
+    equal(javaTractionResp.ok, false);
+    equal(javaTractionResp.statusCode, 'INCOMPATIBLE_PROFILE');
+    equal(javaTractionResp.correlationNonce, 'nonce-traction-01');
+
+    // Probe 9 (FIX-01-C): Oracle execution failure classifies as ORACLE_EXECUTION_ERROR, not MATCH_NO_VALID_ROUTE
+    const execErrRes = await runStrictOracleComparison(graphV1, truthV1, client, {
+      caseId: 'fix01-c-missing-cache-exec-error',
+      stopIds: ['st:101', 'st:102'],
+      objective: 'distance',
+      initialOperating: opAc25k,
+      train: trainAc25k,
+      policy: policyStrictNoRev,
+      forceOracleMissingCache: true,
+    });
+    equal(execErrRes.discrepancyClass, 'ORACLE_EXECUTION_ERROR');
+
     // Two Valid Controls: multi-stop ordered AC route [st:101, st:102, st:104] passes BOTH validators!
     const validGameMulti = validateGameRouteIndependently(truthV1, {
       stopIds: ['st:101', 'st:102', 'st:104'],
@@ -825,7 +862,7 @@ try {
     equal(validLiveMulti.gameSafety.valid, true);
 
     return {
-      negativeProbesRejected: 7,
+      negativeProbesRejected: 9,
       validControlsPassed: 2,
       javaCacheIdentityBoundSha256: javaStaleResp.loadedGraphSha256,
     };

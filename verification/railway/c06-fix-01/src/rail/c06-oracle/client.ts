@@ -243,6 +243,7 @@ export class StrictOracleClient {
           allowReversal: req.allowReversal,
           stops: req.stops,
           train: req.train,
+          initialOperating: req.initialOperating,
           expectedGraphSha256: req.expectedGraphSha256,
           actualGraphSha256: req.actualGraphSha256,
           expectedProfileSha256: req.expectedProfileSha256,

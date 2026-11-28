@@ -56,12 +56,15 @@ java -Xmx256m -cp $cpRun com.railwayceo.c06.StrictOracleRunner import `
 ```
 *(This writes `c06_oracle/cache_strict/c06_cache_identity.json` binding `graphSha256`, `pbfSha256`, `graphNodes`, and `graphEdges` verified at startup by `query-stdio` / `query-once`.)*
 
-### 5. Running C06 & Preserved Regression Suites
+### 5. Running C06, Strict TypeScript Check & Preserved Regression Suites
 ```powershell
-# C06 Strict Oracle Suite (8 test groups, 27 paired comparison scenarios, FIX-01 validator/traction/outcome/IPC checks)
+# C06 Strict Oracle Suite (8 test groups, 27 paired comparison scenarios, 9 FIX-01 negative probes + 2 controls)
 node --experimental-transform-types test_c06_strict_oracle.mjs
 
-# Downstream regressions
+# Strict TypeScript typechecking (tsc 5.9.3 with @types/node; 0 errors in src/rail/c06-oracle/*.ts; 2 pre-existing errors in preserved untouched C04/C05 files)
+node <path-to-typescript-bin>/tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution bundler --skipLibCheck --allowImportingTsExtensions --typeRoots <path-to-types> --types node src/rail/c06-oracle/contracts.ts src/rail/c06-oracle/validator.ts src/rail/c06-oracle/client.ts src/rail/c06-oracle/harness.ts
+
+# Preserved & downstream regressions (437 total executed incl. 34/34 OpenRailRouting mvn -o test)
 node --experimental-transform-types test_c05_packages_install_and_portals.mjs
 node --experimental-transform-types test_c04_contracts_and_tiles.mjs
 node --experimental-transform-types test_c03_runtime_ts.mjs
