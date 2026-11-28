@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "C07-REAL-DATA-READINESS-SCHEMA-V1",
+  "c01ComplianceCleared": false,
+  "minimumRequiredRealCases": 100,
+  "realRouteComparisonsCompleted": 0,
+  "releaseAllowed": false,
+  "coveragePlanSummary": {
+    "targetPositiveRoutes": 40,
+    "targetNegativeCompatibilityRoutes": 35,
+    "targetTopologyAndTurnRoutes": 15,
+    "targetMultiStopAndAlternativeRoutes": 15
+  },
+  "cases": []
+}

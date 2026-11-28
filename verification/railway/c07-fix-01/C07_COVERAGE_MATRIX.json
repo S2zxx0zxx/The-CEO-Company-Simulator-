@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "task": "C07",
+  "originalTask": "R17",
+  "masterRequirements": ["MR-006", "MR-044"],
+  "coordinatorCheckpoint": "00088cd6b1416adfc6822f4896813ef24e15d49b",
+  "mode": "production-first synthetic engineering preparation",
+  "realPbfProcessed": false,
+  "realRouteComparisonsCompleted": 0,
+  "releaseAllowed": false,
+  "categorySummary": {
+    "totalDistinctScenarios": 137,
+    "genuineRouteComparisons": 123,
+    "infrastructureAndUnsupportedCases": 14,
+    "A_POSITIVE_ROUTE": 50,
+    "B_NEGATIVE_COMPATIBILITY": 44,
+    "C_TOPOLOGY_AND_OPERATIONS": 29,
+    "D_IDENTITY_AND_INFRASTRUCTURE": 14,
+    "crossRegionPortalCompositionChecks": 9,
+    "mandatoryFrameworkNegativeTests": 14
+  },
+  "artifacts": [
+    {
+      "requirement": "Versioned C07 Calibration Dataset Contract & Duplicate/Contradiction Validation",
+      "modules": ["src/rail/c07-calibration/contracts.ts", "c07_dataset_generator.mjs"],
+      "fixtures": [
+        "fixtures/c07_calibration/c07_synthetic_calibration_dataset.json",
+        "fixtures/c06_oracle/c07_synthetic_calibration_template.json"
+      ],
+      "tests": ["test_c07_calibration.mjs#c07_01_source_pin_jar_and_dataset_contract"],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "100+ Distinct Synthetic Route Comparison Batch Execution (Live Java 21 + Railway CEO findRoute)",
+      "modules": ["src/rail/c07-calibration/batch-runner.ts", "src/rail/c06-oracle/validator.ts"],
+      "fixtures": [
+        "fixtures/c06_oracle/c06_graph_v1.json",
+        "fixtures/c07_calibration/c07_graph_v1.json"
+      ],
+      "tests": [
+        "test_c07_calibration.mjs#c07_02_full_batch_execution_137_distinct_scenarios",
+        "test_c07_calibration.mjs#c07_03_checkpoint_cancellation_and_safe_resume"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "Distance & Duration Calibration & Provisional Tolerance Retention",
+      "modules": ["src/rail/c07-calibration/calibration.ts"],
+      "outputs": ["C07_CALIBRATION_REPORT.json"],
+      "tests": ["test_c07_calibration.mjs#c07_04_distance_duration_calibration_and_provisional_tolerances"],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "17-Class Discrepancy Registry & Explicit Disposition Enforcement",
+      "modules": ["src/rail/c07-calibration/discrepancy-registry.ts"],
+      "outputs": ["C07_DISCREPANCY_REGISTRY.json"],
+      "tests": [
+        "test_c07_calibration.mjs#c07_02_full_batch_execution_137_distinct_scenarios",
+        "test_c07_calibration.mjs#c07_06_mandatory_14_negative_regression_tests"
+      ],
+      "status": "VERIFIED_SYNTHETIC"
+    },
+    {
+      "requirement": "Cross-Region Portal Composition Validation (C05 FIX-02 Portals)",
+      "modules": ["src/rail/c07-calibration/cross-region.ts", "src/rail/regions/portals.ts"],
+      "outputs": ["C07_CROSS_REGION_REPORT.json"],
+      "tests": ["test_c07_calibration.mjs#c07_05_cross_region_c05_fix02_portal_validation"],
+      "status": "VERIFIED_SYNTHETIC_GAME_PORTAL_ONLY"
+    },
+    {
+      "requirement": "Real-Data Intake & Mandatory R17 Readiness Schema (C01 Gated, 0 Real Routes Processed)",
+      "modules": ["src/rail/c07-calibration/contracts.ts"],
+      "fixtures": ["fixtures/c07_calibration/c07_real_data_readiness_schema.json"],
+      "tests": ["test_c07_calibration.mjs#c07_07_repeated_run_reproducibility_and_real_data_readiness"],
+      "status": "READY_GATED_BY_C01"
+    }
+  ]
+}
