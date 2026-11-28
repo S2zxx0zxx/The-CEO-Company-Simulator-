@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "task": "C06-FIX-01",
+  "originalTask": "R16",
+  "masterRequirement": "MR-005",
+  "syntheticOnly": true,
+  "realPbfProcessed": false,
+  "environment": {
+    "nodeVersion": "v24.10.0",
+    "pythonVersion": "3.13.0",
+    "javaVersion": "21.0.8 (JetBrains Runtime)",
+    "mavenVersion": "3.9.9",
+    "osmiumVersion": "1.19.0",
+    "openRailRoutingCommit": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+    "graphHopperVersion": "11.1-osm-reader-callbacks-1"
+  },
+  "importMetrics": {
+    "pbfBytes": 1351,
+    "pbfSha256": "07d1ca96b1609c5e150f638b462a68f4dc40a70e5fa273ef90442fbb30c48dcd",
+    "graphSha256": "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+    "strictImportDurationMs": 1958.68,
+    "upstreamImportDurationMs": 650.84,
+    "strictCacheBytes": 6346783,
+    "upstreamCacheBytes": 6343187,
+    "graphNodes": 43,
+    "graphEdges": 27,
+    "jvmMaxHeapBytes": 268435456
+  },
+  "oracleQueryBenchmarks": {
+    "coldJvmLoadMs": 1321.21,
+    "coldCliQueryMs": 147.53,
+    "persistentJvmLoadMs": 1446.03,
+    "warmQueryP50Ms": 2.7,
+    "warmQueryP95Ms": 51.04,
+    "repeatedQueryDeterministic": true,
+    "c07TemplateCaseCount": 10
+  },
+  "oracleSuiteElapsedMs": {
+    "c06_01_source_pin_import_and_c02_metadata_audit": 0.82,
+    "c06_02_upstream_permissive_vs_strict_unknown_and_dc_resolution": 2624,
+    "c06_03_comprehensive_24_scenario_oracle_vs_game_comparison": 363.83,
+    "c06_04_easy_isolation_stale_hashes_process_failure_and_timeout": 4546.71,
+    "c06_05_independent_safety_validator_hazard_detection": 0.41,
+    "c06_06_cross_region_c05_fix02_portal_continuity": 183.76,
+    "c06_07_performance_benchmarks_and_c07_schema_preparation": 2481.85,
+    "c06_08_fix01_validator_traction_outcome_and_ipc_regressions": 24.22
+  }
+}

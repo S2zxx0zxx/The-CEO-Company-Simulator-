@@ -1,0 +1,138 @@
+{
+  "baseline": "3245216aee348c292257625fbefd3cb049611982",
+  "masterRequirement": "MR-005",
+  "openRailRoutingPin": "e5112194fde4cc8ec36e2b0093e250df89ef4845",
+  "originalTask": "R16",
+  "realPbfProcessed": false,
+  "releaseAllowed": false,
+  "schemaVersion": 1,
+  "scope": "Isolated C06-FIX-01 validator, traction, outcome classification & IPC cache-identity hardening snapshot; leaves c04-*, c05-*, c06-strict-oracle, root runtime, PR #1 and main untouched.",
+  "sourceFiles": {
+    "C06_DEPENDENCY_EVIDENCE.json": {
+      "bytes": 3124,
+      "gitBlobSha1": "891f3ea91fa7b4e1411fcecc74d8d70009460fb5",
+      "sha256": "7daac5a6b69499a28233b37d869c045e5cb23fd517cee61c8cbaed0b97e598e3"
+    },
+    "C06_PERFORMANCE_BENCHMARK_REPORT.json": {
+      "bytes": 1784,
+      "gitBlobSha1": "123200ad9f97589ac0359ab174201ccad4005cc7",
+      "sha256": "14c24a6291e7c30d030fe948c0778eedfff57ce084405818ae6a7b3727a966ea"
+    },
+    "C06_TRACEABILITY_MATRIX.json": {
+      "bytes": 3598,
+      "gitBlobSha1": "c1b53b5c28b6e7aed41e862e45919fd95202d7f3",
+      "sha256": "a9abdf79824629dd48e20d903577502f3719abb3a7b005713ea5dc2fd1b52a60"
+    },
+    "C06_VERIFICATION_REPORT.json": {
+      "bytes": 4150,
+      "gitBlobSha1": "9bbd7fe12ef313500e3e69f236dc9186f4c87758",
+      "sha256": "1d96661d5e8e4aaf090f3d46b44ff29eb1f9c8a705a60e12f01d52d567a30647"
+    },
+    "EXECUTION_SUMMARY.md": {
+      "bytes": 2515,
+      "gitBlobSha1": "6c71d772d1fa408cc9f030a06faac9de2f55a02a",
+      "sha256": "8261fd7cc1b827b2c8a90ff651d4b2c2d247911f747a5cd13deff600aaec5000"
+    },
+    "README.md": {
+      "bytes": 5451,
+      "gitBlobSha1": "9e3f211db3573074cd5a6595a49820c5406feeec",
+      "sha256": "d266ab18e403afcaa9d2a43fb55248edb9847f46b4576fab38034ed22b2444cc"
+    },
+    "c06_fixture_builder.py": {
+      "bytes": 24115,
+      "gitBlobSha1": "15aa7e858b4117eae80e8f4bb98da577b60b73ff",
+      "sha256": "fdc9bad21e88f73adb7547103ea9c645cec5e82e2522efa1a8d53c19412621dc"
+    },
+    "c06_oracle/c06_test_output.json": {
+      "bytes": 12792,
+      "gitBlobSha1": "cc91aa4b42c19be6b4b8be57beea1426947ce045",
+      "sha256": "4821c687ab51e90fcd7d5c1a6852c70c75116999ad1b530f0ba2d31a5cadb087"
+    },
+    "c06_oracle/cache_strict/c06_cache_identity.json": {
+      "bytes": 649,
+      "gitBlobSha1": "b7b0e2ebf4d49452341fab84fc72f9b97386e40f",
+      "sha256": "a85f0fe65bdbd66aa97b5d2847fbe56d537658f3217d452c53d415dea3b09eb2"
+    },
+    "c06_oracle/import_metrics.json": {
+      "bytes": 446,
+      "gitBlobSha1": "01efe9f46b092561616938e07e528f3f658ede42",
+      "sha256": "a2793c025e1c9761e4e66c57ef7312e533d99e63a0d8a9d0b0e458dc7a7eaa13"
+    },
+    "c06_oracle/java/src/com/railwayceo/c06/StrictEnums.java": {
+      "bytes": 7911,
+      "gitBlobSha1": "9637402d80f022ea97f147375650a59e4be24f57",
+      "sha256": "e0f95a2c759fdb0895b004e43d78d3d2df9bb5295ff5789ea235008e62125639"
+    },
+    "c06_oracle/java/src/com/railwayceo/c06/StrictOracleRunner.java": {
+      "bytes": 31889,
+      "gitBlobSha1": "ae56553fe6ed5d2e50a0d00ec37cd9cd43b67c8e",
+      "sha256": "7f8946039a267612dd419f39948a42c14e84015ede1e572cc465178d77cf0ea0"
+    },
+    "c06_oracle/java/src/com/railwayceo/c06/StrictParsers.java": {
+      "bytes": 12941,
+      "gitBlobSha1": "137a6c6946de058b490b40407873ce2436b354f7",
+      "sha256": "ee6b69dc855ef12178d27dfcfb67bba9f1318f4c0cddb742334e41b597faace6"
+    },
+    "c06_package_and_sync.py": {
+      "bytes": 14364,
+      "gitBlobSha1": "e67435008213ff92c008cb0a57838618c90bad92",
+      "sha256": "d3453f0bbdab916bbabfa7b67f3ffa204cf54a9706acfcb9460b28e379357556"
+    },
+    "docs/C06_STRICT_ORACLE_ARCHITECTURE.md": {
+      "bytes": 4207,
+      "gitBlobSha1": "fab78e05c096a17a3d9133c6eb57c3f62e27cb62",
+      "sha256": "32e80db6c9093a1e8491c7ddc4eed0eea8db2cf89d14b0171dcc9b197334347c"
+    },
+    "docs/C06_VERIFICATION_MATRIX.md": {
+      "bytes": 3200,
+      "gitBlobSha1": "680e1789de633d98dca7af03b8dac785e9144052",
+      "sha256": "a81e8414fc5089614926fa9903778c72c7582eb891e255f36269a3e65fc37db9"
+    },
+    "fixtures/c06_oracle/c06_c02_metadata_audit.json": {
+      "bytes": 832,
+      "gitBlobSha1": "717d47cd4f0177945a765d126f557cb25bdaf971",
+      "sha256": "aab17b417ad6fc6457c3d0ec7f5d8dc668b74b9175ae9b157d6c7379669764e2"
+    },
+    "fixtures/c06_oracle/c06_fixture_manifest.json": {
+      "bytes": 652,
+      "gitBlobSha1": "2792a750fb745b7c844e9c5f4c86c353da4e3a83",
+      "sha256": "58bd4923ec55a6ad9c6a01adcb51efc491c3480caf0dcd1a285b7288335d7c9f"
+    },
+    "fixtures/c06_oracle/c07_synthetic_calibration_template.json": {
+      "bytes": 6832,
+      "gitBlobSha1": "c7fb1d110a8d63b5705c034264660fa75257ced1",
+      "sha256": "53a69fee849ef03fd13784007da4abf3b40c3f7139605ef1f0a218e3d69e5be6"
+    },
+    "src/rail/c06-oracle/client.ts": {
+      "bytes": 12178,
+      "gitBlobSha1": "31517e6a453dd7bf15f92d8edc3c90563a1d4e1d",
+      "sha256": "466f3d8355ce6ad79a31b90b5dea41640b2010fe265099678a3f391b474a0612"
+    },
+    "src/rail/c06-oracle/contracts.ts": {
+      "bytes": 14549,
+      "gitBlobSha1": "6150005d945eb0a567d0ece8c7ed023d04276009",
+      "sha256": "5b20e24f7f4b5d09e6a14e944d6264aa7301dc87c4b583d85cf3bb696da32b00"
+    },
+    "src/rail/c06-oracle/harness.ts": {
+      "bytes": 15573,
+      "gitBlobSha1": "6d2205291de543f075d4ab087d79df8aaacceedd",
+      "sha256": "8d001b015d347350b798efd7a8806da47cbe445a577950a476e9c3dcb8c08052"
+    },
+    "src/rail/c06-oracle/index.ts": {
+      "bytes": 111,
+      "gitBlobSha1": "ed965e4f2b8596739f252cc353e13812b987fba9",
+      "sha256": "3c1eb9e22d363c84a41ae04f2729e0d0479ba528b496c059a85f0286553ca97e"
+    },
+    "src/rail/c06-oracle/validator.ts": {
+      "bytes": 22479,
+      "gitBlobSha1": "ac87bbd55536272a03d9f46eead1893a89615eb0",
+      "sha256": "4ef5829915d8af337667d27c69b6f0e21fcb85cb26e0395ae10966fb8feb2c05"
+    },
+    "test_c06_strict_oracle.mjs": {
+      "bytes": 40353,
+      "gitBlobSha1": "8e2c91af891cf484588dfce37e827254f3d141db",
+      "sha256": "f4811fd6fcce0578e005a9f1ae6c898fae49fec84a7c9853346e46bf0e1bb5b1"
+    }
+  },
+  "task": "C06-FIX-01"
+}

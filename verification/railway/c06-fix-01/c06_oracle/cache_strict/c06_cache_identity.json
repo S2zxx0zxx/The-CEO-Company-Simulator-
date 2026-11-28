@@ -1,0 +1,8 @@
+{
+  "schemaVersion" : 1,
+  "graphSha256" : "f54f0b241fdfe5513136f1bdedb6e46e31a7b96ae8d84ebbb9d9f62cee1c02f9",
+  "pbfSha256" : "07d1ca96b1609c5e150f638b462a68f4dc40a70e5fa273ef90442fbb30c48dcd",
+  "graphNodes" : 43,
+  "graphEdges" : 27,
+  "strictEncodedValues" : "gauge,voltage,electrified,frequency,road_environment,max_speed,rail_access,rail_average_speed,railway_class,railway_service,preferred_direction,osm_way_id,strict_access,strict_active,strict_gauge_state,strict_gauge_mm,strict_electrified_state,strict_voltage_known,strict_voltage_v,strict_freq_state,strict_freq_dhz,strict_maxspeed_known,strict_maxspeed_kmh,strict_oneway_dir"
+}
