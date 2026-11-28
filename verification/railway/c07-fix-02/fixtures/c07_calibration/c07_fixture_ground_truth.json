@@ -1,0 +1,2593 @@
+{
+  "edges": {
+    "e:2001:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:202",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.2,
+          13.1
+        ],
+        [
+          43.1,
+          13.1
+        ]
+      ],
+      "id": "e:2001:0:bwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 60,
+      "osmWayId": 2001,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2001",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "60",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:201",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2001:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:201",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.1,
+          13.1
+        ],
+        [
+          43.2,
+          13.1
+        ]
+      ],
+      "id": "e:2001:0:fwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 60,
+      "osmWayId": 2001,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2001",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "60",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:202",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2002:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:203",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.3,
+          13.1
+        ],
+        [
+          43.2,
+          13.1
+        ]
+      ],
+      "id": "e:2002:0:bwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 60,
+      "osmWayId": 2002,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2002",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "60",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:202",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2002:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:202",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.2,
+          13.1
+        ],
+        [
+          43.3,
+          13.1
+        ]
+      ],
+      "id": "e:2002:0:fwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 60,
+      "osmWayId": 2002,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2002",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "60",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:203",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2003:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:204",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.4,
+          13.1
+        ],
+        [
+          43.3,
+          13.1
+        ]
+      ],
+      "id": "e:2003:0:bwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 130,
+      "osmWayId": 2003,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2003",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "130",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:203",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2003:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:203",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.3,
+          13.1
+        ],
+        [
+          43.4,
+          13.1
+        ]
+      ],
+      "id": "e:2003:0:fwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 130,
+      "osmWayId": 2003,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2003",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "130",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:204",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2004:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:205",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.5,
+          13.1
+        ],
+        [
+          43.4,
+          13.1
+        ]
+      ],
+      "id": "e:2004:0:bwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 100,
+      "osmWayId": 2004,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2004",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "100",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:204",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2004:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:204",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.4,
+          13.1
+        ],
+        [
+          43.5,
+          13.1
+        ]
+      ],
+      "id": "e:2004:0:fwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 100,
+      "osmWayId": 2004,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2004",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "100",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:205",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2005:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:203",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.3,
+          13.1
+        ],
+        [
+          43.2,
+          13.16
+        ],
+        [
+          43.1,
+          13.1
+        ]
+      ],
+      "id": "e:2005:0:bwd",
+      "lengthM": 25438,
+      "maxSpeedKmh": 160,
+      "osmWayId": 2005,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2005",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "160",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:201",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2005:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:201",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.1,
+          13.1
+        ],
+        [
+          43.2,
+          13.16
+        ],
+        [
+          43.3,
+          13.1
+        ]
+      ],
+      "id": "e:2005:0:fwd",
+      "lengthM": 25438,
+      "maxSpeedKmh": 160,
+      "osmWayId": 2005,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2005",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "160",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:203",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2006:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:203",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.3,
+          13.1
+        ],
+        [
+          43.2,
+          13.06
+        ],
+        [
+          43.1,
+          13.1
+        ]
+      ],
+      "id": "e:2006:0:bwd",
+      "lengthM": 23418,
+      "maxSpeedKmh": 50,
+      "osmWayId": 2006,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2006",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "50",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "branch",
+        "voltage": "25000"
+      },
+      "to": "n:201",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2006:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:201",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.1,
+          13.1
+        ],
+        [
+          43.2,
+          13.06
+        ],
+        [
+          43.3,
+          13.1
+        ]
+      ],
+      "id": "e:2006:0:fwd",
+      "lengthM": 23418,
+      "maxSpeedKmh": 50,
+      "osmWayId": 2006,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2006",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1676",
+        "maxspeed": "50",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "branch",
+        "voltage": "25000"
+      },
+      "to": "n:203",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2010:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:211",
+      "gaugeMm": [
+        1435
+      ],
+      "geometry": [
+        [
+          43.2,
+          13.25
+        ],
+        [
+          43.1,
+          13.25
+        ]
+      ],
+      "id": "e:2010:0:bwd",
+      "lengthM": 10823,
+      "maxSpeedKmh": 140,
+      "osmWayId": 2010,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2010",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1435",
+        "maxspeed": "140",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:210",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2010:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:210",
+      "gaugeMm": [
+        1435
+      ],
+      "geometry": [
+        [
+          43.1,
+          13.25
+        ],
+        [
+          43.2,
+          13.25
+        ]
+      ],
+      "id": "e:2010:0:fwd",
+      "lengthM": 10823,
+      "maxSpeedKmh": 140,
+      "osmWayId": 2010,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2010",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1435",
+        "maxspeed": "140",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "25000"
+      },
+      "to": "n:211",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2011:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        0
+      ],
+      "from": "n:212",
+      "gaugeMm": [
+        1435
+      ],
+      "geometry": [
+        [
+          43.3,
+          13.25
+        ],
+        [
+          43.2,
+          13.25
+        ]
+      ],
+      "id": "e:2011:0:bwd",
+      "lengthM": 10823,
+      "maxSpeedKmh": 80,
+      "osmWayId": 2011,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2011",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "maxspeed": "80",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "750"
+      },
+      "to": "n:211",
+      "voltageV": [
+        750
+      ]
+    },
+    "e:2011:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        0
+      ],
+      "from": "n:211",
+      "gaugeMm": [
+        1435
+      ],
+      "geometry": [
+        [
+          43.2,
+          13.25
+        ],
+        [
+          43.3,
+          13.25
+        ]
+      ],
+      "id": "e:2011:0:fwd",
+      "lengthM": 10823,
+      "maxSpeedKmh": 80,
+      "osmWayId": 2011,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2011",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "maxspeed": "80",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "750"
+      },
+      "to": "n:212",
+      "voltageV": [
+        750
+      ]
+    },
+    "e:2012:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "no",
+      "frequencyHz": null,
+      "from": "n:213",
+      "gaugeMm": [
+        1435
+      ],
+      "geometry": [
+        [
+          43.4,
+          13.25
+        ],
+        [
+          43.3,
+          13.25
+        ]
+      ],
+      "id": "e:2012:0:bwd",
+      "lengthM": 10823,
+      "maxSpeedKmh": 90,
+      "osmWayId": 2012,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2012",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "no",
+        "gauge": "1435",
+        "maxspeed": "90",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "branch"
+      },
+      "to": "n:212",
+      "voltageV": null
+    },
+    "e:2012:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "no",
+      "frequencyHz": null,
+      "from": "n:212",
+      "gaugeMm": [
+        1435
+      ],
+      "geometry": [
+        [
+          43.3,
+          13.25
+        ],
+        [
+          43.4,
+          13.25
+        ]
+      ],
+      "id": "e:2012:0:fwd",
+      "lengthM": 10823,
+      "maxSpeedKmh": 90,
+      "osmWayId": 2012,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2012",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "no",
+        "gauge": "1435",
+        "maxspeed": "90",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "branch"
+      },
+      "to": "n:213",
+      "voltageV": null
+    },
+    "e:2013:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        0
+      ],
+      "from": "n:214",
+      "gaugeMm": [
+        1435
+      ],
+      "geometry": [
+        [
+          43.2,
+          13.33
+        ],
+        [
+          43.2,
+          13.25
+        ]
+      ],
+      "id": "e:2013:0:bwd",
+      "lengthM": 8896,
+      "maxSpeedKmh": 100,
+      "osmWayId": 2013,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2013",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "0",
+        "gauge": "1435",
+        "maxspeed": "100",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "3000"
+      },
+      "to": "n:211",
+      "voltageV": [
+        3000
+      ]
+    },
+    "e:2013:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        0
+      ],
+      "from": "n:211",
+      "gaugeMm": [
+        1435
+      ],
+      "geometry": [
+        [
+          43.2,
+          13.25
+        ],
+        [
+          43.2,
+          13.33
+        ]
+      ],
+      "id": "e:2013:0:fwd",
+      "lengthM": 8896,
+      "maxSpeedKmh": 100,
+      "osmWayId": 2013,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2013",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "0",
+        "gauge": "1435",
+        "maxspeed": "100",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "3000"
+      },
+      "to": "n:214",
+      "voltageV": [
+        3000
+      ]
+    },
+    "e:2014:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:211",
+      "gaugeMm": [
+        1435
+      ],
+      "geometry": [
+        [
+          43.2,
+          13.25
+        ],
+        [
+          43.15,
+          13.285
+        ],
+        [
+          43.1,
+          13.25
+        ]
+      ],
+      "id": "e:2014:0:bwd",
+      "lengthM": 13332,
+      "maxSpeedKmh": 100,
+      "osmWayId": 2014,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2014",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1435",
+        "maxspeed": "100",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "branch",
+        "voltage": "25000"
+      },
+      "to": "n:210",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2014:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        50
+      ],
+      "from": "n:210",
+      "gaugeMm": [
+        1435
+      ],
+      "geometry": [
+        [
+          43.1,
+          13.25
+        ],
+        [
+          43.15,
+          13.285
+        ],
+        [
+          43.2,
+          13.25
+        ]
+      ],
+      "id": "e:2014:0:fwd",
+      "lengthM": 13332,
+      "maxSpeedKmh": 100,
+      "osmWayId": 2014,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2014",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "50",
+        "gauge": "1435",
+        "maxspeed": "100",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "branch",
+        "voltage": "25000"
+      },
+      "to": "n:211",
+      "voltageV": [
+        25000
+      ]
+    },
+    "e:2020:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "no",
+      "frequencyHz": null,
+      "from": "n:221",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.11,
+          13.382
+        ],
+        [
+          43.1,
+          13.4
+        ]
+      ],
+      "id": "e:2020:0:bwd",
+      "lengthM": 2275,
+      "maxSpeedKmh": 80,
+      "osmWayId": 2020,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2020",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "no",
+        "gauge": "1676",
+        "maxspeed": "80",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main"
+      },
+      "to": "n:220",
+      "voltageV": null
+    },
+    "e:2020:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "no",
+      "frequencyHz": null,
+      "from": "n:220",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.1,
+          13.4
+        ],
+        [
+          43.11,
+          13.382
+        ]
+      ],
+      "id": "e:2020:0:fwd",
+      "lengthM": 2275,
+      "maxSpeedKmh": 80,
+      "osmWayId": 2020,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2020",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "no",
+        "gauge": "1676",
+        "maxspeed": "80",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main"
+      },
+      "to": "n:221",
+      "voltageV": null
+    },
+    "e:2021:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "no",
+      "frequencyHz": null,
+      "from": "n:222",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.12,
+          13.4
+        ],
+        [
+          43.11,
+          13.382
+        ]
+      ],
+      "id": "e:2021:0:bwd",
+      "lengthM": 2275,
+      "maxSpeedKmh": 80,
+      "osmWayId": 2021,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2021",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "no",
+        "gauge": "1676",
+        "maxspeed": "80",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main"
+      },
+      "to": "n:221",
+      "voltageV": null
+    },
+    "e:2021:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "no",
+      "frequencyHz": null,
+      "from": "n:221",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.11,
+          13.382
+        ],
+        [
+          43.12,
+          13.4
+        ]
+      ],
+      "id": "e:2021:0:fwd",
+      "lengthM": 2275,
+      "maxSpeedKmh": 80,
+      "osmWayId": 2021,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2021",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "no",
+        "gauge": "1676",
+        "maxspeed": "80",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main"
+      },
+      "to": "n:222",
+      "voltageV": null
+    },
+    "e:2022:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "no",
+      "frequencyHz": null,
+      "from": "n:223",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.11,
+          13.35
+        ],
+        [
+          43.11,
+          13.382
+        ]
+      ],
+      "id": "e:2022:0:bwd",
+      "lengthM": 3558,
+      "maxSpeedKmh": 60,
+      "osmWayId": 2022,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2022",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "no",
+        "gauge": "1676",
+        "maxspeed": "60",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "branch"
+      },
+      "to": "n:221",
+      "voltageV": null
+    },
+    "e:2022:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "no",
+      "frequencyHz": null,
+      "from": "n:221",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.11,
+          13.382
+        ],
+        [
+          43.11,
+          13.35
+        ]
+      ],
+      "id": "e:2022:0:fwd",
+      "lengthM": 3558,
+      "maxSpeedKmh": 60,
+      "osmWayId": 2022,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2022",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "no",
+        "gauge": "1676",
+        "maxspeed": "60",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "branch"
+      },
+      "to": "n:223",
+      "voltageV": null
+    },
+    "e:2023:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        0
+      ],
+      "from": "n:224",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.6,
+          13.1
+        ],
+        [
+          43.5,
+          13.1
+        ]
+      ],
+      "id": "e:2023:0:bwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 90,
+      "osmWayId": 2023,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2023",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "0",
+        "gauge": "1676",
+        "maxspeed": "90",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "1500"
+      },
+      "to": "n:205",
+      "voltageV": [
+        1500
+      ]
+    },
+    "e:2023:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "yes",
+      "frequencyHz": [
+        0
+      ],
+      "from": "n:205",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.5,
+          13.1
+        ],
+        [
+          43.6,
+          13.1
+        ]
+      ],
+      "id": "e:2023:0:fwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 90,
+      "osmWayId": 2023,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2023",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "contact_line",
+        "frequency": "0",
+        "gauge": "1676",
+        "maxspeed": "90",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main",
+        "voltage": "1500"
+      },
+      "to": "n:224",
+      "voltageV": [
+        1500
+      ]
+    },
+    "e:2024:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "no",
+      "frequencyHz": null,
+      "from": "n:225",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.7,
+          13.1
+        ],
+        [
+          43.6,
+          13.1
+        ]
+      ],
+      "id": "e:2024:0:bwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 80,
+      "osmWayId": 2024,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2024",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "no",
+        "gauge": "1676",
+        "maxspeed": "80",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "branch"
+      },
+      "to": "n:224",
+      "voltageV": null
+    },
+    "e:2024:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "no",
+      "frequencyHz": null,
+      "from": "n:224",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.6,
+          13.1
+        ],
+        [
+          43.7,
+          13.1
+        ]
+      ],
+      "id": "e:2024:0:fwd",
+      "lengthM": 10830,
+      "maxSpeedKmh": 80,
+      "osmWayId": 2024,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2024",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "no",
+        "gauge": "1676",
+        "maxspeed": "80",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "branch"
+      },
+      "to": "n:225",
+      "voltageV": null
+    },
+    "e:2025:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "no",
+      "frequencyHz": null,
+      "from": "n:213",
+      "gaugeMm": [
+        1435
+      ],
+      "geometry": [
+        [
+          43.4,
+          13.25
+        ],
+        [
+          43.48,
+          13.25
+        ]
+      ],
+      "id": "e:2025:0:fwd",
+      "lengthM": 8659,
+      "maxSpeedKmh": 50,
+      "osmWayId": 2025,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2025",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "electrified": "no",
+        "gauge": "1435",
+        "maxspeed": "50",
+        "oneway": "yes",
+        "railway": "rail",
+        "railway:active": "yes",
+        "railway:preferred_direction": "forward",
+        "usage": "branch"
+      },
+      "to": "n:226",
+      "voltageV": null
+    },
+    "e:2027:0:bwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "bwd",
+      "electrification": "unknown",
+      "frequencyHz": null,
+      "from": "n:228",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.4,
+          13.45
+        ],
+        [
+          43.3,
+          13.45
+        ]
+      ],
+      "id": "e:2027:0:bwd",
+      "lengthM": 10815,
+      "maxSpeedKmh": 100,
+      "osmWayId": 2027,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2027",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "gauge": "1676",
+        "maxspeed": "100",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main"
+      },
+      "to": "n:227",
+      "voltageV": null
+    },
+    "e:2027:0:fwd": {
+      "access": "allowed",
+      "active": true,
+      "direction": "fwd",
+      "electrification": "unknown",
+      "frequencyHz": null,
+      "from": "n:227",
+      "gaugeMm": [
+        1676
+      ],
+      "geometry": [
+        [
+          43.3,
+          13.45
+        ],
+        [
+          43.4,
+          13.45
+        ]
+      ],
+      "id": "e:2027:0:fwd",
+      "lengthM": 10815,
+      "maxSpeedKmh": 100,
+      "osmWayId": 2027,
+      "provenance": {
+        "license": "Synthetic-QA-Only",
+        "qualityFlags": [
+          "SYNTHETIC_ONLY"
+        ],
+        "sourceId": "way:2027",
+        "sourceUrl": "https://synthetic.railway-ceo.local/c07-corridor-v1",
+        "sourceVersion": "1"
+      },
+      "rawTags": {
+        "access": "allowed",
+        "gauge": "1676",
+        "maxspeed": "100",
+        "railway": "rail",
+        "railway:active": "yes",
+        "usage": "main"
+      },
+      "to": "n:228",
+      "voltageV": null
+    }
+  },
+  "graphSha256": "b3cf4194eb8ce720baebc6d1101fc3793db2786cd683e2ac6ad4f70be1bc9650",
+  "nodes": {
+    "n:201": [
+      43.1,
+      13.1
+    ],
+    "n:202": [
+      43.2,
+      13.1
+    ],
+    "n:203": [
+      43.3,
+      13.1
+    ],
+    "n:204": [
+      43.4,
+      13.1
+    ],
+    "n:205": [
+      43.5,
+      13.1
+    ],
+    "n:206": [
+      43.2,
+      13.16
+    ],
+    "n:207": [
+      43.2,
+      13.06
+    ],
+    "n:210": [
+      43.1,
+      13.25
+    ],
+    "n:211": [
+      43.2,
+      13.25
+    ],
+    "n:212": [
+      43.3,
+      13.25
+    ],
+    "n:213": [
+      43.4,
+      13.25
+    ],
+    "n:214": [
+      43.2,
+      13.33
+    ],
+    "n:215": [
+      43.15,
+      13.285
+    ],
+    "n:220": [
+      43.1,
+      13.4
+    ],
+    "n:221": [
+      43.11,
+      13.382
+    ],
+    "n:222": [
+      43.12,
+      13.4
+    ],
+    "n:223": [
+      43.11,
+      13.35
+    ],
+    "n:224": [
+      43.6,
+      13.1
+    ],
+    "n:225": [
+      43.7,
+      13.1
+    ],
+    "n:226": [
+      43.48,
+      13.25
+    ],
+    "n:227": [
+      43.3,
+      13.45
+    ],
+    "n:228": [
+      43.4,
+      13.45
+    ]
+  },
+  "regionId": "c07-corridor-v1",
+  "schemaVersion": 1,
+  "stations": {
+    "st:201": {
+      "coordinates": [
+        43.1,
+        13.1
+      ],
+      "name": "SYN-C07-WEST-HUB",
+      "nodeIds": [
+        "n:201"
+      ]
+    },
+    "st:202": {
+      "coordinates": [
+        43.2,
+        13.1
+      ],
+      "name": "SYN-C07-MID-JCT",
+      "nodeIds": [
+        "n:202"
+      ]
+    },
+    "st:203": {
+      "coordinates": [
+        43.3,
+        13.1
+      ],
+      "name": "SYN-C07-CENTRAL",
+      "nodeIds": [
+        "n:203"
+      ]
+    },
+    "st:204": {
+      "coordinates": [
+        43.4,
+        13.1
+      ],
+      "name": "SYN-C07-EAST-PORT",
+      "nodeIds": [
+        "n:204"
+      ]
+    },
+    "st:205": {
+      "coordinates": [
+        43.5,
+        13.1
+      ],
+      "name": "SYN-C07-AC-TERM",
+      "nodeIds": [
+        "n:205"
+      ]
+    },
+    "st:210": {
+      "coordinates": [
+        43.1,
+        13.25
+      ],
+      "name": "SYN-C07-SG-ALPHA",
+      "nodeIds": [
+        "n:210"
+      ]
+    },
+    "st:211": {
+      "coordinates": [
+        43.2,
+        13.25
+      ],
+      "name": "SYN-C07-SG-BETA",
+      "nodeIds": [
+        "n:211"
+      ]
+    },
+    "st:212": {
+      "coordinates": [
+        43.3,
+        13.25
+      ],
+      "name": "SYN-C07-SG-DC750",
+      "nodeIds": [
+        "n:212"
+      ]
+    },
+    "st:213": {
+      "coordinates": [
+        43.4,
+        13.25
+      ],
+      "name": "SYN-C07-SG-DIESEL",
+      "nodeIds": [
+        "n:213"
+      ]
+    },
+    "st:214": {
+      "coordinates": [
+        43.2,
+        13.33
+      ],
+      "name": "SYN-C07-SG-DC3000",
+      "nodeIds": [
+        "n:214"
+      ]
+    },
+    "st:220": {
+      "coordinates": [
+        43.1,
+        13.4
+      ],
+      "name": "SYN-C07-JCT-WEST",
+      "nodeIds": [
+        "n:220"
+      ]
+    },
+    "st:222": {
+      "coordinates": [
+        43.12,
+        13.4
+      ],
+      "name": "SYN-C07-JCT-EAST",
+      "nodeIds": [
+        "n:222"
+      ]
+    },
+    "st:223": {
+      "coordinates": [
+        43.11,
+        13.35
+      ],
+      "name": "SYN-C07-JCT-HEADSHUNT",
+      "nodeIds": [
+        "n:223"
+      ]
+    },
+    "st:224": {
+      "coordinates": [
+        43.6,
+        13.1
+      ],
+      "name": "SYN-C07-DC-SWITCH",
+      "nodeIds": [
+        "n:224"
+      ]
+    },
+    "st:225": {
+      "coordinates": [
+        43.7,
+        13.1
+      ],
+      "name": "SYN-C07-STEAM-END",
+      "nodeIds": [
+        "n:225"
+      ]
+    },
+    "st:226": {
+      "coordinates": [
+        43.48,
+        13.25
+      ],
+      "name": "SYN-C07-SG-ONEWAY-END",
+      "nodeIds": [
+        "n:226"
+      ]
+    },
+    "st:227": {
+      "coordinates": [
+        43.3,
+        13.45
+      ],
+      "name": "SYN-C07-UNKELEC-START",
+      "nodeIds": [
+        "n:227"
+      ]
+    },
+    "st:228": {
+      "coordinates": [
+        43.4,
+        13.45
+      ],
+      "name": "SYN-C07-UNKELEC-END",
+      "nodeIds": [
+        "n:228"
+      ]
+    }
+  },
+  "turnRules": {
+    "e:2001:0:bwd->e:2001:0:fwd": {
+      "incoming": "e:2001:0:bwd",
+      "outgoing": "e:2001:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2001:0:bwd->e:2005:0:fwd": {
+      "incoming": "e:2001:0:bwd",
+      "outgoing": "e:2005:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2001:0:bwd->e:2006:0:fwd": {
+      "incoming": "e:2001:0:bwd",
+      "outgoing": "e:2006:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2001:0:fwd->e:2001:0:bwd": {
+      "incoming": "e:2001:0:fwd",
+      "outgoing": "e:2001:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2001:0:fwd->e:2002:0:fwd": {
+      "incoming": "e:2001:0:fwd",
+      "outgoing": "e:2002:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2002:0:bwd->e:2001:0:bwd": {
+      "incoming": "e:2002:0:bwd",
+      "outgoing": "e:2001:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2002:0:bwd->e:2002:0:fwd": {
+      "incoming": "e:2002:0:bwd",
+      "outgoing": "e:2002:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2002:0:fwd->e:2002:0:bwd": {
+      "incoming": "e:2002:0:fwd",
+      "outgoing": "e:2002:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2002:0:fwd->e:2003:0:fwd": {
+      "incoming": "e:2002:0:fwd",
+      "outgoing": "e:2003:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2002:0:fwd->e:2005:0:bwd": {
+      "incoming": "e:2002:0:fwd",
+      "outgoing": "e:2005:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2002:0:fwd->e:2006:0:bwd": {
+      "incoming": "e:2002:0:fwd",
+      "outgoing": "e:2006:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2003:0:bwd->e:2002:0:bwd": {
+      "incoming": "e:2003:0:bwd",
+      "outgoing": "e:2002:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2003:0:bwd->e:2003:0:fwd": {
+      "incoming": "e:2003:0:bwd",
+      "outgoing": "e:2003:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2003:0:bwd->e:2005:0:bwd": {
+      "incoming": "e:2003:0:bwd",
+      "outgoing": "e:2005:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2003:0:bwd->e:2006:0:bwd": {
+      "incoming": "e:2003:0:bwd",
+      "outgoing": "e:2006:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2003:0:fwd->e:2003:0:bwd": {
+      "incoming": "e:2003:0:fwd",
+      "outgoing": "e:2003:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2003:0:fwd->e:2004:0:fwd": {
+      "incoming": "e:2003:0:fwd",
+      "outgoing": "e:2004:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2004:0:bwd->e:2003:0:bwd": {
+      "incoming": "e:2004:0:bwd",
+      "outgoing": "e:2003:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2004:0:bwd->e:2004:0:fwd": {
+      "incoming": "e:2004:0:bwd",
+      "outgoing": "e:2004:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2004:0:fwd->e:2004:0:bwd": {
+      "incoming": "e:2004:0:fwd",
+      "outgoing": "e:2004:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2004:0:fwd->e:2023:0:fwd": {
+      "incoming": "e:2004:0:fwd",
+      "outgoing": "e:2023:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2005:0:bwd->e:2001:0:fwd": {
+      "incoming": "e:2005:0:bwd",
+      "outgoing": "e:2001:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2005:0:bwd->e:2005:0:fwd": {
+      "incoming": "e:2005:0:bwd",
+      "outgoing": "e:2005:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2005:0:bwd->e:2006:0:fwd": {
+      "incoming": "e:2005:0:bwd",
+      "outgoing": "e:2006:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2005:0:fwd->e:2002:0:bwd": {
+      "incoming": "e:2005:0:fwd",
+      "outgoing": "e:2002:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2005:0:fwd->e:2003:0:fwd": {
+      "incoming": "e:2005:0:fwd",
+      "outgoing": "e:2003:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2005:0:fwd->e:2005:0:bwd": {
+      "incoming": "e:2005:0:fwd",
+      "outgoing": "e:2005:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2005:0:fwd->e:2006:0:bwd": {
+      "incoming": "e:2005:0:fwd",
+      "outgoing": "e:2006:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2006:0:bwd->e:2001:0:fwd": {
+      "incoming": "e:2006:0:bwd",
+      "outgoing": "e:2001:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2006:0:bwd->e:2005:0:fwd": {
+      "incoming": "e:2006:0:bwd",
+      "outgoing": "e:2005:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2006:0:bwd->e:2006:0:fwd": {
+      "incoming": "e:2006:0:bwd",
+      "outgoing": "e:2006:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2006:0:fwd->e:2002:0:bwd": {
+      "incoming": "e:2006:0:fwd",
+      "outgoing": "e:2002:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2006:0:fwd->e:2003:0:fwd": {
+      "incoming": "e:2006:0:fwd",
+      "outgoing": "e:2003:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2006:0:fwd->e:2005:0:bwd": {
+      "incoming": "e:2006:0:fwd",
+      "outgoing": "e:2005:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2006:0:fwd->e:2006:0:bwd": {
+      "incoming": "e:2006:0:fwd",
+      "outgoing": "e:2006:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2010:0:bwd->e:2010:0:fwd": {
+      "incoming": "e:2010:0:bwd",
+      "outgoing": "e:2010:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2010:0:bwd->e:2014:0:fwd": {
+      "incoming": "e:2010:0:bwd",
+      "outgoing": "e:2014:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2010:0:fwd->e:2010:0:bwd": {
+      "incoming": "e:2010:0:fwd",
+      "outgoing": "e:2010:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2010:0:fwd->e:2011:0:fwd": {
+      "incoming": "e:2010:0:fwd",
+      "outgoing": "e:2011:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2010:0:fwd->e:2013:0:fwd": {
+      "incoming": "e:2010:0:fwd",
+      "outgoing": "e:2013:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2010:0:fwd->e:2014:0:bwd": {
+      "incoming": "e:2010:0:fwd",
+      "outgoing": "e:2014:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2011:0:bwd->e:2010:0:bwd": {
+      "incoming": "e:2011:0:bwd",
+      "outgoing": "e:2010:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2011:0:bwd->e:2011:0:fwd": {
+      "incoming": "e:2011:0:bwd",
+      "outgoing": "e:2011:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2011:0:bwd->e:2013:0:fwd": {
+      "incoming": "e:2011:0:bwd",
+      "outgoing": "e:2013:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2011:0:bwd->e:2014:0:bwd": {
+      "incoming": "e:2011:0:bwd",
+      "outgoing": "e:2014:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2011:0:fwd->e:2011:0:bwd": {
+      "incoming": "e:2011:0:fwd",
+      "outgoing": "e:2011:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2011:0:fwd->e:2012:0:fwd": {
+      "incoming": "e:2011:0:fwd",
+      "outgoing": "e:2012:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2012:0:bwd->e:2011:0:bwd": {
+      "incoming": "e:2012:0:bwd",
+      "outgoing": "e:2011:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2012:0:bwd->e:2012:0:fwd": {
+      "incoming": "e:2012:0:bwd",
+      "outgoing": "e:2012:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2012:0:fwd->e:2012:0:bwd": {
+      "incoming": "e:2012:0:fwd",
+      "outgoing": "e:2012:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2012:0:fwd->e:2025:0:fwd": {
+      "incoming": "e:2012:0:fwd",
+      "outgoing": "e:2025:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2013:0:bwd->e:2010:0:bwd": {
+      "incoming": "e:2013:0:bwd",
+      "outgoing": "e:2010:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2013:0:bwd->e:2011:0:fwd": {
+      "incoming": "e:2013:0:bwd",
+      "outgoing": "e:2011:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2013:0:bwd->e:2013:0:fwd": {
+      "incoming": "e:2013:0:bwd",
+      "outgoing": "e:2013:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2013:0:bwd->e:2014:0:bwd": {
+      "incoming": "e:2013:0:bwd",
+      "outgoing": "e:2014:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2013:0:fwd->e:2013:0:bwd": {
+      "incoming": "e:2013:0:fwd",
+      "outgoing": "e:2013:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2014:0:bwd->e:2010:0:fwd": {
+      "incoming": "e:2014:0:bwd",
+      "outgoing": "e:2010:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2014:0:bwd->e:2014:0:fwd": {
+      "incoming": "e:2014:0:bwd",
+      "outgoing": "e:2014:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2014:0:fwd->e:2010:0:bwd": {
+      "incoming": "e:2014:0:fwd",
+      "outgoing": "e:2010:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2014:0:fwd->e:2011:0:fwd": {
+      "incoming": "e:2014:0:fwd",
+      "outgoing": "e:2011:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2014:0:fwd->e:2013:0:fwd": {
+      "incoming": "e:2014:0:fwd",
+      "outgoing": "e:2013:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2014:0:fwd->e:2014:0:bwd": {
+      "incoming": "e:2014:0:fwd",
+      "outgoing": "e:2014:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2020:0:bwd->e:2020:0:fwd": {
+      "incoming": "e:2020:0:bwd",
+      "outgoing": "e:2020:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2020:0:fwd->e:2020:0:bwd": {
+      "incoming": "e:2020:0:fwd",
+      "outgoing": "e:2020:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2020:0:fwd->e:2021:0:fwd": {
+      "incoming": "e:2020:0:fwd",
+      "outgoing": "e:2021:0:fwd",
+      "penaltyS": 0,
+      "permitted": false,
+      "reversal": false
+    },
+    "e:2020:0:fwd->e:2022:0:fwd": {
+      "incoming": "e:2020:0:fwd",
+      "outgoing": "e:2022:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2021:0:bwd->e:2020:0:bwd": {
+      "incoming": "e:2021:0:bwd",
+      "outgoing": "e:2020:0:bwd",
+      "penaltyS": 0,
+      "permitted": false,
+      "reversal": false
+    },
+    "e:2021:0:bwd->e:2021:0:fwd": {
+      "incoming": "e:2021:0:bwd",
+      "outgoing": "e:2021:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2021:0:bwd->e:2022:0:fwd": {
+      "incoming": "e:2021:0:bwd",
+      "outgoing": "e:2022:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2021:0:fwd->e:2021:0:bwd": {
+      "incoming": "e:2021:0:fwd",
+      "outgoing": "e:2021:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2022:0:bwd->e:2020:0:bwd": {
+      "incoming": "e:2022:0:bwd",
+      "outgoing": "e:2020:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2022:0:bwd->e:2021:0:fwd": {
+      "incoming": "e:2022:0:bwd",
+      "outgoing": "e:2021:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2022:0:bwd->e:2022:0:fwd": {
+      "incoming": "e:2022:0:bwd",
+      "outgoing": "e:2022:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2022:0:fwd->e:2022:0:bwd": {
+      "incoming": "e:2022:0:fwd",
+      "outgoing": "e:2022:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2023:0:bwd->e:2004:0:bwd": {
+      "incoming": "e:2023:0:bwd",
+      "outgoing": "e:2004:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2023:0:bwd->e:2023:0:fwd": {
+      "incoming": "e:2023:0:bwd",
+      "outgoing": "e:2023:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2023:0:fwd->e:2023:0:bwd": {
+      "incoming": "e:2023:0:fwd",
+      "outgoing": "e:2023:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2023:0:fwd->e:2024:0:fwd": {
+      "incoming": "e:2023:0:fwd",
+      "outgoing": "e:2024:0:fwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2024:0:bwd->e:2023:0:bwd": {
+      "incoming": "e:2024:0:bwd",
+      "outgoing": "e:2023:0:bwd",
+      "penaltyS": 0,
+      "permitted": true,
+      "reversal": false
+    },
+    "e:2024:0:bwd->e:2024:0:fwd": {
+      "incoming": "e:2024:0:bwd",
+      "outgoing": "e:2024:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2024:0:fwd->e:2024:0:bwd": {
+      "incoming": "e:2024:0:fwd",
+      "outgoing": "e:2024:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2027:0:bwd->e:2027:0:fwd": {
+      "incoming": "e:2027:0:bwd",
+      "outgoing": "e:2027:0:fwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    },
+    "e:2027:0:fwd->e:2027:0:bwd": {
+      "incoming": "e:2027:0:fwd",
+      "outgoing": "e:2027:0:bwd",
+      "penaltyS": 300,
+      "permitted": true,
+      "reversal": true
+    }
+  }
+}

@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="railway-ceo-c06-fixture-builder">
+  <node id="201" lat="13.1000000" lon="43.1000000" version="1">
+    <tag k="name" v="SYN-C07-WEST-HUB" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="202" lat="13.1000000" lon="43.2000000" version="1">
+    <tag k="name" v="SYN-C07-MID-JCT" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="203" lat="13.1000000" lon="43.3000000" version="1">
+    <tag k="name" v="SYN-C07-CENTRAL" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="204" lat="13.1000000" lon="43.4000000" version="1">
+    <tag k="name" v="SYN-C07-EAST-PORT" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="205" lat="13.1000000" lon="43.5000000" version="1">
+    <tag k="name" v="SYN-C07-AC-TERM" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="206" lat="13.1600000" lon="43.2000000" version="1" />
+  <node id="207" lat="13.0600000" lon="43.2000000" version="1" />
+  <node id="210" lat="13.2500000" lon="43.1000000" version="1">
+    <tag k="name" v="SYN-C07-SG-ALPHA" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="211" lat="13.2500000" lon="43.2000000" version="1">
+    <tag k="name" v="SYN-C07-SG-BETA" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="212" lat="13.2500000" lon="43.3000000" version="1">
+    <tag k="name" v="SYN-C07-SG-DC750" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="213" lat="13.2500000" lon="43.4000000" version="1">
+    <tag k="name" v="SYN-C07-SG-DIESEL" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="214" lat="13.3300000" lon="43.2000000" version="1">
+    <tag k="name" v="SYN-C07-SG-DC3000" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="215" lat="13.2850000" lon="43.1500000" version="1" />
+  <node id="220" lat="13.4000000" lon="43.1000000" version="1">
+    <tag k="name" v="SYN-C07-JCT-WEST" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="221" lat="13.3820000" lon="43.1100000" version="1" />
+  <node id="222" lat="13.4000000" lon="43.1200000" version="1">
+    <tag k="name" v="SYN-C07-JCT-EAST" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="223" lat="13.3500000" lon="43.1100000" version="1">
+    <tag k="name" v="SYN-C07-JCT-HEADSHUNT" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="224" lat="13.1000000" lon="43.6000000" version="1">
+    <tag k="name" v="SYN-C07-DC-SWITCH" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="225" lat="13.1000000" lon="43.7000000" version="1">
+    <tag k="name" v="SYN-C07-STEAM-END" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="226" lat="13.2500000" lon="43.4800000" version="1">
+    <tag k="name" v="SYN-C07-SG-ONEWAY-END" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="227" lat="13.4500000" lon="43.3000000" version="1">
+    <tag k="name" v="SYN-C07-UNKELEC-START" />
+    <tag k="railway" v="station" />
+  </node>
+  <node id="228" lat="13.4500000" lon="43.4000000" version="1">
+    <tag k="name" v="SYN-C07-UNKELEC-END" />
+    <tag k="railway" v="station" />
+  </node>
+  <way id="2001" version="1">
+    <nd ref="201" />
+    <nd ref="202" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="contact_line" />
+    <tag k="frequency" v="50" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="60" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+    <tag k="voltage" v="25000" />
+  </way>
+  <way id="2002" version="1">
+    <nd ref="202" />
+    <nd ref="203" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="contact_line" />
+    <tag k="frequency" v="50" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="60" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+    <tag k="voltage" v="25000" />
+  </way>
+  <way id="2003" version="1">
+    <nd ref="203" />
+    <nd ref="204" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="contact_line" />
+    <tag k="frequency" v="50" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="130" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+    <tag k="voltage" v="25000" />
+  </way>
+  <way id="2004" version="1">
+    <nd ref="204" />
+    <nd ref="205" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="contact_line" />
+    <tag k="frequency" v="50" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="100" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+    <tag k="voltage" v="25000" />
+  </way>
+  <way id="2005" version="1">
+    <nd ref="201" />
+    <nd ref="206" />
+    <nd ref="203" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="contact_line" />
+    <tag k="frequency" v="50" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="160" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+    <tag k="voltage" v="25000" />
+  </way>
+  <way id="2006" version="1">
+    <nd ref="201" />
+    <nd ref="207" />
+    <nd ref="203" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="contact_line" />
+    <tag k="frequency" v="50" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="50" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="branch" />
+    <tag k="voltage" v="25000" />
+  </way>
+  <way id="2023" version="1">
+    <nd ref="205" />
+    <nd ref="224" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="contact_line" />
+    <tag k="frequency" v="0" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="90" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+    <tag k="voltage" v="1500" />
+  </way>
+  <way id="2024" version="1">
+    <nd ref="224" />
+    <nd ref="225" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="no" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="80" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="branch" />
+  </way>
+  <way id="2010" version="1">
+    <nd ref="210" />
+    <nd ref="211" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="contact_line" />
+    <tag k="frequency" v="50" />
+    <tag k="gauge" v="1435" />
+    <tag k="maxspeed" v="140" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+    <tag k="voltage" v="25000" />
+  </way>
+  <way id="2011" version="1">
+    <nd ref="211" />
+    <nd ref="212" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="rail" />
+    <tag k="frequency" v="0" />
+    <tag k="gauge" v="1435" />
+    <tag k="maxspeed" v="80" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+    <tag k="voltage" v="750" />
+  </way>
+  <way id="2012" version="1">
+    <nd ref="212" />
+    <nd ref="213" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="no" />
+    <tag k="gauge" v="1435" />
+    <tag k="maxspeed" v="90" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="branch" />
+  </way>
+  <way id="2013" version="1">
+    <nd ref="211" />
+    <nd ref="214" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="contact_line" />
+    <tag k="frequency" v="0" />
+    <tag k="gauge" v="1435" />
+    <tag k="maxspeed" v="100" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+    <tag k="voltage" v="3000" />
+  </way>
+  <way id="2014" version="1">
+    <nd ref="210" />
+    <nd ref="215" />
+    <nd ref="211" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="contact_line" />
+    <tag k="frequency" v="50" />
+    <tag k="gauge" v="1435" />
+    <tag k="maxspeed" v="100" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="branch" />
+    <tag k="voltage" v="25000" />
+  </way>
+  <way id="2025" version="1">
+    <nd ref="213" />
+    <nd ref="226" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="no" />
+    <tag k="gauge" v="1435" />
+    <tag k="maxspeed" v="50" />
+    <tag k="oneway" v="yes" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="railway:preferred_direction" v="forward" />
+    <tag k="usage" v="branch" />
+  </way>
+  <way id="2020" version="1">
+    <nd ref="220" />
+    <nd ref="221" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="no" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="80" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+  </way>
+  <way id="2021" version="1">
+    <nd ref="221" />
+    <nd ref="222" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="no" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="80" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+  </way>
+  <way id="2022" version="1">
+    <nd ref="221" />
+    <nd ref="223" />
+    <tag k="access" v="allowed" />
+    <tag k="electrified" v="no" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="60" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="branch" />
+  </way>
+  <way id="2027" version="1">
+    <nd ref="227" />
+    <nd ref="228" />
+    <tag k="access" v="allowed" />
+    <tag k="gauge" v="1676" />
+    <tag k="maxspeed" v="100" />
+    <tag k="railway" v="rail" />
+    <tag k="railway:active" v="yes" />
+    <tag k="usage" v="main" />
+  </way>
+</osm>
