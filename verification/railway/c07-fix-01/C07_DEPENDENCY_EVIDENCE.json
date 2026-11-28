@@ -134,13 +134,17 @@
     ]
   },
   "standaloneCleanExtractionRunnableSuites": [
-    "test_c03_topology_and_stations.py",
-    "test_c02_prefilter_synthetic.py",
-    "test_c03_runtime_ts.mjs",
-    "_run_upstream_cases.mjs",
-    "verify_downstream_graphpack.mjs",
-    "test_c04_contracts_and_tiles.mjs",
-    "test_c05_packages_install_and_portals.mjs"
+    "test_c03_topology_and_stations.py (6/6)",
+    "test_c02_prefilter_synthetic.py (36/36)",
+    "test_c03_runtime_ts.mjs (5/5)",
+    "_run_upstream_cases.mjs (321/321)",
+    "verify_downstream_graphpack.mjs (1/1)",
+    "test_c05_packages_install_and_portals.mjs (10/12 executed standalone; c05_05 and c05_10 skipped without c04_renderer_pkg/node_modules)",
+    "c07_dataset_generator.mjs (137/137 dataset contract & raw fixture provenance validation)"
+  ],
+  "npmRendererDependentSuitesRequiringNodeModules": [
+    "test_c04_contracts_and_tiles.mjs (requires c04_renderer_pkg/node_modules/pmtiles)",
+    "test_c05_packages_install_and_portals.mjs c05_05 and c05_10 (require c04_renderer_pkg/node_modules/pmtiles)"
   ],
   "liveJavaDependentSuitesRequiringExternalJars": [
     "test_c07_calibration.mjs",

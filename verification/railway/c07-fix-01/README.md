@@ -12,15 +12,15 @@ Bundled Verified C06 Adapter JAR: `c06_oracle/java/c06-strict-oracle.jar` (`34e8
 ### 1. Bundled Standalone Contents Inside the ZIP
 The single-ZIP deliverable includes all source modules (`src/`), upstream test suites (`tests/`), renderer assets (`assets/fonts/`, `assets/sprites/`, `assets/licenses/`), synthetic C02–C07 fixtures (`fixtures/`), C06 strict adapter JAR & Java sources (`c06_oracle/java/`), C06/C07 strict oracle cache identities & outputs, Python/Node verification scripts (`c02_*`, `c03_*`, `c04_*`, `c05_*`, `c06_*`, `c07_*`, `_run_upstream_cases.mjs`, `verify_downstream_graphpack.mjs`), documentation (`docs/` + `docs/railway/`), `SNAPSHOT_MANIFEST.json`, and `MANIFEST.sha256`.
 
-From a freshly extracted ZIP directory (requiring only **Node.js `v24.10.0`** with `--experimental-transform-types` and **Python `3.13.0`**):
+From a freshly extracted ZIP directory (requiring only **Node.js `v24.10.0`** with `--experimental-transform-types` and **Python `3.13.0`**; note `test_c04_contracts_and_tiles.mjs` and C05 PMTiles subcases `c05_05`/`c05_10` require external `c04_renderer_pkg/node_modules`):
 ```powershell
 python -I -B test_c03_topology_and_stations.py
 python -I -B test_c02_prefilter_synthetic.py
 node --experimental-transform-types test_c03_runtime_ts.mjs
 node --experimental-transform-types _run_upstream_cases.mjs
 node --experimental-transform-types verify_downstream_graphpack.mjs fixtures/c04_synthetic_graph_bundle.json
-node --experimental-transform-types test_c04_contracts_and_tiles.mjs
-node --experimental-transform-types test_c05_packages_install_and_portals.mjs
+node --experimental-transform-types test_c05_packages_install_and_portals.mjs   # 10/12 executed + 2 PMTiles cases skipped standalone; 12/12 with c04_renderer_pkg/node_modules
+node --experimental-transform-types c07_dataset_generator.mjs
 ```
 
 ### 2. External Prerequisites (Not Bundled in Standalone ZIP)

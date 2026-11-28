@@ -1,5 +1,5 @@
 {
-  "baseline": "36c2128d6ea1a86cfebcc94d9886fbf535773354",
+  "baseline": "0f4159d1ab1428f60fddfc5b86acd554c0d89a1f",
   "c06AdapterJarSha256": "34e81249ceb940008fc87545608549e34e3201bd33e251f4405f8eedca7091eb",
   "coordinatorCheckpoint": "36c2128d6ea1a86cfebcc94d9886fbf535773354",
   "datasetIdentity": {
@@ -42,9 +42,9 @@
       "sha256": "485ff8237afe64224b9e5afe5fbfbc49627d10afe8f46197fac46782f49d604c"
     },
     "C07_DEPENDENCY_EVIDENCE.json": {
-      "bytes": 5365,
-      "gitBlobSha1": "db14c88899e3fb43a5d745283258ac99d2bc286b",
-      "sha256": "95e019d9091608a8b2de2e414369b7797f4835ffec67e579c162426351ebb173"
+      "bytes": 5812,
+      "gitBlobSha1": "bb3ca39203e954b2daa4c4da2d72da771c7e34e0",
+      "sha256": "02abc53f915a7deb8fb8e49bce3f0506b9ec2c43dea93256337f9ad6f11b62b1"
     },
     "C07_DISCREPANCY_REGISTRY.json": {
       "bytes": 192889,
@@ -67,9 +67,9 @@
       "sha256": "e26b3c7a5ad072e9cab43b379b75ec8afba4f8a717e9e79981e15d7d870dd63b"
     },
     "README.md": {
-      "bytes": 5865,
-      "gitBlobSha1": "faa4c56d7943c0dcb4ef662ea9b0d8056df64c7c",
-      "sha256": "397b7e4558849f43d5477f5d2b66ee02c564d883179cc0add81ea0158e3dd48e"
+      "bytes": 6089,
+      "gitBlobSha1": "d799620f763eb94574e06b04d095487b8925e475",
+      "sha256": "97c7959f8a14c668d04da66edf4b20d23af077e9ddf1c108bbfcae75f13e8ed5"
     },
     "c07_dataset_generator.mjs": {
       "bytes": 64157,
